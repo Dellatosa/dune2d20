@@ -1,0 +1,65 @@
+import { dune2d20 } from "./config/config.js";
+import { registerSystemSettings } from "./config/settings.js";
+import registerHandlebarsHelpers from "./common/helpers.js"
+import DuneItem from "./duneItem.js";
+import DuneActor from "./duneActor.js";
+import DuneItemSheet from "./sheets/duneItemSheet.js";
+import DuneActorSheet from "./sheets/duneActorSheet.js";
+import DuneHouseSheet from "./sheets/duneHouseSheet.js";
+
+Hooks.once("init", function(){
+    console.log("Dune2D20 | Initializing the Dune 2d20 Game System");
+
+    game.dune2d20 = {
+        DuneActor,
+        DuneItem
+    };
+
+    CONFIG.debug.hooks = true;
+
+    CONFIG.dune2d20 = dune2d20;
+    CONFIG.Item.documentClass = DuneItem;
+    CONFIG.Actor.documentClass = DuneActor;
+
+    Actors.unregisterSheet("core", ActorSheet);
+    Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true});
+    Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"], makeDefault: true});
+
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("dune2d20", DuneItemSheet, {makeDefault: true});
+
+    registerSystemSettings();
+
+    preloadHandlebarsTemplates();
+
+    // Register custom Handlebars Helpers
+	registerHandlebarsHelpers();
+});
+
+Hooks.once("setup", function() {
+    //dune2d20.drives = localizeObj(dune2d20.drives, true);
+    //console.log(dune2d20.drives);
+});
+
+async function preloadHandlebarsTemplates() {
+    /* 
+    const templatePaths = [
+        "systems/dune2d20/templates/xxx.hbs",
+        "systems/dune2d20/templates/yyy.hbs"
+    ];
+
+    return loadTemplates(templatePaths);
+    */
+};
+
+/* function localizeObj(toLocalize, sorted = true) {
+    const localized = Object.entries(toLocalize).map(e => {
+        return [e[0], game.i18n.localize(e[1])];
+    });
+
+    if (sorted) localized.sort((a, b) => a[1].localeCompare(b[1]));
+    return localized.reduce((obj, e) => {
+        obj[e[0]] = e[1];
+        return obj;
+    }, {});
+} */

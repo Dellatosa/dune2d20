@@ -1,0 +1,200 @@
+.dune2d20.sheet.actor  {
+    
+    .window-content {
+        background-image: url("../images/sheet/bg-character.jpg");
+        background-size: cover;
+        background-clip: border-box;
+
+        font-family: "Hoefler";
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.tabs {
+        align-items: center;
+
+        font-size: 1.2em;
+        color: var(--color-normal-text);
+    
+        .active {
+            text-shadow: none;
+
+            font-size: 1.2em;
+            color: var(--color-focus-text);
+            font-weight: bold;
+        }
+    }
+
+    .sheet-header {
+        display: grid;
+        grid-template-columns: 150px 1fr 25px;
+
+        .top-title {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+            text-align: center;
+            font-family: "DuneRise";
+            font-size: 2.5em;
+        }
+
+        img {
+            flex: 0 0 150px;
+            height: 150px;
+            border: none;
+        }
+
+        .background {
+            display: grid;
+            grid-template-columns: 1fr 27px 4fr 27px;
+            grid-auto-rows: 34px;
+
+            align-items: center;
+            margin: 0 2px;
+
+            font-size: 1.2em;
+            color: var(--color-normal-text);
+
+            .bg-name {
+                padding-right: 10px;
+                text-align: right;
+
+                font-weight: bold;
+            }
+
+            .bg-data {
+
+                input {
+                    height: 34px;
+                    width: 100%;
+
+                    background: none;
+                    border: none;
+                    border-top: solid 1px  var(--color-box-border);
+                    border-bottom: solid 1px var(--color-box-border);
+
+                    color: var(--color-normal-text);
+                }
+
+                input:focus {
+                    box-shadow: none;
+
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+            }
+
+            .bg-data.border {
+                height: 34px;
+
+                display: flex;
+                align-items: center;
+
+                border-top: solid 1px var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+            }
+
+            .bg-start {
+                height: 34px;
+                background-image: url("../images/sheet/field-left.png");
+            }
+
+            .bg-end {
+                height: 34px;
+                background-image: url("../images/sheet/field-right.png");
+            }
+        }
+
+        .padlock {
+            text-align: center;
+
+            color: var(--color-normal-text);
+        }
+    }
+
+    .statistics{
+        display: grid;
+        grid-template-columns: 6fr 4fr;        
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 59px 2fr 26px;
+            grid-auto-rows: 50px;
+
+            align-items: center;
+
+            font-size: 1.2em;
+            color: var(--color-normal-text);
+
+            .title {
+                text-align: center;
+
+                font-size: 1.4em;
+            }
+
+            .drive, .skill {
+                text-align: right;
+                padding-right: 10px;
+                
+                font-weight: bold;
+            }
+
+            .val {
+                font-family: "Perpetua";
+                text-align: center;
+
+                background-image: url("../images/sheet/drive-box.png");
+
+                input {
+                    height: 50px;
+
+                    border: none;
+                    background: none;
+
+                    color: var(--color-normal-text);
+                }
+
+                input:focus {
+                    box-shadow: none;
+
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+            }
+
+            .statement, .focuses {
+                height: 50px;
+
+                border-top: solid 1px var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+
+                textarea {
+                    resize: none;
+                    background: none;
+                    border: none;
+                    border-radius: 0;
+                    
+                    font-family: "Hoefler";
+                    font-size: 1em;
+                    color: var(--color-normal-text);
+                }
+
+                textarea:focus {
+                    box-shadow: none;
+
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+            }
+
+            .stat-end {
+                height: 50px;
+                background-image: url("../images/sheet/drive-end.png");
+            }
+        }
+    }
+    
+}

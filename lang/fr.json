@@ -1,0 +1,39 @@
+{
+    "TYPES.Actor.PC": "Personnage Joueur",
+    "TYPES.Actor.SC": "Personnage Secondaire",
+    "TYPES.Actor.NPC": "Personnage Non Joueur", 
+    "TYPES.Actor.House": "Maison",
+    "TYPES.Item.Asset": "Atout",
+    "TYPES.Item.Trait": "Trait", 
+    "TYPES.Item.Talent": "Talent", 
+    "TYPES.Item.Domain": "Domaine", 
+    "TYPES.Item.Enemy": "Ennemi",
+    "dune2d20": {
+        "actor" : {
+            "characterName": "Nom du personnage",
+            "houseName": "Nom de la Maison",
+            "name": "NOM",
+            "house" : "MAISON",
+            "role": "ROLE",
+            "faction": "FACTION",
+            "traits": "TRAITS",
+            "ambition": "AMBITION",
+            "statistics" : "STATISTIQUES",
+            "biography" : "BIOGRAPHIE",
+            "drive": "PRINCIPE",
+            "statement": "MAXIME",
+            "duty": "DEVOIR",
+            "faith": "FOI",
+            "justice": "JUSTICE",
+            "power": "DOMINATION",
+            "truth": "VERITE",
+            "skill": "COMPETENCE",
+            "focuses": "SPECIALISATIONS",
+            "battle": "COMBAT",
+            "communicate": "RHETORIQUE",
+            "discipline": "DISCIPLINE",
+            "move": "MOBILITE",
+            "understand": "ANALYSE"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.dune2d20.sheet.house  {
+    font-family: "Hoefler";
+    
+    .window-content {
+        background-image: url("../images/sheet/bg-house.jpg");
+        background-size: cover;
+        background-clip: border-box;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        //overflow: hidden;
+    }
+
+    .sheet-header {
+        display: grid;
+        grid-template-columns: 1fr 250px;
+
+        img {
+            flex: 0 0 250px;
+            border: none;
+            height: 250px;
+        }
+
+        .padlock {
+            text-align: center;
+        }
+    }
+}

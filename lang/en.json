@@ -1,0 +1,39 @@
+{
+    "TYPES.Actor.PC": "Player Character",
+    "TYPES.Actor.SC": "Supporting Character",
+    "TYPES.Actor.NPC": "Non-Player Character", 
+    "TYPES.Actor.House": "House",
+    "TYPES.Item.Asset": "Asset",
+    "TYPES.Item.Trait": "Trait", 
+    "TYPES.Item.Talent": "Talent", 
+    "TYPES.Item.Domain": "Domain", 
+    "TYPES.Item.Enemy": "Enemy",
+    "dune2d20": {
+        "actor" : {
+            "characterName": "Character Name",
+            "houseName": "House Name",
+            "name": "NAME",
+            "house" : "HOUSE",
+            "role": "ROLE",
+            "faction": "FACTION",
+            "statistics" : "STATISTICS",
+            "traits": "TRAITS",
+            "ambition": "AMBITION",
+            "biography" : "BIOGRAPHY",
+            "drive": "DRIVE",
+            "statement": "STATEMENT",
+            "duty": "DUTY",
+            "faith": "FAITH",
+            "justice": "JUSTICE",
+            "power": "POWER",
+            "truth": "TRUTH",
+            "skill": "SKILL",
+            "focuses": "FOCUSES",
+            "battle": "BATTLE",
+            "communicate": "COMMUNICATE",
+            "discipline": "DISCIPLINE",
+            "move": "MOVE",
+            "understand": "UNDERSTAND"
+        }
+    }
+}

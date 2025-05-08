@@ -1,0 +1,38 @@
+{
+  "id": "dune2d20",
+  "title": "Dune 2D20: Adventures in the Imperium",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "Dellatosa",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.304"
+  },
+  "esmodules": [
+    "modules/dune2d20.js"
+  ],
+  "styles": [
+    "css/dune2d20.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "fr",
+      "name": "français",
+      "path": "lang/fr.json",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/Dellatosa/Dune2d20",
+  "manifest": "https://raw.githubusercontent.com/Dellatosa/Dune2d20/main/system.json",
+  "download": "https://github.com/Dellatosa/Dune2d20/archive/refs/tags/v0.0.1.zip"
+}

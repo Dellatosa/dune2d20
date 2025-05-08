@@ -1,0 +1,181 @@
+{
+  "Actor": {
+    "types": [ "PC", "SC", "NPC", "House" ],
+    "templates": {
+      "informations": {
+        "house": null,
+        "role": "",
+        "faction": "",
+        "ambition": "",
+        "description" : "",
+        "biography":  ""
+      },
+      "resources": {
+        "resources": {
+          "determination": {
+            "min": 0,
+            "value": 0,
+            "max": 3
+          },
+          "advancementPoints": {
+            "min": 0,
+            "value": 0
+          }
+        }
+      },
+      "skillsAndDrives" : {
+        "skills": {
+          "battle": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "focuses": null
+          },
+          "communicate": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "focuses": null
+          },
+          "discipline": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "focuses": null
+          },
+          "move": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "focuses": null
+          },
+          "understand": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "focuses": null
+          }
+        },
+        "drives": {
+          "duty": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "statement": ""
+          },
+          "faith": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "statement": ""
+          },
+          "justice": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "statement": ""
+          },
+          "power": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "statement": ""
+          },
+          "truth": {
+            "value": 4,
+            "min": 4,
+            "max": 8,
+            "statement": ""
+          }
+        }
+      }  
+    },
+    "PC": {
+      "templates": [ "informations", "resources", "skillsAndDrives" ]
+    },
+    "SC": {
+      "templates": [ "informations", "skillsAndDrives" ]
+    },
+    "NPC": {
+      "templates": [ "informations", "skillsAndDrives" ]
+    },
+    "House": {
+      "homeworld": "",
+      "houseType": "",
+      "traits": [],
+      "motto": "",
+      "domains": [],
+      "roles": {
+        "ruler": {
+          "name": ""
+        },
+        "consort": {
+          "name": ""
+        },
+        "heir": {
+          "name": ""
+        },
+        "advisor": {
+          "name": ""
+        },
+        "chiefPhysician": {
+          "name": ""
+        },
+        "councillor": {
+          "name": ""
+        },
+        "envoy": {
+          "name": ""
+        },
+        "marshall": {
+          "name": ""
+        },
+        "scholar": {
+          "name": ""
+        },
+        "spymaster": {
+          "name": ""
+        },
+        "swordmaster": {
+          "name": ""
+        },
+        "treasurer": {
+          "name": ""
+        },
+        "warmaster": {
+          "name": ""
+        }
+      },
+      "enemies": []
+    }
+  },  
+  "Item": {
+    "types": [ "Asset", "Trait", "Talent", "Domain", "Enemy" ],
+    "Asset": {
+      "temporary": false,
+      "quality": 0
+    },
+    "Trait": {
+      "temporary": false
+    },
+    "Talent": {
+      "description": "",
+      "ruleText": "",
+      "faction": "",
+      "skill": "",
+      "linkToSkill": false
+    },
+    "domain": {
+      "primary": false,
+      "area": "",
+      "field": "",
+      "details": ""
+    },
+    "enemy": {
+      "houseType": "",
+      "hatered": 1,
+      "reason": "",
+      "details": null
+    }
+  }
+}
