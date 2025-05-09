@@ -34,6 +34,13 @@
             "discipline": "DISCIPLINE",
             "move": "MOBILITE",
             "understand": "ANALYSE"
+        },
+        "chat": {
+            "confirmSuppr": "Confirmer la suppression",
+            "removeTrait": "Trait a retirer",
+            "removeTraitConfirm": "Etes-vous certain de vouloir retirer ce Trait de ce personnage ?",
+            "removeHouse": "Maison a retirer",
+            "removeHouseConfirm": "Etes-vous certain de vouloir retirer cette Maison de ce personnage ?"
         }
     }
 }

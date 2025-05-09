@@ -35,6 +35,12 @@ export default class DuneActorSheet extends ActorSheet {
         if(this.actor.isOwner) {
             // Vérouiller / dévérouiller la fiche
             html.find(".sheet-change-lock").click(this._onSheetChangelock.bind(this));
+
+            // Delete House
+            html.find('.delete-house').click(this._onDeleteHouse.bind(this));
+
+            // Delete item
+            html.find('.delete-trait').click(this._onDeleteTrait.bind(this));
         }
     }
 
@@ -46,5 +52,36 @@ export default class DuneActorSheet extends ActorSheet {
         if (flagData) await this.actor.unsetFlag(game.system.id, "SheetUnlocked");
         else await this.actor.setFlag(game.system.id, "SheetUnlocked", "SheetUnlocked");
         this.actor.sheet.render(true);
+    }
+
+    async _onDeleteHouse(event) {
+        event.preventDefault();
+        const house = fromUuidSync(this.actor.system.house);
+
+        let content = `<p>${game.i18n.localize("dune2d20.chat.removeHouse")} : ${house.name}<br>${game.i18n.localize("dune2d20.chat.removeHouseConfirm")}<p>`
+        let dlg = Dialog.confirm({
+            title: game.i18n.localize("dune2d20.chat.confirmSuppr"),
+            content: content,
+            yes: () => this.actor.update({"system.house": null}),
+            //no: () =>, Do nothing
+            defaultYes: false
+        });
+    }
+
+    async _onDeleteTrait(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+
+        let itemId = element.closest(".trait").dataset.itemId;
+        let item = this.actor.items.get(itemId);
+        
+        let content = `<p>${game.i18n.localize("dune2d20.chat.removeTrait")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTraitConfirm")}<p>`
+        let dlg = Dialog.confirm({
+            title: game.i18n.localize("dune2d20.chat.confirmSuppr"),
+            content: content,
+            yes: () => item.delete(),
+            //no: () =>, Do nothing
+            defaultYes: false
+        });
     }
 }

@@ -34,6 +34,13 @@
             "discipline": "DISCIPLINE",
             "move": "MOVE",
             "understand": "UNDERSTAND"
+        },
+        "chat": {
+            "confirmSuppr": "Confirm suppression",
+            "removeTrait": "Trait to remove",
+            "removeTraitConfirm": "Are you sure you want to remove this Trait from this character ?",
+            "removeHouse": "House to remove",
+            "removeHouseConfirm": "Are you sure you want to remove this House from this character ?"
         }
     }
 }
