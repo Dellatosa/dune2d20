@@ -15,7 +15,7 @@ Hooks.once("init", function(){
         DuneItem
     };
 
-    CONFIG.debug.hooks = true;
+    //CONFIG.debug.hooks = true;
 
     CONFIG.dune2d20 = dune2d20;
     CONFIG.Item.documentClass = DuneItem;
@@ -51,6 +51,22 @@ async function preloadHandlebarsTemplates() {
     return loadTemplates(templatePaths);
     */
 };
+
+Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
+    if(dropped.type == "Actor") {
+        const actorDocument = fromUuidSync(dropped.uuid);
+
+        if(actorDocument.type == "House") {
+            //console.log(actor, actorDocument.name);
+            if(actor.system.house == null) {
+                actor.update({"system.house": dropped.uuid});
+            }
+            else {
+               return ui.notifications.warn("Le personnage est déjà attaché à une Maison !");
+            }
+        }
+    }
+});
 
 /* function localizeObj(toLocalize, sorted = true) {
     const localized = Object.entries(toLocalize).map(e => {

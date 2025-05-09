@@ -24,7 +24,7 @@ export default class DuneActorSheet extends ActorSheet {
         data.unlocked = this.actor.isUnlocked;
 
         data.traits = data.items.filter(function (item) { return item.type == "Trait"});
-        data.houses = data.items.filter(function (item) { return item.type == "House"});
+        data.house = actorData.house != null ? fromUuidSync(actorData.house) : null;
 
         return data;
     }

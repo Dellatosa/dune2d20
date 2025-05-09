@@ -21,18 +21,19 @@
 }
 .dune2d20.sheet.actor .sheet-header {
   display: grid;
-  grid-template-columns: 150px 1fr 25px;
+  grid-template-columns: 155px 1fr 25px;
 }
 .dune2d20.sheet.actor .sheet-header .top-title {
   grid-column-start: 1;
   grid-column-end: 4;
   text-align: center;
   font-family: "DuneRise";
+  color: var(--color-normal-text);
   font-size: 2.5em;
 }
 .dune2d20.sheet.actor .sheet-header img {
   flex: 0 0 150px;
-  height: 150px;
+  height: 212px;
   border: none;
 }
 .dune2d20.sheet.actor .sheet-header .background {
@@ -62,6 +63,10 @@
   box-shadow: none;
   color: var(--color-focus-text);
   font-weight: bold;
+}
+.dune2d20.sheet.actor .sheet-header .background .bg-data .house,
+.dune2d20.sheet.actor .sheet-header .background .bg-data .trait {
+  padding: 1px 3px;
 }
 .dune2d20.sheet.actor .sheet-header .background .bg-data.border {
   height: 34px;
