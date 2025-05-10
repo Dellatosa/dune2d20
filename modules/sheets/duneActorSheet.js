@@ -37,10 +37,10 @@ export default class DuneActorSheet extends ActorSheet {
             html.find(".sheet-change-lock").click(this._onSheetChangelock.bind(this));
 
             // Delete House
-            html.find('.delete-house').click(this._onDeleteHouse.bind(this));
+            html.find('.remove-house').click(this._onRemoveHouse.bind(this));
 
             // Delete item
-            html.find('.delete-trait').click(this._onDeleteTrait.bind(this));
+            html.find('.remove-trait').click(this._onRemoveTrait.bind(this));
         }
     }
 
@@ -54,13 +54,13 @@ export default class DuneActorSheet extends ActorSheet {
         this.actor.sheet.render(true);
     }
 
-    async _onDeleteHouse(event) {
+    async _onRemoveHouse(event) {
         event.preventDefault();
         const house = fromUuidSync(this.actor.system.house);
 
         let content = `<p>${game.i18n.localize("dune2d20.chat.removeHouse")} : ${house.name}<br>${game.i18n.localize("dune2d20.chat.removeHouseConfirm")}<p>`
         let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmSuppr"),
+            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
             content: content,
             yes: () => this.actor.update({"system.house": null}),
             //no: () =>, Do nothing
@@ -68,7 +68,7 @@ export default class DuneActorSheet extends ActorSheet {
         });
     }
 
-    async _onDeleteTrait(event) {
+    async _onRemoveTrait(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
@@ -77,7 +77,7 @@ export default class DuneActorSheet extends ActorSheet {
         
         let content = `<p>${game.i18n.localize("dune2d20.chat.removeTrait")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTraitConfirm")}<p>`
         let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmSuppr"),
+            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
             content: content,
             yes: () => item.delete(),
             //no: () =>, Do nothing

@@ -10,6 +10,10 @@
     "TYPES.Item.Enemy": "Ennemi",
     "dune2d20": {
         "actor" : {
+            "lock": "Verouiller",
+            "unlock": "Déverrouiller",
+            "removeHouse": "Supprimer la Maison",
+            "removeTrait": "Supprimer le Trait",
             "characterName": "Nom du personnage",
             "houseName": "Nom de la Maison",
             "name": "NOM",
@@ -36,11 +40,11 @@
             "understand": "ANALYSE"
         },
         "chat": {
-            "confirmSuppr": "Confirmer la suppression",
-            "removeTrait": "Trait a retirer",
-            "removeTraitConfirm": "Etes-vous certain de vouloir retirer ce Trait de ce personnage ?",
-            "removeHouse": "Maison a retirer",
-            "removeHouseConfirm": "Etes-vous certain de vouloir retirer cette Maison de ce personnage ?"
+            "confirmRemoval": "Confirmer la suppression",
+            "removeTrait": "Trait à supprimer",
+            "removeTraitConfirm": "Etes-vous certain de vouloir supprimer ce Trait de ce personnage ?",
+            "removeHouse": "Maison à supprimer",
+            "removeHouseConfirm": "Etes-vous certain de vouloir supprimer cette Maison de ce personnage ?"
         }
     }
 }

@@ -10,6 +10,10 @@
     "TYPES.Item.Enemy": "Enemy",
     "dune2d20": {
         "actor" : {
+            "lock": "Lock",
+            "unlock": "Unlock",
+            "removeHouse": "Remove House",
+            "removeTrait": "Remove Trait",
             "characterName": "Character Name",
             "houseName": "House Name",
             "name": "NAME",
@@ -36,7 +40,7 @@
             "understand": "UNDERSTAND"
         },
         "chat": {
-            "confirmSuppr": "Confirm suppression",
+            "confirmRemoval": "Confirm removal",
             "removeTrait": "Trait to remove",
             "removeTraitConfirm": "Are you sure you want to remove this Trait from this character ?",
             "removeHouse": "House to remove",

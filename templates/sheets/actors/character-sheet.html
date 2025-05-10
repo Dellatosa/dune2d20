@@ -11,7 +11,7 @@
             <div class="bg-start"></div>
             <div class="bg-data border">
                 {{#if house}}
-                    <div class="house" data-house-id="{{house._id}}">{{house.name}} <a class="delete-house" title="{{localize 'dune2d20.actor.delete'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
+                    <div class="house" data-house-id="{{house._id}}">{{house.name}} <a class="remove-house" title="{{localize 'dune2d20.actor.removeHouse'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
                 {{/if}}
             </div>
             <div class="bg-end"></div>
@@ -27,7 +27,7 @@
             <div class="bg-start"></div>
             <div class="bg-data border">
                 {{#each traits as |trait id|}}
-                    <div class="trait" data-item-id="{{trait._id}}">{{trait.name}} <a class="delete-trait" title="{{localize 'dune2d20.actor.delete'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
+                    <div class="trait" data-item-id="{{trait._id}}">{{trait.name}} <a class="remove-trait" title="{{localize 'dune2d20.actor.removeTrait'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
                 {{/each}}
             </div>
             <div class="bg-end"></div>
@@ -38,13 +38,13 @@
         </div>
         {{#if unlocked}}
             <div class="padlock">
-                <a class="sheet-change-lock" title="{{localize 'dune2d20.tooltip.lock'}}">
+                <a class="sheet-change-lock" title="{{localize 'dune2d20.actor.lock'}}">
                     <i class="fa-solid fa-unlock"></i>
                 </a>
             </div>
         {{else}}
             <div class="padlock">
-                <a class="sheet-change-lock" title="{{localize 'agone.tooltip.unlock'}}">
+                <a class="sheet-change-lock" title="{{localize 'dune2d20.actor.unlock'}}">
                     <i class="fa-solid fa-lock"></i>
                 </a>
             </div>
