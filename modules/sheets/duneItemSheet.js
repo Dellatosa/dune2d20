@@ -2,8 +2,8 @@ export default class DuneItemSheet extends ItemSheet {
      
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            width: 550,
-            height: 370,
+            width: 492,
+            height: 200,
             classes: ["dune2d20", "sheet", "item"] /*,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
             */

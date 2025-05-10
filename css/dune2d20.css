@@ -67,6 +67,11 @@
 }
 .dune2d20.sheet.actor .sheet-header .background .bg-data input:focus {
   box-shadow: none;
+}
+.dune2d20.sheet.actor .sheet-header .background .bg-data input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.actor .sheet-header .background .bg-data input:not([readonly]):focus {
   color: var(--color-focus-text);
   font-weight: bold;
 }
@@ -130,6 +135,11 @@
 }
 .dune2d20.sheet.actor .statistics .stats-grid .val input:focus {
   box-shadow: none;
+}
+.dune2d20.sheet.actor .statistics .stats-grid .val input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.actor .statistics .stats-grid .val input:not([readonly]):focus {
   color: var(--color-focus-text);
   font-weight: bold;
 }
@@ -152,8 +162,16 @@
 .dune2d20.sheet.actor .statistics .stats-grid .statement textarea:focus,
 .dune2d20.sheet.actor .statistics .stats-grid .focuses textarea:focus {
   box-shadow: none;
+}
+.dune2d20.sheet.actor .statistics .stats-grid .statement textarea:read-only,
+.dune2d20.sheet.actor .statistics .stats-grid .focuses textarea:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.actor .statistics .stats-grid .statement textarea:not([readonly]):focus,
+.dune2d20.sheet.actor .statistics .stats-grid .focuses textarea:not([readonly]):focus {
   color: var(--color-focus-text);
   font-weight: bold;
+  cursor: text;
 }
 .dune2d20.sheet.actor .statistics .stats-grid .stat-end {
   height: 50px;
@@ -183,6 +201,58 @@
 .dune2d20.sheet.house .sheet-header .padlock {
   text-align: center;
 }
+.dune2d20.sheet.item .window-content {
+  background-image: url("../images/sheet/bg-item.jpg");
+  background-size: cover;
+  background-clip: border-box;
+  font-family: "Hoefler";
+}
+.dune2d20.sheet.item .sheet-header {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+.dune2d20.sheet.item .sheet-header img {
+  flex: 0 0 64px;
+  height: 64px;
+  border: none;
+}
+.dune2d20.sheet.item .sheet-header .title {
+  display: grid;
+  grid-template-columns: 27px 4fr 27px;
+  grid-auto-rows: 34px;
+  align-items: center;
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.item .sheet-header .title .t-data input {
+  height: 34px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.item .sheet-header .title .t-data input:focus {
+  box-shadow: none;
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.item .sheet-header .title .t-data.border {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+}
+.dune2d20.sheet.item .sheet-header .title .t-start {
+  height: 34px;
+  background-image: url("../images/sheet/field-left.png");
+}
+.dune2d20.sheet.item .sheet-header .title .t-end {
+  height: 34px;
+  background-image: url("../images/sheet/field-right.png");
+}
 @font-face {
   font-family: "DuneRise";
   src: url("../fonts/Dune_Rise.ttf") format("truetype");
@@ -203,4 +273,22 @@
   --color-box-border: #887264;
   --color-normal-text: #887264;
   --color-focus-text: #bb8b67;
+  --color-highlight: #bd6f34;
+}
+/*#logo {
+    content: url("../images/ui/dune-logo-fvtt.png");
+}*/
+#pause {
+  background: none;
+}
+#pause img {
+  opacity: 0.8;
+}
+#pause figcaption {
+  font-family: "DuneRise";
+  font-weight: bold;
+  color: var(--color-highlight);
+}
+.paused img {
+  content: url("../images/ui/pause.png");
 }

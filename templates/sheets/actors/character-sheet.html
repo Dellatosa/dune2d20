@@ -3,38 +3,11 @@
         <div class="top-title">D U N E</div>
         <img class="" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
         <div class="background">
-            <div class="bg-name">{{ localize 'dune2d20.actor.name' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'dune2d20.actor.characterName' }}"/></div>
-            <div class="bg-end"></div>
-            <div class="bg-name">{{ localize 'dune2d20.actor.house' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data border">
-                {{#if house}}
-                    <div class="house" data-house-id="{{house._id}}">{{house.name}} <a class="remove-house" title="{{localize 'dune2d20.actor.removeHouse'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
-                {{/if}}
-            </div>
-            <div class="bg-end"></div>
-            <div class="bg-name">{{ localize 'dune2d20.actor.role' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data"><input name="system.role" type="text" value="{{data.system.role}}"/></div>
-            <div class="bg-end"></div>
-            <div class="bg-name">{{ localize 'dune2d20.actor.faction' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data"><input name="system.faction" type="text" value="{{data.system.faction}}"/></div>
-            <div class="bg-end"></div>
-            <div class="bg-name">{{ localize 'dune2d20.actor.traits' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data border">
-                {{#each traits as |trait id|}}
-                    <div class="trait" data-item-id="{{trait._id}}">{{trait.name}} <a class="remove-trait" title="{{localize 'dune2d20.actor.removeTrait'}}"><i class="fa-duotone fa-solid fa-x"></i></a></div>
-                {{/each}}
-            </div>
-            <div class="bg-end"></div>
-            <div class="bg-name">{{ localize 'dune2d20.actor.ambition' }}</div>
-            <div class="bg-start"></div>
-            <div class="bg-data"><input name="system.ambition" type="text" value="{{data.system.ambition}}"/></div>
-            <div class="bg-end"></div>
+            {{#if unlocked}}
+                {{> "systems/dune2d20/templates/partials/actors/character-background-unlocked.hbs" }}
+            {{else}}
+                {{> "systems/dune2d20/templates/partials/actors/character-background-locked.hbs" }}
+            {{/if}}
         </div>
         {{#if unlocked}}
             <div class="padlock">
@@ -63,62 +36,22 @@
                     <div> </div>
                     <div class="title">{{ localize 'dune2d20.actor.statement' }}</div>
                     <div> </div>
-                    <!-- Duty -->
-                    <div class="drive">{{ localize 'dune2d20.actor.duty' }}</div>
-                    <div class="val"><input name="system.drives.duty.value" type="number" value="{{data.system.drives.duty.value}}" min="{{data.system.drives.duty.min}}" max="{{data.system.drives.duty.max}}"/></div>
-                    <div class="statement"><textarea name="system.drives.duty.statement">{{data.system.drives.duty.statement}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Faith -->
-                    <div class="drive">{{ localize 'dune2d20.actor.faith' }}</div>
-                    <div class="val"><input name="system.drives.faith.value" type="number" value="{{data.system.drives.faith.value}}" min="{{data.system.drives.faith.min}}" max="{{data.system.drives.faith.max}}"/></div>
-                    <div class="statement"><textarea name="system.drives.faith.statement">{{data.system.drives.faith.statement}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Justice -->
-                    <div class="drive">{{ localize 'dune2d20.actor.justice' }}</div>
-                    <div class="val"><input name="system.drives.justice.value" type="number" value="{{data.system.drives.justice.value}}" min="{{data.system.drives.justice.min}}" max="{{data.system.drives.justice.max}}"/></div>
-                    <div class="statement"><textarea name="system.drives.justice.statement">{{data.system.drives.justice.statement}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Power -->
-                    <div class="drive">{{ localize 'dune2d20.actor.power' }}</div>
-                    <div class="val"><input name="system.drives.power.value" type="number" value="{{data.system.drives.power.value}}" min="{{data.system.drives.power.min}}" max="{{data.system.drives.power.max}}"/></div>
-                    <div class="statement"><textarea name="system.drives.power.statement">{{data.system.drives.power.statement}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Truth -->
-                    <div class="drive">{{ localize 'dune2d20.actor.truth' }}</div>
-                    <div class="val"><input name="system.drives.truth.value" type="number" value="{{data.system.drives.truth.value}}" min="{{data.system.drives.truth.min}}" max="{{data.system.drives.truth.max}}"/></div>
-                    <div class="statement"><textarea name="system.drives.truth.statement">{{data.system.drives.truth.statement}}</textarea></div>
-                    <div class="stat-end"> </div>
-    
+                    {{#if unlocked}}
+                        {{> "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs" }}
+                    {{else}}
+                        {{> "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs" }}
+                    {{/if}}
+
                     <!-- Skills title -->
                     <div class="title">{{ localize 'dune2d20.actor.skill' }}</div>
                     <div> </div>
                     <div class="title">{{ localize 'dune2d20.actor.focuses' }}</div>
                     <div> </div>
-                    <!-- Battle -->
-                    <div class="skill">{{ localize 'dune2d20.actor.battle' }}</div>
-                    <div class="val"><input name="system.skills.battle.value" type="number" value="{{data.system.skills.battle.value}}" min="{{data.system.skills.battle.min}}" max="{{data.system.skills.battle.max}}"/></div>
-                    <div class="focuses"><textarea name="system.skills.battle.focuses">{{data.system.skills.battle.focuses}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Communicate -->
-                    <div class="skill">{{ localize 'dune2d20.actor.communicate' }}</div>
-                    <div class="val"><input name="system.skills.communicate.value" type="number" value="{{data.system.skills.communicate.value}}" min="{{data.system.skills.communicate.min}}" max="{{data.system.skills.communicate.max}}"/></div>
-                    <div class="focuses"><textarea name="system.skills.communicate.focuses">{{data.system.skills.communicate.focuses}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Discipline -->
-                    <div class="skill">{{ localize 'dune2d20.actor.discipline' }}</div>
-                    <div class="val"><input name="system.skills.discipline.value" type="number" value="{{data.system.skills.discipline.value}}" min="{{data.system.skills.discipline.min}}" max="{{data.system.skills.discipline.max}}"/></div>
-                    <div class="focuses"><textarea name="system.skills.discipline.focuses">{{data.system.skills.discipline.focuses}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Move -->
-                    <div class="skill">{{ localize 'dune2d20.actor.move' }}</div>
-                    <div class="val"><input name="system.skills.move.value" type="number" value="{{data.system.skills.move.value}}" min="{{data.system.skills.move.min}}" max="{{data.system.skills.move.max}}"/></div>
-                    <div class="focuses"><textarea name="system.skills.move.focuses">{{data.system.skills.move.focuses}}</textarea></div>
-                    <div class="stat-end"> </div>
-                    <!-- Understand -->
-                    <div class="skill">{{ localize 'dune2d20.actor.understand' }}</div>
-                    <div class="val"><input name="system.skills.understand.value" type="number" value="{{data.system.skills.understand.value}}" min="{{data.system.skills.understand.min}}" max="{{data.system.skills.understand.max}}"/></div>
-                    <div class="focuses"><textarea name="system.skills.understand.focuses">{{data.system.skills.understand.focuses}}</textarea></div>
-                    <div class="stat-end"> </div>
+                    {{#if unlocked}}
+                        {{> "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs" }}
+                    {{else}}
+                        {{> "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs" }}
+                    {{/if}}
                 </div>
             </div>
         </div>

@@ -42,14 +42,16 @@ Hooks.once("setup", function() {
 });
 
 async function preloadHandlebarsTemplates() {
-    /* 
     const templatePaths = [
-        "systems/dune2d20/templates/xxx.hbs",
-        "systems/dune2d20/templates/yyy.hbs"
+        "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-background-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs"
     ];
 
     return loadTemplates(templatePaths);
-    */
 };
 
 Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {

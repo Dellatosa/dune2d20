@@ -1,0 +1,76 @@
+.dune2d20.sheet.item {
+
+    .window-content {
+        background-image: url("../images/sheet/bg-item.jpg");
+        background-size: cover;
+        background-clip: border-box;
+
+         font-family: "Hoefler";
+    }
+
+     .sheet-header {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+
+        img {
+            flex: 0 0 64px;
+            height: 64px;
+            border: none;
+        }
+
+        .title {
+            display: grid;
+            grid-template-columns: 27px 4fr 27px;
+
+            grid-auto-rows: 34px;
+
+            align-items: center;
+            //margin: 0 2px;
+
+            font-size: 1.2em;
+            color: var(--color-normal-text);
+
+            .t-data {
+
+                input {
+                    height: 34px;
+                    width: 100%;
+
+                    background: none;
+                    border: none;
+                    border-top: solid 1px  var(--color-box-border);
+                    border-bottom: solid 1px var(--color-box-border);
+
+                    color: var(--color-normal-text);
+                }
+
+                input:focus {
+                    box-shadow: none;
+
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+            }
+
+            .t-data.border {
+                height: 34px;
+
+                display: flex;
+                align-items: center;
+
+                border-top: solid 1px var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+            }
+
+            .t-start {
+                height: 34px;
+                background-image: url("../images/sheet/field-left.png");
+            }
+
+            .t-end {
+                height: 34px;
+                background-image: url("../images/sheet/field-right.png");
+            }
+        }
+     }
+}

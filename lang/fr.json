@@ -37,7 +37,17 @@
             "communicate": "RHETORIQUE",
             "discipline": "DISCIPLINE",
             "move": "MOBILITE",
-            "understand": "ANALYSE"
+            "understand": "ANALYSE",
+            "rollDrive": "Jet avec le Principe",
+            "rollSkill": "Jet avec la Compétence"
+        },
+        "item": {
+            "name": "Nom",
+            "traitName": "Nom du Trait",
+            "assetName": "Nom de l'Atout",
+            "talentName": "Nom du Talent",
+            "domainName": "Nom du Domaine",
+            "enemyName": "Nom de l'Ennemi"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",

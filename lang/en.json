@@ -37,7 +37,17 @@
             "communicate": "COMMUNICATE",
             "discipline": "DISCIPLINE",
             "move": "MOVE",
-            "understand": "UNDERSTAND"
+            "understand": "UNDERSTAND",
+            "rollDrive": "Drive's dice roll",
+            "rollSkill": "Skill's dice roll"
+        },
+        "item": {
+            "name": "Name",
+            "traitName": "Trait name",
+            "assetName": "Asset name",
+            "talentName": "Talent name",
+            "domainName": "Domain name",
+            "enemyName": "Enemy name"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",

@@ -90,7 +90,13 @@
 
                 input:focus {
                     box-shadow: none;
+                }
 
+                input:read-only {
+                    cursor: default;
+                }
+                
+                input:not([readonly]):focus {
                     color: var(--color-focus-text);
                     font-weight: bold;
                 }
@@ -174,7 +180,13 @@
 
                 input:focus {
                     box-shadow: none;
+                }
 
+                input:read-only {
+                    cursor: default;
+                }
+
+                input:not([readonly]):focus {
                     color: var(--color-focus-text);
                     font-weight: bold;
                 }
@@ -199,9 +211,16 @@
 
                 textarea:focus {
                     box-shadow: none;
+                }
 
+                textarea:read-only {
+                    cursor: default;
+                }
+
+                textarea:not([readonly]):focus {
                     color: var(--color-focus-text);
                     font-weight: bold;
+                    cursor: text;
                 }
             }
 
