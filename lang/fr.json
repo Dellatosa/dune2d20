@@ -39,7 +39,8 @@
             "move": "MOBILITE",
             "understand": "ANALYSE",
             "rollDrive": "Jet avec le Principe",
-            "rollSkill": "Jet avec la Compétence"
+            "rollSkill": "Jet avec la Compétence",
+            "talents": "TALENTS"
         },
         "item": {
             "name": "Nom",

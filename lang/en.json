@@ -39,7 +39,8 @@
             "move": "MOVE",
             "understand": "UNDERSTAND",
             "rollDrive": "Drive's dice roll",
-            "rollSkill": "Skill's dice roll"
+            "rollSkill": "Skill's dice roll",
+            "talents": "TALENTS"
         },
         "item": {
             "name": "Name",

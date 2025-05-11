@@ -25,6 +25,7 @@ export default class DuneActorSheet extends ActorSheet {
 
         data.traits = data.items.filter(function (item) { return item.type == "Trait"});
         data.house = actorData.house != null ? fromUuidSync(actorData.house) : null;
+        data.talents = data.items.filter(function (item) { return item.type == "Talent"});
 
         return data;
     }
@@ -39,8 +40,11 @@ export default class DuneActorSheet extends ActorSheet {
             // Delete House
             html.find('.remove-house').click(this._onRemoveHouse.bind(this));
 
-            // Delete item
+            // Delete Trait item
             html.find('.remove-trait').click(this._onRemoveTrait.bind(this));
+
+            // Delete Talent item
+            html.find('.remove-talent').click(this._onRemoveTalent.bind(this));
         }
     }
 
@@ -76,6 +80,23 @@ export default class DuneActorSheet extends ActorSheet {
         let item = this.actor.items.get(itemId);
         
         let content = `<p>${game.i18n.localize("dune2d20.chat.removeTrait")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTraitConfirm")}<p>`
+        let dlg = Dialog.confirm({
+            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
+            content: content,
+            yes: () => item.delete(),
+            //no: () =>, Do nothing
+            defaultYes: false
+        });
+    }
+
+    async _onRemoveTalent(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+
+        let itemId = element.closest(".talent-row").dataset.itemId;
+        let item = this.actor.items.get(itemId);
+        
+        let content = `<p>${game.i18n.localize("dune2d20.chat.removeTalent")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTalentConfirm")}<p>`
         let dlg = Dialog.confirm({
             title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
             content: content,
