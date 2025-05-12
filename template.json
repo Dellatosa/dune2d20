@@ -152,6 +152,7 @@
   "Item": {
     "types": [ "Asset", "Trait", "Talent", "Domain", "Enemy" ],
     "Asset": {
+      "description": "",
       "temporary": false,
       "quality": 0
     },
@@ -161,7 +162,10 @@
     "Talent": {
       "description": "",
       "ruleText": "",
+      "linkToFaction": false,
       "faction": "",
+      "drive": "",
+      "linkToDrive": false,
       "skill": "",
       "linkToSkill": false
     },

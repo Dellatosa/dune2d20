@@ -5,10 +5,10 @@
         background-size: cover;
         background-clip: border-box;
 
-         font-family: "Hoefler";
+        font-family: "Hoefler";
     }
 
-     .sheet-header {
+    .sheet-header {
         display: grid;
         grid-template-columns: 70px 1fr;
 
@@ -21,11 +21,8 @@
         .title {
             display: grid;
             grid-template-columns: 27px 4fr 27px;
-
             grid-auto-rows: 34px;
-
             align-items: center;
-            //margin: 0 2px;
 
             font-size: 1.2em;
             color: var(--color-normal-text);
@@ -72,5 +69,64 @@
                 background-image: url("../images/sheet/field-right.png");
             }
         }
-     }
+    }
+
+    .sheet-body {
+
+        .talent-grid {
+            display: grid;
+            grid-template-columns: 3fr 7fr;
+
+            .talent-stats {
+                display: grid;
+                grid-template-columns: 4fr 1fr;
+                align-items: center;
+
+                margin: 5px;
+
+                .stat {
+                    font-size: 1.3em;
+                    color: var(--color-normal-text);
+                }
+                
+                .chk {
+                    text-align: center;
+                }
+
+                select {
+                    width: 80%;
+                    font-size: 1.2em;
+                    color: var(--color-normal-text);
+                }
+            }
+
+            .full-col {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+        .talent-desc {
+            margin-left: 5px;
+
+            .title {
+                font-size: 1.3em;
+                color: var(--color-normal-text);
+            }
+            
+            .editor {
+                height: 100px;
+
+                background-color: var(--color-box-background);
+                border: solid 1px var(--color-box-border);
+                box-shadow: inset 0 0 5px var(--color-box-inset);
+                border-radius: 10px;
+
+                .editor-content {
+                    padding: 2px 5px;
+                    color: var(--color-normal-text);
+                }
+            }
+        }
+    }
 }

@@ -8,6 +8,52 @@
         </div>
     </header>
     <section class="sheet-body">
-
+        <div class="talent-grid">
+            <div class="talent-stats">
+                <div class="stat">{{ localize 'dune2d20.item.faction' }}</div>
+                <div class="chk"><input type ="checkbox" name="system.linkToFaction" {{ checked data.system.linkToFaction}}/></div>
+                {{#if data.system.linkToFaction}}
+                    <div class="full-col">                    
+                        <select name="system.faction">
+                            {{#select data.system.faction}}
+                                {{#each config.factions as |name faction|}}
+                                    <option value="{{faction}}">{{localize name}}</option>
+                                {{/each}}
+                            {{/select}} 
+                        </select>
+                    </div>
+                {{/if}}
+                <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
+                <div class="chk"><input type ="checkbox" name="system.linkToSkill" {{ checked data.system.linkToSkill}}/></div>
+                {{#if data.system.linkToSkill}}
+                    <div class="full-col">
+                        <select name="system.skill">
+                            {{#select data.system.skill}}
+                                {{#each config.skills as |name skill|}}
+                                    <option value="{{skill}}">{{localize name}}</option>
+                                {{/each}}
+                            {{/select}} 
+                        </select>
+                    </div>
+                {{/if}}
+                <div class="stat">{{ localize 'dune2d20.item.drive' }}</div>
+                <div class="chk"><input type ="checkbox" name="system.linkToDrive" {{ checked data.system.linkToDrive}}/></div>
+                {{#if data.system.linkToDrive}}
+                    <div class="full-col">
+                        <select name="system.drive">
+                            {{#select data.system.drive}}
+                                {{#each config.drives as |name drive|}}
+                                    <option value="{{drive}}">{{localize name}}</option>
+                                {{/each}}
+                            {{/select}} 
+                        </select>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="talent-desc">
+                <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+                <div>{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+            </div>
+        </div>
     </section>
 </form>

@@ -20,6 +20,11 @@
             "house" : "HOUSE",
             "role": "ROLE",
             "faction": "FACTION",
+            "beneGesserit": "Bene Gesserit",
+            "fremen": "Fremen",
+            "mentat": "Mentat",
+            "spacingGuild": "Spacing Guild",
+            "sukDoctor": "Suk Doctor",
             "statistics" : "STATISTICS",
             "traits": "TRAITS",
             "ambition": "AMBITION",
@@ -48,7 +53,11 @@
             "assetName": "Asset name",
             "talentName": "Talent name",
             "domainName": "Domain name",
-            "enemyName": "Enemy name"
+            "enemyName": "Enemy name",
+            "faction": "FACTION",
+            "skill": "SKILL",
+            "drive": "DRIVE",
+            "description": "DESCRIPTION"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",

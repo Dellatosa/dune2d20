@@ -284,6 +284,50 @@
   height: 34px;
   background-image: url("../images/sheet/field-right.png");
 }
+.dune2d20.sheet.item .sheet-body .talent-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+  margin: 5px;
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .stat {
+  font-size: 1.3em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .chk {
+  text-align: center;
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats select {
+  width: 80%;
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .full-col {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc {
+  margin-left: 5px;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc .title {
+  font-size: 1.3em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.item .sheet-body .talent-desc .editor {
+  height: 100px;
+  background-color: var(--color-box-background);
+  border: solid 1px var(--color-box-border);
+  box-shadow: inset 0 0 5px var(--color-box-inset);
+  border-radius: 10px;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc .editor .editor-content {
+  padding: 2px 5px;
+  color: var(--color-normal-text);
+}
 @font-face {
   font-family: "DuneRise";
   src: url("../fonts/Dune_Rise.ttf") format("truetype");
@@ -301,10 +345,12 @@
   src: url("../fonts/Perpetua Normal.ttf") format("truetype");
 }
 :root {
-  --color-box-border: #887264;
   --color-normal-text: #887264;
   --color-focus-text: #bb8b67;
   --color-highlight: #bd6f34;
+  --color-box-border: #887264;
+  --color-box-inset: #e7ddd6;
+  --color-box-background: #88726440;
 }
 /*#logo {
     content: url("../images/ui/dune-logo-fvtt.png");

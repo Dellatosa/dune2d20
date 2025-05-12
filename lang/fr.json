@@ -20,6 +20,11 @@
             "house" : "MAISON",
             "role": "ROLE",
             "faction": "FACTION",
+            "beneGesserit": "Bene Gesserit",
+            "fremen": "Fremen",
+            "mentat": "Mentat",
+            "spacingGuild": "Guilde Spatiale",
+            "sukDoctor": "Docteur Suk",
             "traits": "TRAITS",
             "ambition": "AMBITION",
             "statistics" : "STATISTIQUES",
@@ -48,7 +53,11 @@
             "assetName": "Nom de l'Atout",
             "talentName": "Nom du Talent",
             "domainName": "Nom du Domaine",
-            "enemyName": "Nom de l'Ennemi"
+            "enemyName": "Nom de l'Ennemi",
+            "faction": "FACTION",
+            "skill": "COMPETENCE",
+            "drive": "PRINCIPE",
+            "description": "DESCRIPTION"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",
