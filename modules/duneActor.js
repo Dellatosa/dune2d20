@@ -38,6 +38,13 @@ export default class DuneActor extends Actor {
             // UNDERSTAND
             if(this.system.skills.understand.value < this.system.skills.understand.min) this.system.skills.understand.value = this.system.skills.understand.min;
             if(this.system.skills.understand.value > this.system.skills.understand.max) this.system.skills.understand.value = this.system.skills.understand.max;
+
+            // ADVANCEMENT
+            if(this.system.resources.advancementPoints.value < this.system.resources.advancementPoints.min) this.system.resources.advancementPoints.value = this.system.resources.advancementPoints.min;
+
+            // DETERMINATION
+            if(this.system.resources.determination.value < this.system.resources.determination.min) this.system.resources.determination.value = this.system.resources.determination.min;
+            if(this.system.resources.determination.value > this.system.resources.determination.max) this.system.resources.determination.value = this.system.resources.determination.max;
         }
         
     }
@@ -47,3 +54,20 @@ export default class DuneActor extends Actor {
         return false;
     }
 }
+
+Hooks.on("createActor", (actor, render, id) => onCreateActor(actor));
+
+function onCreateActor(actor) {
+    if (actor.img == "icons/svg/mystery-man.svg") {
+        let image = null;
+        if(actor.type != "House") {
+            image = "systems/dune2d20/images/sheet/mystery-man-dune.svg";
+        }
+        else {
+            image = "systems/dune2d20/images/sheet/combat-dune.svg";
+        }
+
+        actor.img = image;
+        actor.update({ "img": image});
+    }
+} 

@@ -11,7 +11,6 @@ export default class DuneItem extends Item {
         super.prepareData();
         let data = this.system;
 
-        
     }
 
 }
@@ -23,5 +22,6 @@ function onCreateItem(item) {
         let image = CONFIG.dune2d20.itemDefIcon[item.type] ? CONFIG.dune2d20.itemDefIcon[item.type] : "icons/svg/mystery-man-black.svg";
         //let image = "systems/dune2d20/images/sheet/item-icon-2.png";
         item.img = image;
+        item.update({ "img": image});
     }
-}
+} 

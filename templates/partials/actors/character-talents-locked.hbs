@@ -1,0 +1,12 @@
+{{#each talents as |talent id|}}
+    <div class="talent-row" data-item-id="{{talent._id}}">
+        <div class="talent-name">• {{talent.name}}</div>
+        {{#if system.descVisible}}
+            <a class="talent-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideTalentDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+        </div>
+           <div class="desc-row">{{editor system.ruleText target="system.ruleText" button=false owner=true editable=false}}</div>
+        {{else}}
+            <a class="talent-desc" data-action="show" title="{{localize 'dune2d20.hint.showTalentDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
+        </div>
+        {{/if}}
+{{/each}}

@@ -26,7 +26,15 @@
     --color-box-border: #887264;
     --color-box-inset: #e7ddd6;
     --color-box-background: #88726440;
+    --color-scrollbar: rgba(255, 166, 0, 0.836);
     
+}
+
+::-webkit-scrollbar-thumb {
+    outline: none;
+    border-radius: 3px;
+    background: var(--color-scrollbar);
+    border: 1px solid var(--color-box-inset);
 }
 
 /*#logo {
@@ -49,4 +57,16 @@
 
 .paused img {
     content: url("../images/ui/pause.png");
+}
+
+.window-app.dialog {
+
+    .window-content {
+        background-image: url("../images/sheet/bg-dialog.jpg");
+        background-size: cover;
+        background-clip: border-box;
+
+        font-family: "Hoefler";
+        font-size: 1.2em;
+    }
 }

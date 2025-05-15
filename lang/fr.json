@@ -10,21 +10,12 @@
     "TYPES.Item.Enemy": "Ennemi",
     "dune2d20": {
         "actor" : {
-            "lock": "Verouiller",
-            "unlock": "Déverrouiller",
-            "removeHouse": "Supprimer la Maison",
-            "removeTrait": "Supprimer le Trait",
             "characterName": "Nom du personnage",
             "houseName": "Nom de la Maison",
             "name": "NOM",
             "house" : "MAISON",
             "role": "ROLE",
             "faction": "FACTION",
-            "beneGesserit": "Bene Gesserit",
-            "fremen": "Fremen",
-            "mentat": "Mentat",
-            "spacingGuild": "Guilde Spatiale",
-            "sukDoctor": "Docteur Suk",
             "traits": "TRAITS",
             "ambition": "AMBITION",
             "statistics" : "STATISTIQUES",
@@ -43,9 +34,10 @@
             "discipline": "DISCIPLINE",
             "move": "MOBILITE",
             "understand": "ANALYSE",
-            "rollDrive": "Jet avec le Principe",
-            "rollSkill": "Jet avec la Compétence",
-            "talents": "TALENTS"
+            "talents": "TALENTS",
+            "assets": "ATOUTS",
+            "advancement": "PROGRESSION",
+            "determination": "DETERMINATION"
         },
         "item": {
             "name": "Nom",
@@ -55,16 +47,45 @@
             "domainName": "Nom du Domaine",
             "enemyName": "Nom de l'Ennemi",
             "faction": "FACTION",
+            "linkToFaction": "Talent lié à une Faction",
             "skill": "COMPETENCE",
+            "linkToSkill": "Talent lié à une Compétence",
             "drive": "PRINCIPE",
-            "description": "DESCRIPTION"
+            "linkToDrive": "Talent lié à un Principe",
+            "description": "DESCRIPTION",
+            "ruleText": "REGLES",
+            "temporary": "TEMPORAIRE",
+            "quality": "QUALITE"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",
             "removeTrait": "Trait à supprimer",
-            "removeTraitConfirm": "Etes-vous certain de vouloir supprimer ce Trait de ce personnage ?",
+            "removeTraitConfirm": "Etes-vous certain de vouloir supprimer ce Trait ?",
             "removeHouse": "Maison à supprimer",
-            "removeHouseConfirm": "Etes-vous certain de vouloir supprimer cette Maison de ce personnage ?"
+            "removeHouseConfirm": "Etes-vous certain de vouloir supprimer cette Maison ?",
+            "removeTalent": "Talent à supprimer",
+            "removeTalentConfirm": "Etes-vous certain de vouloir supprimer ce Talent ?",
+            "removeAsset": "Atout à supprimer",
+            "removeAssetConfirm": "Etes-vous certain de vouloir supprimer cet Atout ?"
+        },
+        "hint": {
+            "lock": "Verouiller",
+            "unlock": "Déverrouiller",
+            "removeHouse": "Supprimer la Maison",
+            "removeTrait": "Supprimer le Trait",
+            "rollDrive": "Jet avec le Principe",
+            "rollSkill": "Jet avec la Compétence",
+            "removeTalent": "Supprimer le Talent",
+            "editTalent": "Modifier le Talent",
+            "hideTalentDesc": "Masquer la règle du Talent",
+            "showTalentDesc": "Afficher la règle du Talent"
+        },
+        "config": {
+            "beneGesserit": "Bene Gesserit",
+            "fremen": "Fremen",
+            "mentat": "Mentat",
+            "spacingGuild": "Guilde Spatiale",
+            "sukDoctor": "Docteur Suk"
         }
     }
 }

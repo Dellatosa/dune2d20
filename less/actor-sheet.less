@@ -234,7 +234,7 @@
             display: grid;
             grid-template-columns: 1fr 248px 1fr;
 
-            .talents-flex {
+            .talents-flex, .assets-flex {
                 display: flex;
                 flex-direction: column;
 
@@ -250,7 +250,6 @@
                 }
 
                 .title-row {
-                    //flex-basis: 25px;
                     border-left: solid 1px var(--color-box-border);
                     border-right: solid 1px var(--color-box-border);
 
@@ -258,12 +257,47 @@
                     text-align: center;
                 }
 
-                .talent-row {
-                    //flex-basis: 35px;
+                .talent-row, .asset-row {
+                    display: flex;
+
                     border-left: solid 1px var(--color-box-border);
                     border-right: solid 1px var(--color-box-border);
 
-                    padding: 5px;
+                    padding-top: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+
+                    .talent-name, .asset-name {
+                        flex: 1;
+                    }
+
+                    .edit-talent, .remove-talent, .talent-desc, .edit-asset, .remove-asset, .asset-desc {
+                        flex-basis: 25px;
+                        text-align: center;
+                    }
+                }
+
+                .desc-row {
+                    border-left: solid 1px var(--color-box-border);
+                    border-right: solid 1px var(--color-box-border);
+
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    padding-bottom: 3px;
+
+                    .editor {
+                        background-color: var(--color-box-background);
+                        border: solid 1px var(--color-box-border);
+                        box-shadow: inset 0 0 5px var(--color-box-inset);
+                        border-radius: 5px;
+
+                        .editor-content {
+                            padding: 2px 2px;
+
+                            font-size: 0.8em;
+                            color: var(--color-normal-text);
+                        }
+                    }
                 }
 
                 .bottom-row {
@@ -272,6 +306,51 @@
                 }
             }
         }
+
+        .adv-det-grid {
+            grid-column-start: 1;
+            grid-column-end: 4;            
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 34px;
+            align-items: center;
+
+            padding: 5px;
+            
+            color: var(--color-normal-text);
+
+            .title {
+                font-family: "Hoefler";
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.1em;
+            }
+
+            .val {
+                font-family: "Perpetua";
+                text-align: center;
+                font-size: 1.25em;
+            }
+        }
     }
     
+    .biography {
+        
+        .editor {
+            min-height: 100px;
+
+            background-color: var(--color-box-background);
+            border: solid 1px var(--color-box-border);
+            box-shadow: inset 0 0 5px var(--color-box-inset);
+            border-radius: 10px;
+
+            .editor-content {
+                padding: 2px 5px;
+
+                //font-size: 1.2em;
+                color: var(--color-normal-text);
+            }
+        }
+    }
 }

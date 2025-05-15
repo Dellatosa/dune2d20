@@ -10,21 +10,12 @@
     "TYPES.Item.Enemy": "Enemy",
     "dune2d20": {
         "actor" : {
-            "lock": "Lock",
-            "unlock": "Unlock",
-            "removeHouse": "Remove House",
-            "removeTrait": "Remove Trait",
             "characterName": "Character Name",
             "houseName": "House Name",
             "name": "NAME",
             "house" : "HOUSE",
             "role": "ROLE",
             "faction": "FACTION",
-            "beneGesserit": "Bene Gesserit",
-            "fremen": "Fremen",
-            "mentat": "Mentat",
-            "spacingGuild": "Spacing Guild",
-            "sukDoctor": "Suk Doctor",
             "statistics" : "STATISTICS",
             "traits": "TRAITS",
             "ambition": "AMBITION",
@@ -42,10 +33,11 @@
             "communicate": "COMMUNICATE",
             "discipline": "DISCIPLINE",
             "move": "MOVE",
-            "understand": "UNDERSTAND",
-            "rollDrive": "Drive's dice roll",
-            "rollSkill": "Skill's dice roll",
-            "talents": "TALENTS"
+            "understand": "UNDERSTAND",            
+            "talents": "TALENTS",
+            "assets": "ASSETS",
+            "advancement": "ADVANCEMENT",
+            "determination": "DETERMINATION"
         },
         "item": {
             "name": "Name",
@@ -55,16 +47,45 @@
             "domainName": "Domain name",
             "enemyName": "Enemy name",
             "faction": "FACTION",
+            "linkToFaction": "Talent linked to Faction",
             "skill": "SKILL",
+            "linkToSkill": "Talent linked to Skill",
             "drive": "DRIVE",
-            "description": "DESCRIPTION"
+            "linkToDrive": "Talent linked to Drive",
+            "description": "DESCRIPTION",
+            "ruleText": "RULE TEXT",
+            "temporary": "TEMPORARY",
+            "quality": "QUALITY"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",
             "removeTrait": "Trait to remove",
-            "removeTraitConfirm": "Are you sure you want to remove this Trait from this character ?",
+            "removeTraitConfirm": "Are you sure you want to remove this Trait ?",
             "removeHouse": "House to remove",
-            "removeHouseConfirm": "Are you sure you want to remove this House from this character ?"
+            "removeHouseConfirm": "Are you sure you want to remove this House ?",
+            "removeTalent": "Talent to remove",
+            "removeTalentConfirm": "Are you sure you want to remove this Talent ?",
+            "removeAsset": "Asset to remove",
+            "removeAssetConfirm": "Are you sure you want to remove this Asset ?"
+        },
+        "hint": {
+            "lock": "Lock",
+            "unlock": "Unlock",
+            "removeHouse": "Remove House",
+            "removeTrait": "Remove Trait",
+            "rollDrive": "Drive's dice roll",
+            "rollSkill": "Skill's dice roll",
+            "removeTalent": "Remove Talent",
+            "editTalent": "Edit Talent",
+            "hideTalentDesc": "Hide Talent rule text",
+            "showTalentDesc": "Show Talent rule text"
+        },
+        "config": {
+            "beneGesserit": "Bene Gesserit",
+            "fremen": "Fremen",
+            "mentat": "Mentat",
+            "spacingGuild": "Spacing Guild",
+            "sukDoctor": "Suk Doctor"
         }
     }
 }

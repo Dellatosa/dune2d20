@@ -11,7 +11,9 @@
         <div class="talent-grid">
             <div class="talent-stats">
                 <div class="stat">{{ localize 'dune2d20.item.faction' }}</div>
-                <div class="chk"><input type ="checkbox" name="system.linkToFaction" {{ checked data.system.linkToFaction}}/></div>
+                <a class="chk-talent" title="{{ localize 'dune2d20.item.linkToFaction' }}" data-field="system.linkToFaction" data-stat="system.faction">
+                    {{#if data.system.linkToFaction}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+                </a>
                 {{#if data.system.linkToFaction}}
                     <div class="full-col">                    
                         <select name="system.faction">
@@ -24,7 +26,9 @@
                     </div>
                 {{/if}}
                 <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
-                <div class="chk"><input type ="checkbox" name="system.linkToSkill" {{ checked data.system.linkToSkill}}/></div>
+                <a class="chk-talent" title="{{ localize 'dune2d20.item.linkToSkill' }}" data-field="system.linkToSkill" data-stat="system.skill">
+                    {{#if data.system.linkToSkill}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+                </a>
                 {{#if data.system.linkToSkill}}
                     <div class="full-col">
                         <select name="system.skill">
@@ -37,7 +41,9 @@
                     </div>
                 {{/if}}
                 <div class="stat">{{ localize 'dune2d20.item.drive' }}</div>
-                <div class="chk"><input type ="checkbox" name="system.linkToDrive" {{ checked data.system.linkToDrive}}/></div>
+                <a class="chk-talent" title="{{ localize 'dune2d20.item.linkToDrive' }}" data-field="system.linkToDrive" data-stat="system.drive">
+                    {{#if data.system.linkToDrive}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+                </a>
                 {{#if data.system.linkToDrive}}
                     <div class="full-col">
                         <select name="system.drive">
@@ -52,7 +58,9 @@
             </div>
             <div class="talent-desc">
                 <div class="title">{{ localize 'dune2d20.item.description' }}</div>
-                <div>{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+                <div class="ed-100">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+                <div class="title">{{ localize 'dune2d20.item.ruleText' }}</div>
+                <div class="ed-100">{{editor data.system.ruleText target="system.ruleText" button=true owner=true editable=true}}</div>
             </div>
         </div>
     </section>

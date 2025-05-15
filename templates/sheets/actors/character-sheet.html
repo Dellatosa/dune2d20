@@ -11,13 +11,13 @@
         </div>
         {{#if unlocked}}
             <div class="padlock">
-                <a class="sheet-change-lock" title="{{localize 'dune2d20.actor.lock'}}">
+                <a class="sheet-change-lock" title="{{localize 'dune2d20.hint.lock'}}">
                     <i class="fa-solid fa-unlock"></i>
                 </a>
             </div>
         {{else}}
             <div class="padlock">
-                <a class="sheet-change-lock" title="{{localize 'dune2d20.actor.unlock'}}">
+                <a class="sheet-change-lock" title="{{localize 'dune2d20.hint.unlock'}}">
                     <i class="fa-solid fa-lock"></i>
                 </a>
             </div>
@@ -58,19 +58,39 @@
                     <div class="talents-flex">
                         <div class="top-row"> </div>
                         <div class="title-row">{{ localize 'dune2d20.actor.talents' }}</div>
-                        {{#each talents as |talent id|}}
-                            <div class="talent-row" data-item-id="{{talent._id}}">• {{talent.name}}
-                                <a class="remove-talent" title="{{localize 'dune2d20.actor.removeTalent'}}"><i class="fa-solid fa-delete-left"></i></a>
-                            </div>
-                        {{/each}}
+                        {{#if unlocked}}
+                            {{> "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs" }}
+                        {{else}}
+                            {{> "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs" }}
+                        {{/if}}
                         <div class="bottom-row"> </div>
                     </div>
                     <div> </div>
+                    <div> </div>
+                    <div class="assets-flex">
+                        <div class="top-row"> </div>
+                        <div class="title-row">{{ localize 'dune2d20.actor.assets' }}</div>
+                        {{#if unlocked}}
+                            {{> "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs" }}
+                        {{else}}
+                            {{> "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs" }}
+                        {{/if}}
+                        <div class="bottom-row"> </div>
+                    </div>
+                    <div> </div>
+                    <div class="adv-det-grid ">
+                        <div class="title">{{ localize 'dune2d20.actor.advancement' }}</div>
+                        <div class="title">{{ localize 'dune2d20.actor.determination' }}</div>
+                        <div class="val"><input name="system.resources.advancementPoints.value" type="number" value="{{data.system.resources.advancementPoints.value}}" min="{{data.system.resources.advancementPoints.min}}"></div>
+                        <div class="val"><input name="system.resources.determination.value" type="number" value="{{data.system.resources.determination.value}}" min="{{data.system.resources.determination.min}}" max="{{data.system.resources.determination.max}}"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="tab biography-content" data-group="primary" data-tab="biography">
-            BIO
+            <div class="biography">
+                {{editor data.system.biography target="system.biography" button=true owner=true editable=true}}
+            </div>
         </div>
     </section>
 </form>

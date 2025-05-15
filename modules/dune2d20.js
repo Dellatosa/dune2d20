@@ -36,11 +36,6 @@ Hooks.once("init", function(){
 	registerHandlebarsHelpers();
 });
 
-Hooks.once("setup", function() {
-    //dune2d20.drives = localizeObj(dune2d20.drives, true);
-    //console.log(dune2d20.drives);
-});
-
 async function preloadHandlebarsTemplates() {
     const templatePaths = [
         "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
@@ -48,7 +43,11 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs"
+        "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs"
     ];
 
     return loadTemplates(templatePaths);
@@ -58,9 +57,10 @@ Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
     if(dropped.type == "Actor") {
         const actorDocument = fromUuidSync(dropped.uuid);
 
+        console.log(fromUuidSync(actor.system.house));
+
         if(actorDocument.type == "House") {
-            //console.log(actor, actorDocument.name);
-            if(actor.system.house == null) {
+            if(actor.system.house == null || fromUuidSync(actor.system.house) == null) {
                 actor.update({"system.house": dropped.uuid});
             }
             else {

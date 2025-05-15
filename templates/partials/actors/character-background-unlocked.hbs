@@ -7,7 +7,7 @@
             <div class="bg-data border">
                 {{#if house}}
                     <div class="house" data-house-id="{{house._id}}">{{house.name}}
-                        <a class="remove-house" title="{{localize 'dune2d20.actor.removeHouse'}}"><i class="fa-solid fa-delete-left"></i></a>
+                        <a class="remove-house" title="{{localize 'dune2d20.hint.removeHouse'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
                     </div>
                 {{/if}}
             </div>
@@ -25,7 +25,7 @@
             <div class="bg-data border">
                 {{#each traits as |trait id|}}
                     <div class="trait" data-item-id="{{trait._id}}">• {{trait.name}}
-                        <a class="remove-trait" title="{{localize 'dune2d20.actor.removeTrait'}}"><i class="fa-solid fa-delete-left"></i></a>
+                        <a class="remove-trait" title="{{localize 'dune2d20.hint.removeTrait'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
                     </div>
                 {{/each}}
             </div>

@@ -20,11 +20,11 @@ dune2d20.skills = {
 
 dune2d20.factions = {
     none: "",
-    beneGesserit: "dune2d20.actor.beneGesserit",
-    fremen: "dune2d20.actor.fremen",
-    mentat: "dune2d20.actor.mentat",
-    spacingGuild: "dune2d20.actor.spacingGuild",
-    sukDoctor: "dune2d20.actor.sukDoctor"
+    beneGesserit: "dune2d20.config.beneGesserit",
+    fremen: "dune2d20.config.fremen",
+    mentat: "dune2d20.config.mentat",
+    spacingGuild: "dune2d20.config.spacingGuild",
+    sukDoctor: "dune2d20.config.sukDoctor"
 }
 
 

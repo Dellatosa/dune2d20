@@ -1,6 +1,11 @@
 .dune2d20.sheet.item {
 
+    a:hover {
+            text-shadow: 0 0 10px orange;
+    }
+
     .window-content {
+        //background-image: url("../images/sheet/bg-item.jpg");
         background-image: url("../images/sheet/bg-item.jpg");
         background-size: cover;
         background-clip: border-box;
@@ -73,23 +78,26 @@
 
     .sheet-body {
 
-        .talent-grid {
+        .talent-grid, .asset-grid, .trait-grid {
             display: grid;
             grid-template-columns: 3fr 7fr;
 
-            .talent-stats {
+            .talent-stats, .asset-stats, .trait-stats {
                 display: grid;
                 grid-template-columns: 4fr 1fr;
                 align-items: center;
+                grid-auto-rows: 35px;
 
-                margin: 5px;
+                padding: 5px;
 
                 .stat {
-                    font-size: 1.3em;
+                    font-size: 1.4em;
                     color: var(--color-normal-text);
                 }
                 
-                .chk {
+                .chk-talent, .chk-asset, .chk-trait {
+                    font-size: 1.4em;
+                    color: var(--color-normal-text);
                     text-align: center;
                 }
 
@@ -97,6 +105,27 @@
                     width: 80%;
                     font-size: 1.2em;
                     color: var(--color-normal-text);
+                    margin-bottom: 10px;
+                }
+                
+                select:focus {
+                     box-shadow: none;
+                }
+                
+                input {
+                    width: 100%;
+                    
+                    font-family: "Perpetua";
+                    font-size: 1.25em;
+                    color: var(--color-normal-text);
+                    text-align: center;
+                }
+
+                input:focus {
+                    box-shadow: none;
+
+                    color: var(--color-focus-text);
+                    font-weight: bold;
                 }
             }
 
@@ -106,16 +135,28 @@
             }
         }
 
-        .talent-desc {
-            margin-left: 5px;
+        .talent-desc, .asset-desc, .trait-desc {
+            padding: 5px;
+            border-left: solid 1px var(--color-box-border);
 
             .title {
-                font-size: 1.3em;
+                font-size: 1.4em;
                 color: var(--color-normal-text);
+                margin-bottom: 5px;
             }
             
+            .ed-100 {
+                min-height: 100px;
+                margin-bottom: 10px;
+            }
+
+            .ed-200 {
+                min-height: 200px;
+                margin-bottom: 10px;
+            } 
+
             .editor {
-                height: 100px;
+                min-height: inherit;
 
                 background-color: var(--color-box-background);
                 border: solid 1px var(--color-box-border);
@@ -124,6 +165,8 @@
 
                 .editor-content {
                     padding: 2px 5px;
+
+                    font-size: 1.2em;
                     color: var(--color-normal-text);
                 }
             }

@@ -1,0 +1,7 @@
+{{#each talents as |talent id|}}
+    <div class="talent-row" data-item-id="{{talent._id}}">
+        <div class="talent-name">• {{talent.name}}</div>
+        <a class="edit-talent" title="{{localize 'dune2d20.hint.editTalent'}}"><i class="fa-regular fa-sliders"></i></a>
+        <a class="remove-talent" title="{{localize 'dune2d20.hint.removeTalent'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+    </div>
+{{/each}}
