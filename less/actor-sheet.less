@@ -271,6 +271,10 @@
                         flex: 1;
                     }
 
+                    .quality {
+                         font-family: "Perpetua";
+                    }
+
                     .edit-talent, .remove-talent, .talent-desc, .edit-asset, .remove-asset, .asset-desc {
                         flex-basis: 25px;
                         text-align: center;
@@ -312,8 +316,8 @@
             grid-column-end: 4;            
 
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-auto-rows: 34px;
+            grid-template-columns: 1fr 47px 40px 36px 36px 40px 47px 1fr;
+            grid-template-rows: 34px 70px;
             align-items: center;
 
             padding: 5px;
@@ -324,13 +328,68 @@
                 font-family: "Hoefler";
                 font-weight: bold;
                 text-align: center;
-                font-size: 1.1em;
+            }
+
+            .left {
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+
+            .right {
+                grid-column-start: 5;
+                grid-column-end: 9;
             }
 
             .val {
                 font-family: "Perpetua";
                 text-align: center;
-                font-size: 1.25em;
+                font-size: 1.5em;
+
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .adv {
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+
+            .det {
+                grid-column-start: 6;
+                grid-column-end: 7;
+            }
+
+            .back {
+                grid-column-start: 2;
+                grid-column-end: 8;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+                height: 70px;
+                background-image: url("../images/sheet/pools.png");
+
+            }
+
+            input {
+                height: 40px;
+
+                border: none;
+                background: none;
+
+                color: var(--color-normal-text);
+            }
+
+            input:focus {
+                box-shadow: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+
+            input:not([readonly]):focus {
+                color: var(--color-focus-text);
+                font-weight: bold;
             }
         }
     }

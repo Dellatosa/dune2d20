@@ -47,7 +47,9 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs"
+        "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-pools-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs"
     ];
 
     return loadTemplates(templatePaths);

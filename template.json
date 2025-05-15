@@ -154,7 +154,8 @@
     "Asset": {
       "description": "",
       "temporary": false,
-      "quality": 0
+      "quality": 0,
+      "keywords": ""
     },
     "Trait": {
       "description": "",

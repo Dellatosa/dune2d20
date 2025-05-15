@@ -223,6 +223,12 @@
 .dune2d20.sheet.actor .statistics .col-right .assets-flex .asset-row .asset-name {
   flex: 1;
 }
+.dune2d20.sheet.actor .statistics .col-right .talents-flex .talent-row .quality,
+.dune2d20.sheet.actor .statistics .col-right .assets-flex .talent-row .quality,
+.dune2d20.sheet.actor .statistics .col-right .talents-flex .asset-row .quality,
+.dune2d20.sheet.actor .statistics .col-right .assets-flex .asset-row .quality {
+  font-family: "Perpetua";
+}
 .dune2d20.sheet.actor .statistics .col-right .talents-flex .talent-row .edit-talent,
 .dune2d20.sheet.actor .statistics .col-right .assets-flex .talent-row .edit-talent,
 .dune2d20.sheet.actor .statistics .col-right .talents-flex .asset-row .edit-talent,
@@ -280,8 +286,8 @@
   grid-column-start: 1;
   grid-column-end: 4;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 34px;
+  grid-template-columns: 1fr 47px 40px 36px 36px 40px 47px 1fr;
+  grid-template-rows: 34px 70px;
   align-items: center;
   padding: 5px;
   color: var(--color-normal-text);
@@ -290,12 +296,53 @@
   font-family: "Hoefler";
   font-weight: bold;
   text-align: center;
-  font-size: 1.1em;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .left {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .right {
+  grid-column-start: 5;
+  grid-column-end: 9;
 }
 .dune2d20.sheet.actor .statistics .adv-det-grid .val {
   font-family: "Perpetua";
   text-align: center;
-  font-size: 1.25em;
+  font-size: 1.5em;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .adv {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .det {
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .back {
+  grid-column-start: 2;
+  grid-column-end: 8;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  height: 70px;
+  background-image: url("../images/sheet/pools.png");
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid input {
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid input:focus {
+  box-shadow: none;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
 }
 .dune2d20.sheet.actor .biography .editor {
   min-height: 100px;
@@ -451,6 +498,17 @@
   color: var(--color-normal-text);
   text-align: center;
 }
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .val {
+  text-align: center;
+}
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats select,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats select,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats select,
@@ -489,7 +547,6 @@
   font-family: "Perpetua";
   font-size: 1.25em;
   color: var(--color-normal-text);
-  text-align: center;
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats input:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats input:focus,

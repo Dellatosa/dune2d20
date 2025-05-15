@@ -1,6 +1,6 @@
 {{#each assets as |asset id|}}
     <div class="asset-row" data-item-id="{{asset._id}}">
-        <div class="asset-name">• {{asset.name}}</div>
+        <div class="asset-name">• {{asset.name}} <span class="quality"><i class="fa-solid fa-star-sharp" title="{{localize 'dune2d20.hint.quality'}}"></i> {{asset.system.quality}}</span></div>
         {{#if system.descVisible}}
             <a class="asset-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideAssetDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
         </div>

@@ -55,7 +55,8 @@
             "description": "DESCRIPTION",
             "ruleText": "REGLES",
             "temporary": "TEMPORAIRE",
-            "quality": "QUALITE"
+            "quality": "QUALITE",
+            "keywords": "MOTS CLEFS"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",
@@ -78,7 +79,10 @@
             "removeTalent": "Supprimer le Talent",
             "editTalent": "Modifier le Talent",
             "hideTalentDesc": "Masquer la règle du Talent",
-            "showTalentDesc": "Afficher la règle du Talent"
+            "showTalentDesc": "Afficher la règle du Talent",
+            "hideAssetDesc": "Masquer la description de l'Atout",
+            "showAssetDesc": "Afficher la description de l'Atout",
+            "quality": "Qualité"
         },
         "config": {
             "beneGesserit": "Bene Gesserit",

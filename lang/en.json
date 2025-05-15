@@ -55,7 +55,8 @@
             "description": "DESCRIPTION",
             "ruleText": "RULE TEXT",
             "temporary": "TEMPORARY",
-            "quality": "QUALITY"
+            "quality": "QUALITY",
+            "keywords": "KEYWORDS"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",
@@ -78,7 +79,10 @@
             "removeTalent": "Remove Talent",
             "editTalent": "Edit Talent",
             "hideTalentDesc": "Hide Talent rule text",
-            "showTalentDesc": "Show Talent rule text"
+            "showTalentDesc": "Show Talent rule text",
+            "hideAssetDesc": "Hide Asset description",
+            "showAssetDesc": "Show Asset description",
+            "quality": "Quality"
         },
         "config": {
             "beneGesserit": "Bene Gesserit",
