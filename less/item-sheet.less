@@ -52,6 +52,11 @@
                     color: var(--color-focus-text);
                     font-weight: bold;
                 }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
             }
 
             .t-data.border {
@@ -78,11 +83,11 @@
 
     .sheet-body {
 
-        .talent-grid, .asset-grid, .trait-grid {
+        .talent-grid, .asset-grid, .trait-grid, .domain-grid, .enemy-grid {
             display: grid;
             grid-template-columns: 3fr 7fr;
 
-            .talent-stats, .asset-stats, .trait-stats {
+            .talent-stats, .asset-stats, .trait-stats, .domain-stats, .enemy-stats {
                 display: grid;
                 grid-template-columns: 4fr 1fr;
                 align-items: center;
@@ -95,18 +100,14 @@
                     color: var(--color-normal-text);
                 }
                 
-                .chk-talent, .chk-asset, .chk-trait {
+                .chk-talent, .chk-item {
                     font-size: 1.4em;
                     color: var(--color-normal-text);
                     text-align: center;
                 }
-
-                .val {
-                    text-align: center;
-                }
                 
                 select {
-                    width: 80%;
+                    width: 100%;
                     font-size: 1.2em;
                     color: var(--color-normal-text);
                     margin-bottom: 10px;
@@ -116,11 +117,16 @@
                      box-shadow: none;
                 }
                 
+                .val {
+                    text-align: center;
+                    font-family: "Perpetua";
+                    font-size: 1.25em;
+                }
+
                 input {
                     width: 100%;
                     
-                    font-family: "Perpetua";
-                    font-size: 1.25em;
+                    font-size: 1.2em;
                     color: var(--color-normal-text);
                 }
 
@@ -130,6 +136,11 @@
                     color: var(--color-focus-text);
                     font-weight: bold;
                 }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
             }
 
             .full-col {
@@ -138,7 +149,7 @@
             }
         }
 
-        .talent-desc, .asset-desc, .trait-desc {
+        .talent-desc, .asset-desc, .trait-desc, .domain-desc, .enemy-desc  {
             padding: 5px;
             border-left: solid 1px var(--color-box-border);
 
@@ -148,13 +159,42 @@
                 margin-bottom: 5px;
             }
             
-            .ed-100 {
-                min-height: 100px;
+            input {
+                width: 100%;
+                
+                background-color: var(--color-box-background);
+                border: solid 1px var(--color-box-border);
+                box-shadow: inset 0 0 5px var(--color-box-inset);
+
+                font-size: 1.2em;
+                color: var(--color-normal-text);
+                margin-bottom: 10px;
+            }
+
+            input:focus {
+                box-shadow: none;
+
+                color: var(--color-focus-text);
+                font-weight: bold;
+            }
+
+            input::placeholder {
+                color: var(--color-placeholder-text);
+                font-style: italic;
+            }
+
+            .ed-110 {
+                min-height: 110px;
                 margin-bottom: 10px;
             }
 
             .ed-200 {
                 min-height: 200px;
+                margin-bottom: 10px;
+            } 
+
+            .ed-265 {
+                min-height: 265px;
                 margin-bottom: 10px;
             } 
 

@@ -8,6 +8,35 @@
         </div>
     </header>
     <section class="sheet-body">
-
+        <div class="enemy-grid">
+            <div class="enemy-stats">
+                <div class="stat">{{ localize 'dune2d20.item.houseType' }}</div>
+                <div class="full-col">                    
+                    <select name="system.houseType">
+                        {{#select data.system.houseType}}
+                            {{#each config.houseType as |name type|}}
+                                <option value="{{type}}">{{localize name}}</option>
+                            {{/each}}
+                        {{/select}} 
+                    </select>
+                </div>
+                <div class="stat">{{ localize 'dune2d20.item.hatred' }}</div>
+                <div class="full-col">                    
+                    <select name="system.hatred">
+                        {{#select data.system.hatred}}
+                            {{#each config.hatred as |name level|}}
+                                <option value="{{level}}">{{localize name}}</option>
+                            {{/each}}
+                        {{/select}} 
+                    </select>
+                </div>
+            </div>
+            <div class="enemy-desc">
+                <div class="title">{{ localize 'dune2d20.item.reason' }}</div>
+                <div><input name="system.reason" type="text" value="{{data.system.reason}}"></div>
+                <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+                <div class="ed-200">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+            </div>
+        </div>
     </section>
 </form>

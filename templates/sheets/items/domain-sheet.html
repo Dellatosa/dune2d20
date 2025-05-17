@@ -8,6 +8,21 @@
         </div>
     </header>
     <section class="sheet-body">
-
+        <div class="domain-grid">
+            <div class="domain-stats">
+                <div class="stat">{{ localize 'dune2d20.item.primary' }}</div>
+                <a class="chk-item" title="{{ localize 'dune2d20.item.primary' }}" data-field="system.primary">
+                    {{#if data.system.primary}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+                </a>
+                <div class="stat">{{ localize 'dune2d20.item.area' }}</div>
+                <div class="full-col"><input name="system.area" type="text" value="{{data.system.area}}" placeholder="{{ localize 'dune2d20.item.areaOfExpertise' }}"/></div>
+                <div class="stat">{{ localize 'dune2d20.item.section' }}</div>
+                <div class="full-col"><input name="system.section" type="text" value="{{data.system.section}}"/></div>  
+            </div>
+             <div class="domain-desc">
+                <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+                <div class="ed-265">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+            </div>
+        </div>
     </section>
 </form>

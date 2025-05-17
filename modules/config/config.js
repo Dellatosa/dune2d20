@@ -27,10 +27,26 @@ dune2d20.factions = {
     sukDoctor: "dune2d20.config.sukDoctor"
 }
 
+dune2d20.houseType = {
+    none: "",
+    nascentHouse: "dune2d20.config.nascentHouse",
+    houseMinor: "dune2d20.config.houseMinor",
+    houseMajor: "dune2d20.config.houseMajor",
+    greatHouse: "dune2d20.config.greatHouse"
+}
+
+dune2d20.hatred = {
+    none: "",
+    dislike: "dune2d20.config.dislike",
+    rival: "dune2d20.config.rival",
+    loathing: "dune2d20.config.loathing",
+    kanly: "dune2d20.config.kanly"
+}
 
 dune2d20.itemDefIcon = {
     Asset: "systems/dune2d20/images/sheet/item-icon-2.png",
     Domain: "systems/dune2d20/images/sheet/item-icon-1.png",
     Trait: "systems/dune2d20/images/sheet/item-icon-1.png",
-    Talent: "systems/dune2d20/images/sheet/item-icon-2.png"
+    Talent: "systems/dune2d20/images/sheet/item-icon-2.png",
+    Enemy: "systems/dune2d20/images/sheet/combat-dune-dark.svg"
 }

@@ -11,7 +11,7 @@
     "dune2d20": {
         "actor" : {
             "characterName": "Nom du personnage",
-            "houseName": "Nom de la Maison",
+            "houseNamePlaceholder": "Nom de la Maison",
             "name": "NOM",
             "house" : "MAISON",
             "role": "ROLE",
@@ -37,7 +37,25 @@
             "talents": "TALENTS",
             "assets": "ATOUTS",
             "advancement": "PROGRESSION",
-            "determination": "DETERMINATION"
+            "determination": "DETERMINATION",
+            "houseName": "NOM DE LA MAISON",
+            "homeworld": "MONDE D'ORIGINE",
+            "houseType": "TYPE DE MAISON",
+            "motto": "DEVISE",
+            "domains": "DOMAINES",
+            "ruler": "SEIGNEUR",
+            "consort": "CONSORT",
+            "heir": "HERITIER",
+            "advisor": "CONSEILLER",
+            "chiefPhysician": "PREMIER MEDECIN",
+            "councillor": "CHAMBELLAN",
+            "envoy": "EMISSAIRE",
+            "marshall": "CONNETABLE",
+            "scholar": "ERUDIT",
+            "spymaster": "MAITRE-ESPION",
+            "swordmaster": "MAITRE D'ARMES",
+            "treasurer": "ARGENTIER",
+            "warmaster": "MAITRE DE GUERRE"
         },
         "item": {
             "name": "Nom",
@@ -56,7 +74,14 @@
             "ruleText": "REGLES",
             "temporary": "TEMPORAIRE",
             "quality": "QUALITE",
-            "keywords": "MOTS CLEFS"
+            "keywords": "MOTS CLEFS",
+            "primary": "PRIMAIRE",
+            "area" :"SECTEUR",
+            "areaOfExpertise" :"Secteur de Pointe",
+            "section": "SECTION",
+            "houseType": "TYPE",
+            "hatred" : "HAINE",
+            "reason": "RAISON"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",
@@ -84,12 +109,23 @@
             "showAssetDesc": "Afficher la description de l'Atout",
             "quality": "Qualité"
         },
+        "notification": {
+            "houseAlreadyExists" : "Ce personnage sert déjà une Maison !"
+        },
         "config": {
             "beneGesserit": "Bene Gesserit",
             "fremen": "Fremen",
             "mentat": "Mentat",
             "spacingGuild": "Guilde Spatiale",
-            "sukDoctor": "Docteur Suk"
+            "sukDoctor": "Docteur Suk",
+            "nascentHouse": "Maison naissante",
+            "houseMinor": "Maison mineure",
+            "houseMajor": "Maison majeure",
+            "greatHouse": "Grande Maison",
+            "dislike": "Aversion",
+            "rival": "Rivalité",
+            "loathing": "Haine",
+            "kanly": "Kanly"
         }
     }
 }

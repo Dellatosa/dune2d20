@@ -101,6 +101,11 @@
                     font-weight: bold;
                 }
 
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
+
                 .house, .trait {
                     padding: 1px 3px;
                 }
@@ -190,6 +195,11 @@
                 input:not([readonly]):focus {
                     color: var(--color-focus-text);
                     font-weight: bold;
+                }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
                 }
             }
 
@@ -413,7 +423,6 @@
             .editor-content {
                 padding: 2px 5px;
 
-                //font-size: 1.2em;
                 color: var(--color-normal-text);
             }
         }

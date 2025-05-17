@@ -1,0 +1,26 @@
+<div class="bg-name">{{ localize 'dune2d20.actor.houseName' }}</div>
+<div class="bg-start"></div>
+<div class="bg-data"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'dune2d20.actor.houseNamePlaceholder' }}" readonly/></div>
+<div class="bg-end"></div>
+<div class="bg-name">{{ localize 'dune2d20.actor.homeworld' }}</div>
+<div class="bg-start"></div>
+<div class="bg-data"><input name="system.homeworld" type="text" value="{{data.system.homeworld}}" readonly/></div>
+<div class="bg-end"></div>
+<div class="bg-name">{{ localize 'dune2d20.actor.houseType' }}</div>
+<div class="bg-start"></div>
+<div class="bg-data border">
+    <div class="type">{{configLocalize "houseType" data.system.houseType}}</div>
+</div>
+<div class="bg-end"></div>
+<div class="bg-name">{{ localize 'dune2d20.actor.traits' }}</div>
+<div class="bg-start"></div>
+<div class="bg-data border">
+    {{#each traits as |trait id|}}
+        <div class="trait" data-item-id="{{trait._id}}">• {{trait.name}}</div>
+    {{/each}}
+</div>
+<div class="bg-end"></div>
+<div class="bg-name">{{ localize 'dune2d20.actor.motto' }}</div>
+<div class="bg-start"></div>
+<div class="bg-data"><input name="system.motto" type="text" value="{{data.system.motto}}" readonly/></div>
+<div class="bg-end"></div>

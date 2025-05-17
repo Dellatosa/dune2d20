@@ -174,14 +174,14 @@
     "domain": {
       "primary": false,
       "area": "",
-      "field": "",
-      "details": ""
+      "section": "",
+      "description": ""
     },
     "enemy": {
       "houseType": "",
-      "hatered": 1,
+      "hatred": "",
       "reason": "",
-      "details": null
+      "description": null
     }
   }
 }

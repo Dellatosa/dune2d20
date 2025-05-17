@@ -28,8 +28,6 @@ export default class DuneActorSheet extends ActorSheet {
         data.talents = data.items.filter(function (item) { return item.type == "Talent"});
         data.assets = data.items.filter(function (item) { return item.type == "Asset"});
 
-        console.log(data);
-
         return data;
     }
 
@@ -49,7 +47,7 @@ export default class DuneActorSheet extends ActorSheet {
             // Edit Talent item
             html.find('.edit-talent').click(this._onEditTalent.bind(this));
 
-             // Edit Asset item
+            // Edit Asset item
             html.find('.edit-asset').click(this._onEditAsset.bind(this));
 
             // Delete Talent item

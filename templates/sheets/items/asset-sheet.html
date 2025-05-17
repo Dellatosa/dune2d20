@@ -11,15 +11,16 @@
         <div class="asset-grid">
             <div class="asset-stats">
                 <div class="stat">{{ localize 'dune2d20.item.temporary' }}</div>
-                <a class="chk-asset" title="{{ localize 'dune2d20.item.temporary' }}" data-field="system.temporary">
+                <a class="chk-item" title="{{ localize 'dune2d20.item.temporary' }}" data-field="system.temporary">
                     {{#if data.system.temporary}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
                 </a>
                 <div class="stat">{{ localize 'dune2d20.item.quality' }}</div>
                 <div class="val"><input name="system.quality" type="number" value="{{data.system.quality}}" min="0" max="4"/></div>
-                <div class="stat">{{ localize 'dune2d20.item.keywords' }}</div>
-                <div class="full-col"><input name="system.keywords" type="text" value="{{data.system.keywords}}"></div>
+                
             </div>
              <div class="asset-desc">
+                <div class="title">{{ localize 'dune2d20.item.keywords' }}</div>
+                <div><input name="system.keywords" type="text" value="{{data.system.keywords}}"></div>
                 <div class="title">{{ localize 'dune2d20.item.description' }}</div>
                 <div class="ed-200">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
             </div>

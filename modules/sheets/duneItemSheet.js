@@ -4,7 +4,7 @@ export default class DuneItemSheet extends ItemSheet {
 
         return mergeObject(super.defaultOptions, {
             width: 738,
-            height: 400,
+            height: 425,
             classes: ["dune2d20", "sheet", "item"] /*,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
             */
@@ -32,10 +32,7 @@ export default class DuneItemSheet extends ItemSheet {
 
         html.find('.chk-talent').click(this._onCheckTalentStat.bind(this));
 
-        html.find('.chk-asset').click(this._onCheckItem.bind(this));
-
-        html.find('.chk-trait').click(this._onCheckItem.bind(this));
-        
+        html.find('.chk-item').click(this._onCheckItem.bind(this));
     }
 
     async _onCheckTalentStat(event) {

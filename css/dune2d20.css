@@ -75,6 +75,10 @@
   color: var(--color-focus-text);
   font-weight: bold;
 }
+.dune2d20.sheet.actor .sheet-header .background .bg-data input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
 .dune2d20.sheet.actor .sheet-header .background .bg-data .house,
 .dune2d20.sheet.actor .sheet-header .background .bg-data .trait {
   padding: 1px 3px;
@@ -142,6 +146,10 @@
 .dune2d20.sheet.actor .statistics .stats-grid .val input:not([readonly]):focus {
   color: var(--color-focus-text);
   font-weight: bold;
+}
+.dune2d20.sheet.actor .statistics .stats-grid .val input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
 }
 .dune2d20.sheet.actor .statistics .stats-grid .focuses textarea {
   font-size: 1.2em;
@@ -369,17 +377,150 @@
   display: flex;
   flex-direction: column;
 }
+.dune2d20.sheet.house form a:hover {
+  text-shadow: 0 0 10px orange;
+}
 .dune2d20.sheet.house .sheet-header {
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 25px 1fr 200px;
+}
+.dune2d20.sheet.house .sheet-header .top-title {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  font-family: "DuneRise";
+  color: var(--color-normal-text);
+  font-size: 2.5em;
 }
 .dune2d20.sheet.house .sheet-header img {
-  flex: 0 0 250px;
+  flex: 0 0 200px;
   border: none;
-  height: 250px;
+  height: 200px;
+}
+.dune2d20.sheet.house .sheet-header .background {
+  display: grid;
+  grid-template-columns: 1fr 27px 3fr 27px;
+  grid-auto-rows: 38px;
+  align-items: center;
+  margin: 0 2px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .sheet-header .background .bg-name {
+  padding-right: 10px;
+  text-align: right;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data input,
+.dune2d20.sheet.house .sheet-header .background .bg-data select {
+  height: 34px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data input:focus,
+.dune2d20.sheet.house .sheet-header .background .bg-data select:focus {
+  box-shadow: none;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data input:not([readonly]):focus,
+.dune2d20.sheet.house .sheet-header .background .bg-data select:focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data .trait,
+.dune2d20.sheet.house .sheet-header .background .bg-data .type {
+  padding: 1px 3px;
+  font-size: 1.2em;
+}
+.dune2d20.sheet.house .sheet-header .background .bg-data.border {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+}
+.dune2d20.sheet.house .sheet-header .background .bg-start {
+  height: 34px;
+  background-image: url("../images/sheet/field-left.png");
+}
+.dune2d20.sheet.house .sheet-header .background .bg-end {
+  height: 34px;
+  background-image: url("../images/sheet/field-right.png");
 }
 .dune2d20.sheet.house .sheet-header .padlock {
   text-align: center;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .domaines-grid {
+  display: grid;
+  grid-template-columns: 1fr 720px 1fr;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex {
+  display: flex;
+  flex-direction: column;
+  font-family: "Hoefler";
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .top-row {
+  flex-basis: 28px;
+  background-image: url("../images/sheet/domaines-top.png");
+  margin-top: 15px;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .title-row {
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+  font-weight: bold;
+  text-align: center;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row {
+  display: flex;
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .domain-name {
+  flex: 1;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .edit-domain,
+.dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .remove-domain {
+  flex-basis: 25px;
+  text-align: center;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row {
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor {
+  background-color: var(--color-box-background);
+  border: solid 1px var(--color-box-border);
+  box-shadow: inset 0 0 5px var(--color-box-inset);
+  border-radius: 5px;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor .editor-content {
+  padding: 2px 2px;
+  font-size: 0.8em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .bottom-row {
+  flex-basis: 32px;
+  background-image: url("../images/sheet/domaines-bottom.png");
 }
 .dune2d20.sheet.item a:hover {
   text-shadow: 0 0 10px orange;
@@ -421,6 +562,10 @@
   color: var(--color-focus-text);
   font-weight: bold;
 }
+.dune2d20.sheet.item .sheet-header .title .t-data input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
 .dune2d20.sheet.item .sheet-header .title .t-data.border {
   height: 34px;
   display: flex;
@@ -438,19 +583,37 @@
 }
 .dune2d20.sheet.item .sheet-body .talent-grid,
 .dune2d20.sheet.item .sheet-body .asset-grid,
-.dune2d20.sheet.item .sheet-body .trait-grid {
+.dune2d20.sheet.item .sheet-body .trait-grid,
+.dune2d20.sheet.item .sheet-body .domain-grid,
+.dune2d20.sheet.item .sheet-body .enemy-grid {
   display: grid;
   grid-template-columns: 3fr 7fr;
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats {
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats {
   display: grid;
   grid-template-columns: 4fr 1fr;
   align-items: center;
@@ -460,67 +623,111 @@
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .stat,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .stat,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .stat,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats .stat,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats .stat,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .stat,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .stat,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .stat,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats .stat,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats .stat,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .stat,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .stat,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .stat {
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .stat,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats .stat,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats .stat,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats .stat,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats .stat,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats .stat,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats .stat,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats .stat,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats .stat,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats .stat,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats .stat,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats .stat,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats .stat {
   font-size: 1.4em;
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .chk-talent,
 .dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .chk-talent,
-.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .chk-asset,
-.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .chk-trait,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .chk-trait {
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats .chk-talent,
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats .chk-item,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats .chk-item {
   font-size: 1.4em;
   color: var(--color-normal-text);
-  text-align: center;
-}
-.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .val,
-.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .val,
-.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .val,
-.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .val,
-.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .val,
-.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .val,
-.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .val,
-.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .val,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .val {
   text-align: center;
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats select,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats select,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats select,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats select,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats select,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats select,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats select,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats select,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats select,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats select,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats select,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats select,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats select {
-  width: 80%;
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats select,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats select,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats select,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats select,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats select,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats select,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats select,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats select,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats select,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats select,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats select,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats select,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats select {
+  width: 100%;
   font-size: 1.2em;
   color: var(--color-normal-text);
   margin-bottom: 10px;
@@ -528,75 +735,229 @@
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats select:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats select:focus,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats select:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats select:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats select:focus,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats select:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats select:focus,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats select:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats select:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats select:focus,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats select:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats select:focus,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats select:focus {
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats select:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats select:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats select:focus,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats select:focus,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats select:focus,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats select:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats select:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats select:focus,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats select:focus,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats select:focus,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats select:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats select:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats select:focus {
   box-shadow: none;
+}
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats .val,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats .val,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats .val,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats .val,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats .val,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats .val,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats .val,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats .val {
+  text-align: center;
+  font-family: "Perpetua";
+  font-size: 1.25em;
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats input,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats input,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats input,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats input,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats input,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats input,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats input,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats input,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats input,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats input,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats input,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats input,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats input {
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats input,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats input,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats input,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats input,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats input,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats input,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats input,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats input,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats input,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats input,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats input,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats input,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats input {
   width: 100%;
-  font-family: "Perpetua";
-  font-size: 1.25em;
+  font-size: 1.2em;
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.item .sheet-body .talent-grid .talent-stats input:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .talent-stats input:focus,
 .dune2d20.sheet.item .sheet-body .trait-grid .talent-stats input:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats input:focus,
 .dune2d20.sheet.item .sheet-body .talent-grid .asset-stats input:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .asset-stats input:focus,
 .dune2d20.sheet.item .sheet-body .trait-grid .asset-stats input:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats input:focus,
 .dune2d20.sheet.item .sheet-body .talent-grid .trait-stats input:focus,
 .dune2d20.sheet.item .sheet-body .asset-grid .trait-stats input:focus,
-.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats input:focus {
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats input:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats input:focus,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats input:focus,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats input:focus,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats input:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats input:focus,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats input:focus,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats input:focus,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats input:focus,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats input:focus {
   box-shadow: none;
   color: var(--color-focus-text);
   font-weight: bold;
 }
+.dune2d20.sheet.item .sheet-body .talent-grid .talent-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-grid .talent-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-grid .talent-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-grid .talent-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-grid .talent-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .talent-grid .asset-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-grid .asset-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-grid .asset-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-grid .asset-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-grid .asset-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .talent-grid .trait-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-grid .trait-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-grid .trait-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-grid .trait-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-grid .trait-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .talent-grid .domain-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-grid .domain-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-grid .domain-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-grid .domain-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-grid .domain-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .talent-grid .enemy-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-grid .enemy-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-grid .enemy-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-grid .enemy-stats input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-grid .enemy-stats input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
 .dune2d20.sheet.item .sheet-body .talent-grid .full-col,
 .dune2d20.sheet.item .sheet-body .asset-grid .full-col,
-.dune2d20.sheet.item .sheet-body .trait-grid .full-col {
+.dune2d20.sheet.item .sheet-body .trait-grid .full-col,
+.dune2d20.sheet.item .sheet-body .domain-grid .full-col,
+.dune2d20.sheet.item .sheet-body .enemy-grid .full-col {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 .dune2d20.sheet.item .sheet-body .talent-desc,
 .dune2d20.sheet.item .sheet-body .asset-desc,
-.dune2d20.sheet.item .sheet-body .trait-desc {
+.dune2d20.sheet.item .sheet-body .trait-desc,
+.dune2d20.sheet.item .sheet-body .domain-desc,
+.dune2d20.sheet.item .sheet-body .enemy-desc {
   padding: 5px;
   border-left: solid 1px var(--color-box-border);
 }
 .dune2d20.sheet.item .sheet-body .talent-desc .title,
 .dune2d20.sheet.item .sheet-body .asset-desc .title,
-.dune2d20.sheet.item .sheet-body .trait-desc .title {
+.dune2d20.sheet.item .sheet-body .trait-desc .title,
+.dune2d20.sheet.item .sheet-body .domain-desc .title,
+.dune2d20.sheet.item .sheet-body .enemy-desc .title {
   font-size: 1.4em;
   color: var(--color-normal-text);
   margin-bottom: 5px;
 }
-.dune2d20.sheet.item .sheet-body .talent-desc .ed-100,
-.dune2d20.sheet.item .sheet-body .asset-desc .ed-100,
-.dune2d20.sheet.item .sheet-body .trait-desc .ed-100 {
-  min-height: 100px;
+.dune2d20.sheet.item .sheet-body .talent-desc input,
+.dune2d20.sheet.item .sheet-body .asset-desc input,
+.dune2d20.sheet.item .sheet-body .trait-desc input,
+.dune2d20.sheet.item .sheet-body .domain-desc input,
+.dune2d20.sheet.item .sheet-body .enemy-desc input {
+  width: 100%;
+  background-color: var(--color-box-background);
+  border: solid 1px var(--color-box-border);
+  box-shadow: inset 0 0 5px var(--color-box-inset);
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+  margin-bottom: 10px;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc input:focus,
+.dune2d20.sheet.item .sheet-body .asset-desc input:focus,
+.dune2d20.sheet.item .sheet-body .trait-desc input:focus,
+.dune2d20.sheet.item .sheet-body .domain-desc input:focus,
+.dune2d20.sheet.item .sheet-body .enemy-desc input:focus {
+  box-shadow: none;
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc input::placeholder,
+.dune2d20.sheet.item .sheet-body .asset-desc input::placeholder,
+.dune2d20.sheet.item .sheet-body .trait-desc input::placeholder,
+.dune2d20.sheet.item .sheet-body .domain-desc input::placeholder,
+.dune2d20.sheet.item .sheet-body .enemy-desc input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc .ed-110,
+.dune2d20.sheet.item .sheet-body .asset-desc .ed-110,
+.dune2d20.sheet.item .sheet-body .trait-desc .ed-110,
+.dune2d20.sheet.item .sheet-body .domain-desc .ed-110,
+.dune2d20.sheet.item .sheet-body .enemy-desc .ed-110 {
+  min-height: 110px;
   margin-bottom: 10px;
 }
 .dune2d20.sheet.item .sheet-body .talent-desc .ed-200,
 .dune2d20.sheet.item .sheet-body .asset-desc .ed-200,
-.dune2d20.sheet.item .sheet-body .trait-desc .ed-200 {
+.dune2d20.sheet.item .sheet-body .trait-desc .ed-200,
+.dune2d20.sheet.item .sheet-body .domain-desc .ed-200,
+.dune2d20.sheet.item .sheet-body .enemy-desc .ed-200 {
   min-height: 200px;
+  margin-bottom: 10px;
+}
+.dune2d20.sheet.item .sheet-body .talent-desc .ed-265,
+.dune2d20.sheet.item .sheet-body .asset-desc .ed-265,
+.dune2d20.sheet.item .sheet-body .trait-desc .ed-265,
+.dune2d20.sheet.item .sheet-body .domain-desc .ed-265,
+.dune2d20.sheet.item .sheet-body .enemy-desc .ed-265 {
+  min-height: 265px;
   margin-bottom: 10px;
 }
 .dune2d20.sheet.item .sheet-body .talent-desc .editor,
 .dune2d20.sheet.item .sheet-body .asset-desc .editor,
-.dune2d20.sheet.item .sheet-body .trait-desc .editor {
+.dune2d20.sheet.item .sheet-body .trait-desc .editor,
+.dune2d20.sheet.item .sheet-body .domain-desc .editor,
+.dune2d20.sheet.item .sheet-body .enemy-desc .editor {
   min-height: inherit;
   background-color: var(--color-box-background);
   border: solid 1px var(--color-box-border);
@@ -605,7 +966,9 @@
 }
 .dune2d20.sheet.item .sheet-body .talent-desc .editor .editor-content,
 .dune2d20.sheet.item .sheet-body .asset-desc .editor .editor-content,
-.dune2d20.sheet.item .sheet-body .trait-desc .editor .editor-content {
+.dune2d20.sheet.item .sheet-body .trait-desc .editor .editor-content,
+.dune2d20.sheet.item .sheet-body .domain-desc .editor .editor-content,
+.dune2d20.sheet.item .sheet-body .enemy-desc .editor .editor-content {
   padding: 2px 5px;
   font-size: 1.2em;
   color: var(--color-normal-text);
@@ -629,6 +992,7 @@
 :root {
   --color-normal-text: #887264;
   --color-focus-text: #bb8b67;
+  --color-placeholder-text: #88726480;
   --color-highlight: #bd6f34;
   --color-box-border: #887264;
   --color-box-inset: #e7ddd6;

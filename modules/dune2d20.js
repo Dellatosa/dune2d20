@@ -36,6 +36,23 @@ Hooks.once("init", function(){
 	registerHandlebarsHelpers();
 });
 
+Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
+    if(dropped.type == "Actor") {
+        const actorDocument = fromUuidSync(dropped.uuid);
+
+        console.log(fromUuidSync(actor.system.house));
+
+        if(actorDocument.type == "House") {
+            if(actor.system.house == null || fromUuidSync(actor.system.house) == null) {
+                actor.update({"system.house": dropped.uuid});
+            }
+            else {
+               return ui.notifications.warn(game.i18n.localize("dune2d20.notification.houseAlreadyExists"));
+            }
+        }
+    }
+});
+
 async function preloadHandlebarsTemplates() {
     const templatePaths = [
         "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
@@ -49,29 +66,17 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-pools-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs"
+        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs"
     ];
 
     return loadTemplates(templatePaths);
 };
-
-Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
-    if(dropped.type == "Actor") {
-        const actorDocument = fromUuidSync(dropped.uuid);
-
-        console.log(fromUuidSync(actor.system.house));
-
-        if(actorDocument.type == "House") {
-            if(actor.system.house == null || fromUuidSync(actor.system.house) == null) {
-                actor.update({"system.house": dropped.uuid});
-            }
-            else {
-               return ui.notifications.warn("Le personnage est déjà attaché à une Maison !");
-            }
-        }
-    }
-});
-
 /* function localizeObj(toLocalize, sorted = true) {
     const localized = Object.entries(toLocalize).map(e => {
         return [e[0], game.i18n.localize(e[1])];

@@ -11,7 +11,7 @@
     "dune2d20": {
         "actor" : {
             "characterName": "Character Name",
-            "houseName": "House Name",
+            "houseNamePlaceholder": "House Name",
             "name": "NAME",
             "house" : "HOUSE",
             "role": "ROLE",
@@ -37,7 +37,25 @@
             "talents": "TALENTS",
             "assets": "ASSETS",
             "advancement": "ADVANCEMENT",
-            "determination": "DETERMINATION"
+            "determination": "DETERMINATION",
+            "houseName": "HOUSE NAME",
+            "homeworld": "HOMEWORLD",
+            "houseType": "HOUSE TYPE",
+            "motto": "MOTTO",
+            "domains": "DOMAINS",
+            "ruler": "RULER",
+            "consort": "CONSORT",
+            "heir": "HEIR",
+            "advisor": "ADVISOR",
+            "chiefPhysician": "CHIEF PHYSICIAN",
+            "councillor": "COUNCILLOR",
+            "envoy": "ENVOY",
+            "marshall": "MARSHALL",
+            "scholar": "SCHOLAR",
+            "spymaster": "SPYMASTER",
+            "swordmaster": "SWORDMASTER",
+            "treasurer": "TREASURER",
+            "warmaster": "WARMASTER"
         },
         "item": {
             "name": "Name",
@@ -56,7 +74,14 @@
             "ruleText": "RULE TEXT",
             "temporary": "TEMPORARY",
             "quality": "QUALITY",
-            "keywords": "KEYWORDS"
+            "keywords": "KEYWORDS",
+            "primary": "PRIMARY",
+            "area" :"AREA",
+            "areaOfExpertise" :"Area of Expertise",
+            "section": "SECTION",
+            "houseType": "HOUSE TYPE",
+            "hatred" : "HATRED",
+            "reason": "REASON"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",
@@ -84,12 +109,23 @@
             "showAssetDesc": "Show Asset description",
             "quality": "Quality"
         },
+        "notification": {
+            "houseAlreadyExists" : "This character already serves a House !"
+        },
         "config": {
             "beneGesserit": "Bene Gesserit",
             "fremen": "Fremen",
             "mentat": "Mentat",
             "spacingGuild": "Spacing Guild",
-            "sukDoctor": "Suk Doctor"
+            "sukDoctor": "Suk Doctor",
+            "nascentHouse": "Nascent House",
+            "houseMinor": "House Minor",
+            "houseMajor": "House Major",
+            "greatHouse": "Great House",
+            "dislike": "Dislike",
+            "rival": "Rival",
+            "loathing": "Loathing",
+            "kanly": "Kanly"
         }
     }
 }

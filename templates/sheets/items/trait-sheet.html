@@ -11,13 +11,13 @@
         <div class="trait-grid">
             <div class="trait-stats">
                 <div class="stat">{{ localize 'dune2d20.item.temporary' }}</div>
-                <a class="chk-trait" title="{{ localize 'dune2d20.item.temporary' }}" data-field="system.temporary">
+                <a class="chk-item" title="{{ localize 'dune2d20.item.temporary' }}" data-field="system.temporary">
                     {{#if data.system.temporary}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
                 </a>
             </div>
             <div class="trait-desc">
                 <div class="title">{{ localize 'dune2d20.item.description' }}</div>
-                <div class="ed-200">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+                <div class="ed-265">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
             </div>
         </div>
     </section>
