@@ -72,7 +72,9 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
         "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs"
+        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs"
     ];
 
     return loadTemplates(templatePaths);

@@ -55,7 +55,13 @@
             "spymaster": "MAITRE-ESPION",
             "swordmaster": "MAITRE D'ARMES",
             "treasurer": "ARGENTIER",
-            "warmaster": "MAITRE DE GUERRE"
+            "warmaster": "MAITRE DE GUERRE",
+            "area" :"Secteur",
+            "section": "Section",
+            "houseRoles": "ROLES DE LA MAISON",
+            "enemies": "ENNEMIS",
+            "type": "TYPE",
+            "reason": "RAISON"
         },
         "item": {
             "name": "Nom",
@@ -81,7 +87,8 @@
             "section": "SECTION",
             "houseType": "TYPE",
             "hatred" : "HAINE",
-            "reason": "RAISON"
+            "reason": "RAISON",
+            "notes": "NOTES"
         },
         "chat": {
             "confirmRemoval": "Confirmer la suppression",
@@ -107,7 +114,10 @@
             "showTalentDesc": "Afficher la règle du Talent",
             "hideAssetDesc": "Masquer la description de l'Atout",
             "showAssetDesc": "Afficher la description de l'Atout",
-            "quality": "Qualité"
+            "quality": "Qualité",
+            "primaryDomain": "Domaine primaire",
+            "secondaryDomain": "Domaine secondaire",
+            "hatred" : "Haine"
         },
         "notification": {
             "houseAlreadyExists" : "Ce personnage sert déjà une Maison !"

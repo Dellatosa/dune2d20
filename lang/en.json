@@ -55,7 +55,13 @@
             "spymaster": "SPYMASTER",
             "swordmaster": "SWORDMASTER",
             "treasurer": "TREASURER",
-            "warmaster": "WARMASTER"
+            "warmaster": "WARMASTER",
+            "area" :"Area",
+            "section": "Section",
+            "houseRoles": "HOUSE ROLES",
+            "enemies": "ENEMIES",
+            "type": "TYPE",
+            "reason": "REASON"
         },
         "item": {
             "name": "Name",
@@ -81,7 +87,8 @@
             "section": "SECTION",
             "houseType": "HOUSE TYPE",
             "hatred" : "HATRED",
-            "reason": "REASON"
+            "reason": "REASON",
+            "notes": "NOTES"
         },
         "chat": {
             "confirmRemoval": "Confirm removal",
@@ -107,7 +114,10 @@
             "showTalentDesc": "Show Talent rule text",
             "hideAssetDesc": "Hide Asset description",
             "showAssetDesc": "Show Asset description",
-            "quality": "Quality"
+            "quality": "Quality",
+            "primaryDomain": "Primary Domain",
+            "secondaryDomain": "Secondary Domain",
+            "hatred" : "Hatred"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !"

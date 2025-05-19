@@ -137,7 +137,7 @@
             .top-row {
                 flex-basis: 28px;
                 background-image: url("../images/sheet/domaines-top.png");
-                margin-top: 15px;
+                margin-top: 10px;
             }
 
             .title-row {
@@ -159,6 +159,10 @@
                 padding-right: 5px;
 
                 .domain-name {
+                    flex: 2;
+                }
+
+                .domain-stat {
                     flex: 1;
                 }
 
@@ -194,6 +198,133 @@
             .bottom-row {
                 flex-basis: 32px;
                 background-image: url("../images/sheet/domaines-bottom.png");
+            }
+        }
+    }
+
+    .section-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--color-normal-text);
+
+        margin-top: 10px;
+    }
+
+    .roles {
+        display: grid;
+        grid-template-columns: 27px 1fr 27px 10px 27px 1fr 27px;
+
+        align-items: center;
+        margin: 0 2px;
+
+        color: var(--color-normal-text);
+
+        .role-name {
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-top: 3px;
+            
+            font-weight: bold;
+        }
+
+        .role-name.left {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .role-name.right {
+            grid-column-start: 5;
+            grid-column-end: 8;
+        }
+
+        .role-data {
+
+            input, select {
+                height: 34px;
+                width: 100%;
+
+                padding-right: 5px;
+                padding-left: 5px;
+
+                background: none;
+                border: none;
+                border-top: solid 1px  var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+
+                font-size: 1.2em;
+                color: var(--color-normal-text);
+            }
+
+            input:focus, select:focus {
+                box-shadow: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+                
+            input:not([readonly]):focus, select:focus {
+                color: var(--color-focus-text);
+                font-weight: bold;
+            }
+
+            input::placeholder {
+                color: var(--color-placeholder-text);
+                font-style: italic;
+            }
+        }
+
+        .role-start {
+            height: 34px;
+            background-image: url("../images/sheet/field-left.png");
+        }
+
+        .role-end {
+            height: 34px;
+            background-image: url("../images/sheet/field-right.png");
+        }
+    }
+
+    .enemies {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        color: var(--color-normal-text);
+
+        .enemy {
+            display: grid;
+            grid-template-columns: 1fr 2fr 25px 2fr 25px;
+
+            .enemy-title {
+                grid-column-start: 1;
+                grid-column-end: 2;
+
+                font-size: 1.1em;
+            }
+
+            .remove-enemy, .edit-enemy, .hatred {
+                font-size: 1.2em;
+            }
+
+            .enemy-name {
+                grid-column-start: 1;
+                grid-column-end: 3;
+
+                font-size: 1.2em;
+            }
+
+            .enemy-stat {
+                grid-column-start: 2;
+                grid-column-end: 5;
+
+                font-size: 1.2em;
+            }
+
+            .enemy-notes {
+                grid-column-start: 1;
+                grid-column-end: 6;
+
+                font-size: 1.2em;
             }
         }
     }

@@ -1,0 +1,14 @@
+{{#each enemies as |enemy id|}}
+    <div class="enemy" data-item-id="{{enemy._id}}">
+        <div class="enemy-name">{{enemy.name}}</div>
+        <div class="hatred"><i class="fa-solid fa-heart-crack" title="{{localize 'dune2d20.hint.hatred'}}"></i></div>
+        <div class="hatred">{{configLocalize "hatred" enemy.system.hatred}}</div>
+        <div> </div>
+        <div class="enemy-title">{{localize 'dune2d20.actor.type'}}</div>
+        <div class="enemy-stat">{{configLocalize "houseType" enemy.system.houseType}}</div>
+        <div class="enemy-title">{{localize 'dune2d20.actor.reason'}}</div>
+        <div class="enemy-stat">{{enemy.system.reason}}</div>
+        <div> </div>
+        <div class="enemy-notes">{{editor system.notes target="system.notes" button=false owner=true editable=false}}</div>
+    </div>
+{{/each}}
