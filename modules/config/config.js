@@ -48,5 +48,6 @@ dune2d20.itemDefIcon = {
     Domain: "systems/dune2d20/images/sheet/item-icon-1.png",
     Trait: "systems/dune2d20/images/sheet/item-icon-1.png",
     Talent: "systems/dune2d20/images/sheet/item-icon-2.png",
-    Enemy: "systems/dune2d20/images/sheet/combat-dune-dark.svg"
+    Enemy: "systems/dune2d20/images/sheet/combat-dune-dark.svg",
+    Focus: "systems/dune2d20/images/sheet/item-icon-1.png",
 }

@@ -150,7 +150,7 @@
     }
   },  
   "Item": {
-    "types": [ "Asset", "Trait", "Talent", "Domain", "Enemy" ],
+    "types": [ "Asset", "Trait", "Talent", "Focus", "Domain", "Enemy" ],
     "Asset": {
       "description": "",
       "temporary": false,
@@ -171,13 +171,17 @@
       "skill": "",
       "linkToSkill": false
     },
-    "domain": {
+    "Focus": {
+      "description": "",
+      "skill": ""
+    },
+    "Domain": {
       "primary": false,
       "area": "",
       "section": "",
       "description": ""
     },
-    "enemy": {
+    "Enemy": {
       "houseType": "",
       "hatred": "",
       "reason": "",

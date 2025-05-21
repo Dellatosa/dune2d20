@@ -79,6 +79,7 @@ async function preloadHandlebarsTemplates() {
 
     return loadTemplates(templatePaths);
 };
+
 /* function localizeObj(toLocalize, sorted = true) {
     const localized = Object.entries(toLocalize).map(e => {
         return [e[0], game.i18n.localize(e[1])];

@@ -1,7 +1,7 @@
 {{#each assets as |asset id|}}
-    <div class="asset-row" data-item-id="{{asset._id}}">
+    <div class="asset-row item" data-item-id="{{asset._id}}" data-item-type="asset">
         <div class="asset-name">• {{asset.name}} <span class="quality"><i class="fa-solid fa-star-sharp" title="{{localize 'dune2d20.hint.quality'}}"></i> {{asset.system.quality}}</span></div>
-        <a class="edit-asset" title="{{localize 'dune2d20.hint.editAsset'}}"><i class="fa-regular fa-sliders"></i></a>
-        <a class="remove-asset" title="{{localize 'dune2d20.hint.removeAsset'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+        <a class="edit-item" title="{{localize 'dune2d20.hint.editAsset'}}"><i class="fa-regular fa-sliders"></i></a>
+        <a class="remove-item" title="{{localize 'dune2d20.hint.removeAsset'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
     </div>
 {{/each}}

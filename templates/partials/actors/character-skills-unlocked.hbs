@@ -1,25 +1,65 @@
 <!-- Battle -->
 <div class="skill">{{ localize 'dune2d20.actor.battle' }}</div>
 <div class="val"><input name="system.skills.battle.value" type="number" value="{{data.system.skills.battle.value}}" min="{{data.system.skills.battle.min}}" max="{{data.system.skills.battle.max}}"/></div>
-<div class="focuses"><textarea name="system.skills.battle.focuses">{{data.system.skills.battle.focuses}}</textarea></div>
+<div class="focuses">
+    {{#each focuses as |focus id|}}
+        {{#if (eq focus.system.skill "battle") }}
+            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
+                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
 <div class="stat-end"> </div>
 <!-- Communicate -->
 <div class="skill">{{ localize 'dune2d20.actor.communicate' }}</div>
 <div class="val"><input name="system.skills.communicate.value" type="number" value="{{data.system.skills.communicate.value}}" min="{{data.system.skills.communicate.min}}" max="{{data.system.skills.communicate.max}}"/></div>
-<div class="focuses"><textarea name="system.skills.communicate.focuses">{{data.system.skills.communicate.focuses}}</textarea></div>
+<div class="focuses">
+    {{#each focuses as |focus id|}}
+        {{#if (eq focus.system.skill "communicate") }}
+            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
+                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
 <div class="stat-end"> </div>
 <!-- Discipline -->
 <div class="skill">{{ localize 'dune2d20.actor.discipline' }}</div>
 <div class="val"><input name="system.skills.discipline.value" type="number" value="{{data.system.skills.discipline.value}}" min="{{data.system.skills.discipline.min}}" max="{{data.system.skills.discipline.max}}"/></div>
-<div class="focuses"><textarea name="system.skills.discipline.focuses">{{data.system.skills.discipline.focuses}}</textarea></div>
+<div class="focuses">
+    {{#each focuses as |focus id|}}
+        {{#if (eq focus.system.skill "discipline") }}
+            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
+                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
 <div class="stat-end"> </div>
 <!-- Move -->
 <div class="skill">{{ localize 'dune2d20.actor.move' }}</div>
 <div class="val"><input name="system.skills.move.value" type="number" value="{{data.system.skills.move.value}}" min="{{data.system.skills.move.min}}" max="{{data.system.skills.move.max}}"/></div>
-<div class="focuses"><textarea name="system.skills.move.focuses">{{data.system.skills.move.focuses}}</textarea></div>
+<div class="focuses">
+    {{#each focuses as |focus id|}}
+        {{#if (eq focus.system.skill "move") }}
+            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
+                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
 <div class="stat-end"> </div>
 <!-- Understand -->
 <div class="skill">{{ localize 'dune2d20.actor.understand' }}</div>
 <div class="val"><input name="system.skills.understand.value" type="number" value="{{data.system.skills.understand.value}}" min="{{data.system.skills.understand.min}}" max="{{data.system.skills.understand.max}}"/></div>
-<div class="focuses"><textarea name="system.skills.understand.focuses">{{data.system.skills.understand.focuses}}</textarea></div>
+<div class="focuses">
+    {{#each focuses as |focus id|}}
+        {{#if (eq focus.system.skill "understand") }}
+            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
+                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
 <div class="stat-end"> </div>

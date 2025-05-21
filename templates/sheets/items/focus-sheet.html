@@ -1,0 +1,30 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+        <div class="title">
+            <div class="t-start"></div>
+            <div class="t-data"><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'dune2d20.item.focusName' }}"/></div>
+            <div class="t-end"></div>
+        </div>
+    </header>
+    <section class="sheet-body">
+        <div class="focus-grid">
+            <div class="focus-stats">
+                <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
+                <div class="full-col">
+                    <select name="system.skill">
+                        {{#select data.system.skill}}
+                            {{#each config.skills as |name skill|}}
+                                <option value="{{skill}}">{{localize name}}</option>
+                            {{/each}}
+                        {{/select}} 
+                    </select>
+                </div>
+            </div>
+            <div class="focus-desc">
+                <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+                <div class="ed-200">{{editor data.system.description target="system.description" button=true owner=true editable=true}}</div>
+            </div>
+        </div>
+    </section>
+</form>

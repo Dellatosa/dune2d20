@@ -1,5 +1,5 @@
 {{#each domains as |domain id|}}
-    <div class="domain-row" data-item-id="{{domain._id}}">
+    <div class="domain-row item" data-item-id="{{domain._id}}" data-item-type="domain">
         <div class="domain-name">
             {{#if domain.system.primary}}
                 <i class="fa-solid fa-square-1" title="{{localize 'dune2d20.hint.primaryDomain'}}"></i>
@@ -9,7 +9,7 @@
         </div>
         <div class="domain-stat">{{localize 'dune2d20.actor.area'}} : {{domain.system.area}}</div>
         <div class="domain-stat">{{localize 'dune2d20.actor.section'}} : {{domain.system.section}}</div>
-        <a class="edit-domain" title="{{localize 'dune2d20.hint.editDomain'}}"><i class="fa-regular fa-sliders"></i></a>
-        <a class="remove-domain" title="{{localize 'dune2d20.hint.removeDomain'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+        <a class="edit-item" title="{{localize 'dune2d20.hint.editDomain'}}"><i class="fa-regular fa-sliders"></i></a>
+        <a class="remove-item" title="{{localize 'dune2d20.hint.removeDomain'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
     </div>
 {{/each}}

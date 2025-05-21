@@ -137,7 +137,7 @@
             .top-row {
                 flex-basis: 28px;
                 background-image: url("../images/sheet/domaines-top.png");
-                margin-top: 10px;
+                margin-top: 5px;
             }
 
             .title-row {
@@ -166,7 +166,7 @@
                     flex: 1;
                 }
 
-                .edit-domain, .remove-domain {
+                .edit-item, .remove-item {
                     flex-basis: 25px;
                     text-align: center;
                 }
@@ -207,7 +207,7 @@
         font-weight: bold;
         color: var(--color-normal-text);
 
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .roles {
@@ -288,43 +288,84 @@
     .enemies {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
 
         color: var(--color-normal-text);
 
-        .enemy {
-            display: grid;
-            grid-template-columns: 1fr 2fr 25px 2fr 25px;
+        .enemy-block {
+            width: 360px;
 
-            .enemy-title {
-                grid-column-start: 1;
-                grid-column-end: 2;
-
-                font-size: 1.1em;
+            .enemy-top {
+                height: 28px;
+                background-image: url("../images/sheet/enemy-top.png");
             }
 
-            .remove-enemy, .edit-enemy, .hatred {
-                font-size: 1.2em;
-            }
+            .enemy {
+                display: grid;
+                grid-template-columns: 1fr 2fr 25px 1.5fr 25px;
+                align-items: center;
 
-            .enemy-name {
-                grid-column-start: 1;
-                grid-column-end: 3;
+                padding: 3px;
 
-                font-size: 1.2em;
-            }
+                border-left: solid 1px var(--color-box-border);
+                border-right: solid 1px var(--color-box-border);
 
-            .enemy-stat {
-                grid-column-start: 2;
-                grid-column-end: 5;
+                .enemy-title {
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                
+                    font-size: 1.1em;
+                    font-weight: bold;
+                }
 
-                font-size: 1.2em;
+                .remove-item, .edit-item, .hatred, .toogle-desc {
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+
+                .enemy-name {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+
+                    font-size: 1.2em;
+                }
+
+                .enemy-stat {
+                    grid-column-start: 2;
+                    grid-column-end: 5;
+
+                    padding-left: 2px;
+
+                    font-size: 1.2em;
+                }
             }
 
             .enemy-notes {
-                grid-column-start: 1;
-                grid-column-end: 6;
+                padding: 3px;
+                
+                border-left: solid 1px var(--color-box-border);
+                border-right: solid 1px var(--color-box-border);
 
                 font-size: 1.2em;
+
+                .editor {
+                    background-color: var(--color-box-background);
+                    border: solid 1px var(--color-box-border);
+                    box-shadow: inset 0 0 5px var(--color-box-inset);
+                    border-radius: 5px;
+
+                    .editor-content {
+                        padding: 2px 2px;
+
+                        font-size: 0.8em;
+                        color: var(--color-normal-text);
+                    }
+                }
+            }
+
+            .enemy-bottom {
+                height: 32px;
+                background-image: url("../images/sheet/enemy-bottom.png");
             }
         }
     }

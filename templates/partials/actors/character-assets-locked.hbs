@@ -1,12 +1,12 @@
 {{#each assets as |asset id|}}
-    <div class="asset-row" data-item-id="{{asset._id}}">
+    <div class="asset-row item" data-item-id="{{asset._id}}">
         <div class="asset-name">• {{asset.name}} <span class="quality"><i class="fa-solid fa-star-sharp" title="{{localize 'dune2d20.hint.quality'}}"></i> {{asset.system.quality}}</span></div>
         {{#if system.descVisible}}
-            <a class="asset-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideAssetDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+            <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideAssetDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
         </div>
            <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
         {{else}}
-            <a class="asset-desc" data-action="show" title="{{localize 'dune2d20.hint.showAssetDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
+            <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showAssetDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
         </div>
         {{/if}}
 {{/each}}

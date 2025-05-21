@@ -1,3 +1,5 @@
+import * as Dice from "../dice.js";
+
 export default class DuneActorSheet extends ActorSheet {
      
     static get defaultOptions() {
@@ -23,10 +25,12 @@ export default class DuneActorSheet extends ActorSheet {
         // Sheet lock state
         data.unlocked = this.actor.isUnlocked;
 
-        data.traits = data.items.filter(function (item) { return item.type == "Trait"});
         data.house = actorData.house != null ? fromUuidSync(actorData.house) : null;
+
+        data.traits = data.items.filter(function (item) { return item.type == "Trait"});
         data.talents = data.items.filter(function (item) { return item.type == "Talent"});
         data.assets = data.items.filter(function (item) { return item.type == "Asset"});
+        data.focuses = data.items.filter(function (item) { return item.type == "Focus"});
 
         return data;
     }
@@ -41,26 +45,20 @@ export default class DuneActorSheet extends ActorSheet {
             // Delete House
             html.find('.remove-house').click(this._onRemoveHouse.bind(this));
 
-            // Delete Trait item
-            html.find('.remove-trait').click(this._onRemoveTrait.bind(this));
+            // Delete item
+            html.find('.remove-item').click(this._onRemoveItem.bind(this));
 
-            // Edit Talent item
-            html.find('.edit-talent').click(this._onEditTalent.bind(this));
+            // Edit item
+            html.find('.edit-item').click(this._onEditItem.bind(this));
 
-            // Edit Asset item
-            html.find('.edit-asset').click(this._onEditAsset.bind(this));
+            // Show / hide item description or ruletext
+            html.find('.toogle-desc').click(this._onToogleDesc.bind(this));
 
-            // Delete Talent item
-            html.find('.remove-talent').click(this._onRemoveTalent.bind(this));
+            // Roll Drive check
+            html.find('.roll-drive').click(this._onRollDrive.bind(this));
 
-            // Delete Asset item
-            html.find('.remove-asset').click(this._onRemoveAsset.bind(this));
-
-            // Show / hide Talent ruletext
-            html.find('.talent-desc').click(this._onTalentDesc.bind(this));
-
-            // Show / hide Asset description
-            html.find('.asset-desc').click(this._onAssetDesc.bind(this));
+            // Roll Skill check
+            html.find('.roll-skill').click(this._onRollSkill.bind(this));
         }
     }
 
@@ -88,14 +86,35 @@ export default class DuneActorSheet extends ActorSheet {
         });
     }
 
-    async _onRemoveTrait(event) {
+    async _onRemoveItem(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        let itemId = element.closest(".trait").dataset.itemId;
+        let itemId = element.closest(".item").dataset.itemId;
         let item = this.actor.items.get(itemId);
+        const itemType = element.closest(".item").dataset.itemType;
+
+        let removeItemloc = "";
+        let removeItemConfloc = "";
+        switch(itemType) {
+            case "talent": 
+                removeItemloc = "dune2d20.chat.removeTalent";
+                removeItemConfloc = "dune2d20.chat.removeTalentConfirm";
+                break;
+            case "asset":
+                removeItemloc = "dune2d20.chat.removeAsset";
+                removeItemConfloc = "dune2d20.chat.removeAssetConfirm";
+                break;
+            case "trait":
+                removeItemloc = "dune2d20.chat.removeTrait";
+                removeItemConfloc = "dune2d20.chat.removeTraitConfirm";
+                break;
+            default:
+                removeItemloc = "notDefined";
+                removeItemConfloc = "notDefined";
+        }
         
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeTrait")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTraitConfirm")}<p>`
+        let content = `<p>${game.i18n.localize(removeItemloc)} : ${item.name}<br>${game.i18n.localize(removeItemConfloc)}<p>`
         let dlg = Dialog.confirm({
             title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
             content: content,
@@ -105,65 +124,21 @@ export default class DuneActorSheet extends ActorSheet {
         });
     }
 
-    _onEditTalent(event) {
+    _onEditItem(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        let itemId = element.closest(".talent-row").dataset.itemId;
+        let itemId = element.closest(".item").dataset.itemId;
         let item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
     }
 
-    _onEditAsset(event) {
+    async _onToogleDesc(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        let itemId = element.closest(".asset-row").dataset.itemId;
-        let item = this.actor.items.get(itemId);
-
-        item.sheet.render(true);
-    }
-
-    async _onRemoveTalent(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-
-        let itemId = element.closest(".talent-row").dataset.itemId;
-        let item = this.actor.items.get(itemId);
-        
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeTalent")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTalentConfirm")}<p>`
-        let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
-            content: content,
-            yes: () => item.delete(),
-            //no: () =>, Do nothing
-            defaultYes: false
-        });
-    }
-
-    async _onRemoveAsset(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-
-        let itemId = element.closest(".asset-row").dataset.itemId;
-        let item = this.actor.items.get(itemId);
-        
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeAsset")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeAssetConfirm")}<p>`
-        let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
-            content: content,
-            yes: () => item.delete(),
-            //no: () =>, Do nothing
-            defaultYes: false
-        });
-    }
-
-    async _onTalentDesc(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-
-        const itemId = element.closest(".talent-row").dataset.itemId;
+        const itemId = element.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
 
         const action = element.dataset.action;
@@ -176,20 +151,17 @@ export default class DuneActorSheet extends ActorSheet {
         }
     }
 
-    async _onAssetDesc(event) {
+    _onRollDrive(event) {
         event.preventDefault();
-        const element = event.currentTarget;
+        const dataset = event.currentTarget.dataset;
 
-        const itemId = element.closest(".asset-row").dataset.itemId;
-        const item = this.actor.items.get(itemId);
+        Dice.rollDrive({ actor: this.actor, drive: dataset.drive });
+    }
 
-        const action = element.dataset.action;
+    _onRollSkill(event) {
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
 
-        if(action == "show") {
-            return item.update({["system.descVisible"] : true});
-        }
-        else if (action == "hide") {
-            return item.update({["system.descVisible"] : false});
-        }
+        Dice.rollSkill({ actor: this.actor, skill: dataset.skill });
     }
 }

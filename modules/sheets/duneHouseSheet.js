@@ -37,17 +37,14 @@ export default class DuneHouseSheet extends ActorSheet {
             // Lock / unlock sheet
             html.find(".sheet-change-lock").click(this._onSheetChangelock.bind(this));
 
-            // Delete Trait item
-            html.find('.remove-trait').click(this._onRemoveTrait.bind(this));
+            // Edit item
+            html.find('.edit-item').click(this._onEditItem.bind(this));
 
-            // Edit Domain item
-            html.find('.edit-domain').click(this._onEditDomain.bind(this));
+            // Delete item
+            html.find('.remove-item').click(this._onRemoveItem.bind(this));
 
-            // Delete Domain item
-            html.find('.remove-domain').click(this._onRemoveDomain.bind(this));
-
-            // Show / hide Domain description
-            html.find('.domain-desc').click(this._onDomainDesc.bind(this));
+            // Show / hide item description, details or notes
+            html.find('.toogle-desc').click(this._onToogleDesc.bind(this));
         }
     }
 
@@ -61,41 +58,45 @@ export default class DuneHouseSheet extends ActorSheet {
         this.actor.sheet.render(true);
     }
 
-    async _onRemoveTrait(event) {
+    _onEditItem(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        let itemId = element.closest(".trait").dataset.itemId;
-        let item = this.actor.items.get(itemId);
-        
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeTrait")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeTraitConfirm")}<p>`
-        let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
-            content: content,
-            yes: () => item.delete(),
-            //no: () =>, Do nothing
-            defaultYes: false
-        });
-    }
-
-    _onEditDomain(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-
-        let itemId = element.closest(".domain-row").dataset.itemId;
-        let item = this.actor.items.get(itemId);
+        const itemId = element.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
     }
 
-    async _onRemoveDomain(event) {
+    async _onRemoveItem(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        let itemId = element.closest(".domain-row").dataset.itemId;
-        let item = this.actor.items.get(itemId);
+        const itemId = element.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
+        const itemType = element.closest(".item").dataset.itemType;
+
+        let removeItemloc = "";
+        let removeItemConfloc = "";
+        switch(itemType) {
+            case "domain": 
+                removeItemloc = "dune2d20.chat.removeDomain";
+                removeItemConfloc = "dune2d20.chat.removeDomainConfirm";
+                break;
+            case "enemy":
+                removeItemloc = "dune2d20.chat.removeEnemy";
+                removeItemConfloc = "dune2d20.chat.removeEnemyConfirm";
+                break;
+            case "trait":
+                removeItemloc = "dune2d20.chat.removeTrait";
+                removeItemConfloc = "dune2d20.chat.removeTraitConfirm";
+                break;
+            default:
+                removeItemloc = "notDefined";
+                removeItemConfloc = "notDefined";
+        }
         
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeDomain")} : ${item.name}<br>${game.i18n.localize("dune2d20.chat.removeDomainConfirm")}<p>`
+        let content = `<p>${game.i18n.localize(removeItemloc)} : ${item.name}<br>${game.i18n.localize(removeItemConfloc)}<p>`
         let dlg = Dialog.confirm({
             title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
             content: content,
@@ -105,11 +106,11 @@ export default class DuneHouseSheet extends ActorSheet {
         });
     }
 
-    async _onDomainDesc(event) {
+    async _onToogleDesc(event) {
         event.preventDefault();
         const element = event.currentTarget;
 
-        const itemId = element.closest(".domain-row").dataset.itemId;
+        const itemId = element.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
 
         const action = element.dataset.action;

@@ -1,5 +1,7 @@
 {{#each enemies as |enemy id|}}
-    <div class="enemy" data-item-id="{{enemy._id}}">
+<div class="enemy-block">
+    <div class="enemy-top"> </div>
+    <div class="enemy item" data-item-id="{{enemy._id}}">
         <div class="enemy-name">{{enemy.name}}</div>
         <div class="hatred"><i class="fa-solid fa-heart-crack" title="{{localize 'dune2d20.hint.hatred'}}"></i></div>
         <div class="hatred">{{configLocalize "hatred" enemy.system.hatred}}</div>
@@ -8,7 +10,15 @@
         <div class="enemy-stat">{{configLocalize "houseType" enemy.system.houseType}}</div>
         <div class="enemy-title">{{localize 'dune2d20.actor.reason'}}</div>
         <div class="enemy-stat">{{enemy.system.reason}}</div>
-        <div> </div>
-        <div class="enemy-notes">{{editor system.notes target="system.notes" button=false owner=true editable=false}}</div>
+        {{#if system.descVisible}}
+            <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideEnemyNotes'}}"><i class="fa-solid fa-caret-up"></i></a>
+        {{else}}
+            <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showEnemyNotes'}}"><i class="fa-solid fa-caret-down"></i></a>
+        {{/if}}
     </div>
+    {{#if system.descVisible}}
+        <div class="enemy-notes">{{editor system.notes target="system.notes" button=false owner=true editable=false}}</div>
+    {{/if}}
+    <div class="enemy-bottom"> </div>
+</div>
 {{/each}}

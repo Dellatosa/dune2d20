@@ -6,6 +6,7 @@
     "TYPES.Item.Asset": "Atout",
     "TYPES.Item.Trait": "Trait", 
     "TYPES.Item.Talent": "Talent", 
+    "TYPES.Item.Focus": "Spécialisation", 
     "TYPES.Item.Domain": "Domaine", 
     "TYPES.Item.Enemy": "Ennemi",
     "dune2d20": {
@@ -99,7 +100,11 @@
             "removeTalent": "Talent à supprimer",
             "removeTalentConfirm": "Etes-vous certain de vouloir supprimer ce Talent ?",
             "removeAsset": "Atout à supprimer",
-            "removeAssetConfirm": "Etes-vous certain de vouloir supprimer cet Atout ?"
+            "removeAssetConfirm": "Etes-vous certain de vouloir supprimer cet Atout ?",
+            "removeDomain": "Domaine à supprimer",
+            "removeDomainConfirm": "Etes-vous certain de vouloir supprimer ce Domaine ?",
+            "removeEnemy": "Ennemi à supprimer",
+            "removeEnemyConfirm": "Etes-vous certain de vouloir supprimer cet Ennemi ?"
         },
         "hint": {
             "lock": "Verouiller",
@@ -117,7 +122,11 @@
             "quality": "Qualité",
             "primaryDomain": "Domaine primaire",
             "secondaryDomain": "Domaine secondaire",
-            "hatred" : "Haine"
+            "hatred" : "Haine",
+            "removeDomain": "Supprimer le Domaine",
+            "editDomain": "Modifier le Domaine",
+            "removeEnemy": "Supprimer l'Ennemi",
+            "editEnemy": "Modifier l'Ennemi"
         },
         "notification": {
             "houseAlreadyExists" : "Ce personnage sert déjà une Maison !"

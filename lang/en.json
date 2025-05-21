@@ -5,7 +5,8 @@
     "TYPES.Actor.House": "House",
     "TYPES.Item.Asset": "Asset",
     "TYPES.Item.Trait": "Trait", 
-    "TYPES.Item.Talent": "Talent", 
+    "TYPES.Item.Talent": "Talent",
+    "TYPES.Item.Focus": "Focus", 
     "TYPES.Item.Domain": "Domain", 
     "TYPES.Item.Enemy": "Enemy",
     "dune2d20": {
@@ -99,7 +100,11 @@
             "removeTalent": "Talent to remove",
             "removeTalentConfirm": "Are you sure you want to remove this Talent ?",
             "removeAsset": "Asset to remove",
-            "removeAssetConfirm": "Are you sure you want to remove this Asset ?"
+            "removeAssetConfirm": "Are you sure you want to remove this Asset ?",
+            "removeDomain": "Domain to remove",
+            "removeDomainConfirm": "Are you sure you want to remove this Domain ?",
+            "removeEnemy": "Enemy to remove",
+            "removeEnemyConfirm": "Are you sure you want to remove this Enemy ?"
         },
         "hint": {
             "lock": "Lock",
@@ -117,7 +122,11 @@
             "quality": "Quality",
             "primaryDomain": "Primary Domain",
             "secondaryDomain": "Secondary Domain",
-            "hatred" : "Hatred"
+            "hatred" : "Hatred",
+            "removeDomain": "Remove Domain",
+            "editDomain": "Edit Domain",
+            "removeEnemy": "Remove Enemy",
+            "editEnemy": "Edit Enemy"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !"
