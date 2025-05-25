@@ -91,7 +91,7 @@
             "reason": "RAISON",
             "notes": "NOTES"
         },
-        "chat": {
+        "dialog": {
             "confirmRemoval": "Confirmer la suppression",
             "removeTrait": "Trait à supprimer",
             "removeTraitConfirm": "Etes-vous certain de vouloir supprimer ce Trait ?",
@@ -104,7 +104,22 @@
             "removeDomain": "Domaine à supprimer",
             "removeDomainConfirm": "Etes-vous certain de vouloir supprimer ce Domaine ?",
             "removeEnemy": "Ennemi à supprimer",
-            "removeEnemyConfirm": "Etes-vous certain de vouloir supprimer cet Ennemi ?"
+            "removeEnemyConfirm": "Etes-vous certain de vouloir supprimer cet Ennemi ?",
+            "roll": "Jet",
+            "cancel": "Annuler",
+            "one": "1",
+            "two": "2",
+            "three": "3",
+            "four": "4",
+            "five": "5",
+            "driveRoll": "Jet de Principe",
+            "skillRoll": "Jet de Compétence",
+            "drive": "Principe",
+            "skill": "Compétence",
+            "difficulty": "Difficulté",
+            "useDetermination": "Utiliser la Détermination",
+            "numberOfDices": "Nombre de dés",
+            "focus": "Spécialisation"
         },
         "hint": {
             "lock": "Verouiller",

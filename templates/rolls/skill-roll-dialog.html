@@ -1,0 +1,60 @@
+<form class="roll-dialog">
+    <div class="title">{{configLocalize "skills" skill}}</div>
+    <div class="opt-select">
+        <div>{{localize 'dune2d20.dialog.drive'}}</div>
+        <select name="drive">
+            {{#select drive}}
+                {{#each data.drives as |name key|}}
+                    {{#unless (eq key "none")}}
+                        <option value="{{key}}">{{localize name}}</option>
+                    {{/unless}}
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    {{#if focuses}}
+        <div class="opt-select">
+            <div>{{localize 'dune2d20.dialog.focus'}}</div>
+            <select name="focus">
+                <option value="none"> </option>
+                {{#select focus}}
+                    {{#each focuses as |focus key|}}
+                        <option value="{{key}}">{{localize name}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+        </div>
+    {{/if}}
+    <div class="opt-val">
+      <div>{{localize 'dune2d20.dialog.difficulty'}}</div>
+      <!-- <a class="minus"><i class="fa-solid fa-circle-minus"></i></a> -->
+      <div class="center"><input name="difficulty" type="number" value="{{difficulty}}" min="1" max="5"></div>
+      <!-- <a class="plus"><i class="fa-solid fa-circle-plus"></i></a> -->
+    </div>
+    {{#if (gt actor.system.resources.determination.value 0)}}
+        <div class="opt-check">
+            <div>{{localize 'dune2d20.dialog.useDetermination'}}</div>
+            <!-- <div>{{#if useDetermination}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}</div> -->
+             <div class="center"><input type="checkbox" name="useDetermination"/></div>
+        </div>
+    {{/if}}
+    <div class="opt-dice-pool">
+        <div>{{localize 'dune2d20.dialog.numberOfDices'}}</div>
+        <div class="dice-pool">
+            <div class="flexrow">
+                <span class="label left">{{localize 'dune2d20.dialog.one'}}</span>
+                <span class="space"></span>
+                <span class="label">{{localize 'dune2d20.dialog.two'}}</span>
+                <span class="space"></span>
+                <span class="label">{{localize 'dune2d20.dialog.three'}}</span>
+                <span class="space"></span>
+                <span class="label">{{localize 'dune2d20.dialog.four'}}</span>
+                <span class="space"></span>
+                <span class="label right">{{localize 'dune2d20.dialog.five'}}</span>
+            </div>
+            <input type="range" name="dicePoolSize" min="1" max="5" value="{{nbDice}}" class="slider" id="dicePoolSlider">
+        </div>
+    </div>
+    </div>
+    
+</form>

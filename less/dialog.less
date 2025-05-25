@@ -1,0 +1,120 @@
+.window-app.dialog {
+
+    .window-content {
+        background-image: url("../images/sheet/bg-dialog.jpg");
+        background-size: cover;
+        background-clip: border-box;
+
+        font-family: "Hoefler";
+        color: var(--color-normal-text);
+        font-size: 1.2em;
+
+        .title {
+            margin-top: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            margin-bottom:  5px; 
+
+            font-family: "DuneRise";
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .opt-select {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+
+            margin: 5px 2px;
+
+            select {
+                color: var(--color-normal-text);
+            }
+        }
+
+        .opt-val {
+            display: grid;
+            grid-template-columns: 1fr 50px;
+            align-items: center;
+
+            margin: 5px 2px;
+
+            .center {
+                text-align: center;
+            }
+
+            input {
+                font-family: "Perpetua";
+                color: var(--color-normal-text);
+            }
+        }
+
+        .opt-val-min-max {
+            display: grid;
+            grid-template-columns: 1fr 25px 50px 25px;
+            align-items: center;
+
+            margin: 5px 2px;
+        }
+
+        .opt-check {
+            display: grid;
+            grid-template-columns: 1fr 50px;
+            align-items: center;
+
+            margin: 5px 2px;
+
+            .center {
+                text-align: center;
+            }
+        }
+
+        .opt-dice-pool {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            margin: 5px 2px;
+
+            .dice-pool {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    flex: 1;
+                    text-align: center;
+
+                    font-family: "Perpetua";
+                }
+
+                .label.left {
+                    text-align: left;
+                }
+
+                .label.right {
+                    text-align: right;
+                }
+
+                .space {
+                    flex: 1;
+                }
+            }
+        }
+        
+        .dialog-button {
+            font-family: "Hoefler";
+            color: var(--color-normal-text);
+            font-size: 1.1em;
+        }
+
+        .dialog-button:focus {
+            color: var(--color-focus-text);
+            box-shadow: 0 0 5px var(--color-highlight);
+        }
+
+        .dialog-button:hover {
+            box-shadow: 0 0 5px var(--color-highlight);
+        }
+    }
+}

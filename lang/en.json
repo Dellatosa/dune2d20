@@ -91,7 +91,7 @@
             "reason": "REASON",
             "notes": "NOTES"
         },
-        "chat": {
+        "dialog": {
             "confirmRemoval": "Confirm removal",
             "removeTrait": "Trait to remove",
             "removeTraitConfirm": "Are you sure you want to remove this Trait ?",
@@ -104,7 +104,22 @@
             "removeDomain": "Domain to remove",
             "removeDomainConfirm": "Are you sure you want to remove this Domain ?",
             "removeEnemy": "Enemy to remove",
-            "removeEnemyConfirm": "Are you sure you want to remove this Enemy ?"
+            "removeEnemyConfirm": "Are you sure you want to remove this Enemy ?",
+            "roll": "Roll",
+            "cancel": "Cancel",
+            "one": "1",
+            "two": "2",
+            "three": "3",
+            "four": "4",
+            "five": "5",
+            "driveRoll": "Drive roll",
+            "skillRoll": "Skill roll",
+            "drive": "Drive",
+            "skill": "Skill",
+            "difficulty": "Difficulty",
+            "useDetermination": "Use Determination",
+            "numberOfDices": "Number of dices",
+            "focus": "Focus"
         },
         "hint": {
             "lock": "Lock",

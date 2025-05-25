@@ -1,4 +1,4 @@
-import * as Dice from "../dice.js";
+import * as Roll from "../roll.js";
 
 export default class DuneActorSheet extends ActorSheet {
      
@@ -26,6 +26,8 @@ export default class DuneActorSheet extends ActorSheet {
         data.unlocked = this.actor.isUnlocked;
 
         data.house = actorData.house != null ? fromUuidSync(actorData.house) : null;
+
+        //console.log(this.actor, data);
 
         data.traits = data.items.filter(function (item) { return item.type == "Trait"});
         data.talents = data.items.filter(function (item) { return item.type == "Talent"});
@@ -76,9 +78,9 @@ export default class DuneActorSheet extends ActorSheet {
         event.preventDefault();
         const house = fromUuidSync(this.actor.system.house);
 
-        let content = `<p>${game.i18n.localize("dune2d20.chat.removeHouse")} : ${house.name}<br>${game.i18n.localize("dune2d20.chat.removeHouseConfirm")}<p>`
+        let content = `<p>${game.i18n.localize("dune2d20.dialog.removeHouse")} : ${house.name}<br>${game.i18n.localize("dune2d20.dialog.removeHouseConfirm")}<p>`
         let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
+            title: game.i18n.localize("dune2d20.dialog.confirmRemoval"),
             content: content,
             yes: () => this.actor.update({"system.house": null}),
             //no: () =>, Do nothing
@@ -98,16 +100,16 @@ export default class DuneActorSheet extends ActorSheet {
         let removeItemConfloc = "";
         switch(itemType) {
             case "talent": 
-                removeItemloc = "dune2d20.chat.removeTalent";
-                removeItemConfloc = "dune2d20.chat.removeTalentConfirm";
+                removeItemloc = "dune2d20.dialog.removeTalent";
+                removeItemConfloc = "dune2d20.dialog.removeTalentConfirm";
                 break;
             case "asset":
-                removeItemloc = "dune2d20.chat.removeAsset";
-                removeItemConfloc = "dune2d20.chat.removeAssetConfirm";
+                removeItemloc = "dune2d20.dialog.removeAsset";
+                removeItemConfloc = "dune2d20.dialog.removeAssetConfirm";
                 break;
             case "trait":
-                removeItemloc = "dune2d20.chat.removeTrait";
-                removeItemConfloc = "dune2d20.chat.removeTraitConfirm";
+                removeItemloc = "dune2d20.dialog.removeTrait";
+                removeItemConfloc = "dune2d20.dialog.removeTraitConfirm";
                 break;
             default:
                 removeItemloc = "notDefined";
@@ -116,7 +118,7 @@ export default class DuneActorSheet extends ActorSheet {
         
         let content = `<p>${game.i18n.localize(removeItemloc)} : ${item.name}<br>${game.i18n.localize(removeItemConfloc)}<p>`
         let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
+            title: game.i18n.localize("dune2d20.dialog.confirmRemoval"),
             content: content,
             yes: () => item.delete(),
             //no: () =>, Do nothing
@@ -155,13 +157,23 @@ export default class DuneActorSheet extends ActorSheet {
         event.preventDefault();
         const dataset = event.currentTarget.dataset;
 
-        Dice.rollDrive({ actor: this.actor, drive: dataset.drive });
+        Roll.roll({ 
+            type: "drive", 
+            actor: this.actor, 
+            drive: dataset.drive, 
+            focuses: this.getData().focuses 
+        });
     }
 
     _onRollSkill(event) {
         event.preventDefault();
         const dataset = event.currentTarget.dataset;
-
-        Dice.rollSkill({ actor: this.actor, skill: dataset.skill });
+        
+        Roll.roll({ 
+            type: "skill", 
+            actor: this.actor, 
+            skill: dataset.skill, 
+            focuses: this.getData().focuses.filter(function (focus) { return focus.system.skill == dataset.skill}) 
+        });
     }
 }

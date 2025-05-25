@@ -1219,6 +1219,97 @@
   font-size: 1.2em;
   color: var(--color-normal-text);
 }
+.window-app.dialog .window-content {
+  background-image: url("../images/sheet/bg-dialog.jpg");
+  background-size: cover;
+  background-clip: border-box;
+  font-family: "Hoefler";
+  color: var(--color-normal-text);
+  font-size: 1.2em;
+}
+.window-app.dialog .window-content .title {
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  font-family: "DuneRise";
+  text-align: center;
+  font-size: 1.5em;
+}
+.window-app.dialog .window-content .opt-select {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  margin: 5px 2px;
+}
+.window-app.dialog .window-content .opt-select select {
+  color: var(--color-normal-text);
+}
+.window-app.dialog .window-content .opt-val {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+  margin: 5px 2px;
+}
+.window-app.dialog .window-content .opt-val .center {
+  text-align: center;
+}
+.window-app.dialog .window-content .opt-val input {
+  font-family: "Perpetua";
+  color: var(--color-normal-text);
+}
+.window-app.dialog .window-content .opt-val-min-max {
+  display: grid;
+  grid-template-columns: 1fr 25px 50px 25px;
+  align-items: center;
+  margin: 5px 2px;
+}
+.window-app.dialog .window-content .opt-check {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+  margin: 5px 2px;
+}
+.window-app.dialog .window-content .opt-check .center {
+  text-align: center;
+}
+.window-app.dialog .window-content .opt-dice-pool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 5px 2px;
+}
+.window-app.dialog .window-content .opt-dice-pool .dice-pool {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label {
+  flex: 1;
+  text-align: center;
+  font-family: "Perpetua";
+}
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.left {
+  text-align: left;
+}
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.right {
+  text-align: right;
+}
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .space {
+  flex: 1;
+}
+.window-app.dialog .window-content .dialog-button {
+  font-family: "Hoefler";
+  color: var(--color-normal-text);
+  font-size: 1.1em;
+}
+.window-app.dialog .window-content .dialog-button:focus {
+  color: var(--color-focus-text);
+  box-shadow: 0 0 5px var(--color-highlight);
+}
+.window-app.dialog .window-content .dialog-button:hover {
+  box-shadow: 0 0 5px var(--color-highlight);
+}
 @font-face {
   font-family: "DuneRise";
   src: url("../fonts/Dune_Rise.ttf") format("truetype");
@@ -1244,6 +1335,7 @@
   --color-box-inset: #e7ddd6;
   --color-box-background: #88726440;
   --color-scrollbar: rgba(255, 166, 0, 0.836);
+  --color-box-focus: #ffa600;
 }
 ::-webkit-scrollbar-thumb {
   outline: none;
@@ -1267,12 +1359,4 @@
 }
 .paused img {
   content: url("../images/ui/pause.png");
-}
-.window-app.dialog .window-content {
-  background-image: url("../images/sheet/bg-dialog.jpg");
-  background-size: cover;
-  background-clip: border-box;
-  font-family: "Hoefler";
-  color: var(--color-normal-text);
-  font-size: 1.2em;
 }

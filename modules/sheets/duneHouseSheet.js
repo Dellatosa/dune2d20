@@ -80,16 +80,16 @@ export default class DuneHouseSheet extends ActorSheet {
         let removeItemConfloc = "";
         switch(itemType) {
             case "domain": 
-                removeItemloc = "dune2d20.chat.removeDomain";
-                removeItemConfloc = "dune2d20.chat.removeDomainConfirm";
+                removeItemloc = "dune2d20.dialog.removeDomain";
+                removeItemConfloc = "dune2d20.dialog.removeDomainConfirm";
                 break;
             case "enemy":
-                removeItemloc = "dune2d20.chat.removeEnemy";
-                removeItemConfloc = "dune2d20.chat.removeEnemyConfirm";
+                removeItemloc = "dune2d20.dialog.removeEnemy";
+                removeItemConfloc = "dune2d20.dialog.removeEnemyConfirm";
                 break;
             case "trait":
-                removeItemloc = "dune2d20.chat.removeTrait";
-                removeItemConfloc = "dune2d20.chat.removeTraitConfirm";
+                removeItemloc = "dune2d20.dialog.removeTrait";
+                removeItemConfloc = "dune2d20.dialog.removeTraitConfirm";
                 break;
             default:
                 removeItemloc = "notDefined";
@@ -98,7 +98,7 @@ export default class DuneHouseSheet extends ActorSheet {
         
         let content = `<p>${game.i18n.localize(removeItemloc)} : ${item.name}<br>${game.i18n.localize(removeItemConfloc)}<p>`
         let dlg = Dialog.confirm({
-            title: game.i18n.localize("dune2d20.chat.confirmRemoval"),
+            title: game.i18n.localize("dune2d20.dialog.confirmRemoval"),
             content: content,
             yes: () => item.delete(),
             //no: () =>, Do nothing

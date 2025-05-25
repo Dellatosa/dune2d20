@@ -13,9 +13,29 @@ export default function registerHandlebarsHelpers() {
         return accum;
     });
 
-    Handlebars.registerHelper("configLocalize", function(liste, val) {
-        return game.i18n.localize(dune2d20[liste][val]);
+    Handlebars.registerHelper("configLocalize", function(liste, val, limit) {
+        let result = game.i18n.localize(dune2d20[liste][val]);
+        if(limit != null) {
+            if(result.length > limit) {
+                return result.slice(0, limit);
+            }
+        }
+
+        return result;
     });
+
+    /* Handlebars.registerHelper("truncate", function(str, limit, suffix) {
+        if (typeof str === 'string') {
+            if (typeof suffix !== 'string') {
+                suffix = '';
+            }
+    
+            if (str.length > limit) {
+                return str.slice(0, limit - suffix.length) + suffix;
+            }
+            return str;
+        }
+    }); */
 
     /* Handlebars.registerHelper('eachSorted', function(context, options) {
         var ret = ""
