@@ -126,8 +126,8 @@
             "difficulty": "Difficulty",
             "successes": "Successes",
             "nbSuccesses": "Number of successes",
-            "successfulTest": "Successful !",
-            "failedTest": "Failed !",
+            "successfulTest": "Successful",
+            "failedTest": "Failed",
             "momentum": "Momentum",
             "complication": "Complication !"
         },

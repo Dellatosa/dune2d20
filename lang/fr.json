@@ -96,8 +96,8 @@
             "difficulty": "Difficulté",
             "nbSuccesses": "Nombre de succès",
             "successes": "Succès",
-            "successfulTest": "Réussite !",
-            "failedTest": "Echec !",
+            "successfulTest": "Reussite",
+            "failedTest": "Echec",
             "momentum": "Impulsion",
             "complication": "Complication !"
         },

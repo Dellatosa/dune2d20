@@ -19,18 +19,21 @@
     </div>
     <div class="successes">
         {{#times nbSuccesses}}<i class="fa-regular fa-sword" title="{{localize 'dune2d20.chat.nbSuccesses'}} : {{nbSuccesses}}"></i>{{/times}} 
-        / 
+        {{#if (gt nbSuccesses 0)}}/{{/if}} 
         {{#times difficulty}}<i class="fa-regular fa-shield" title="{{localize 'dune2d20.chat.difficulty'}} : {{difficulty}}"></i>{{/times}}
     </div>
     {{#if successfulTest}} 
         <div class="test-result">{{localize 'dune2d20.chat.successfulTest'}}</div>
-        {{#if (gt momentum 0)}}
-        <div>{{localize 'dune2d20.chat.momentum'}} : {{momentum}}</div>
-        {{/if}}
     {{else}} 
         <div class="test-result">{{localize 'dune2d20.chat.failedTest'}}</div>
     {{/if}}
-    {{#if complication}} 
-        <div>{{localize 'dune2d20.chat.complication'}}</div>
-    {{/if}}
+    <div class="footer">
+        {{#if (gt momentum 0)}}
+            <div class="momentum-bg" title="{{localize 'dune2d20.chat.momentum'}} : + {{momentum}}"><div class="momentum">{{momentum}}</div></div>
+        {{/if}}
+        {{#if complication}} 
+            <!-- <div class="complication-bg"><div class="complication">{{localize 'dune2d20.chat.complication'}}</div></div> -->
+             <div class="comp"><div class="comp-img">&nbsp;</div><div class="comp-text">{{localize 'dune2d20.chat.complication'}}</div></div>
+        {{/if}}
+    </div>
 </div>

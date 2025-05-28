@@ -31,6 +31,7 @@
         grid-template-columns: 1fr 50px 2fr 50px 1fr;
         align-items: center;
         text-align: center;
+        margin: 3px 0;
 
         font-family: "Perpetua";
         font-size: 1.5em;
@@ -67,7 +68,9 @@
     }
 
     .focus {
-        font-size: 1.3em;
+        margin: 3px;
+
+        font-size: 1.2em;
         color: var(--color-normal-text);
         text-align: center;
     }
@@ -75,12 +78,14 @@
     .dices-pool {
         display: flex;
         justify-content: center;
+
+        margin: 3px;
     }
     
     .dice-back {
         display: flex;
         justify-content: center;
-        margin: 3px;
+        margin: 3px 0;
     
         .roll {
             width: 45px;
@@ -100,31 +105,127 @@
             background-size: 45px 45px;
         }
 
+        .d20.crit {
+            color: var(--color-dice-crit);
+        }
+
         .d20.determ {
             background: url("../images/ui/d20-dune-determ.svg") no-repeat;
             background-size: 45px 45px;
             color: var(--color-dice-determ);
         }
 
-        .d20.crit {
-            color: var(--color-dice-crit);
-        }
-
         .d20.comp {
+            background: url("../images/ui/d20-dune-comp.svg") no-repeat;
+            background-size: 45px 45px;
             color: var(--color-dice-comp);
         }
     }
 
     .successes {
         text-align: center;
+        margin: 3px 0;
 
         font-size: 1.3em;
         color: var(--color-normal-text);
     }
 
     .test-result {
-        text-align: center;
-        //background-image: url("../images/ui/chat-deco2.png");
-        //height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        padding-top: 3px;
+
+        font-size: 1.3em;
+        font-family: "DuneRise";
+        font-weight: bold;
+        color: var(--color-darker-text);
+
+        background-image: url("../images/ui/chat-deco1-l.png");
+        background-size: 272px 33px;
+        height: 33px;
     }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 3px 0;
+
+        .momentum-bg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 3px 0;
+            width: 50px;
+            height: 50px;
+
+            background: url("../images/ui/momentum-token.png") no-repeat;
+            background-size: 50px 50px;
+            
+            .momentum {
+                font-family: "Perpetua";
+                font-size: 1.5em;
+                font-weight: bold;
+                color: var(--color-darker-text);
+                text-shadow: white 0 0 5px;
+
+                border-radius: 10px;
+                backdrop-filter: blur(3px);
+
+            }
+        }
+
+        /*.complication-bg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 150px;
+            height: 50px;
+
+            background: url("../images/ui/krys.png") no-repeat;
+            background-size: 150px 29px;
+            background-position: center;
+
+            .complication {
+                font-family: "Perpetua";
+                font-size: 1.5em;
+                font-weight: bold;
+                color: var(--color-darker-text);
+                text-shadow: white 0 0 5px;
+
+                border-radius: 10px;
+                //backdrop-filter: blur(3px);
+
+            }
+        }*/
+
+        .comp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .comp-img {
+                background: url("../images/ui/krys.png") no-repeat;
+                background-size: 150px 29px;
+                background-position: center;
+
+                margin: 3px 0;
+                width: 150px;
+            }
+
+            .comp-text {
+                margin: 3px 0;
+                
+                font-family: "Perpetua";
+                font-size: 1.5em;
+                font-weight: bold;
+                color: var(--color-darker-text);
+            }
+        }
+    }
+
 }

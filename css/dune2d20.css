@@ -1305,10 +1305,10 @@
 }
 .window-app.dialog .window-content .dialog-button:focus {
   color: var(--color-focus-text);
-  box-shadow: 0 0 5px var(--color-highlight);
+  box-shadow: 0 0 5px var(--color-highlight-text);
 }
 .window-app.dialog .window-content .dialog-button:hover {
-  box-shadow: 0 0 5px var(--color-highlight);
+  box-shadow: 0 0 5px var(--color-highlight-text);
 }
 .chat-message {
   font-family: "Hoefler";
@@ -1337,6 +1337,7 @@
   grid-template-columns: 1fr 50px 2fr 50px 1fr;
   align-items: center;
   text-align: center;
+  margin: 3px 0;
   font-family: "Perpetua";
   font-size: 1.5em;
   font-weight: bold;
@@ -1365,18 +1366,20 @@
   grid-row-start: 1;
 }
 .chat-message .focus {
-  font-size: 1.3em;
+  margin: 3px;
+  font-size: 1.2em;
   color: var(--color-normal-text);
   text-align: center;
 }
 .chat-message .dices-pool {
   display: flex;
   justify-content: center;
+  margin: 3px;
 }
 .chat-message .dice-back {
   display: flex;
   justify-content: center;
-  margin: 3px;
+  margin: 3px 0;
 }
 .chat-message .dice-back .roll {
   width: 45px;
@@ -1392,24 +1395,106 @@
   color: var(--color-dice-normal);
   background-size: 45px 45px;
 }
+.chat-message .dice-back .d20.crit {
+  color: var(--color-dice-crit);
+}
 .chat-message .dice-back .d20.determ {
   background: url("../images/ui/d20-dune-determ.svg") no-repeat;
   background-size: 45px 45px;
   color: var(--color-dice-determ);
 }
-.chat-message .dice-back .d20.crit {
-  color: var(--color-dice-crit);
-}
 .chat-message .dice-back .d20.comp {
+  background: url("../images/ui/d20-dune-comp.svg") no-repeat;
+  background-size: 45px 45px;
   color: var(--color-dice-comp);
 }
 .chat-message .successes {
   text-align: center;
+  margin: 3px 0;
   font-size: 1.3em;
   color: var(--color-normal-text);
 }
 .chat-message .test-result {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  padding-top: 3px;
+  font-size: 1.3em;
+  font-family: "DuneRise";
+  font-weight: bold;
+  color: var(--color-darker-text);
+  background-image: url("../images/ui/chat-deco1-l.png");
+  background-size: 272px 33px;
+  height: 33px;
+}
+.chat-message .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 3px 0;
+  /*.complication-bg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 150px;
+            height: 50px;
+
+            background: url("../images/ui/krys.png") no-repeat;
+            background-size: 150px 29px;
+            background-position: center;
+
+            .complication {
+                font-family: "Perpetua";
+                font-size: 1.5em;
+                font-weight: bold;
+                color: var(--color-darker-text);
+                text-shadow: white 0 0 5px;
+
+                border-radius: 10px;
+                //backdrop-filter: blur(3px);
+
+            }
+        }*/
+}
+.chat-message .footer .momentum-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px 0;
+  width: 50px;
+  height: 50px;
+  background: url("../images/ui/momentum-token.png") no-repeat;
+  background-size: 50px 50px;
+}
+.chat-message .footer .momentum-bg .momentum {
+  font-family: "Perpetua";
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-darker-text);
+  text-shadow: white 0 0 5px;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+.chat-message .footer .comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chat-message .footer .comp .comp-img {
+  background: url("../images/ui/krys.png") no-repeat;
+  background-size: 150px 29px;
+  background-position: center;
+  margin: 3px 0;
+  width: 150px;
+}
+.chat-message .footer .comp .comp-text {
+  margin: 3px 0;
+  font-family: "Perpetua";
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-darker-text);
 }
 @font-face {
   font-family: "DuneRise";
@@ -1431,7 +1516,8 @@
   --color-normal-text: #887264;
   --color-focus-text: #bb8b67;
   --color-placeholder-text: #88726480;
-  --color-highlight: #bd6f34;
+  --color-highlight-text: #bd6f34;
+  --color-darker-text: #953c03;
   --color-box-border: #887264;
   --color-box-inset: #e7ddd6;
   --color-box-background: #88726440;
@@ -1439,7 +1525,7 @@
   --color-box-focus: #ffa600;
   --color-dice-normal: #887264;
   --color-dice-crit: #e66f14;
-  --color-dice-determ: rgba(0, 0, 0, 0.651);
+  --color-dice-determ: #953c03;
   --color-dice-comp: rgba(255, 0, 0, 0.7);
 }
 ::-webkit-scrollbar-thumb {
@@ -1460,7 +1546,7 @@
 #pause figcaption {
   font-family: "DuneRise";
   font-weight: bold;
-  color: var(--color-highlight);
+  color: var(--color-highlight-text);
 }
 .paused img {
   content: url("../images/ui/pause.png");
