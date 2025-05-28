@@ -17,7 +17,11 @@
             </div>
         {{/each}}
     </div>
-    <div class="successes">{{localize 'dune2d20.chat.successes'}} : {{#times nbSuccesses}}<i class="fa-regular fa-sword"></i>{{/times}} / {{#times difficulty}}<i class="fa-regular fa-shield"></i>{{/times}}</div>
+    <div class="successes">
+        {{#times nbSuccesses}}<i class="fa-regular fa-sword" title="{{localize 'dune2d20.chat.nbSuccesses'}} : {{nbSuccesses}}"></i>{{/times}} 
+        / 
+        {{#times difficulty}}<i class="fa-regular fa-shield" title="{{localize 'dune2d20.chat.difficulty'}} : {{difficulty}}"></i>{{/times}}
+    </div>
     {{#if successfulTest}} 
         <div class="test-result">{{localize 'dune2d20.chat.successfulTest'}}</div>
         {{#if (gt momentum 0)}}

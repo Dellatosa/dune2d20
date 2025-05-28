@@ -1330,6 +1330,7 @@
   text-align: center;
   margin: 6px 0 3px 0;
   color: var(--color-normal-text);
+  font-weight: bold;
 }
 .chat-message .stats-val {
   display: grid;
