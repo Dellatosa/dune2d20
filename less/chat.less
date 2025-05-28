@@ -1,0 +1,129 @@
+.chat-message {
+    font-family: "Hoefler";
+
+    background-image: url("../images/ui/bg-chat.jpg");
+    background-size: cover;
+    background-clip: border-box;
+
+    .message-header {
+        font-size: 1.3em;
+        color: var(--color-normal-text);
+
+        .message-timestamp {
+            font-family: "Perpetua";
+        }
+    }
+
+    .stats-name {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: center;
+
+        margin: 6px 0 3px 0;
+
+        color: var(--color-normal-text);
+    }
+
+    .stats-val {
+        display: grid;
+        grid-template-columns: 1fr 50px 2fr 50px 1fr;
+        align-items: center;
+        text-align: center;
+
+        font-family: "Perpetua";
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--color-normal-text);
+
+        .left-bg {
+            background-image: url("../images/ui/chat-bg-stat.png");
+            background-size: 50px 50px;
+            height: 50px;
+
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+
+        .right-bg {
+            background-image: url("../images/ui/chat-bg-stat.png");
+            background-size: 50px 50px;
+            height: 50px;
+
+            grid-column-start: 4;
+            grid-row-start: 1;
+        }
+
+        .left-val {
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+
+        .right-val {
+            grid-column-start: 4;
+            grid-row-start: 1;
+        }
+    }
+
+    .focus {
+        font-size: 1.3em;
+        color: var(--color-normal-text);
+        text-align: center;
+    }
+
+    .dices-pool {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .dice-back {
+        display: flex;
+        justify-content: center;
+        margin: 3px;
+    
+        .roll {
+            width: 45px;
+            line-height: 45px;
+            margin: 3px;
+
+            font-family: "Perpetua";
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            
+        }
+    
+        .d20 {
+            background: url("../images/ui/d20-dune.svg") no-repeat;
+            color: var(--color-dice-normal);
+            background-size: 45px 45px;
+        }
+
+        .d20.determ {
+            background: url("../images/ui/d20-dune-determ.svg") no-repeat;
+            background-size: 45px 45px;
+            color: var(--color-dice-determ);
+        }
+
+        .d20.crit {
+            color: var(--color-dice-crit);
+        }
+
+        .d20.comp {
+            color: var(--color-dice-comp);
+        }
+    }
+
+    .successes {
+        text-align: center;
+
+        font-size: 1.3em;
+        color: var(--color-normal-text);
+    }
+
+    .test-result {
+        text-align: center;
+        //background-image: url("../images/ui/chat-deco2.png");
+        //height: 63px;
+    }
+}

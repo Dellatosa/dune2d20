@@ -1220,7 +1220,7 @@
   color: var(--color-normal-text);
 }
 .window-app.dialog .window-content {
-  background-image: url("../images/sheet/bg-dialog.jpg");
+  background-image: url("../images/ui/bg-dialog.jpg");
   background-size: cover;
   background-clip: border-box;
   font-family: "Hoefler";
@@ -1310,6 +1310,106 @@
 .window-app.dialog .window-content .dialog-button:hover {
   box-shadow: 0 0 5px var(--color-highlight);
 }
+.chat-message {
+  font-family: "Hoefler";
+  background-image: url("../images/ui/bg-chat.jpg");
+  background-size: cover;
+  background-clip: border-box;
+}
+.chat-message .message-header {
+  font-size: 1.3em;
+  color: var(--color-normal-text);
+}
+.chat-message .message-header .message-timestamp {
+  font-family: "Perpetua";
+}
+.chat-message .stats-name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  margin: 6px 0 3px 0;
+  color: var(--color-normal-text);
+}
+.chat-message .stats-val {
+  display: grid;
+  grid-template-columns: 1fr 50px 2fr 50px 1fr;
+  align-items: center;
+  text-align: center;
+  font-family: "Perpetua";
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-normal-text);
+}
+.chat-message .stats-val .left-bg {
+  background-image: url("../images/ui/chat-bg-stat.png");
+  background-size: 50px 50px;
+  height: 50px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.chat-message .stats-val .right-bg {
+  background-image: url("../images/ui/chat-bg-stat.png");
+  background-size: 50px 50px;
+  height: 50px;
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+.chat-message .stats-val .left-val {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.chat-message .stats-val .right-val {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+.chat-message .focus {
+  font-size: 1.3em;
+  color: var(--color-normal-text);
+  text-align: center;
+}
+.chat-message .dices-pool {
+  display: flex;
+  justify-content: center;
+}
+.chat-message .dice-back {
+  display: flex;
+  justify-content: center;
+  margin: 3px;
+}
+.chat-message .dice-back .roll {
+  width: 45px;
+  line-height: 45px;
+  margin: 3px;
+  font-family: "Perpetua";
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.chat-message .dice-back .d20 {
+  background: url("../images/ui/d20-dune.svg") no-repeat;
+  color: var(--color-dice-normal);
+  background-size: 45px 45px;
+}
+.chat-message .dice-back .d20.determ {
+  background: url("../images/ui/d20-dune-determ.svg") no-repeat;
+  background-size: 45px 45px;
+  color: var(--color-dice-determ);
+}
+.chat-message .dice-back .d20.crit {
+  color: var(--color-dice-crit);
+}
+.chat-message .dice-back .d20.comp {
+  color: var(--color-dice-comp);
+}
+.chat-message .successes {
+  text-align: center;
+  font-size: 1.3em;
+  color: var(--color-normal-text);
+}
+.chat-message .test-result {
+  text-align: center;
+}
 @font-face {
   font-family: "DuneRise";
   src: url("../fonts/Dune_Rise.ttf") format("truetype");
@@ -1336,6 +1436,10 @@
   --color-box-background: #88726440;
   --color-scrollbar: rgba(255, 166, 0, 0.836);
   --color-box-focus: #ffa600;
+  --color-dice-normal: #887264;
+  --color-dice-crit: #e66f14;
+  --color-dice-determ: rgba(0, 0, 0, 0.651);
+  --color-dice-comp: rgba(255, 0, 0, 0.7);
 }
 ::-webkit-scrollbar-thumb {
   outline: none;

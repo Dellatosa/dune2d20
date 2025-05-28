@@ -121,6 +121,16 @@
             "numberOfDices": "Number of dices",
             "focus": "Focus"
         },
+        "chat": {
+            "focus": "Focus",
+            "difficulty": "Difficulty",
+            "successes": "Successes",
+            "nbSuccesses": "Number of successes",
+            "successfulTest": "Successful !",
+            "failedTest": "Failed !",
+            "momentum": "Momentum",
+            "complication": "Complication !"
+        },
         "hint": {
             "lock": "Lock",
             "unlock": "Unlock",
@@ -144,7 +154,8 @@
             "editEnemy": "Edit Enemy"
         },
         "notification": {
-            "houseAlreadyExists" : "This character already serves a House !"
+            "houseAlreadyExists" : "This character already serves a House !",
+            "focusSkillMismatch": "Selected Focus does not match the Skill !"
         },
         "config": {
             "beneGesserit": "Bene Gesserit",

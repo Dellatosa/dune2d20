@@ -91,6 +91,16 @@
             "reason": "RAISON",
             "notes": "NOTES"
         },
+        "chat": {
+            "focus": "Spécialisation",
+            "difficulty": "Difficulté",
+            "nbSuccesses": "Nombre de succès",
+            "successes": "Succès",
+            "successfulTest": "Réussite !",
+            "failedTest": "Echec !",
+            "momentum": "Impulsion",
+            "complication": "Complication !"
+        },
         "dialog": {
             "confirmRemoval": "Confirmer la suppression",
             "removeTrait": "Trait à supprimer",
@@ -144,7 +154,8 @@
             "editEnemy": "Modifier l'Ennemi"
         },
         "notification": {
-            "houseAlreadyExists" : "Ce personnage sert déjà une Maison !"
+            "houseAlreadyExists" : "Ce personnage sert déjà une Maison !",
+            "focusSkillMismatch": "La Spécialisation sélectionnée ne correspond pas à la Compétence !"
         },
         "config": {
             "beneGesserit": "Bene Gesserit",

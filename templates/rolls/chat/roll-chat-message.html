@@ -1,0 +1,32 @@
+<div class="roll-message">
+    <div class="stats-name">
+        <div>{{driveName}}</div>
+        <div>{{skillName}}</div>
+    </div>
+    <div class="stats-val">
+        <div class="left-bg"> </div>
+        <div class="left-val">{{driveValue}}</div>
+        <div class="right-bg"> </div>
+        <div class="right-val bg">{{skillValue}}</div>
+    </div>
+    {{#if focus}}<div class="focus">{{localize 'dune2d20.chat.focus'}} : {{focus.name}}</div>{{/if}}
+    <div class="dices-pool">
+        {{#each dices as |dice|}}
+            <div class="dice-back">
+                <div class="roll d20 {{#if determination}}determ{{/if}} {{#if critSuccess}}crit{{/if}} {{#if complication}}comp{{/if}}">{{dice.result}}</div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="successes">{{localize 'dune2d20.chat.successes'}} : {{#times nbSuccesses}}<i class="fa-regular fa-sword"></i>{{/times}} / {{#times difficulty}}<i class="fa-regular fa-shield"></i>{{/times}}</div>
+    {{#if successfulTest}} 
+        <div class="test-result">{{localize 'dune2d20.chat.successfulTest'}}</div>
+        {{#if (gt momentum 0)}}
+        <div>{{localize 'dune2d20.chat.momentum'}} : {{momentum}}</div>
+        {{/if}}
+    {{else}} 
+        <div class="test-result">{{localize 'dune2d20.chat.failedTest'}}</div>
+    {{/if}}
+    {{#if complication}} 
+        <div>{{localize 'dune2d20.chat.complication'}}</div>
+    {{/if}}
+</div>
