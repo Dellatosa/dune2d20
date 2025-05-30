@@ -101,7 +101,7 @@
     },
     "House": {
       "homeworld": "",
-      "houseType": "",
+      "houseType": "none",
       "traits": [],
       "motto": "",
       "domains": [],

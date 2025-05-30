@@ -124,7 +124,7 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
             break;
         case "skill":
             template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog.html";
-            title = "dune2d20.dialog.driveSkill"
+            title = "dune2d20.dialog.skillRoll"
             break;
     }
     
