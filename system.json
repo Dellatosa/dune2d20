@@ -1,7 +1,7 @@
 {
   "id": "dune2d20",
   "title": "Dune 2D20: Adventures in the Imperium",
-  "version": "0.0.1b",
+  "version": "0.0.2",
   "authors": [
     {
       "name": "Dellatosa",
@@ -34,5 +34,5 @@
   ],
   "url": "https://github.com/Dellatosa/Dune2d20",
   "manifest": "https://raw.githubusercontent.com/Dellatosa/Dune2d20/main/system.json",
-  "download": "https://github.com/Dellatosa/Dune2d20/archive/refs/tags/v0.0.1b.zip"
+  "download": "https://github.com/Dellatosa/Dune2d20/archive/refs/tags/v0.0.2.zip"
 }
