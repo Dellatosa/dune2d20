@@ -129,7 +129,12 @@
             "successfulTest": "Successful",
             "failedTest": "Failed",
             "momentum": "Momentum",
-            "complication": "Complication !"
+            "complication": "Complication !",
+            "reroll": "Re-roll"
+        },
+        "app": {
+            "reroll": "Re-roll",
+            "rerollDices": "Re-roll dice(s)"
         },
         "hint": {
             "lock": "Lock",

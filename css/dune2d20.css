@@ -1316,6 +1316,9 @@
   background-size: cover;
   background-clip: border-box;
 }
+.chat-message a:hover {
+  text-shadow: 0 0 10px orange;
+}
 .chat-message .message-header {
   font-size: 1.3em;
   color: var(--color-normal-text);
@@ -1428,6 +1431,10 @@
   background-size: 272px 33px;
   height: 33px;
 }
+.chat-message .test-result .reroll {
+  margin-left: 10px;
+  font-size: 0.7em;
+}
 .chat-message .footer {
   display: flex;
   align-items: center;
@@ -1472,7 +1479,7 @@
   font-family: "Perpetua";
   font-size: 1.5em;
   font-weight: bold;
-  color: var(--color-darker-text);
+  color: var(--color-momentum-text);
   text-shadow: white 0 0 5px;
   border-radius: 10px;
   backdrop-filter: blur(3px);
@@ -1518,6 +1525,7 @@
   --color-placeholder-text: #88726480;
   --color-highlight-text: #bd6f34;
   --color-darker-text: #953c03;
+  --color-momentum-text: #632702;
   --color-box-border: #887264;
   --color-box-inset: #e7ddd6;
   --color-box-background: #88726440;
@@ -1550,4 +1558,81 @@
 }
 .paused img {
   content: url("../images/ui/pause.png");
+}
+.dune2d20.app.reroll .window-content {
+  background-image: url("../images/ui/bg-dialog.jpg");
+  background-size: cover;
+  background-clip: border-box;
+}
+.dune2d20.app.reroll a:hover {
+  text-shadow: 0 0 10px orange;
+}
+.dune2d20.app.reroll .title {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "DuneRise";
+  color: var(--color-normal-text);
+}
+.dune2d20.app.reroll .dices-pool {
+  display: flex;
+  justify-content: center;
+  margin: 3px;
+}
+.dune2d20.app.reroll .dice-back {
+  display: flex;
+  justify-content: center;
+  margin: 3px 0;
+}
+.dune2d20.app.reroll .dice-back .disabled {
+  width: 45px;
+  margin: 3px;
+  color: var(--color-placeholder-text);
+  text-align: center;
+  font-size: 1.5em;
+}
+.dune2d20.app.reroll .dice-back .check {
+  width: 45px;
+  margin: 3px;
+  color: var(--color-normal-text);
+  text-align: center;
+  font-size: 1.5em;
+}
+.dune2d20.app.reroll .dice-back .roll {
+  width: 45px;
+  line-height: 45px;
+  margin: 3px;
+  font-family: "Perpetua";
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.dune2d20.app.reroll .dice-back .d20 {
+  background: url("../images/ui/d20-dune.svg") no-repeat;
+  color: var(--color-dice-normal);
+  background-size: 45px 45px;
+}
+.dune2d20.app.reroll .dice-back .d20.crit {
+  color: var(--color-dice-crit);
+}
+.dune2d20.app.reroll .dice-back .d20.determ {
+  background: url("../images/ui/d20-dune-determ.svg") no-repeat;
+  background-size: 45px 45px;
+  color: var(--color-dice-determ);
+}
+.dune2d20.app.reroll .dice-back .d20.comp {
+  background: url("../images/ui/d20-dune-comp.svg") no-repeat;
+  background-size: 45px 45px;
+  color: var(--color-dice-comp);
+}
+.dune2d20.app.reroll .reroll-button {
+  font-family: "Hoefler";
+  color: var(--color-normal-text);
+  font-size: 1.1em;
+}
+.dune2d20.app.reroll .reroll-button:focus {
+  color: var(--color-focus-text);
+  box-shadow: 0 0 5px var(--color-highlight-text);
+}
+.dune2d20.app.reroll .reroll-button:hover {
+  box-shadow: 0 0 5px var(--color-highlight-text);
 }

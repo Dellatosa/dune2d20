@@ -1,0 +1,98 @@
+.dune2d20.app.reroll  {
+
+    .window-content {
+        background-image: url("../images/ui/bg-dialog.jpg");
+        background-size: cover;
+        background-clip: border-box;
+    }
+    
+    a:hover {
+        text-shadow: 0 0 10px orange;
+    }
+    
+    .title {
+        text-align: center; 
+        font-size: 1.5em;
+        font-family: "DuneRise";
+        color: var(--color-normal-text);
+    }
+
+    .dices-pool {
+        display: flex;
+        justify-content: center;
+
+        margin: 3px;
+    }
+    
+    .dice-back {
+        display: flex;
+        justify-content: center;
+        margin: 3px 0;
+    
+        .disabled {
+            width: 45px;
+            margin: 3px;
+            
+            color: var(--color-placeholder-text);
+            text-align: center; 
+            font-size: 1.5em;
+        }
+
+        .check {
+            width: 45px;
+            margin: 3px;
+
+            color: var(--color-normal-text);
+            text-align: center; 
+            font-size: 1.5em;
+        }
+
+        .roll {
+            width: 45px;
+            line-height: 45px;
+            margin: 3px;
+
+            font-family: "Perpetua";
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center; 
+        }
+    
+        .d20 {
+            background: url("../images/ui/d20-dune.svg") no-repeat;
+            color: var(--color-dice-normal);
+            background-size: 45px 45px;
+        }
+
+        .d20.crit {
+            color: var(--color-dice-crit);
+        }
+
+        .d20.determ {
+            background: url("../images/ui/d20-dune-determ.svg") no-repeat;
+            background-size: 45px 45px;
+            color: var(--color-dice-determ);
+        }
+
+        .d20.comp {
+            background: url("../images/ui/d20-dune-comp.svg") no-repeat;
+            background-size: 45px 45px;
+            color: var(--color-dice-comp);
+        }
+    }
+
+    .reroll-button {
+        font-family: "Hoefler";
+        color: var(--color-normal-text);
+        font-size: 1.1em;
+    }
+
+    .reroll-button:focus {
+        color: var(--color-focus-text);
+        box-shadow: 0 0 5px var(--color-highlight-text);
+    }
+
+    .reroll-button:hover {
+        box-shadow: 0 0 5px var(--color-highlight-text);
+    }
+}

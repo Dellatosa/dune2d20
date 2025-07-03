@@ -22,17 +22,30 @@
         {{#if (gt nbSuccesses 0)}}/{{/if}} 
         {{#times difficulty}}<i class="fa-regular fa-shield" title="{{localize 'dune2d20.chat.difficulty'}} : {{difficulty}}"></i>{{/times}}
     </div>
-    {{#if successfulTest}} 
-        <div class="test-result">{{localize 'dune2d20.chat.successfulTest'}}</div>
-    {{else}} 
-        <div class="test-result">{{localize 'dune2d20.chat.failedTest'}}</div>
-    {{/if}}
+    <div class="test-result">
+        {{#if successfulTest}}
+            {{localize 'dune2d20.chat.successfulTest'}}
+        {{else}}
+            {{localize 'dune2d20.chat.failedTest'}}
+        {{/if}}
+        {{#if canReroll}}
+            <a class="reroll" data-actor-id="{{actor.id}}"
+                {{#each dices as |dice|}}
+                    data-dice{{@index}}="{{dice.result}}" 
+                    data-dice{{@index}}-det="{{dice.determination}}" 
+                {{/each}}
+                data-drive-name="{{driveName}}" data-drive-value="{{driveValue}}"
+                data-skill-name="{{skillName}}" data-skill-value="{{skillValue}}"
+                data-difficulty="{{difficulty}}" data-focus="{{#if focus}}{{focus.name}}{{/if}}"
+                title="{{localize 'dune2d20.chat.reroll'}}"><i class="fa-solid fa-dice-d20"></i>
+            </a>
+        {{/if}}
+    </div>
     <div class="footer">
         {{#if (gt momentum 0)}}
             <div class="momentum-bg" title="{{localize 'dune2d20.chat.momentum'}} : + {{momentum}}"><div class="momentum">{{momentum}}</div></div>
         {{/if}}
         {{#if complication}} 
-            <!-- <div class="complication-bg"><div class="complication">{{localize 'dune2d20.chat.complication'}}</div></div> -->
              <div class="comp"><div class="comp-img">&nbsp;</div><div class="comp-text">{{localize 'dune2d20.chat.complication'}}</div></div>
         {{/if}}
     </div>

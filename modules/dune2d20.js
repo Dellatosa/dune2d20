@@ -3,6 +3,7 @@ import { registerSystemSettings } from "./config/settings.js";
 import registerHandlebarsHelpers from "./common/helpers.js"
 import DuneItem from "./duneItem.js";
 import DuneActor from "./duneActor.js";
+import * as Chat from "./chat.js";
 import DuneItemSheet from "./sheets/duneItemSheet.js";
 import DuneActorSheet from "./sheets/duneActorSheet.js";
 import DuneHouseSheet from "./sheets/duneHouseSheet.js";
@@ -52,6 +53,8 @@ Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
         }
     }
 });
+
+Hooks.on("renderChatLog", (app, html, data) => Chat.addChatListeners(html));
 
 async function preloadHandlebarsTemplates() {
     const templatePaths = [

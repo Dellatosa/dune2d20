@@ -99,7 +99,12 @@
             "successfulTest": "Reussite",
             "failedTest": "Echec",
             "momentum": "Impulsion",
-            "complication": "Complication !"
+            "complication": "Complication !",
+            "reroll": "Relance"
+        },
+        "app": {
+            "reroll": "Relance",
+            "rerollDices": "Relancer le(s) dé(s)"
         },
         "dialog": {
             "confirmRemoval": "Confirmer la suppression",

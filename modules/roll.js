@@ -7,6 +7,9 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         return null;
     }
 
+    // Can reroll
+    const canReroll = true;
+
     // Drive and Skill selection
     if(type == "drive") {
         skill = dialogOptions.skill;
@@ -40,8 +43,6 @@ export async function roll({type = null, actor = null, drive = null, skill= null
     if(useDetermination) {
         const greaterDiceValue = Math.max(...rollResult.dice[0].results.map(res => res.result));
         const index = rollResult.dice[0].results.findIndex(res => res.result == greaterDiceValue);
-
-        console.log(greaterDiceValue, index);
 
         rollResult.dice[0].results[index].count = 1;
         rollResult.dice[0].results[index].result = 1;
@@ -78,7 +79,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         actor: actor,
         skillName: game.i18n.localize(CONFIG.dune2d20.skills[skill]),
         skillValue: skillValue,
-        driveName:game.i18n.localize(CONFIG.dune2d20.drives[drive]),
+        driveName: game.i18n.localize(CONFIG.dune2d20.drives[drive]),
         driveValue: driveValue,
         focus: focus,
         difficulty: difficulty,
@@ -87,11 +88,12 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         successfulTest: successfulTest,
         momentum: momentum,
         complication: complication,
-        dices: rollResult.dice[0].results
+        dices: rollResult.dice[0].results,
+        canReroll: canReroll
     };
 
-    console.log(rollResult);
-    console.log(rollStats);
+    //console.log(rollStats.dices);
+    //console.log(rollStats);
 
     // Chat message
     const messageTemplate = "systems/dune2d20/templates/rolls/chat/roll-chat-message.html";
@@ -185,26 +187,80 @@ function _processRollOptions(form) {
     }
 }
 
-export async function rollSkill({actor = null, skill = null, focuses = null} = {}) {
-    // Roll Skill options
-    let dialogOptions = await getRollSkillOptions({cfgData: CONFIG.dune2d20, actor: actor, skill: skill});
+export async function reroll(actor, driveName, driveValue, skillName, skillValue, dicesSel, focus, difficulty) {  
+    // Can't reroll more than once
+    const canReroll = false;
 
-    // Cancel roll if 'Cancel' or 'Close' button used
-    if(dialogOptions.cancel) {
-        return null;
-    }
-}
+    // Focus
+    const intialFocus = focus != "" ? {name: focus} : null;
 
-function _processRollOptionstemplate(form) {
-    let chkDataOpt = false;
-    if(form.checkboxOptField) {
-        chkDataOpt = form.checkboxOptField.checked;
+    // Roll formula
+    const rerollPoolSize = dicesSel.filter(die => die.select == true).length;
+    let rollFormula = `${rerollPoolSize}d20cs<=${skillValue + driveValue}`;
+    let rollResult = await new Roll(rollFormula, null).roll({async: true});
+    
+    // Reconstruct roll result
+    let dicePoolResult = rollResult.dice[0].results.map((x) => x);
+    dicesSel.filter(die => die.select == false).reverse().forEach(die => {
+        console.log(die);
+        const success = die.result <= (skillValue + driveValue);
+        dicePoolResult.splice(0, 0, {active: true, count: success ? 1 : 0, result: die.result, success: success, determination: die.determination});
+    });
+
+    let complication = false;
+    dicePoolResult.forEach(res => {
+        if (focus != null && res.result <= skillValue) {
+            res.count += 1;
+            res.critSuccess = true;
+        }
+        else if (res.result == 1) {
+            res.count += 1;
+            res.critSuccess = true;
+        }
+
+        if(res.result >= 20) {
+            complication = true;
+            res.complication = true;
+        }
+    });
+
+    // Number of Successes
+    const initialValue = 0;
+    const nbSuccesses = dicePoolResult.reduce((accumulator, die) => accumulator + die.count, initialValue);
+
+    // Test passed
+    const successfulTest = nbSuccesses >= difficulty;
+
+    // Generated momentum
+    const momentum = nbSuccesses > difficulty ? nbSuccesses - difficulty : 0;
+
+    let rollStats = {
+        actor: actor,
+        skillName: skillName,
+        skillValue: skillValue,
+        driveName: driveName,
+        driveValue: driveValue,
+        focus: intialFocus,
+        difficulty: difficulty,
+        nbSuccesses: nbSuccesses, 
+        successfulTest: successfulTest,
+        momentum: momentum,
+        complication: complication,
+        dices: dicePoolResult,
+        canReroll: canReroll
+    };
+
+    // Chat message
+    const messageTemplate = "systems/dune2d20/templates/rolls/chat/roll-chat-message.html";
+
+    let chatData = {
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        roll: rollResult,
+        content: await renderTemplate(messageTemplate, rollStats),
+        sound: CONFIG.sounds.dice,
+        type: CONST.CHAT_MESSAGE_TYPES.ROLL
     }
 
-    return {
-        data1: form.field1.value,
-        intData1: parseInt(form.numField.value),
-        chkData1 : form.checkboxField1.checked,
-        chkDataOpt2: chkDataOpt
-    }
+    await ChatMessage.create(chatData);
 }
