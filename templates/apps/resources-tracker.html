@@ -1,0 +1,28 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="dune2d20-opacity-hover" id="resources-tracker">
+        {{#if isGM}}
+        <div id="resources-tracker-drag"></div>
+        {{/if}}
+        <div class="grid-title">
+            <div class="title">{{localize 'dune2d20.app.momentum'}}</div>
+            <div>&nbsp;</div>
+            <div class="title">{{localize 'dune2d20.app.threat'}}</div>
+        </div>
+        <div class="grid-tracker">
+            <div class="valeur momentum" id="momentum-val" data-valeur="{{momentumPool}}"><label>{{momentumPool}}</label></div>
+            <div>&nbsp;</div>
+            <div class="valeur threat" id="threat-val" data-valeur="{{threatPool}}"><label>{{threatPool}}</label></div>
+        </div>
+        <div class="grid-actions">
+            <a class="minus" data-pool="momentum" title=""><i class="fa-regular fa-hexagon-minus"></i></a>
+            <a class="reinit" data-pool="momentum" title=""><i class="fa-regular fa-hexagon-xmark"></i></a>
+            <a class="plus" data-pool="momentum" title=""><i class="fa-regular fa-hexagon-plus"></i></a>
+            <div>&nbsp;</div>
+            <a class="minus" data-pool="threat" title=""><i class="fa-regular fa-hexagon-minus"></i></a>
+            <a class="reinit" data-pool="threat" title=""><i class="fa-regular fa-hexagon-xmark"></i></a>
+            <a class="plus" data-pool="threat" title=""><i class="fa-regular fa-hexagon-plus"></i></a>
+        </div>
+        {{#if isGM}}
+        {{/if}}
+    </div>
+</form>

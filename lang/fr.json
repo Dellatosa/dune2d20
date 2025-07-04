@@ -104,7 +104,9 @@
         },
         "app": {
             "reroll": "Relance",
-            "rerollDices": "Relancer le(s) dé(s)"
+            "rerollDices": "Relancer le(s) dé(s)",
+            "momentum": "Impulsion",
+            "threat": "Menace"
         },
         "dialog": {
             "confirmRemoval": "Confirmer la suppression",
@@ -176,6 +178,10 @@
             "rival": "Rivalité",
             "loathing": "Haine",
             "kanly": "Kanly"
+        },
+        "setting": {
+            "momentumPool": "Jauge d'Impulsion",
+            "threatPool": "Jauge de Menace"
         }
     }
 }

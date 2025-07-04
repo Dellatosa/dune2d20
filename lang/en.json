@@ -134,7 +134,9 @@
         },
         "app": {
             "reroll": "Re-roll",
-            "rerollDices": "Re-roll dice(s)"
+            "rerollDices": "Re-roll dice(s)",
+            "momentum": "Momentum",
+            "threat": "Threat"
         },
         "hint": {
             "lock": "Lock",
@@ -176,6 +178,10 @@
             "rival": "Rival",
             "loathing": "Loathing",
             "kanly": "Kanly"
+        },
+        "setting": {
+            "momentumPool": "Momentum Pool",
+            "threatPool": "Threat Pool"
         }
     }
 }

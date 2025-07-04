@@ -51,3 +51,5 @@ dune2d20.itemDefIcon = {
     Enemy: "systems/dune2d20/images/sheet/combat-dune-dark.svg",
     Focus: "systems/dune2d20/images/sheet/item-icon-1.png",
 }
+
+dune2d20.resourcesTrackerPos = {xPos: "840px", yPos: "3px"};

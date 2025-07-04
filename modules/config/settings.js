@@ -2,13 +2,23 @@
 
 export const registerSystemSettings = function() {
     
-    // Suggestions des échecs ctitiques envoyées à l'EG
-    game.settings.register("dune2d20","xxx", {
-        config: true,
+    game.settings.register("dune2d20","momentumPool", {
+        config: false,
         scope: "world",
-        name: "parameters.xxx.name",
-        hint: "parameters.xx.label",
-        type: Boolean,
-        default: true
+        name: "duned20.setting.momentumPool",
+        hint: "",
+        type: Object,
+        default: {max: 6, value: 0},
+        onChange: value => { game.dune2d20.DuneResourcesTracker.refresh(); }
+    });
+
+    game.settings.register("dune2d20","threatPool", {
+        config: false,
+        scope: "world",
+        name: "duned20.setting.threatPool",
+        hint: "",
+        type: Number,
+        default: 0,
+        onChange: value => { game.dune2d20.DuneResourcesTracker.refresh(); }
     });
 }
