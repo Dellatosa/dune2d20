@@ -17,8 +17,8 @@ export const registerSystemSettings = function() {
         scope: "world",
         name: "duned20.setting.threatPool",
         hint: "",
-        type: Number,
-        default: 0,
+        type: Object,
+        default: {max: 99, value: 0},
         onChange: value => { game.dune2d20.DuneResourcesTracker.refresh(); }
     });
 }

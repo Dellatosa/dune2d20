@@ -19,19 +19,7 @@ export class DuneResourcesTracker extends Application {
 		data.isGM = game.user.isGM;
 
 		data.momentumPool = game.settings.get("dune2d20", "momentumPool").value;
-		data.threatPool = game.settings.get("dune2d20", "threatPool");
-		/*let actors = game.actors.filter(function (actor) { return actor.type == "pj"});
-
-		let pointsDramePJ = 0;
-		actors.forEach(actor => {
-			if(actor.system.pointsDrame) {
-				pointsDramePJ += actor.system.pointsDrame;
-			}
-		});
-
-		let DefTailleReserve = game.settings.get("wallow-wide", "tailleReservePointsDrame");
-		data.reservePointsDrame = Math.max(DefTailleReserve - pointsDramePJ, 0);
-        */
+		data.threatPool = game.settings.get("dune2d20", "threatPool").value;
 
 		return data;
 	}
@@ -39,9 +27,10 @@ export class DuneResourcesTracker extends Application {
 	activateListeners(html) {
 		super.activateListeners(html);
 		
-		//new ContextMenu(html, ".lst-persos-in", this.getPersosInContextMenu());
-		//new ContextMenu(html, ".lst-persos-out", this.getPersosOutContextMenu());
-		html.find(".tracker-reinit").click(this._onTrackerReinit.bind(this));	
+		html.find(".plus").click(this._onTrackerPlus.bind(this));
+		html.find(".minus").click(this._onTrackerMinus.bind(this));
+		html.find(".reinit").click(this._onTrackerReinit.bind(this));
+
 		html.find("#resources-tracker-drag").contextmenu(this._onRightClick.bind(this));
 
 		// Set position
@@ -58,19 +47,36 @@ export class DuneResourcesTracker extends Application {
 		this.render(true);
 	}
 
-	getNbPointsReserve() {
-		//let element = document.getElementById("tracker-val");
-		//return element.dataset.valeur;
+	_onTrackerPlus(event) {
+		event.preventDefault();
+
+ 		const poolName = event.currentTarget.dataset.pool.concat("Pool");
+
+		const pool = game.settings.get("dune2d20", poolName);
+		if (pool.value < pool.max) {
+			game.settings.set("dune2d20", poolName, {max: pool.max, value: pool.value + 1});
+		}
+		
+	}
+
+	_onTrackerMinus(event) {
+		event.preventDefault();
+
+ 		const poolName = event.currentTarget.dataset.pool.concat("Pool");
+
+		const pool = game.settings.get("dune2d20", poolName);
+		if (pool.value > 0) {
+			game.settings.set("dune2d20", poolName, {max: pool.max, value: pool.value - 1});
+		}
 	}
 
 	_onTrackerReinit(event) {
-		event.preventDefault();		
+		event.preventDefault();
 
-		/*let actors = game.actors.filter(function (actor) { return actor.type == "pj"});
+ 		const poolName = event.currentTarget.dataset.pool.concat("Pool");
 
-		actors.forEach(actor => {
-			actor.reinitPointDrame();
-		});*/
+		const pool = game.settings.get("dune2d20", poolName);
+		game.settings.set("dune2d20", poolName, {max: pool.max, value: 0});
 	}
 
 	_onRightClick(event) {
@@ -79,59 +85,6 @@ export class DuneResourcesTracker extends Application {
 		tracker.style.left = original.xPos;
 		tracker.style.bottom = original.yPos;
 		game.user.setFlag("dune2d20", "resourcesTrackerPos", original);
-	}
-
-	getPersosInContextMenu() {
-		/*let persosContextMenu = [];
-
-		let actors = game.actors.filter(function (actor) { return actor.type == "pj"});
-		actors.forEach(actor => {
-			if(actor.system.pointsDrame >= 1) {
-				let actorEntry = {
-					name: actor.name,
-					icon: '<i class="fa-solid fa-hat-cowboy"></i>',
-					callback: e => {
-						actor.restituerPointDrame();
-					}
-				}
-				persosContextMenu.push(actorEntry);
-			}
-		});
-
-		return persosContextMenu;
-		*/
-	}
-	
-	getPersosOutContextMenu() {
-		/*let persosContextMenu = [];
-
-		let actors = game.actors.filter(function (actor) { return actor.type == "pj"});
-
-		let pointsDramePJ = 0;
-		actors.forEach(actor => {
-			if(actor.system.pointsDrame) {
-				pointsDramePJ += actor.system.pointsDrame;
-			}
-		});
-
-		let DefTailleReserve = game.settings.get("dune2d20", "tailleReservePointsDrame");
-		let reservePointsDrame = Math.max(DefTailleReserve - pointsDramePJ, 0);
-
-		actors.forEach(actor => {
-			if(actor.system.pointsDrame <= 1 && reservePointsDrame > 0) {
-				let actorEntry = {
-					name: actor.name,
-					icon: '<i class="fa-solid fa-hat-cowboy"></i>',
-					callback: e => {
-						actor.utiliserPointDrame();
-					}
-				}
-				persosContextMenu.push(actorEntry);
-			}
-		});
-
-		return persosContextMenu;
-		*/
 	}
 
 	_dragElement(elmnt) {
