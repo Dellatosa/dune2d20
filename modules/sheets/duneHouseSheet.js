@@ -1,8 +1,8 @@
-export default class DuneHouseSheet extends ActorSheet {
+export default class DuneHouseSheet extends foundry.appv1.sheets.ActorSheet {
      
     static get defaultOptions() {
 
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             width: 748,
             height: 999,
             classes: ["dune2d20", "sheet", "house"],

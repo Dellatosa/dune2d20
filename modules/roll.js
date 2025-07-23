@@ -1,6 +1,15 @@
 export async function roll({type = null, actor = null, drive = null, skill= null, focuses = null} = {}) {
     // Roll Drive options
-    let dialogOptions = await getRollOptions({cfgData: CONFIG.dune2d20, type: type, actor: actor, drive: drive, skill: skill, focuses: focuses});
+    let focusesList = focuses.length > 0 ? [{id: "none", name: "", nameWithSkl: ""}] : null;
+
+    focuses.forEach(foc => {
+        const skill = game.i18n.localize(CONFIG.dune2d20.skills[foc.system.skill]);
+        let result = foc.name.concat(" (");
+        if (skill.length > 3) { result = result.concat(skill.slice(0, 3), ")") };
+        focusesList.push({id: foc._id, name: foc.name, nameWithSkl: result});
+    });
+
+    let dialogOptions = await getRollOptions({cfgData: CONFIG.dune2d20, type: type, actor: actor, drive: drive, skill: skill, focuses: focusesList});
 
     // Cancel roll if 'Cancel' or 'Close' button used
     if(dialogOptions.cancel) {
@@ -21,7 +30,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
     let driveValue = actor.system.drives[drive].value;
 
     // Focus
-    let focus = dialogOptions.focusNum != null && dialogOptions.focusNum != "none" ? focuses[dialogOptions.focusNum] : null;
+    let focus = dialogOptions.focusId != null && dialogOptions.focusId != "none" ? actor.items.get(dialogOptions.focusId) : null;
     if(focus != null && focus.system.skill != skill) {
         focus = null;
         ui.notifications.warn(game.i18n.localize("dune2d20.notification.focusSkillMismatch"));
@@ -37,7 +46,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
 
     // Roll formula
     let rollFormula = `${dicePoolSize}d20cs<=${skillValue + driveValue}`;
-    let rollResult = await new Roll(rollFormula, null).roll({async: true});
+    let rollResult = await new Roll(rollFormula, null).evaluate(); //.roll({async: true});
 
     // Change greater dice value to 1 if determination used
     if(useDetermination) {
@@ -92,9 +101,6 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         canReroll: canReroll
     };
 
-    //console.log(rollStats.dices);
-    //console.log(rollStats);
-
     // Chat message
     const messageTemplate = "systems/dune2d20/templates/rolls/chat/roll-chat-message.html";
 
@@ -102,9 +108,8 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: actor }),
         roll: rollResult,
-        content: await renderTemplate(messageTemplate, rollStats),
-        sound: CONFIG.sounds.dice,
-        type: CONST.CHAT_MESSAGE_TYPES.ROLL
+        content: await foundry.applications.handlebars.renderTemplate(messageTemplate, rollStats),
+        sound: CONFIG.sounds.dice
     }
 
     await ChatMessage.create(chatData);
@@ -130,7 +135,7 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
             break;
     }
     
-    const html = await renderTemplate(template, {data: cfgData, actor: actor, drive: drive, skill: skill, focuses: focuses, difficulty: difficulty, nbDice: nbDice, useDetermination: false});
+    const html = await foundry.applications.handlebars.renderTemplate(template, {data: cfgData, actor: actor, drive: drive, skill: skill, focuses: focuses, difficulty: difficulty, nbDice: nbDice, useDetermination: false});
 
     return new Promise( resolve => {
         const data = {
@@ -180,7 +185,7 @@ function _processRollOptions(form) {
     return {
         drive: drive,
         skill: skill,
-        focusNum: focus,
+        focusId: focus,
         difficulty: parseInt(form.difficulty.value),
         useDetermination : useDetermination,
         dicePoolSize: parseInt(form.dicePoolSize.value)
@@ -209,7 +214,7 @@ export async function reroll(actor, driveName, driveValue, skillName, skillValue
 
     let complication = false;
     dicePoolResult.forEach(res => {
-        if (focus != null && res.result <= skillValue) {
+        if (intialFocus != null && res.result <= skillValue) {
             res.count += 1;
             res.critSuccess = true;
         }
@@ -257,7 +262,7 @@ export async function reroll(actor, driveName, driveValue, skillName, skillValue
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: actor }),
         roll: rollResult,
-        content: await renderTemplate(messageTemplate, rollStats),
+        content: await foundry.applications.handlebars.renderTemplate(messageTemplate, rollStats),
         sound: CONFIG.sounds.dice,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
     }

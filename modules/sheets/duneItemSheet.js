@@ -1,8 +1,8 @@
-export default class DuneItemSheet extends ItemSheet {
+export default class DuneItemSheet extends foundry.appv1.sheets.ItemSheet {
      
     static get defaultOptions() {
 
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             width: 738,
             height: 'auto', //425,
             classes: ["dune2d20", "sheet", "item"] /*,

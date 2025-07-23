@@ -1,10 +1,10 @@
 import * as Roll from "../roll.js";
 
-export default class DuneActorSheet extends ActorSheet {
+export default class DuneActorSheet extends foundry.appv1.sheets.ActorSheet {
      
     static get defaultOptions() {
 
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             width: 748,
             height: 999,
             classes: ["dune2d20", "sheet", "actor"],
@@ -161,7 +161,7 @@ export default class DuneActorSheet extends ActorSheet {
             type: "drive", 
             actor: this.actor, 
             drive: dataset.drive, 
-            focuses: this.getData().focuses 
+            focuses: this.getData().focuses
         });
     }
 

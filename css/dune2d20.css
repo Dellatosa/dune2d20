@@ -1644,9 +1644,9 @@
 .dune2d20.app.reroll .reroll-button:hover {
   box-shadow: 0 0 5px var(--color-highlight-text);
 }
-/*******************************/
-/**       Drame Tracker        **/
-/*******************************/
+/************************************/
+/**       Resources Tracker        **/
+/************************************/
 #resources-tracker-drag {
   width: 100%;
   height: 10px;
@@ -1654,10 +1654,6 @@
 }
 #resources-tracker-drag:hover {
   cursor: move;
-}
-.flexcol {
-  display: flex;
-  flex-direction: column;
 }
 #resources-tracker {
   position: absolute;

@@ -9,7 +9,7 @@ export default class DuneRerollFormApplication extends FormApplication {
     }
   
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
         classes: ['dune2d20','app','reroll'],
         popOut: true,
         template: "systems/dune2d20/templates/apps/reroll-app.html",

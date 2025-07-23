@@ -3,25 +3,14 @@
     <div class="opt-select">
         <div>{{localize 'dune2d20.dialog.skill'}}</div>
         <select name="skill">
-            {{#select skill}}
-                {{#each data.skills as |name key|}}
-                    {{#unless (eq key "none")}}
-                        <option value="{{key}}">{{localize name}}</option>
-                    {{/unless}}
-                {{/each}}
-            {{/select}}
+            {{selectOptions data.skillsMdt selected=value localize=true}}
         </select>
     </div>
     {{#if focuses}}
         <div class="opt-select">
             <div>{{localize 'dune2d20.dialog.focus'}}</div>
             <select name="focus">
-                <option value="none"> </option>
-                {{#select focus}}
-                    {{#each focuses as |focus key|}}
-                        <option value="{{key}}">{{localize name}} ({{configLocalize "skills" focus.system.skill 3}})</option>
-                    {{/each}}
-                {{/select}}
+                {{selectOptions focuses selected=value valueAttr="id" labelAttr="nameWithSkl"}}
             </select>
         </div>
     {{/if}}

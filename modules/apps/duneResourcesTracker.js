@@ -5,7 +5,7 @@ export class DuneResourcesTracker extends Application {
 	}
 
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["dune2d20", "app", "tracker"]
         });
     }
