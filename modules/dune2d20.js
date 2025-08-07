@@ -4,9 +4,11 @@ import registerHandlebarsHelpers from "./common/helpers.js"
 import DuneItem from "./duneItem.js";
 import DuneActor from "./duneActor.js";
 import { DuneResourcesTracker } from "./apps/duneResourcesTracker.js";
+import { DuneResourcesTrackerV2 } from "./apps/duneResourcesTrackerV2.js";
 import * as Chat from "./chat.js";
 import DuneItemSheet from "./sheets/duneItemSheet.js";
 import DuneActorSheet from "./sheets/duneActorSheet.js";
+import DuneActorSheetV2 from "./sheets/duneActorSheetV2.js";
 import DuneHouseSheet from "./sheets/duneHouseSheet.js";
 
 Hooks.once("init", function(){
@@ -15,16 +17,19 @@ Hooks.once("init", function(){
     game.dune2d20 = {
         DuneActor,
         DuneItem,
-        DuneResourcesTracker
+        DuneResourcesTracker,
+        DuneResourcesTrackerV2
     };
-
     
+    game.dune2d20.DuneResourcesTrackerV2 = new DuneResourcesTrackerV2();
+
+    /*
     game.dune2d20.DuneResourcesTracker = new DuneResourcesTracker({
         popOut: false,
         minimizable: false,
         resizable: false
     });
-    
+    */
     
     //CONFIG.debug.hooks = true;
 
@@ -33,7 +38,9 @@ Hooks.once("init", function(){
     CONFIG.Actor.documentClass = DuneActor;
 
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true});
+    //foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true});
+    // The the `config` object in the fourth argument is entirely optional, as are its properties
+    DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.MyDocumentSheet.Label", types: ["PC", "SC", "NPC"], makeDefault: true});
     foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"], makeDefault: true});
 
     foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
@@ -71,11 +78,17 @@ Hooks.on("renderChatMessageHTML", (message, html, context) => Chat.addChatMessag
 async function preloadHandlebarsTemplates() {
     const templatePaths = [
         "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-background-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
@@ -99,10 +112,18 @@ Hooks.once("ready", async function() {
     
     // Tracker Handling
     console.log(game);
+
+    //Tracker v1
     // Identify if User already has ageTrackerPos flag set
+    const useTracker = false;
     const userTrackerFlag = await game.user.getFlag("dune2d20", "resourcesTrackerPos");
-    const useTracker = true;
     if (!userTrackerFlag) await game.user.setFlag("dune2d20", "resourcesTrackerPos", dune2d20.resourcesTrackerPos);
     if (useTracker) game.dune2d20.DuneResourcesTracker.refresh();
     
+    //Tracker v2
+    // Identify if User already has ageTrackerV2Pos flag set
+    const useTrackerV2 = true;
+    const userTrackerV2Flag = await game.user.getFlag("dune2d20", "resourcesTrackerV2Pos");
+    if (!userTrackerV2Flag) await game.user.setFlag("dune2d20", "resourcesTrackerV2Pos", dune2d20.resourcesTrackerV2Pos);
+    if (useTrackerV2) game.dune2d20.DuneResourcesTrackerV2.refresh(userTrackerV2Flag);
 });

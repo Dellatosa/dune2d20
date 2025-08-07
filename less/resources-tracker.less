@@ -2,12 +2,29 @@
 /**       Resources Tracker        **/
 /************************************/
 
+#resources-tracker-window {
+
+    button.fa-xmark {
+        visibility: hidden;
+    }
+
+    .window-title {
+        font-size: 1.2em;
+        border: none;
+        margin: 0;
+    }
+
+    .window-content {
+        padding: 2px;
+    }
+}
 
 #resources-tracker-drag {
     width: 100%;
     height: 10px;
     border-radius: 5px;
 }
+
 #resources-tracker-drag:hover {
     cursor: move;
 }
@@ -25,6 +42,7 @@
     box-shadow: inset 0 0 5px var(--color-box-border); //var(--color-box-inset);
 
     .grid-title {
+        margin-top: 10px;
         display: grid;
         grid-template-columns: 92px 88px 92px;
 

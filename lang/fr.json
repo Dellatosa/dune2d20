@@ -106,7 +106,8 @@
             "reroll": "Relance",
             "rerollDices": "Relancer le(s) dé(s)",
             "momentum": "Impulsion",
-            "threat": "Menace"
+            "threat": "Menace",
+            "trackerTitle": "Impulsion / Menace"
         },
         "dialog": {
             "confirmRemoval": "Confirmer la suppression",

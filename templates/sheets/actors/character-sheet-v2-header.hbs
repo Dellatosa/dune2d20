@@ -1,0 +1,24 @@
+<header class="sheet-header">
+    <div class="top-title">D U N E</div>
+    <img class="" src="{{img}}" title="{{name}}" data-edit="img"/>
+    <div class="background">
+        {{#if unlocked}}
+            {{> "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs" }}
+        {{else}}
+            {{> "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs" }}
+        {{/if}}
+    </div>
+    {{#if unlocked}}
+        <div class="padlock">
+            <a class="sheet-change-lock" title="{{localize 'dune2d20.hint.lock'}}">
+                <i class="fa-solid fa-unlock"></i>
+            </a>
+        </div>
+    {{else}}
+        <div class="padlock">
+            <a class="sheet-change-lock" title="{{localize 'dune2d20.hint.unlock'}}">
+                <i class="fa-solid fa-lock"></i>
+            </a>
+        </div>
+    {{/if}}
+</header>

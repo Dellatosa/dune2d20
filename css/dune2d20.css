@@ -1647,6 +1647,17 @@
 /************************************/
 /**       Resources Tracker        **/
 /************************************/
+#resources-tracker-window button.fa-xmark {
+  visibility: hidden;
+}
+#resources-tracker-window .window-title {
+  font-size: 1.2em;
+  border: none;
+  margin: 0;
+}
+#resources-tracker-window .window-content {
+  padding: 2px;
+}
 #resources-tracker-drag {
   width: 100%;
   height: 10px;
@@ -1666,6 +1677,7 @@
   box-shadow: inset 0 0 5px var(--color-box-border);
 }
 #resources-tracker .grid-title {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 92px 88px 92px;
   text-align: center;

@@ -69,3 +69,5 @@ dune2d20.itemDefIcon = {
 }
 
 dune2d20.resourcesTrackerPos = {xPos: "840px", yPos: "3px"};
+
+dune2d20.resourcesTrackerV2Pos = {left: 215, top: 819, height:180, width: 282, scale:1, zIndex: 101};

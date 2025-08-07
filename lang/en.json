@@ -136,7 +136,8 @@
             "reroll": "Re-roll",
             "rerollDices": "Re-roll dice(s)",
             "momentum": "Momentum",
-            "threat": "Threat"
+            "threat": "Threat",
+            "trackerTitle": "Momentum / Threat"
         },
         "hint": {
             "lock": "Lock",
