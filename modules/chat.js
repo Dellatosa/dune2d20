@@ -18,7 +18,7 @@ export function addChatMessageListeners(html) {
 }
 
 async function onReroll(event) {
-    console.log(event);
+    //console.log(event);
 
     const dataset = event.currentTarget.dataset;
     const actor = game.actors.get(dataset.actorId);

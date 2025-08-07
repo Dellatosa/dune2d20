@@ -202,12 +202,12 @@ export async function reroll(actor, driveName, driveValue, skillName, skillValue
     // Roll formula
     const rerollPoolSize = dicesSel.filter(die => die.select == true).length;
     let rollFormula = `${rerollPoolSize}d20cs<=${skillValue + driveValue}`;
-    let rollResult = await new Roll(rollFormula, null).roll({async: true});
+    let rollResult = await new Roll(rollFormula, null).evaluate(); //.roll({async: true});
     
     // Reconstruct roll result
     let dicePoolResult = rollResult.dice[0].results.map((x) => x);
     dicesSel.filter(die => die.select == false).reverse().forEach(die => {
-        console.log(die);
+        //console.log(die);
         const success = die.result <= (skillValue + driveValue);
         dicePoolResult.splice(0, 0, {active: true, count: success ? 1 : 0, result: die.result, success: success, determination: die.determination});
     });
@@ -263,8 +263,7 @@ export async function reroll(actor, driveName, driveValue, skillName, skillValue
         speaker: ChatMessage.getSpeaker({ actor: actor }),
         roll: rollResult,
         content: await foundry.applications.handlebars.renderTemplate(messageTemplate, rollStats),
-        sound: CONFIG.sounds.dice,
-        type: CONST.CHAT_MESSAGE_TYPES.ROLL
+        sound: CONFIG.sounds.dice
     }
 
     await ChatMessage.create(chatData);

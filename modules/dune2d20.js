@@ -38,9 +38,8 @@ Hooks.once("init", function(){
     CONFIG.Actor.documentClass = DuneActor;
 
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-    //foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true});
-    // The the `config` object in the fourth argument is entirely optional, as are its properties
-    DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.MyDocumentSheet.Label", types: ["PC", "SC", "NPC"], makeDefault: true});
+    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true});
+    //DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.MyDocumentSheet.Label", types: ["PC", "SC", "NPC"], makeDefault: true});
     foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"], makeDefault: true});
 
     foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
@@ -111,14 +110,14 @@ async function preloadHandlebarsTemplates() {
 Hooks.once("ready", async function() {
     
     // Tracker Handling
-    console.log(game);
+    //console.log(game);
 
-    //Tracker v1
+    /* //Tracker v1
     // Identify if User already has ageTrackerPos flag set
     const useTracker = false;
     const userTrackerFlag = await game.user.getFlag("dune2d20", "resourcesTrackerPos");
     if (!userTrackerFlag) await game.user.setFlag("dune2d20", "resourcesTrackerPos", dune2d20.resourcesTrackerPos);
-    if (useTracker) game.dune2d20.DuneResourcesTracker.refresh();
+    if (useTracker) game.dune2d20.DuneResourcesTracker.refresh(); */
     
     //Tracker v2
     // Identify if User already has ageTrackerV2Pos flag set
