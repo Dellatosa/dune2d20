@@ -13,12 +13,8 @@ export function addChatListeners(html) {
 */
 
 export function addChatMessageListeners(html) {
-    //console.log("dune2d20 - CHAT MESSAGE HTML");
     const query = html.querySelector('a.reroll');
-    if(query) {
-        query.addEventListener('click', onReroll);
-    }
-    
+    if(query) { query.addEventListener('click', onReroll); }
 }
 
 async function onReroll(event) {

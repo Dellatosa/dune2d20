@@ -9,7 +9,7 @@ export const registerSystemSettings = function() {
         hint: "",
         type: Object,
         default: {max: 6, value: 0},
-        onChange: value => { game.dune2d20.DuneResourcesTracker.refresh(); }
+        onChange: value => { game.dune2d20.DuneResourcesTrackerV2.refresh(null); }
     });
 
     game.settings.register("dune2d20","threatPool", {
@@ -19,6 +19,6 @@ export const registerSystemSettings = function() {
         hint: "",
         type: Object,
         default: {max: 99, value: 0},
-        onChange: value => { game.dune2d20.DuneResourcesTracker.refresh(); }
+        onChange: value => { game.dune2d20.DuneResourcesTrackerV2.refresh(null); }
     });
 }

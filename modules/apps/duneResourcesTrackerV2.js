@@ -40,9 +40,11 @@ export class DuneResourcesTrackerV2 extends HandlebarsApplicationMixin(Applicati
 	}
 	
 	refresh(position) {
-		console.log(position);
+		//console.log(position);
 		this.render(true);
-		this.setPosition({left: position.left, top: position.top});
+		if(position != null) {
+			this.setPosition({left: position.left, top: position.top});
+		}
 	}
 
 	static plusHandler(event, target) {
