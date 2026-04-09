@@ -39,12 +39,14 @@ export default class DuneActor extends Actor {
             if(this.system.skills.understand.value < this.system.skills.understand.min) this.system.skills.understand.value = this.system.skills.understand.min;
             if(this.system.skills.understand.value > this.system.skills.understand.max) this.system.skills.understand.value = this.system.skills.understand.max;
 
-            // ADVANCEMENT
-            if(this.system.resources.advancementPoints.value < this.system.resources.advancementPoints.min) this.system.resources.advancementPoints.value = this.system.resources.advancementPoints.min;
+            if(this.type == "PC") {
+                // ADVANCEMENT
+                if(this.system.resources.advancementPoints.value < this.system.resources.advancementPoints.min) this.system.resources.advancementPoints.value = this.system.resources.advancementPoints.min;
 
-            // DETERMINATION
-            if(this.system.resources.determination.value < this.system.resources.determination.min) this.system.resources.determination.value = this.system.resources.determination.min;
-            if(this.system.resources.determination.value > this.system.resources.determination.max) this.system.resources.determination.value = this.system.resources.determination.max;
+                // DETERMINATION
+                if(this.system.resources.determination.value < this.system.resources.determination.min) this.system.resources.determination.value = this.system.resources.determination.min;
+                if(this.system.resources.determination.value > this.system.resources.determination.max) this.system.resources.determination.value = this.system.resources.determination.max;
+            }
         }
         
     }

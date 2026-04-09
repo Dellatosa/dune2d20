@@ -13,21 +13,13 @@
                 <div class="stat">{{ localize 'dune2d20.item.houseType' }}</div>
                 <div class="full-col">                    
                     <select name="system.houseType">
-                        {{#select data.system.houseType}}
-                            {{#each config.houseType as |name type|}}
-                                <option value="{{type}}">{{localize name}}</option>
-                            {{/each}}
-                        {{/select}} 
+                        {{selectOptions config.houseType selected=data.system.houseType localize=true}}
                     </select>
                 </div>
                 <div class="stat">{{ localize 'dune2d20.item.hatred' }}</div>
                 <div class="full-col">                    
-                    <select name="system.hatred">
-                        {{#select data.system.hatred}}
-                            {{#each config.hatred as |name level|}}
-                                <option value="{{level}}">{{localize name}}</option>
-                            {{/each}}
-                        {{/select}} 
+                    <select name="system.hatred"> 
+                        {{selectOptions config.hatred selected=data.system.hatred localize=true}}
                     </select>
                 </div>
             </div>

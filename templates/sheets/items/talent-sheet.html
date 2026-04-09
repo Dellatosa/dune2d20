@@ -17,11 +17,7 @@
                 {{#if data.system.linkToFaction}}
                     <div class="full-col">                    
                         <select name="system.faction">
-                            {{#select data.system.faction}}
-                                {{#each config.factions as |name faction|}}
-                                    <option value="{{faction}}">{{localize name}}</option>
-                                {{/each}}
-                            {{/select}} 
+                            {{selectOptions config.factions selected=data.system.faction localize=true}}
                         </select>
                     </div>
                 {{/if}}
@@ -32,11 +28,7 @@
                 {{#if data.system.linkToSkill}}
                     <div class="full-col">
                         <select name="system.skill">
-                            {{#select data.system.skill}}
-                                {{#each config.skills as |name skill|}}
-                                    <option value="{{skill}}">{{localize name}}</option>
-                                {{/each}}
-                            {{/select}} 
+                            {{selectOptions config.skills selected=data.system.skill localize=true}}
                         </select>
                     </div>
                 {{/if}}
@@ -47,11 +39,7 @@
                 {{#if data.system.linkToDrive}}
                     <div class="full-col">
                         <select name="system.drive">
-                            {{#select data.system.drive}}
-                                {{#each config.drives as |name drive|}}
-                                    <option value="{{drive}}">{{localize name}}</option>
-                                {{/each}}
-                            {{/select}} 
+                            {{selectOptions config.drives selected=data.system.drive localize=true}}
                         </select>
                     </div>
                 {{/if}}

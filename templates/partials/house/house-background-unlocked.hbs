@@ -10,11 +10,7 @@
 <div class="bg-start"></div>
 <div class="bg-data">
     <select name="system.houseType">
-        {{#select data.system.houseType}}
-            {{#each config.houseType as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}} 
+        {{selectOptions config.houseType selected=data.system.houseType localize=true}}
     </select>
 </div>
 <div class="bg-end"></div>

@@ -13,11 +13,7 @@
                 <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
                 <div class="full-col">
                     <select name="system.skill">
-                        {{#select data.system.skill}}
-                            {{#each config.skills as |name skill|}}
-                                <option value="{{skill}}">{{localize name}}</option>
-                            {{/each}}
-                        {{/select}} 
+                        {{selectOptions config.skills selected=data.system.skill localize=true}}
                     </select>
                 </div>
             </div>
