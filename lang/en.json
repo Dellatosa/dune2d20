@@ -184,5 +184,8 @@
             "momentumPool": "Momentum Pool",
             "threatPool": "Threat Pool"
         }
+        ,"DuneActorSheetV2": {
+            "label": "Character sheet V2"
+        }
     }
 }

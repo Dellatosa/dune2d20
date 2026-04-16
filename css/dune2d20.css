@@ -127,7 +127,6 @@
 }
 .dune2d20.sheet.actor .statistics .stats-grid .val {
   font-family: "Perpetua";
-  text-align: center;
   font-size: 1.25em;
   background-image: url("../images/sheet/drive-box.png");
 }
@@ -136,6 +135,7 @@
   border: none;
   background: none;
   color: var(--color-normal-text);
+  text-align: center;
 }
 .dune2d20.sheet.actor .statistics .stats-grid .val input:focus {
   box-shadow: none;

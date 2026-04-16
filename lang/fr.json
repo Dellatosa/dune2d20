@@ -184,5 +184,8 @@
             "momentumPool": "Jauge d'Impulsion",
             "threatPool": "Jauge de Menace"
         }
+        ,"DuneActorSheetV2": {
+            "label": "Feuille de personnage V2"
+        }
     }
 }
