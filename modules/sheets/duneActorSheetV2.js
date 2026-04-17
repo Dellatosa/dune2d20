@@ -17,7 +17,7 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     		template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-header.hbs"
   		},
         tabs: {
-            template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-navigation.hbs"
+            template: "templates/generic/tab-navigation.hbs" //"systems/dune2d20/templates/sheets/actors/character-sheet-v2-navigation.hbs"
         },
         statistics: {
             template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-statistics.hbs",
@@ -69,7 +69,20 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     }*/
 
     async _prepareContext(options) {
-        console.log(this);
+        /*
+        const context = await super._prepareContext(options)
+        console.log("Before", context);
+
+        context.config = CONFIG.dune2d20;
+        context.unlocked = this.actor.isUnlocked;
+        context.house = this.actor.system.house != null ? fromUuidSync(this.actor.system.house) : null;
+        context.name = this.actor.name;
+        context.img = this.actor.img;
+        context.system = this.actor.system;
+        context.tabs = this._prepareTabs("primary");
+        */
+        
+        
         const context = {
             tabs: this._prepareTabs("primary"),
             config: CONFIG.dune2d20,
@@ -79,6 +92,9 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
             img: this.actor.img,
             system: this.actor.system
         };
+
+        console.log("After", context);
+
         return context;
     }
 

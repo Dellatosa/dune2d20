@@ -13,7 +13,11 @@
 }
 .dune2d20.sheet.actor nav.tabs {
   align-items: center;
+  margin: 4px 0;
+  line-height: 43px;
   font-size: 1.2em;
+}
+.dune2d20.sheet.actor nav.tabs a {
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.actor nav.tabs .active {
