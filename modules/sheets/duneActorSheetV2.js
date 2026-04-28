@@ -9,7 +9,14 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 		position:{
 			width: 748,
 			height: 999
-		}
+		},
+		actions: {
+            changeLock: DuneActorSheetV2.changeLockHandler,
+      		hide: DuneActorSheetV2.hideHandler,
+			show: DuneActorSheetV2.showHandler,
+            rollDrive: DuneActorSheetV2.rollDriveHandler,
+            rollSkill: DuneActorSheetV2.rollSkillHandler
+    	}
     };
 
     static PARTS = {
@@ -17,7 +24,7 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     		template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-header.hbs"
   		},
         tabs: {
-            template: "templates/generic/tab-navigation.hbs" //"systems/dune2d20/templates/sheets/actors/character-sheet-v2-navigation.hbs"
+            template: "templates/generic/tab-navigation.hbs"
         },
         statistics: {
             template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-statistics.hbs",
@@ -56,13 +63,6 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         return context;
     }
     /*
-    static get defaultOptions() {
-
-        return foundry.utils.mergeObject(super.defaultOptions, {
-            tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "statistics" }]
-        });
-    }
-
     get template() {
         console.log(`Dune2D20 | type : ${this.actor.type} | loading template systems/dune2d20/templates/sheets/actors/character-sheet.html`);
         return `systems/dune2d20/templates/sheets/actors/character-sheet.html`
@@ -93,7 +93,7 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
             system: this.actor.system
         };
 
-        console.log("After", context);
+        //console.log("After", context);
 
         return context;
     }
@@ -111,11 +111,6 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
         //console.log(this.actor, data);
 
-        data.traits = data.items.filter(function (item) { return item.type == "Trait"});
-        data.talents = data.items.filter(function (item) { return item.type == "Talent"});
-        data.assets = data.items.filter(function (item) { return item.type == "Asset"});
-        data.focuses = data.items.filter(function (item) { return item.type == "Focus"});
-
         return data;
     }*/
 
@@ -123,9 +118,6 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         super.activateListeners(html);
 
         if(this.actor.isOwner) {
-            // Lock / unlock sheet
-            html.find(".sheet-change-lock").click(this._onSheetChangelock.bind(this));
-
             // Delete House
             html.find('.remove-house').click(this._onRemoveHouse.bind(this));
 
@@ -134,22 +126,13 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
             // Edit item
             html.find('.edit-item').click(this._onEditItem.bind(this));
-
-            // Show / hide item description or ruletext
-            html.find('.toogle-desc').click(this._onToogleDesc.bind(this));
-
-            // Roll Drive check
-            html.find('.roll-drive').click(this._onRollDrive.bind(this));
-
-            // Roll Skill check
-            html.find('.roll-skill').click(this._onRollSkill.bind(this));
         }
     }
 
     // Lock / unlock sheet
-    async _onSheetChangelock(event) {
-        event.preventDefault();
-        
+    static async changeLockHandler(event, target) {
+		event.preventDefault();
+
         let flagData = await this.actor.getFlag(game.system.id, "SheetUnlocked");
         if (flagData) await this.actor.unsetFlag(game.system.id, "SheetUnlocked");
         else await this.actor.setFlag(game.system.id, "SheetUnlocked", "SheetUnlocked");
@@ -218,44 +201,45 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         item.sheet.render(true);
     }
 
-    async _onToogleDesc(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
+    static hideHandler(event, target) {
+		event.preventDefault();
 
-        const itemId = element.closest(".item").dataset.itemId;
+ 		const itemId = target.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
 
-        const action = element.dataset.action;
+		return item.update({["system.descVisible"] : false});
+	}
 
-        if(action == "show") {
-            return item.update({["system.descVisible"] : true});
-        }
-        else if (action == "hide") {
-            return item.update({["system.descVisible"] : false});
-        }
-    }
+    static showHandler(event, target) {
+		event.preventDefault();
 
-    _onRollDrive(event) {
-        event.preventDefault();
-        const dataset = event.currentTarget.dataset;
+ 		const itemId = target.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
+
+		return item.update({["system.descVisible"] : true});
+	}
+
+    static rollDriveHandler(event, target) {
+		event.preventDefault();
+        const dataset = target.dataset;
 
         Roll.roll({ 
             type: "drive", 
             actor: this.actor, 
             drive: dataset.drive, 
-            focuses: this.getData().focuses
+            focuses: this.actor.items.filter(function (item) { return item.type == "Focus"})
         });
     }
 
-    _onRollSkill(event) {
-        event.preventDefault();
-        const dataset = event.currentTarget.dataset;
-        
+    static rollSkillHandler(event, target) {
+		event.preventDefault();
+        const dataset = target.dataset;
+
         Roll.roll({ 
             type: "skill", 
             actor: this.actor, 
             skill: dataset.skill, 
-            focuses: this.getData().focuses.filter(function (focus) { return focus.system.skill == dataset.skill}) 
+            focuses: this.actor.items.filter(function (item) { return item.type == "Focus" && item.system.skill == dataset.skill})
         });
     }
 }
