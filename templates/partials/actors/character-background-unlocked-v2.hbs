@@ -7,7 +7,7 @@
 <div class="bg-data border">
     {{#if house}}
         <div class="house" data-house-id="{{house._id}}">{{house.name}}
-            <a class="remove-house" title="{{localize 'dune2d20.hint.removeHouse'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <a data-action="removeHouse" title="{{localize 'dune2d20.hint.removeHouse'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
         </div>
     {{/if}}
 </div>

@@ -10,12 +10,18 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 			width: 748,
 			height: 999
 		},
+        tag: 'form',
+        form: {
+            submitOnChange: true,
+            closeOnSubmit: false
+        },
 		actions: {
             changeLock: DuneActorSheetV2.changeLockHandler,
       		hide: DuneActorSheetV2.hideHandler,
 			show: DuneActorSheetV2.showHandler,
             rollDrive: DuneActorSheetV2.rollDriveHandler,
-            rollSkill: DuneActorSheetV2.rollSkillHandler
+            rollSkill: DuneActorSheetV2.rollSkillHandler,
+            removeHouse: DuneActorSheetV2.removeHouseHandler
     	}
     };
 
@@ -69,56 +75,31 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     }*/
 
     async _prepareContext(options) {
-        /*
-        const context = await super._prepareContext(options)
-        console.log("Before", context);
+        const context = await super._prepareContext(options);
 
+        context.tabs = this._prepareTabs("primary");
         context.config = CONFIG.dune2d20;
-        context.unlocked = this.actor.isUnlocked;
+        context.unlocked = this.actor.isOwner ? this.actor.isUnlocked : false;
         context.house = this.actor.system.house != null ? fromUuidSync(this.actor.system.house) : null;
         context.name = this.actor.name;
         context.img = this.actor.img;
         context.system = this.actor.system;
-        context.tabs = this._prepareTabs("primary");
-        */
-        
-        
-        const context = {
-            tabs: this._prepareTabs("primary"),
-            config: CONFIG.dune2d20,
-            unlocked: this.actor.isUnlocked,
-            house: this.actor.system.house != null ? fromUuidSync(this.actor.system.house) : null,
-            name: this.actor.name,
-            img: this.actor.img,
-            system: this.actor.system
-        };
 
-        //console.log("After", context);
+        context.biographyHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.actor.system.biography,
+        {
+            secrets: this.document.isOwner,
+            relativeTo: this.document
+        });
 
         return context;
     }
-
-    /*
-    getData() {
-        const data = super.getData();
-        data.config = CONFIG.dune2d20;
-        const actorData = data.data.system;
-
-        // Sheet lock state
-        data.unlocked = this.actor.isUnlocked;
-
-        data.house = actorData.house != null ? fromUuidSync(actorData.house) : null;
-
-        //console.log(this.actor, data);
-
-        return data;
-    }*/
 
     activateListeners(html) {
         super.activateListeners(html);
 
         if(this.actor.isOwner) {
-            // Delete House
+            
             html.find('.remove-house').click(this._onRemoveHouse.bind(this));
 
             // Delete item
@@ -137,6 +118,21 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         if (flagData) await this.actor.unsetFlag(game.system.id, "SheetUnlocked");
         else await this.actor.setFlag(game.system.id, "SheetUnlocked", "SheetUnlocked");
         this.actor.sheet.render(true);
+    }
+
+    // Delete House
+    static async removeHouseHandler(event, target) {
+		event.preventDefault();
+        const house = fromUuidSync(this.actor.system.house);
+
+        const suppr = await foundry.applications.api.DialogV2.confirm({
+            window: { title: game.i18n.localize("dune2d20.dialog.confirmRemoval") },
+            content: `<p>${game.i18n.localize("dune2d20.dialog.removeHouse")} : ${house.name}<br>${game.i18n.localize("dune2d20.dialog.removeHouseConfirm")}<p>`
+        });
+
+        if(suppr) {
+            this.actor.update({"system.house": null});
+        }
     }
 
     async _onRemoveHouse(event) {

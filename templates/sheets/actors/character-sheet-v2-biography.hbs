@@ -1,5 +1,11 @@
 <section class="tab biography-content {{tab.cssClass}}" data-group="primary" data-tab="biography">
     <div class="biography">
-        {{editor system.biography target="system.biography" button=true owner=true editable=true}}
+        {{#if unlocked}}
+            <prose-mirror name="system.biography" button="true" editable="{{unlocked}}" toggled="false" value="{{system.biography}}">
+                {{{biographyHTML}}}
+            </prose-mirror>
+        {{else}}
+            {{{biographyHTML}}}
+        {{/if}}
     </div>
 </section>

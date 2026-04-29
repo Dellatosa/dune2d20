@@ -1,4 +1,4 @@
-.window-app.dialog {
+.window-app.dialog, dialog {
 
     .window-content {
         background-image: url("../images/ui/bg-dialog.jpg");
@@ -102,18 +102,19 @@
             }
         }
         
-        .dialog-button {
+        .dialog-button, button {
             font-family: "Hoefler";
             color: var(--color-normal-text);
             font-size: 1.1em;
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        .dialog-button:focus {
+        .dialog-button:focus, button:focus {
             color: var(--color-focus-text);
             box-shadow: 0 0 5px var(--color-highlight-text);
         }
 
-        .dialog-button:hover {
+        .dialog-button:hover, button:hover {
             box-shadow: 0 0 5px var(--color-highlight-text);
         }
     }

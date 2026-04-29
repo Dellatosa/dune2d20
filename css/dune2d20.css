@@ -32,6 +32,7 @@
 .dune2d20.sheet.actor .sheet-header {
   display: grid;
   grid-template-columns: 155px 1fr 25px;
+  align-items: center;
 }
 .dune2d20.sheet.actor .sheet-header .top-title {
   grid-column-start: 1;
@@ -71,6 +72,7 @@
 }
 .dune2d20.sheet.actor .sheet-header .background .bg-data input:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.actor .sheet-header .background .bg-data input:read-only {
   cursor: default;
@@ -143,6 +145,7 @@
 }
 .dune2d20.sheet.actor .statistics .stats-grid .val input:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.actor .statistics .stats-grid .val input:read-only {
   cursor: default;
@@ -165,11 +168,14 @@
   background: none;
   border: none;
   border-radius: 0;
+  width: 100%;
+  min-height: 50px;
   font-family: "Hoefler";
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.actor .statistics .stats-grid .statement textarea:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.actor .statistics .stats-grid .statement textarea:read-only {
   cursor: default;
@@ -312,10 +318,12 @@
 }
 .dune2d20.sheet.actor .statistics .adv-det-grid .val {
   font-family: "Perpetua";
-  text-align: center;
   font-size: 1.5em;
   grid-row-start: 2;
   grid-row-end: 3;
+}
+.dune2d20.sheet.actor .statistics .adv-det-grid .val input {
+  text-align: center;
 }
 .dune2d20.sheet.actor .statistics .adv-det-grid .adv {
   grid-column-start: 3;
@@ -341,6 +349,7 @@
 }
 .dune2d20.sheet.actor .statistics .adv-det-grid input:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.actor .statistics .adv-det-grid input:read-only {
   cursor: default;
@@ -349,12 +358,16 @@
   color: var(--color-focus-text);
   font-weight: bold;
 }
-.dune2d20.sheet.actor .biography .editor {
-  min-height: 100px;
+.dune2d20.sheet.actor .biography {
   background-color: var(--color-box-background);
   border: solid 1px var(--color-box-border);
   box-shadow: inset 0 0 5px var(--color-box-inset);
   border-radius: 10px;
+  padding: 2px 5px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.actor .biography .editor {
+  min-height: 100px;
 }
 .dune2d20.sheet.actor .biography .editor .editor-content {
   padding: 2px 5px;
@@ -1223,7 +1236,8 @@
   font-size: 1.2em;
   color: var(--color-normal-text);
 }
-.window-app.dialog .window-content {
+.window-app.dialog .window-content,
+dialog .window-content {
   background-image: url("../images/ui/bg-dialog.jpg");
   background-size: cover;
   background-clip: border-box;
@@ -1231,7 +1245,8 @@
   color: var(--color-normal-text);
   font-size: 1.2em;
 }
-.window-app.dialog .window-content .title {
+.window-app.dialog .window-content .title,
+dialog .window-content .title {
   margin-top: 2px;
   margin-left: 2px;
   margin-right: 2px;
@@ -1240,78 +1255,102 @@
   text-align: center;
   font-size: 1.5em;
 }
-.window-app.dialog .window-content .opt-select {
+.window-app.dialog .window-content .opt-select,
+dialog .window-content .opt-select {
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   margin: 5px 2px;
 }
-.window-app.dialog .window-content .opt-select select {
+.window-app.dialog .window-content .opt-select select,
+dialog .window-content .opt-select select {
   color: var(--color-normal-text);
 }
-.window-app.dialog .window-content .opt-val {
+.window-app.dialog .window-content .opt-val,
+dialog .window-content .opt-val {
   display: grid;
   grid-template-columns: 1fr 50px;
   align-items: center;
   margin: 5px 2px;
 }
-.window-app.dialog .window-content .opt-val .center {
+.window-app.dialog .window-content .opt-val .center,
+dialog .window-content .opt-val .center {
   text-align: center;
 }
-.window-app.dialog .window-content .opt-val input {
+.window-app.dialog .window-content .opt-val input,
+dialog .window-content .opt-val input {
   font-family: "Perpetua";
   color: var(--color-normal-text);
 }
-.window-app.dialog .window-content .opt-val-min-max {
+.window-app.dialog .window-content .opt-val-min-max,
+dialog .window-content .opt-val-min-max {
   display: grid;
   grid-template-columns: 1fr 25px 50px 25px;
   align-items: center;
   margin: 5px 2px;
 }
-.window-app.dialog .window-content .opt-check {
+.window-app.dialog .window-content .opt-check,
+dialog .window-content .opt-check {
   display: grid;
   grid-template-columns: 1fr 50px;
   align-items: center;
   margin: 5px 2px;
 }
-.window-app.dialog .window-content .opt-check .center {
+.window-app.dialog .window-content .opt-check .center,
+dialog .window-content .opt-check .center {
   text-align: center;
 }
-.window-app.dialog .window-content .opt-dice-pool {
+.window-app.dialog .window-content .opt-dice-pool,
+dialog .window-content .opt-dice-pool {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   margin: 5px 2px;
 }
-.window-app.dialog .window-content .opt-dice-pool .dice-pool {
+.window-app.dialog .window-content .opt-dice-pool .dice-pool,
+dialog .window-content .opt-dice-pool .dice-pool {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.window-app.dialog .window-content .opt-dice-pool .dice-pool .label {
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label,
+dialog .window-content .opt-dice-pool .dice-pool .label {
   flex: 1;
   text-align: center;
   font-family: "Perpetua";
 }
-.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.left {
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.left,
+dialog .window-content .opt-dice-pool .dice-pool .label.left {
   text-align: left;
 }
-.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.right {
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .label.right,
+dialog .window-content .opt-dice-pool .dice-pool .label.right {
   text-align: right;
 }
-.window-app.dialog .window-content .opt-dice-pool .dice-pool .space {
+.window-app.dialog .window-content .opt-dice-pool .dice-pool .space,
+dialog .window-content .opt-dice-pool .dice-pool .space {
   flex: 1;
 }
-.window-app.dialog .window-content .dialog-button {
+.window-app.dialog .window-content .dialog-button,
+dialog .window-content .dialog-button,
+.window-app.dialog .window-content button,
+dialog .window-content button {
   font-family: "Hoefler";
   color: var(--color-normal-text);
   font-size: 1.1em;
+  background: rgba(0, 0, 0, 0.05);
 }
-.window-app.dialog .window-content .dialog-button:focus {
+.window-app.dialog .window-content .dialog-button:focus,
+dialog .window-content .dialog-button:focus,
+.window-app.dialog .window-content button:focus,
+dialog .window-content button:focus {
   color: var(--color-focus-text);
   box-shadow: 0 0 5px var(--color-highlight-text);
 }
-.window-app.dialog .window-content .dialog-button:hover {
+.window-app.dialog .window-content .dialog-button:hover,
+dialog .window-content .dialog-button:hover,
+.window-app.dialog .window-content button:hover,
+dialog .window-content button:hover {
   box-shadow: 0 0 5px var(--color-highlight-text);
 }
 .chat-message {
