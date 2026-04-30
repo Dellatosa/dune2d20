@@ -95,6 +95,8 @@
             "confirmRemoval": "Confirm removal",
             "removeTrait": "Trait to remove",
             "removeTraitConfirm": "Are you sure you want to remove this Trait ?",
+            "removeFocus": "Focus to remove",
+            "removeFocusConfirm": "Are you sure you want to remove this Focus ?",
             "removeHouse": "House to remove",
             "removeHouseConfirm": "Are you sure you want to remove this House ?",
             "removeTalent": "Talent to remove",
@@ -144,10 +146,13 @@
             "unlock": "Unlock",
             "removeHouse": "Remove House",
             "removeTrait": "Remove Trait",
+            "removeFocus": "Remove Focus",
             "rollDrive": "Drive's dice roll",
             "rollSkill": "Skill's dice roll",
             "removeTalent": "Remove Talent",
             "editTalent": "Edit Talent",
+            "removeAsset": "Remove Asset",
+            "editAsset": "Edit Asset",
             "hideTalentDesc": "Hide Talent rule text",
             "showTalentDesc": "Show Talent rule text",
             "hideAssetDesc": "Hide Asset description",
@@ -183,9 +188,12 @@
         "setting": {
             "momentumPool": "Momentum Pool",
             "threatPool": "Threat Pool"
-        }
-        ,"DuneActorSheetV2": {
+        },
+        "DuneActorSheetV2": {
             "label": "Character sheet V2"
+        },
+        "DuneHouseSheetV2": {
+            "label": "House sheet V2"
         }
     }
 }

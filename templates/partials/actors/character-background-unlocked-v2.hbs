@@ -25,7 +25,7 @@
 <div class="bg-data border">
     {{#each traits as |trait id|}}
         <div class="trait item" data-item-id="{{trait._id}}" data-item-type="trait">• {{trait.name}}
-            <a class="remove-item" title="{{localize 'dune2d20.hint.removeTrait'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeTrait'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
         </div>
     {{/each}}
 </div>

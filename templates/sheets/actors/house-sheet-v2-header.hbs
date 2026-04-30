@@ -1,13 +1,5 @@
 <header class="sheet-header">
     <div class="top-title">D U N E</div>
-    <img class="" src="{{img}}" data-action="editImage" data-field="img" title="{{name}}"/>
-    <div class="background">
-        {{#if unlocked}}
-            {{> "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs" }}
-        {{else}}
-            {{> "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs" }}
-        {{/if}}
-    </div>
     {{#if unlocked}}
         <div class="padlock">
             <a data-action="changeLock" title="{{localize 'dune2d20.hint.lock'}}">
@@ -21,4 +13,12 @@
             </a>
         </div>
     {{/if}}
+    <div class="background">
+        {{#if unlocked}}
+            {{> "systems/dune2d20/templates/partials/house/house-background-unlocked-v2.hbs" }}
+        {{else}}
+            {{> "systems/dune2d20/templates/partials/house/house-background-locked-v2.hbs" }}
+        {{/if}}
+    </div>
+    <img class="" src="{{img}}" data-action="editImage" data-field="img" title="{{name}}"/>
 </header>

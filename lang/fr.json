@@ -113,6 +113,8 @@
             "confirmRemoval": "Confirmer la suppression",
             "removeTrait": "Trait à supprimer",
             "removeTraitConfirm": "Etes-vous certain de vouloir supprimer ce Trait ?",
+            "removeFocus": "Spécialisation à supprimer",
+            "removeFocusConfirm": "Etes-vous certain de vouloir supprimer cette Spécialisation ?",
             "removeHouse": "Maison à supprimer",
             "removeHouseConfirm": "Etes-vous certain de vouloir supprimer cette Maison ?",
             "removeTalent": "Talent à supprimer",
@@ -144,10 +146,13 @@
             "unlock": "Déverrouiller",
             "removeHouse": "Supprimer la Maison",
             "removeTrait": "Supprimer le Trait",
+            "removeFocus": "Supprimer la Spécialisation",
             "rollDrive": "Jet avec le Principe",
             "rollSkill": "Jet avec la Compétence",
             "removeTalent": "Supprimer le Talent",
             "editTalent": "Modifier le Talent",
+            "removeAsset": "Supprimer l'Atout",
+            "editAsset": "Modifier le l'Atout",
             "hideTalentDesc": "Masquer la règle du Talent",
             "showTalentDesc": "Afficher la règle du Talent",
             "hideAssetDesc": "Masquer la description de l'Atout",
@@ -186,6 +191,9 @@
         }
         ,"DuneActorSheetV2": {
             "label": "Feuille de personnage V2"
+        },
+        "DuneHouseSheetV2": {
+            "label": "Feuille de maison V2"
         }
     }
 }

@@ -10,6 +10,7 @@ import DuneItemSheet from "./sheets/duneItemSheet.js";
 import DuneActorSheet from "./sheets/duneActorSheet.js";
 import DuneActorSheetV2 from "./sheets/duneActorSheetV2.js";
 import DuneHouseSheet from "./sheets/duneHouseSheet.js";
+import DuneHouseSheetV2 from "./sheets/duneHouseSheetV2.js";
 
 Hooks.once("init", function(){
     console.log("Dune2D20 | Initializing the Dune 2d20 Game System");
@@ -39,8 +40,9 @@ Hooks.once("init", function(){
 
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
     foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true}); 
-    DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.DuneActorSheetV2.Label", types: ["PC", "SC", "NPC"]}); //, makeDefault: true
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.DuneActorSheetV2.label", types: ["PC", "SC", "NPC"]}); //, makeDefault: true
     foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"], makeDefault: true});
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneHouseSheetV2, {label: "dune2d20.DuneHouseSheetV2.label", types: ["House"]});
 
     foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
     foundry.documents.collections.Items.registerSheet("dune2d20", DuneItemSheet, {makeDefault: true});
@@ -97,11 +99,15 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-pools-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-background-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-background-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
         "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs",
         "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs"
     ];

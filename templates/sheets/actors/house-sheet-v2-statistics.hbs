@@ -1,0 +1,32 @@
+<section class="sheet-body">
+    <div class="domaines-grid">
+        <div> </div>
+        <div class="domaines-flex">
+            <div class="top-row"> </div>
+            <div class="title-row">{{ localize 'dune2d20.actor.domains' }}</div>
+            {{#if unlocked}}
+                {{> "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs" }}
+            {{else}}
+                {{> "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs" }}
+            {{/if}}
+            <div class="bottom-row"> </div>
+        </div>
+        <div> </div>
+    </div>
+    <div class="section-title">{{ localize 'dune2d20.actor.houseRoles' }}</div>
+    <div class="roles">
+        {{#if unlocked}}
+            {{> "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs" }}
+        {{else}}
+            {{> "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs" }}
+        {{/if}}
+    </div>
+    <div class="section-title">{{ localize 'dune2d20.actor.enemies' }}</div>
+    <div class="enemies">
+        {{#if unlocked}}
+            {{> "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs" }}
+        {{else}}
+            {{> "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs" }}
+        {{/if}}
+    </div>
+</section>

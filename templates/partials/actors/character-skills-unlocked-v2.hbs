@@ -4,8 +4,8 @@
 <div class="focuses">
     {{#each focuses as |focus id|}}
         {{#if (eq focus.system.skill "battle") }}
-            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
-                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <div class="focus item" data-item-id="{{focus._id}}" data-item-type="focus">• {{focus.name}}
+                <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
             </div>
         {{/if}}
     {{/each}}
@@ -17,8 +17,8 @@
 <div class="focuses">
     {{#each focuses as |focus id|}}
         {{#if (eq focus.system.skill "communicate") }}
-            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
-                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <div class="focus item" data-item-id="{{focus._id}}" data-item-type="focus">• {{focus.name}}
+                <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
             </div>
         {{/if}}
     {{/each}}
@@ -30,8 +30,8 @@
 <div class="focuses">
     {{#each focuses as |focus id|}}
         {{#if (eq focus.system.skill "discipline") }}
-            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
-                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <div class="focus item" data-item-id="{{focus._id}}" data-item-type="focus">• {{focus.name}}
+                <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
             </div>
         {{/if}}
     {{/each}}
@@ -43,8 +43,8 @@
 <div class="focuses">
     {{#each focuses as |focus id|}}
         {{#if (eq focus.system.skill "move") }}
-            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
-                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <div class="focus item" data-item-id="{{focus._id}}" data-item-type="focus">• {{focus.name}}
+                <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
             </div>
         {{/if}}
     {{/each}}
@@ -56,8 +56,8 @@
 <div class="focuses">
     {{#each focuses as |focus id|}}
         {{#if (eq focus.system.skill "understand") }}
-            <div class="focus item" data-item-id="{{focus._id}}">• {{focus.name}}
-                <a class="remove-item" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+            <div class="focus item" data-item-id="{{focus._id}}" data-item-type="focus">• {{focus.name}}
+                <a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeFocus'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
             </div>
         {{/if}}
     {{/each}}

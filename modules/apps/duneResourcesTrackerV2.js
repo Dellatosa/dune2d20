@@ -16,7 +16,7 @@ export class DuneResourcesTrackerV2 extends HandlebarsApplicationMixin(Applicati
 		actions: {
       		plus: DuneResourcesTrackerV2.plusHandler,
 			minus: DuneResourcesTrackerV2.minusHandler,
-			reinit : DuneResourcesTrackerV2.reinitHandler
+			reinit: DuneResourcesTrackerV2.reinitHandler
     	}
   	}
 
@@ -40,7 +40,6 @@ export class DuneResourcesTrackerV2 extends HandlebarsApplicationMixin(Applicati
 	}
 	
 	refresh(position) {
-		//console.log(position);
 		this.render(true);
 		if(position != null) {
 			this.setPosition({left: position.left, top: position.top});

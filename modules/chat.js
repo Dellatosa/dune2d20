@@ -1,4 +1,5 @@
-import DuneRerollFormApplication from "./apps/duneRerollApp.js";
+//import DuneRerollFormApplication from "./apps/duneRerollApp.js";
+import DuneRerollAppV2 from "./apps/duneRerollAppV2.js";
 import * as Roll from "./roll.js";
 
 /*
@@ -29,7 +30,9 @@ async function onReroll(event) {
     if (dataset.dice3) { dices.push({ result:parseInt(dataset.dice3), determination: (dataset.dice3Det), select: false }) };
     if (dataset.dice4) { dices.push({ result:parseInt(dataset.dice4), determination: (dataset.dice4Det), select: false }) };
 
-    const dicesSel = await DuneRerollFormApplication.open(actor, dices);
+    //const dicesSel = await DuneRerollFormApplication.open(actor, dices);
+    const dicesSel = await DuneRerollAppV2.open(actor, dices);
+
     if(dicesSel) {
         Roll.reroll(actor, dataset.driveName, parseInt(dataset.driveValue), dataset.skillName, parseInt(dataset.skillValue), dicesSel, dataset.focus, dataset.difficulty);
     }

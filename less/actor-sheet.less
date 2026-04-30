@@ -6,6 +6,8 @@
         background-clip: border-box;
 
         font-family: "Hoefler";
+
+        padding: 5px 10px;
     }
 
     form {
@@ -20,7 +22,7 @@
     nav.tabs {
         align-items: center;
         margin: 4px 0;
-        line-height: 43px;
+        line-height: 30px;
         font-size: 1.2em;
         
         a {
@@ -30,7 +32,7 @@
         .active {
             text-shadow: none;
 
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: var(--color-focus-text);
             font-weight: bold;
         }
@@ -52,7 +54,7 @@
             text-align: center;
             font-family: "DuneRise";
             color: var(--color-normal-text);
-            font-size: 2.5em;
+            font-size: 2.4em;
         }
 
         img {
@@ -152,7 +154,8 @@
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 59px 2fr 26px;
-            grid-auto-rows: 50px;
+            //grid-auto-rows: 50px;
+            grid-template-rows: 40px repeat(5, 50px) 40px repeat(5, 50px);
 
             align-items: center;
 
@@ -311,7 +314,7 @@
                          font-family: "Perpetua";
                     }
 
-                    .edit-item, .remove-item, .toogle-desc {
+                    .action-btn, .edit-item, .remove-item, .toogle-desc {
                         flex-basis: 25px;
                         text-align: center;
                     }
