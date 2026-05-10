@@ -79,7 +79,7 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     async _prepareContext(options) {
         const context = await super._prepareContext(options);
 
-        context.tabs = this._prepareTabs("primary");
+        //context.tabs = this._prepareTabs("primary");
         context.config = CONFIG.dune2d20;
         context.unlocked = this.actor.isOwner ? this.actor.isUnlocked : false;
         context.house = this.actor.system.house != null ? fromUuidSync(this.actor.system.house) : null;

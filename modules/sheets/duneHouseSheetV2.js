@@ -38,7 +38,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             template: "templates/generic/tab-navigation.hbs"
         },
         roles: {
-            template: "systems/dune2d20/templates/sheets/actors/house-sheet-roles-tab-v2.hbs",
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-roles.hbs",
             scrollable: ['']
         },
         statistics: {
@@ -83,14 +83,6 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
         context.name = this.actor.name;
         context.img = this.actor.img;
         context.system = this.actor.system;
-
-        /*context.biographyHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-        this.actor.system.biography,
-        {
-            secrets: this.document.isOwner,
-            relativeTo: this.document
-        });
-        */
 
         return context;
     }
