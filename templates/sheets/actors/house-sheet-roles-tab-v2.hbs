@@ -1,0 +1,10 @@
+<section class="tab statistics-content {{tab.cssClass}}" data-group="primary" data-tab="roles">
+    <div class="section-title">{{ localize 'dune2d20.actor.houseRoles' }}</div>
+    <div class="roles">
+        {{#if unlocked}}
+            {{> "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs" }}
+        {{else}}
+            {{> "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs" }}
+        {{/if}}
+    </div>
+</section>

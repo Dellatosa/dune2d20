@@ -16,6 +16,7 @@
             "name": "NOM",
             "house" : "MAISON",
             "role": "ROLE",
+            "roles": "ROLES",
             "faction": "FACTION",
             "traits": "TRAITS",
             "ambition": "AMBITION",

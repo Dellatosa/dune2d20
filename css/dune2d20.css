@@ -393,6 +393,24 @@
 .dune2d20.sheet.house form a:hover {
   text-shadow: 0 0 10px orange;
 }
+.dune2d20.sheet.house nav.tabs {
+  align-items: center;
+  margin: 4px 0;
+  line-height: 30px;
+  font-size: 1.2em;
+}
+.dune2d20.sheet.house nav.tabs a {
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house nav.tabs .active {
+  text-shadow: none;
+  font-size: 1.1em;
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house nav.tabs a:hover {
+  text-shadow: 0 0 10px orange;
+}
 .dune2d20.sheet.house .sheet-header {
   display: grid;
   grid-template-columns: 25px 1fr 200px;

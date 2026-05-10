@@ -16,6 +16,7 @@
             "name": "NAME",
             "house" : "HOUSE",
             "role": "ROLE",
+            "roles": "ROLES",
             "faction": "FACTION",
             "statistics" : "STATISTICS",
             "traits": "TRAITS",

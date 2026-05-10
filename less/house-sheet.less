@@ -16,6 +16,29 @@
         }
     }
 
+    nav.tabs {
+        align-items: center;
+        margin: 4px 0;
+        line-height: 30px;
+        font-size: 1.2em;
+        
+        a {
+            color: var(--color-normal-text);
+        }
+    
+        .active {
+            text-shadow: none;
+
+            font-size: 1.1em;
+            color: var(--color-focus-text);
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px orange;
+        }
+    }
+    
     .sheet-header {
         display: grid;
         grid-template-columns: 25px 1fr 200px;

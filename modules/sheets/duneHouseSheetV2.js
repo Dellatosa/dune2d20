@@ -34,24 +34,26 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
   		header: {
     		template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-header.hbs"
   		},
-        /*tabs: {
+        tabs: {
             template: "templates/generic/tab-navigation.hbs"
-        },*/
+        },
+        roles: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-roles-tab-v2.hbs",
+            scrollable: ['']
+        },
         statistics: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-statistics.hbs",
             scrollable: ['']
         }
 	};
 
-    /*
     static TABS = {
         primary: {
-            tabs: [{ id: "statistics" }, { id: "biography" }],
+            tabs: [{ id: "roles" }, { id: "statistics" }],
             labelPrefix: "dune2d20.actor", 
-            initial: "statistics"
+            initial: "roles"
         }
     };
-    */
 
     async _preparePartContext(partId, context) {
         switch (partId) {
@@ -61,7 +63,10 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             case 'statistics':
                 context.domains = this.actor.items.filter(function (item) { return item.type == "Domain"});
                 context.enemies = this.actor.items.filter(function (item) { return item.type == "Enemy"});
-                //context.tab = context.tabs[partId];
+                context.tab = context.tabs[partId];
+                break;
+            case 'roles':
+                context.tab = context.tabs[partId];
                 break;
             default:
         }
