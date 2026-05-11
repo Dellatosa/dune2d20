@@ -7,6 +7,7 @@ import { DuneResourcesTracker } from "./apps/duneResourcesTracker.js";
 import { DuneResourcesTrackerV2 } from "./apps/duneResourcesTrackerV2.js";
 import * as Chat from "./chat.js";
 import DuneItemSheet from "./sheets/duneItemSheet.js";
+import DuneItemSheetV2 from "./sheets/duneItemSheetV2.js";
 import DuneActorSheet from "./sheets/duneActorSheet.js";
 import DuneActorSheetV2 from "./sheets/duneActorSheetV2.js";
 import DuneHouseSheet from "./sheets/duneHouseSheet.js";
@@ -39,13 +40,14 @@ Hooks.once("init", function(){
     CONFIG.Actor.documentClass = DuneActor;
 
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"], makeDefault: true}); 
-    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.DuneActorSheetV2.label", types: ["PC", "SC", "NPC"]}); //, makeDefault: true
-    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"], makeDefault: true});
-    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneHouseSheetV2, {label: "dune2d20.DuneHouseSheetV2.label", types: ["House"]});
+    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"]}); 
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.DuneActorSheetV2.label", types: ["PC", "SC", "NPC"], makeDefault: true}); //, makeDefault: true
+    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"]});
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneHouseSheetV2, {label: "dune2d20.DuneHouseSheetV2.label", types: ["House"], makeDefault: true});
 
     foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
-    foundry.documents.collections.Items.registerSheet("dune2d20", DuneItemSheet, {makeDefault: true});
+    foundry.documents.collections.Items.registerSheet("dune2d20", DuneItemSheet);
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "dune2d20", DuneItemSheetV2, {label: "dune2d20.DuneItemSheetV2.label", makeDefault: true});
 
     registerSystemSettings();
 

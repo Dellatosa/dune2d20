@@ -195,6 +195,9 @@
         },
         "DuneHouseSheetV2": {
             "label": "House sheet V2"
+        },
+        "DuneItemSheetV2": {
+            "label": "Item sheet V2"
         }
     }
 }

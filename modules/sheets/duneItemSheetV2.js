@@ -18,14 +18,34 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
             closeOnSubmit: false
         },
         actions: {
-            editImage: DuneItemSheetV2.editImageHandler
+            editImage: DuneItemSheetV2.editImageHandler,
+            checkItem: DuneItemSheetV2.checkItemHandler,
+            checkTalent: DuneItemSheetV2.checkTalentHandler
         }
     };
 
     static PARTS = {
-        main: {
-    		template: `systems/dune2d20/templates/sheets/items/${this.item.type.toLowerCase()}-sheet.html`
-  		}
+        header: {
+    		template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-header.hbs"
+  		},
+        asset: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-asset.hbs"
+        },
+        domain: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-domain.hbs"
+        },
+        enemy: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-enemy.hbs"
+        },
+        focus: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-focus.hbs"
+        },
+        talent: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-talent.hbs"
+        },
+        trait: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-trait.hbs"
+        }
     };
 
     async _prepareContext(options) {
@@ -36,7 +56,55 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         context.img = this.item.img;
         context.system = this.item.system;
 
+        context.descriptionHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.item.system.description,
+        {
+            secrets: this.document.isOwner,
+            relativeTo: this.document
+        });
+
+        context.notesHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.item.system.notes,
+        {
+            secrets: this.document.isOwner,
+            relativeTo: this.document
+        });
+
+        context.ruleTextHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.item.system.ruleText,
+        {
+            secrets: this.document.isOwner,
+            relativeTo: this.document
+        });
+
         return context;
+    }
+
+    _configureRenderOptions(options) {
+        super._configureRenderOptions(options);
+
+        options.parts = ['header']
+
+        switch (this.document.type) {
+            case 'Asset':
+                options.parts.push('asset')
+                break;
+            case 'Domain':
+                options.parts.push('domain')
+                break;
+            case 'Enemy':
+                options.parts.push('enemy')
+                break;
+            case 'Focus':
+                options.parts.push('focus')
+                break;
+            case 'Talent':
+                options.parts.push('talent')
+                break;
+            case 'Trait':
+                options.parts.push('trait')
+                break;
+        }
     }
 
     // Image
@@ -53,22 +121,29 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         fp.render(true)
     }
 
-    /*
-    get template() {
-        console.log(`Dune2d20 | loading template systems/dune2d20/templates/sheets/items/${this.item.type.toLowerCase()}-sheet.html template`);
-        return `systems/dune2d20/templates/sheets/items/${this.item.type.toLowerCase()}-sheet.html`
-    }
-    */
+    static checkItemHandler(event, target) {
+        event.preventDefault();
 
-    /*
-    getData() {
-        const data = super.getData();
-        data.config = CONFIG.dune2d20;
-        const myItemData = data.data.system;
+        const field = target.dataset.field;
+        let dtField = field.split(".");
+        let val = !this.item.system[dtField[1]];
 
-        return data;
+        this.item.update({ [field]: val});
     }
-    */
+
+    static checkTalentHandler(event, target) {
+        event.preventDefault();
+
+        const field = target.dataset.field;
+        const stat = target.dataset.stat;
+        let dtField = field.split(".");
+        let val = !this.item.system[dtField[1]];
+
+        if(!val) {
+            this.item.update({ [stat]: null});    
+        }
+        this.item.update({ [field]: val});
+    }
 
     activateListeners(html) {
         super.activateListeners(html);

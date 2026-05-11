@@ -94,6 +94,8 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
             relativeTo: this.document
         });
 
+        //console.log("OPTIONS : ", options);
+
         return context;
     }
 

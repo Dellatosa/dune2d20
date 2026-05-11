@@ -1,0 +1,28 @@
+<section class="sheet-body">
+    <div class="enemy-grid">
+        <div class="enemy-stats">
+            <div class="stat">{{ localize 'dune2d20.item.houseType' }}</div>
+            <div class="full-col">                    
+                <select name="system.houseType">
+                    {{selectOptions config.houseType selected=system.houseType localize=true}}
+                </select>
+            </div>
+            <div class="stat">{{ localize 'dune2d20.item.hatred' }}</div>
+            <div class="full-col">                    
+                <select name="system.hatred"> 
+                    {{selectOptions config.hatred selected=system.hatred localize=true}}
+                </select>
+            </div>
+        </div>
+        <div class="enemy-desc">
+            <div class="title">{{ localize 'dune2d20.item.reason' }}</div>
+            <div><input name="system.reason" type="text" value="{{system.reason}}"></div>
+            <div class="title">{{ localize 'dune2d20.item.notes' }}</div>
+            <div class="ed-200">
+                <prose-mirror name="system.notes" button="true" editable="true" toggled="false" value="{{system.notes}}">
+                    {{{notesHTML}}}
+                </prose-mirror>
+            </div>
+        </div>
+    </div>
+</section>

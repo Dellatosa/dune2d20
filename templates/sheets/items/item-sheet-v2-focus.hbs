@@ -1,0 +1,20 @@
+<section class="sheet-body">
+    <div class="focus-grid">
+        <div class="focus-stats">
+            <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
+            <div class="full-col">
+                <select name="system.skill">
+                    {{selectOptions config.skills selected=system.skill localize=true}}
+                </select>
+            </div>
+        </div>
+        <div class="focus-desc">
+            <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+            <div class="ed-200">
+                <prose-mirror name="system.description" button="true" editable="true" toggled="false" value="{{system.description}}">
+                    {{{descriptionHTML}}}
+                </prose-mirror>
+            </div>
+        </div>
+    </div>
+</section>

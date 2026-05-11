@@ -1,0 +1,53 @@
+<section class="sheet-body">
+    <div class="talent-grid">
+        <div class="talent-stats">
+            <div class="stat">{{ localize 'dune2d20.item.faction' }}</div>
+            <a class="chk-talent" data-action="checkTalent" title="{{ localize 'dune2d20.item.linkToFaction' }}" data-field="system.linkToFaction" data-stat="system.faction">
+                {{#if system.linkToFaction}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+            </a>
+            {{#if system.linkToFaction}}
+                <div class="full-col">                    
+                    <select name="system.faction">
+                        {{selectOptions config.factions selected=system.faction localize=true}}
+                    </select>
+                </div>
+            {{/if}}
+            <div class="stat">{{ localize 'dune2d20.item.skill' }}</div>
+            <a class="chk-talent" data-action="checkTalent" title="{{ localize 'dune2d20.item.linkToSkill' }}" data-field="system.linkToSkill" data-stat="system.skill">
+                {{#if system.linkToSkill}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+            </a>
+            {{#if system.linkToSkill}}
+                <div class="full-col">
+                    <select name="system.skill">
+                        {{selectOptions config.skills selected=system.skill localize=true}}
+                    </select>
+                </div>
+            {{/if}}
+            <div class="stat">{{ localize 'dune2d20.item.drive' }}</div>
+            <a class="chk-talent" data-action="checkTalent" title="{{ localize 'dune2d20.item.linkToDrive' }}" data-field="system.linkToDrive" data-stat="system.drive">
+                {{#if system.linkToDrive}}<i class="fa-light fa-hexagon-check"></i>{{else}}<i class="fa-light fa-hexagon"></i>{{/if}}
+            </a>
+            {{#if system.linkToDrive}}
+                <div class="full-col">
+                    <select name="system.drive">
+                        {{selectOptions config.drives selected=system.drive localize=true}}
+                    </select>
+                </div>
+            {{/if}}
+        </div>
+        <div class="talent-desc">
+            <div class="title">{{ localize 'dune2d20.item.description' }}</div>
+            <div class="ed-110">
+                <prose-mirror name="system.description" button="true" editable="true" toggled="false" value="{{system.description}}">
+                    {{{descriptionHTML}}}
+                </prose-mirror>
+            </div>
+            <div class="title">{{ localize 'dune2d20.item.ruleText' }}</div>
+            <div class="ed-110">
+                <prose-mirror name="system.ruleText" button="true" editable="true" toggled="false" value="{{system.ruleText}}">
+                    {{{ruleTextHTML}}}
+                </prose-mirror>
+            </div>
+        </div>
+    </div>
+</section>

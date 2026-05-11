@@ -195,6 +195,9 @@
         },
         "DuneHouseSheetV2": {
             "label": "Feuille de maison V2"
+        },
+        "DuneItemSheetV2": {
+            "label": "Feuille d'objet V2"
         }
     }
 }
