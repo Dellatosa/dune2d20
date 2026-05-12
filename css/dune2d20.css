@@ -1251,13 +1251,13 @@
   color: var(--color-placeholder-text);
   font-style: italic;
 }
-.dune2d20.sheet.item .sheet-body .talent-desc .ed-110,
-.dune2d20.sheet.item .sheet-body .asset-desc .ed-110,
-.dune2d20.sheet.item .sheet-body .trait-desc .ed-110,
-.dune2d20.sheet.item .sheet-body .focus-desc .ed-110,
-.dune2d20.sheet.item .sheet-body .domain-desc .ed-110,
-.dune2d20.sheet.item .sheet-body .enemy-desc .ed-110 {
-  min-height: 110px;
+.dune2d20.sheet.item .sheet-body .talent-desc .ed-150,
+.dune2d20.sheet.item .sheet-body .asset-desc .ed-150,
+.dune2d20.sheet.item .sheet-body .trait-desc .ed-150,
+.dune2d20.sheet.item .sheet-body .focus-desc .ed-150,
+.dune2d20.sheet.item .sheet-body .domain-desc .ed-150,
+.dune2d20.sheet.item .sheet-body .enemy-desc .ed-150 {
+  min-height: 150px;
   margin-bottom: 10px;
 }
 .dune2d20.sheet.item .sheet-body .talent-desc .ed-200,
