@@ -12,7 +12,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
     let dialogOptions = await getRollOptions({cfgData: CONFIG.dune2d20, type: type, actor: actor, drive: drive, skill: skill, focuses: focusesList});
 
     // Cancel roll if 'Cancel' or 'Close' button used
-    if(dialogOptions.cancel) {
+    if(dialogOptions == "cancel" || dialogOptions == null) {
         return null;
     }
 
@@ -119,6 +119,7 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
 
     let nbDice = 2;
     let difficulty = 1;
+    let useDetermination = false;
 
     // Template
     let template = null;
@@ -126,17 +127,32 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
 
     switch(type) {
         case "drive":
-            template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog.html";
+            //template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog.html";
+            template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog-v2.hbs";
             title = "dune2d20.dialog.driveRoll";
             break;
         case "skill":
-            template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog.html";
+            //template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog.html";
+            template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog-v2.hbs";
             title = "dune2d20.dialog.skillRoll"
             break;
     }
     
-    const html = await foundry.applications.handlebars.renderTemplate(template, {data: cfgData, actor: actor, drive: drive, skill: skill, focuses: focuses, difficulty: difficulty, nbDice: nbDice, useDetermination: false});
+    let dialogContext = {
+        cfgData,
+        actor,
+        drive,
+        skill,
+        focuses,
+        difficulty,
+        nbDice,
+        useDetermination
+    }
 
+    //const html = await foundry.applications.handlebars.renderTemplate(template, {data: cfgData, actor: actor, drive: drive, skill: skill, focuses: focuses, difficulty: difficulty, nbDice: nbDice, useDetermination: false});
+    const html = await foundry.applications.handlebars.renderTemplate(template, dialogContext);
+
+    /*
     return new Promise( resolve => {
         const data = {
             title: game.i18n.localize(title),
@@ -159,6 +175,30 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
         // Show dialog
         new Dialog(data, null).render(true);
     });
+    */
+
+    const rollOptions = await foundry.applications.api.DialogV2.wait({
+      window: { title },
+      classes: ["dune2d20", "roll-dialog"],
+      position: { width: 430 },
+      content: html,
+      rejectClose: false, 
+      buttons: [
+        {
+            action: "roll",
+            label: "dune2d20.dialog.roll",
+            icon: "fa-solid fa-dice-d20",
+            callback: (event, button, dialog) => {
+                return _processRollOptions(button.form);
+            }
+        },
+        {
+            action: "cancel",
+            label: "dune2d20.dialog.cancel",
+        }
+      ]});
+
+    return rollOptions;
 }
 
 function _processRollOptions(form) {

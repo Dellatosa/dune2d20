@@ -5,6 +5,8 @@
         background-size: cover;
         background-clip: border-box;
 
+        padding: 8px;
+        
         font-family: "Hoefler";
         color: var(--color-normal-text);
         font-size: 1.2em;
@@ -29,6 +31,10 @@
 
             select {
                 color: var(--color-normal-text);
+                width: auto;
+                background-color: rgba(0, 0, 0, 0.05);
+
+                height: 1.6rem;
             }
         }
 
@@ -44,8 +50,12 @@
             }
 
             input {
+                text-align: center;
                 font-family: "Perpetua";
                 color: var(--color-normal-text);
+                background-color: rgba(0, 0, 0, 0.05);
+
+                height: 1.6rem;
             }
         }
 
@@ -66,6 +76,10 @@
 
             .center {
                 text-align: center;
+            }
+
+            input {
+                --checkbox-background-color: var(--color-box-background);
             }
         }
 
@@ -98,6 +112,13 @@
 
                 .space {
                     flex: 1;
+                }
+
+                input {
+                    --range-track-color: var(--color-box-background);
+                    --range-thumb-background-color: var(--color-normal-text);
+
+                    height: 1.6rem;
                 }
             }
         }

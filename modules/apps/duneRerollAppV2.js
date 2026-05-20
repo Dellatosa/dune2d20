@@ -61,12 +61,6 @@ export default class DuneRerollAppV2 extends HandlebarsApplicationMixin(Applicat
         this.mustReroll = this.initialRoll.some(die => die.select == true);
         this.render();
     }
-
-    /*
-    async _processSubmitData(event, form, formData) {
-        console.log("_processSubmitData");
-    }
-    */
     
     close(options) {
 		    super.close(options);
