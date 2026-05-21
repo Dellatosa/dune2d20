@@ -1,9 +1,43 @@
-<div class="field-name">{{ localize 'dune2d20.actor.militaryPower' }}</div>
+<div class="field-name start">{{ localize 'dune2d20.actor.militaryPower' }}</div>
+<div class="modifier">{{ localize 'dune2d20.actor.modifier' }}</div>
+<div> </div>
+<div class="upkeep">{{ localize 'dune2d20.actor.upkeep' }}</div>
+<div> </div>
 <div class="field-start"> </div>
-<div class="field-data"><input name="system.militaryPower" type="text" value="{{system.militaryPower}}"/></div>
+<div class="field-data">
+    <select name="system.militaryPower">
+        {{selectOptions config.militaryPowerLevel selected=system.militaryPower labelAttr="label" localize=true}}
+    </select>
+</div>
 <div class="field-end"> </div>
 <div> </div>
-<div class="val">0</div>
+<div class="val">&nbsp;</div>
 <div> </div>
-<div class="val">0</div>
+<div class="val">&nbsp;</div>
+<div> </div>
+<div class="field-name">{{ localize 'dune2d20.actor.populationLoyalty' }}</div>
+<div class="field-start"> </div>
+<div class="field-data">
+    <select name="system.populationLoyalty">
+        {{selectOptions config.populationLoyaltyLevel selected=system.populationLoyalty labelAttr="label" localize=true}}
+    </select>
+</div>
+<div class="field-end"> </div>
+<div> </div>
+<div class="val">&nbsp;</div>
+<div> </div>
+<div class="val">&nbsp;</div>
+<div> </div>
+<div class="field-name">{{ localize 'dune2d20.actor.lifestyle' }}</div>
+<div class="field-start"> </div>
+<div class="field-data">
+    <select name="system.lifestyle">
+        {{selectOptions config.lifestyleLevel selected=system.lifestyle labelAttr="label" localize=true}}
+    </select>
+</div>
+<div class="field-end"> </div>
+<div> </div>
+<div class="val">&nbsp;</div>
+<div> </div>
+<div class="val">&nbsp;</div>
 <div> </div>

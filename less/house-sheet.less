@@ -148,12 +148,12 @@
 
     .statistics{
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 15px 2fr;
 
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 59px;
-            grid-template-rows: 40px repeat(5, 50px) 40px 50px;
+            grid-template-rows: 40px repeat(5, 50px) 30px 50px;
 
             align-items: center;
 
@@ -226,14 +226,32 @@
             align-items: center;
             margin: 0 2px;
 
-            .title {
-                text-align: center;
+             color: var(--color-normal-text);
 
+            .title {
                 font-weight: bold;
                 font-size: 1.5em;
 
                 grid-column-start: 1;
                 grid-column-end: 9;
+            }
+
+            .modifier {
+                text-align: center;
+                font-weight: bold;
+                font-size: 0.55em;
+
+                grid-column-start: 5;
+                grid-column-end: 6;
+            }
+
+            .upkeep {
+                text-align: center;
+                font-weight: bold;
+                font-size: 0.55em;
+
+                grid-column-start: 7;
+                grid-column-end: 8;
             }
 
             .field-name {
@@ -245,6 +263,11 @@
 
                 grid-column-start: 1;
                 grid-column-end: 9;
+            }
+
+            .field-name.start {
+                grid-column-start: 1;
+                grid-column-end: 5;
             }
 
             .field-data {
@@ -284,6 +307,16 @@
                 }
             }
 
+            .field-data.locked {
+                height: 34px;
+                
+                padding: 5px 3px;
+                font-size: 1.2em;
+
+                border-top: solid 1px  var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+            }
+
             .field-start {
                 height: 34px;
                 background-image: url("../images/sheet/field-left.png");
@@ -298,6 +331,7 @@
                 font-family: "Perpetua";
                 font-size: 1.25em;
                 background-image: url("../images/sheet/house-skill-box.png");
+                height: 50px;
 
                 input {
                     height: 50px;

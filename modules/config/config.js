@@ -59,6 +59,104 @@ dune2d20.hatred = {
     kanly: "dune2d20.config.kanly"
 }
 
+dune2d20.militaryPowerLevel = {
+    empty:{
+        label: ""
+    },
+    none: {
+        label: "dune2d20.config.none",
+        difficulty: 0,
+        wealthUpkeep: 0 
+    },
+    militia: {
+        label: "dune2d20.config.militia",
+        difficulty: 1,
+        wealthUpkeep: 5 
+    },
+    groundDefense: {
+        label: "dune2d20.config.groundDefense",
+        difficulty: 2,
+        wealthUpkeep: 10 
+    },
+    planetaryDefense: {
+        label: "dune2d20.config.planetaryDefense",
+        difficulty: 3,
+        wealthUpkeep: 20 
+    },
+    assaultForce: {
+        label: "dune2d20.config.assaultForce",
+        difficulty: 4,
+        wealthUpkeep: 30 
+    },
+    invasionFleet: {
+        label: "dune2d20.config.invasionFleet",
+        difficulty: 5,
+        wealthUpkeep: 50 
+    }
+}
+
+dune2d20.populationLoyaltyLevel = {
+    empty:{
+        label: ""
+    },
+    hatred: {
+        label: "dune2d20.config.hatred",
+        modifier: 2,
+        wealthUpkeep: 0 
+    },
+    loathing: {
+        label: "dune2d20.config.loathingPL",
+        modifier: 1,
+        wealthUpkeep: 5 
+    },
+    acceptance: {
+        label: "dune2d20.config.acceptance",
+        difficulty: 0,
+        wealthUpkeep: 10 
+    },
+    appreciation: {
+        label: "dune2d20.config.appreciation",
+        difficulty: 1,
+        wealthUpkeep: 20 
+    },
+    love: {
+        label: "dune2d20.config.love",
+        difficulty: 2,
+        wealthUpkeep: 40 
+    }
+}
+
+dune2d20.lifestyleLevel = {
+    empty:{
+        label: ""
+    },
+    ofThePeople: {
+        label: "dune2d20.config.ofThePeople",
+        trait: "commoners",
+        wealthUpkeep: 0 
+    },
+    poor: {
+        label: "dune2d20.config.poor",
+        trait: "poor",
+        wealthUpkeep: 5 
+    },
+    noble: {
+        label: "dune2d20.config.noble",
+        trait: "",
+        wealthUpkeep: 10 
+    },
+    wealthy: {
+        label: "dune2d20.config.wealthy",
+        trait: "impressive",
+        wealthUpkeep: 30 
+    },
+    imperial: {
+        label: "dune2d20.config.imperial",
+        trait: "envied",
+        wealthUpkeep: 60 
+    }
+}
+
 dune2d20.itemDefIcon = {
     Asset: "systems/dune2d20/images/sheet/item-icon-2.png",
     Domain: "systems/dune2d20/images/sheet/item-icon-1.png",

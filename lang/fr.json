@@ -65,7 +65,16 @@
             "type": "TYPE",
             "reason": "RAISON",
             "management": "GESTION",
-            "skillUpkeep": "ENTRETIEN"
+            "skillUpkeep": "ENTRETIEN DES COMPETENCES",
+            "overview": "PRESENTATION",
+            "modifier": "MODIFICATEUR",
+            "upkeep": "ENTRETIEN",
+            "militaryPower": "PUISSANCE MILITAIRE",
+            "populationLoyalty": "LOYAUTE DE LA POPULATION",
+            "lifestyle": "TRAIN DE VIE",
+            "domainIncome": "DOMAIN INCOME",
+            "resources": "RESSOURCES",
+            "wealth": "RICHESSE"
         },
         "item": {
             "name": "Nom",
@@ -186,7 +195,23 @@
             "dislike": "Aversion",
             "rival": "Rivalité",
             "loathing": "Haine",
-            "kanly": "Kanly"
+            "kanly": "Kanly",
+            "none": "Aucune",
+            "militia": "Milice",
+            "groundDefense": "Défenses terrestres",
+            "planetaryDefense": "Défenses planétaires",
+            "assaultForce": "Forces d'assaut",
+            "invasionFleet": "Flotte d'invasion",
+            "hatred": "Haine",
+            "loathingPL": "Dégoût",
+            "acceptance": "Acceptation",
+            "appreciation": "Reconnaissance",
+            "love": "Amour",
+            "ofThePeople": "L'une des nôtres",
+            "poor": "Pauvre",
+            "noble": "Noble",
+            "wealthy": "Riche",
+            "imperial": "Impérial"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",

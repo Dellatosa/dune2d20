@@ -24,6 +24,17 @@ export default function registerHandlebarsHelpers() {
         return result;
     });
 
+    Handlebars.registerHelper("configLocalizeLabel", function(liste, val, limit) {
+        let result = game.i18n.localize(dune2d20[liste][val].label);
+        if(limit != null) {
+            if(result.length > limit) {
+                return result.slice(0, limit);
+            }
+        }
+
+        return result;
+    });
+
     Handlebars.registerHelper("times", function (n, block) {
         var accum = "";
         for (var i = 1; i <= n; ++i) {

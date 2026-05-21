@@ -496,12 +496,12 @@
 }
 .dune2d20.sheet.house .statistics {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 15px 2fr;
 }
 .dune2d20.sheet.house .statistics .stats-grid {
   display: grid;
   grid-template-columns: 1fr 59px;
-  grid-template-rows: 40px repeat(5, 50px) 40px 50px;
+  grid-template-rows: 40px repeat(5, 50px) 30px 50px;
   align-items: center;
   color: var(--color-normal-text);
 }
@@ -560,13 +560,27 @@
   grid-template-rows: 40px 20px 50px 20px 50px 20px 50px;
   align-items: center;
   margin: 0 2px;
+  color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .statistics .overview-grid .title {
-  text-align: center;
   font-weight: bold;
   font-size: 1.5em;
   grid-column-start: 1;
   grid-column-end: 9;
+}
+.dune2d20.sheet.house .statistics .overview-grid .modifier {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.55em;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+.dune2d20.sheet.house .statistics .overview-grid .upkeep {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.55em;
+  grid-column-start: 7;
+  grid-column-end: 8;
 }
 .dune2d20.sheet.house .statistics .overview-grid .field-name {
   padding-right: 5px;
@@ -575,6 +589,10 @@
   font-weight: bold;
   grid-column-start: 1;
   grid-column-end: 9;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-name.start {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
 .dune2d20.sheet.house .statistics .overview-grid .field-data input,
 .dune2d20.sheet.house .statistics .overview-grid .field-data select {
@@ -605,6 +623,13 @@
   color: var(--color-placeholder-text);
   font-style: italic;
 }
+.dune2d20.sheet.house .statistics .overview-grid .field-data.locked {
+  height: 34px;
+  padding: 5px 3px;
+  font-size: 1.2em;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+}
 .dune2d20.sheet.house .statistics .overview-grid .field-start {
   height: 34px;
   background-image: url("../images/sheet/field-left.png");
@@ -617,6 +642,7 @@
   font-family: "Perpetua";
   font-size: 1.25em;
   background-image: url("../images/sheet/house-skill-box.png");
+  height: 50px;
 }
 .dune2d20.sheet.house .statistics .overview-grid .val input {
   height: 50px;
