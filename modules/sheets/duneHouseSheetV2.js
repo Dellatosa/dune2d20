@@ -23,8 +23,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
       		hide: DuneHouseSheetV2.hideHandler,
 			show: DuneHouseSheetV2.showHandler,
             /*rollDrive: DuneActorSheetV2.rollDriveHandler,
-            rollSkill: DuneActorSheetV2.rollSkillHandler,
-            removeHouse: DuneActorSheetV2.removeHouseHandler,*/
+            rollSkill: DuneActorSheetV2.rollSkillHandler,*/
             editItem: DuneHouseSheetV2.editItemHandler,
             removeItem: DuneHouseSheetV2.removeItemHandler
     	}
@@ -41,15 +40,23 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-roles.hbs",
             scrollable: ['']
         },
+        domains: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-domains.hbs",
+            scrollable: ['']
+        },
         statistics: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-statistics.hbs",
+            scrollable: ['']
+        },
+        management: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-management.hbs",
             scrollable: ['']
         }
 	};
 
     static TABS = {
         primary: {
-            tabs: [{ id: "roles" }, { id: "statistics" }],
+            tabs: [{ id: "roles" }, { id: "domains" }, { id: "statistics" }, { id: "management" }],
             labelPrefix: "dune2d20.actor", 
             initial: "roles"
         }
@@ -60,12 +67,18 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             case 'header':
                 context.traits = this.actor.items.filter(function (item) { return item.type == "Trait"});
                 break;
-            case 'statistics':
+            case 'domains':
                 context.domains = this.actor.items.filter(function (item) { return item.type == "Domain"});
                 context.enemies = this.actor.items.filter(function (item) { return item.type == "Enemy"});
                 context.tab = context.tabs[partId];
                 break;
+            case 'statistics':
+                context.tab = context.tabs[partId];
+                break;
             case 'roles':
+                context.tab = context.tabs[partId];
+                break;
+            case 'management':
                 context.tab = context.tabs[partId];
                 break;
             default:
@@ -84,6 +97,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
         context.img = this.actor.img;
         context.system = this.actor.system;
 
+        console.log(context);
         return context;
     }
 

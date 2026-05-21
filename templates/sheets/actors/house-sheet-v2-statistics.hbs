@@ -1,25 +1,23 @@
 <section class="tab statistics-content {{tab.cssClass}}" data-group="primary" data-tab="statistics">
-    <div class="domaines-grid">
-        <div> </div>
-        <div class="domaines-flex">
-            <div class="top-row"> </div>
-            <div class="title-row">{{ localize 'dune2d20.actor.domains' }}</div>
+    <div class="statistics">
+        <div class="stats-grid">
+            <!-- House skills title -->
+            <div class="title">{{ localize 'dune2d20.actor.skill' }}</div>
+            <div> </div>
             {{#if unlocked}}
-                {{> "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs" }}
+                {{> "systems/dune2d20/templates/partials/house/house-skills-unlocked-v2.hbs" }}
             {{else}}
-                {{> "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs" }}
+                {{> "systems/dune2d20/templates/partials/house/house-skills-locked-v2.hbs" }}
             {{/if}}
-            <div class="bottom-row"> </div>
         </div>
-        <div> </div>
-    </div>
-    
-    <div class="section-title">{{ localize 'dune2d20.actor.enemies' }}</div>
-    <div class="enemies">
-        {{#if unlocked}}
-            {{> "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs" }}
-        {{else}}
-            {{> "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs" }}
-        {{/if}}
+        <div class="overview-grid">
+            <!-- Overview title -->
+            <div class="title">{{ localize 'dune2d20.actor.overview' }}</div>
+            {{#if unlocked}}
+                {{> "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs" }}
+            {{else}}
+                {{> "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs" }}
+            {{/if}}
+        </div>
     </div>
 </section>

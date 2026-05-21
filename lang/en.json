@@ -165,7 +165,9 @@
             "removeDomain": "Remove Domain",
             "editDomain": "Edit Domain",
             "removeEnemy": "Remove Enemy",
-            "editEnemy": "Edit Enemy"
+            "editEnemy": "Edit Enemy",
+            "management": "MANAGEMENT",
+            "skillUpkeep": "SKILL UPKEEP"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !",

@@ -146,6 +146,192 @@
         }
     }
 
+    .statistics{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 59px;
+            grid-template-rows: 40px repeat(5, 50px) 40px 50px;
+
+            align-items: center;
+
+            color: var(--color-normal-text);
+
+            .title {
+                text-align: center;
+
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+
+            .skill {
+                text-align: right;
+                padding-right: 10px;
+                
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            .val {
+                background-image: url("../images/sheet/house-skill-box.png");
+            }
+
+            .skill-upkeep {
+                background-image: url("../images/sheet/house-upkeep-box.png");
+            }
+
+            .val, .skill-upkeep {
+                font-family: "Perpetua";
+                font-size: 1.25em;
+
+                input {
+                    height: 50px;
+
+                    border: none;
+                    background: none;
+
+                    color: var(--color-normal-text);
+
+                    text-align: center;
+                }
+
+                input:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+
+                input:read-only {
+                    cursor: default;
+                }
+
+                input:not([readonly]):focus {
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
+            }
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 27px 1fr 27px 10px 59px 10px 59px 10px;
+            grid-template-rows: 40px 20px 50px 20px 50px 20px 50px;
+
+            align-items: center;
+            margin: 0 2px;
+
+            .title {
+                text-align: center;
+
+                font-weight: bold;
+                font-size: 1.5em;
+
+                grid-column-start: 1;
+                grid-column-end: 9;
+            }
+
+            .field-name {
+                padding-right: 5px;
+                padding-left: 5px;
+                margin-top: 3px;
+            
+                font-weight: bold;
+
+                grid-column-start: 1;
+                grid-column-end: 9;
+            }
+
+            .field-data {
+
+                input, select {
+                    height: 34px;
+                    width: 100%;
+
+                    padding-right: 5px;
+                    padding-left: 5px;
+
+                    background: none;
+                    border: none;
+                    border-top: solid 1px  var(--color-box-border);
+                    border-bottom: solid 1px var(--color-box-border);
+
+                    font-size: 1.2em;
+                    color: var(--color-normal-text);
+                }
+
+                input:focus, select:focus {
+                    box-shadow: none;
+                }
+
+                input:read-only {
+                    cursor: default;
+                }
+                
+                input:not([readonly]):focus, select:focus {
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
+            }
+
+            .field-start {
+                height: 34px;
+                background-image: url("../images/sheet/field-left.png");
+            }
+
+            .field-end {
+                height: 34px;
+                background-image: url("../images/sheet/field-right.png");
+            }
+
+            .val {
+                font-family: "Perpetua";
+                font-size: 1.25em;
+                background-image: url("../images/sheet/house-skill-box.png");
+
+                input {
+                    height: 50px;
+
+                    border: none;
+                    background: none;
+
+                    color: var(--color-normal-text);
+
+                    text-align: center;
+                }
+
+                input:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+
+                input:read-only {
+                    cursor: default;
+                }
+
+                input:not([readonly]):focus {
+                    color: var(--color-focus-text);
+                    font-weight: bold;
+                }
+
+                input::placeholder {
+                    color: var(--color-placeholder-text);
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
     .domaines-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;

@@ -146,6 +146,41 @@
           "name": ""
         }
       },
+      "skills": {
+          "battle": {
+            "value": 4,
+            "min": 4,
+            "max": 10
+          },
+          "communicate": {
+            "value": 4,
+            "min": 4,
+            "max": 10
+          },
+          "discipline": {
+            "value": 4,
+            "min": 4,
+            "max": 10
+          },
+          "move": {
+            "value": 4,
+            "min": 4,
+            "max": 10
+          },
+          "understand": {
+            "value": 4,
+            "min": 4,
+            "max": 10
+          },
+          "upkeep": {
+            "value": 0,
+            "min": 0,
+            "max": 10
+          }
+      },
+      "militaryPower": {
+
+      },
       "enemies": []
     }
   },  

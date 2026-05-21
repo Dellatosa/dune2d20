@@ -63,7 +63,9 @@
             "houseRoles": "ROLES DE LA MAISON",
             "enemies": "ENNEMIS",
             "type": "TYPE",
-            "reason": "RAISON"
+            "reason": "RAISON",
+            "management": "GESTION",
+            "skillUpkeep": "ENTRETIEN"
         },
         "item": {
             "name": "Nom",

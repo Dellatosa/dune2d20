@@ -494,6 +494,152 @@
   text-align: center;
   color: var(--color-normal-text);
 }
+.dune2d20.sheet.house .statistics {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.dune2d20.sheet.house .statistics .stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 59px;
+  grid-template-rows: 40px repeat(5, 50px) 40px 50px;
+  align-items: center;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .statistics .stats-grid .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.dune2d20.sheet.house .statistics .stats-grid .skill {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val {
+  background-image: url("../images/sheet/house-skill-box.png");
+}
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep {
+  background-image: url("../images/sheet/house-upkeep-box.png");
+}
+.dune2d20.sheet.house .statistics .stats-grid .val,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep {
+  font-family: "Perpetua";
+  font-size: 1.25em;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val input,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep input {
+  height: 50px;
+  border: none;
+  background: none;
+  color: var(--color-normal-text);
+  text-align: center;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val input:focus,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val input:read-only,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val input:not([readonly]):focus,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .statistics .stats-grid .val input::placeholder,
+.dune2d20.sheet.house .statistics .stats-grid .skill-upkeep input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
+.dune2d20.sheet.house .statistics .overview-grid {
+  display: grid;
+  grid-template-columns: 27px 1fr 27px 10px 59px 10px 59px 10px;
+  grid-template-rows: 40px 20px 50px 20px 50px 20px 50px;
+  align-items: center;
+  margin: 0 2px;
+}
+.dune2d20.sheet.house .statistics .overview-grid .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-name {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-top: 3px;
+  font-weight: bold;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-data input,
+.dune2d20.sheet.house .statistics .overview-grid .field-data select {
+  height: 34px;
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+  background: none;
+  border: none;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+  font-size: 1.2em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-data input:focus,
+.dune2d20.sheet.house .statistics .overview-grid .field-data select:focus {
+  box-shadow: none;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-data input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-data input:not([readonly]):focus,
+.dune2d20.sheet.house .statistics .overview-grid .field-data select:focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-data input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-start {
+  height: 34px;
+  background-image: url("../images/sheet/field-left.png");
+}
+.dune2d20.sheet.house .statistics .overview-grid .field-end {
+  height: 34px;
+  background-image: url("../images/sheet/field-right.png");
+}
+.dune2d20.sheet.house .statistics .overview-grid .val {
+  font-family: "Perpetua";
+  font-size: 1.25em;
+  background-image: url("../images/sheet/house-skill-box.png");
+}
+.dune2d20.sheet.house .statistics .overview-grid .val input {
+  height: 50px;
+  border: none;
+  background: none;
+  color: var(--color-normal-text);
+  text-align: center;
+}
+.dune2d20.sheet.house .statistics .overview-grid .val input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.house .statistics .overview-grid .val input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .statistics .overview-grid .val input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .statistics .overview-grid .val input::placeholder {
+  color: var(--color-placeholder-text);
+  font-style: italic;
+}
 .dune2d20.sheet.house .domaines-grid {
   display: grid;
   grid-template-columns: 1fr 720px 1fr;
