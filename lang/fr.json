@@ -72,7 +72,7 @@
             "militaryPower": "PUISSANCE MILITAIRE",
             "populationLoyalty": "LOYAUTE DE LA POPULATION",
             "lifestyle": "TRAIN DE VIE",
-            "domainIncome": "DOMAIN INCOME",
+            "domainIncome": "REVENUS DES DOMAINES",
             "resources": "RESSOURCES",
             "wealth": "RICHESSE"
         },
@@ -172,11 +172,14 @@
             "quality": "Qualité",
             "primaryDomain": "Domaine primaire",
             "secondaryDomain": "Domaine secondaire",
-            "hatred" : "Haine",
+            "hatred" : "Niveau d'inimitié",
             "removeDomain": "Supprimer le Domaine",
             "editDomain": "Modifier le Domaine",
             "removeEnemy": "Supprimer l'Ennemi",
-            "editEnemy": "Modifier l'Ennemi"
+            "editEnemy": "Modifier l'Ennemi",
+            "houseType": "Type de Maison",
+            "showDomainDesc": "Afficher la description du Domaine",
+            "showEnemyNotes": "Afficher les notes concernant l'Ennemi"
         },
         "notification": {
             "houseAlreadyExists" : "Ce personnage sert déjà une Maison !",
@@ -211,7 +214,20 @@
             "poor": "Pauvre",
             "noble": "Noble",
             "wealthy": "Riche",
-            "imperial": "Impérial"
+            "imperial": "Impérial",
+            "machinery": "Machines",
+            "produce": "Production",
+            "expertise": "Experts",
+            "workers": "Main-d'oeuvre",
+            "understanding": "Conception",
+            "artistic": "Arts",
+            "espionage": "Espionnage",
+            "farming": "Agriculture",
+            "industrial": "Industrie",
+            "military": "Armée",
+            "political": "Politique",
+            "religious": "Religion",
+            "scientific": "Science"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",

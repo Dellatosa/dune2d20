@@ -59,9 +59,129 @@ dune2d20.hatred = {
     kanly: "dune2d20.config.kanly"
 }
 
+dune2d20.areaOfExpertise = {
+    none: {
+        label: "",
+        resourcesP: null,
+        resourcesS: null,
+        wealthP: null,
+        wealthS: null
+    },
+    artistic: {
+        label: "dune2d20.config.artistic",
+        resourcesP: -3,
+        resourcesS: -1,
+        wealthP: 8,
+        wealthS: 4
+    },
+    espionage: {
+        label: "dune2d20.config.espionage",
+        resourcesP: -3,
+        resourcesS: -1,
+        wealthP: 8,
+        wealthS: 4
+    },
+    farming: {
+        label: "dune2d20.config.farming",
+        resourcesP: 3,
+        resourcesS: 1,
+        wealthP: -6,
+        wealthS: -4
+    },
+    industrial: {
+        label: "dune2d20.config.industrial",
+        resourcesP: 3,
+        resourcesS: 1,
+        wealthP: -6,
+        wealthS: -4
+    },
+    kanly: {
+        label: "dune2d20.config.kanly",
+        resourcesP: 3,
+        resourcesS: 1,
+        wealthP: -6,
+        wealthS: -4
+    },
+    military: {
+        label: "dune2d20.config.military",
+        resourcesP: 3,
+        resourcesS: 1,
+        wealthP: -6,
+        wealthS: -4
+    },
+    political: {
+        label: "dune2d20.config.political",
+        resourcesP: -3,
+        resourcesS: -1,
+        wealthP: 8,
+        wealthS: 4
+    },
+    religious: {
+        label: "dune2d20.config.religious",
+        resourcesP: -3,
+        resourcesS: -1,
+        wealthP: 8,
+        wealthS: 4
+    },
+    scientific: {
+        label: "dune2d20.config.scientific",
+        resourcesP: 3,
+        resourcesS: 1,
+        wealthP: -6,
+        wealthS: -4
+    }
+}
+
+dune2d20.sections = {
+    none: {
+        label: "",
+        resourcesP: null,
+        resourcesS: null,
+        wealthP: null,
+        wealthS: null
+    },
+    machinery: {
+        label: "dune2d20.config.machinery",
+        resourcesP: 12,
+        resourcesS: 6,
+        wealthP: 32,
+        wealthS: 16
+    },
+    produce: {
+        label: "dune2d20.config.produce",
+        resourcesP: 10,
+        resourcesS: 5,
+        wealthP: 30,
+        wealthS: 18
+    },
+    expertise: {
+        label: "dune2d20.config.expertise",
+        resourcesP: 6,
+        resourcesS: 3,
+        wealthP: 44,
+        wealthS: 22
+    },
+    workers: {
+        label: "dune2d20.config.workers",
+        resourcesP: 8,
+        resourcesS: 4,
+        wealthP: 40,
+        wealthS: 20
+    },
+    understanding: {
+        label: "dune2d20.config.understanding",
+        resourcesP: 6,
+        resourcesS: 3,
+        wealthP: 42,
+        wealthS: 22
+    }
+}
+
 dune2d20.militaryPowerLevel = {
     empty:{
-        label: ""
+        label: "",
+        difficulty: null,
+        wealthUpkeep: null 
     },
     none: {
         label: "dune2d20.config.none",
@@ -97,7 +217,9 @@ dune2d20.militaryPowerLevel = {
 
 dune2d20.populationLoyaltyLevel = {
     empty:{
-        label: ""
+        label: "",
+        modifier: null,
+        wealthUpkeep: null
     },
     hatred: {
         label: "dune2d20.config.hatred",
@@ -111,24 +233,26 @@ dune2d20.populationLoyaltyLevel = {
     },
     acceptance: {
         label: "dune2d20.config.acceptance",
-        difficulty: 0,
+        modifier: 0,
         wealthUpkeep: 10 
     },
     appreciation: {
         label: "dune2d20.config.appreciation",
-        difficulty: 1,
+        modifier: 1,
         wealthUpkeep: 20 
     },
     love: {
         label: "dune2d20.config.love",
-        difficulty: 2,
+        modifier: 2,
         wealthUpkeep: 40 
     }
 }
 
 dune2d20.lifestyleLevel = {
     empty:{
-        label: ""
+        label: "",
+        trait: null,
+        wealthUpkeep: null
     },
     ofThePeople: {
         label: "dune2d20.config.ofThePeople",

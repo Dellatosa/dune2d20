@@ -74,48 +74,53 @@ Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
     }
 });
 
-//Hooks.on("renderChatLog", (app, html, context) => Chat.addChatListeners(html));
-
 Hooks.on("renderChatMessageHTML", (message, html, context) => Chat.addChatMessageListeners(html));
 
 async function preloadHandlebarsTemplates() {
     const templatePaths = [
+        // Sheet V1
         "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-background-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-pools-locked.hbs",
+        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-background-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs",
+
+        // Sheet V1 & Sheet V2
         "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
         "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
+        "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs",
+        "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs",
+
+        // Sheet V2
+        "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-drives-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/actors/character-skills-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-pools-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs",
         "systems/dune2d20/templates/partials/actors/character-pools-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-background-locked.hbs",
         "systems/dune2d20/templates/partials/house/house-background-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-background-unlocked.hbs",
         "systems/dune2d20/templates/partials/house/house-background-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-skills-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-skills-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs"
+        "systems/dune2d20/templates/partials/house/house-dom-income-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-dom-income-unlocked-v2.hbs"
     ];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);

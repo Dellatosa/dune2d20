@@ -218,11 +218,18 @@
             }
         }
 
+        .domain-income-grid {
+            display: grid;
+            grid-template-columns: 27px 1fr 27px 10px 59px 10px 59px 10px;
+        }
+
         .overview-grid {
             display: grid;
             grid-template-columns: 27px 1fr 27px 10px 59px 10px 59px 10px;
             grid-template-rows: 40px 20px 50px 20px 50px 20px 50px;
+        }
 
+        .overview-grid, .domain-income-grid {
             align-items: center;
             margin: 0 2px;
 
@@ -236,7 +243,7 @@
                 grid-column-end: 9;
             }
 
-            .modifier {
+            .modifier, .resources {
                 text-align: center;
                 font-weight: bold;
                 font-size: 0.55em;
@@ -245,7 +252,7 @@
                 grid-column-end: 6;
             }
 
-            .upkeep {
+            .upkeep, .wealth {
                 text-align: center;
                 font-weight: bold;
                 font-size: 0.55em;
@@ -307,11 +314,14 @@
                 }
             }
 
-            .field-data.locked {
+            .field-data.locked, .field-data.domain {
                 height: 34px;
                 
                 padding: 5px 3px;
                 font-size: 1.2em;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
 
                 border-top: solid 1px  var(--color-box-border);
                 border-bottom: solid 1px var(--color-box-border);
@@ -546,7 +556,7 @@
 
             .enemy {
                 display: grid;
-                grid-template-columns: 1fr 2fr 25px 1.5fr 25px;
+                grid-template-columns: 25px 1fr 25px 1fr 25px;
                 align-items: center;
 
                 padding: 3px;
@@ -554,33 +564,27 @@
                 border-left: solid 1px var(--color-box-border);
                 border-right: solid 1px var(--color-box-border);
 
-                .enemy-title {
-                    grid-column-start: 1;
-                    grid-column-end: 2;
-                
-                    font-size: 1.1em;
-                    font-weight: bold;
-                }
-
-                .remove-item, .edit-item, .hatred, .toogle-desc {
+                .remove-item, .edit-item, .icone, .toogle-desc {
                     text-align: center;
                     font-size: 1.2em;
                 }
 
                 .enemy-name {
                     grid-column-start: 1;
-                    grid-column-end: 3;
+                    grid-column-end: 5;
 
                     font-size: 1.2em;
+                    font-weight: bold;
                 }
 
                 .enemy-stat {
+                    padding-left: 2px;
+                    font-size: 1.2em;
+                }
+
+                .enemy-stat.large {
                     grid-column-start: 2;
                     grid-column-end: 5;
-
-                    padding-left: 2px;
-
-                    font-size: 1.2em;
                 }
             }
 

@@ -9,8 +9,24 @@ export default class DuneItem extends Item {
 
     prepareData() {
         super.prepareData();
-        let data = this.system;
-
+        
+        if(this.type == "Domain") {
+            // Calculate Wealth and Resources income
+            if(this.system.area != null && this.system.area != "none" && this.system.section != null && this.system.section != "none") {
+                if(this.system.primary) {
+                    this.system.wealthIncome = CONFIG.dune2d20.sections[this.system.section].wealthP + CONFIG.dune2d20.areaOfExpertise[this.system.area].wealthP;
+                    this.system.resourcesIncome = CONFIG.dune2d20.sections[this.system.section].resourcesP + CONFIG.dune2d20.areaOfExpertise[this.system.area].resourcesP;
+                }
+                else {
+                    this.system.wealthIncome = CONFIG.dune2d20.sections[this.system.section].wealthS + CONFIG.dune2d20.areaOfExpertise[this.system.area].wealthS;
+                    this.system.resourcesIncome = CONFIG.dune2d20.sections[this.system.section].resourcesS + CONFIG.dune2d20.areaOfExpertise[this.system.area].resourcesS;
+                }
+            }
+            else {
+                this.system.wealthIncome = null;
+                this.system.resourcesIncome = null;
+            }
+        }
     }
 
 }

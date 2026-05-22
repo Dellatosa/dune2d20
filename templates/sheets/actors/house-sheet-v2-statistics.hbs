@@ -11,14 +11,25 @@
             {{/if}}
         </div>
         <div> </div>
-        <div class="overview-grid">
-            <!-- Overview title -->
-            <div class="title">{{ localize 'dune2d20.actor.overview' }}</div>
-            {{#if unlocked}}
-                {{> "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs" }}
-            {{else}}
-                {{> "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs" }}
-            {{/if}}
+        <div>
+            <div class="overview-grid">
+                <!-- Overview title -->
+                <div class="title">{{ localize 'dune2d20.actor.overview' }}</div>
+                {{#if unlocked}}
+                    {{> "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs" }}
+                {{else}}
+                    {{> "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs" }}
+                {{/if}}
+            </div>
+            <div class="domain-income-grid">
+                <!-- Domain income title -->
+                <div class="title">{{ localize 'dune2d20.actor.domainIncome' }}</div>
+                {{#if unlocked}}
+                    {{> "systems/dune2d20/templates/partials/house/house-dom-income-unlocked-v2.hbs" }}
+                {{else}}
+                    {{> "systems/dune2d20/templates/partials/house/house-dom-income-locked-v2.hbs" }}
+                {{/if}}
+            </div>
         </div>
     </div>
 </section>

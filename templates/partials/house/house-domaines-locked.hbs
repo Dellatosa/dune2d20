@@ -7,14 +7,14 @@
                 <i class="fa-solid fa-square-2" title="{{localize 'dune2d20.hint.secondaryDomain'}}"></i>
             {{/if}} {{domain.name}}
         </div>
-        <div class="domain-stat">{{localize 'dune2d20.actor.area'}} : {{domain.system.area}}</div>
-        <div class="domain-stat">{{localize 'dune2d20.actor.section'}} : {{domain.system.section}}</div>
-        {{#if system.descVisible}}
-            <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideDomainDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
-        </div>
-           <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
-        {{else}}
-            <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showDomainDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
-        </div>
-        {{/if}}
+        <div class="domain-stat"><i class="fa-solid fa-chart-pie-simple-circle-dollar" title="{{localize 'dune2d20.actor.area'}}"></i> {{configLocalizeLabel "areaOfExpertise" domain.system.area}}</div>
+        <div class="domain-stat"><i class="fa-solid fa-industry" title="{{localize 'dune2d20.actor.section'}}"></i> {{configLocalizeLabel "sections" domain.system.section}}</div>
+    {{#if system.descVisible}}
+        <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideDomainDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+    </div>
+    <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
+    {{else}}
+        <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showDomainDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
+    </div>
+    {{/if}}
 {{/each}}

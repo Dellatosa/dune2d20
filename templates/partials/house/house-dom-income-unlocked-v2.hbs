@@ -1,0 +1,21 @@
+<div class="field-name start">&nbsp;</div>
+<div class="resources">{{ localize 'dune2d20.actor.resources' }}</div>
+<div> </div>
+<div class="wealth">{{ localize 'dune2d20.actor.wealth' }}</div>
+<div> </div>
+{{#each domains as |domain id|}}
+    <div class="field-start"> </div>
+    <div class="field-data domain" title="{{domain.name}}">
+        {{#if domain.system.primary}}
+            <i class="fa-solid fa-square-1" title="{{localize 'dune2d20.hint.primaryDomain'}}"></i>
+        {{else}}
+            <i class="fa-solid fa-square-2" title="{{localize 'dune2d20.hint.secondaryDomain'}}"></i>
+        {{/if}} {{domain.name}}
+    </div>
+    <div class="field-end"> </div>
+    <div> </div>
+    <div class="val"><input name="system.resourcesIncome" type="number" value="{{domain.system.resourcesIncome}}" readonly/></div>
+    <div> </div>
+    <div class="val"><input name="system.wealthIncome" type="number" value="{{domain.system.wealthIncome}}" readonly/></div>
+    <div> </div>
+{{/each}}

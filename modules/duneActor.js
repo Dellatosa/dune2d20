@@ -5,7 +5,7 @@ export default class DuneActor extends Actor {
 
         if(this.type != "House") {
             
-            // Set min and max values for Drives eand Skills
+            // Set min and max values for Drives
 
             // DUTY
             if(this.system.drives.duty.value < this.system.drives.duty.min) this.system.drives.duty.value = this.system.drives.duty.min;
@@ -23,22 +23,6 @@ export default class DuneActor extends Actor {
             if(this.system.drives.truth.value < this.system.drives.truth.min) this.system.drives.truth.value = this.system.drives.truth.min;
             if(this.system.drives.truth.value > this.system.drives.truth.max) this.system.drives.truth.value = this.system.drives.truth.max;
 
-            // BATTLE
-            if(this.system.skills.battle.value < this.system.skills.battle.min) this.system.skills.battle.value = this.system.skills.battle.min;
-            if(this.system.skills.battle.value > this.system.skills.battle.max) this.system.skills.battle.value = this.system.skills.battle.max;
-            // COMMUNICATE
-            if(this.system.skills.communicate.value < this.system.skills.communicate.min) this.system.skills.communicate.value = this.system.skills.communicate.min;
-            if(this.system.skills.communicate.value > this.system.skills.communicate.max) this.system.skills.communicate.value = this.system.skills.communicate.max;
-            // DISCIPLINE
-            if(this.system.skills.discipline.value < this.system.skills.discipline.min) this.system.skills.discipline.value = this.system.skills.discipline.min;
-            if(this.system.skills.discipline.value > this.system.skills.discipline.max) this.system.skills.discipline.value = this.system.skills.discipline.max;
-            // MOVE
-            if(this.system.skills.move.value < this.system.skills.move.min) this.system.skills.move.value = this.system.skills.move.min;
-            if(this.system.skills.move.value > this.system.skills.move.max) this.system.skills.move.value = this.system.skills.move.max;
-            // UNDERSTAND
-            if(this.system.skills.understand.value < this.system.skills.understand.min) this.system.skills.understand.value = this.system.skills.understand.min;
-            if(this.system.skills.understand.value > this.system.skills.understand.max) this.system.skills.understand.value = this.system.skills.understand.max;
-
             if(this.type == "PC") {
                 // ADVANCEMENT
                 if(this.system.resources.advancementPoints.value < this.system.resources.advancementPoints.min) this.system.resources.advancementPoints.value = this.system.resources.advancementPoints.min;
@@ -49,6 +33,45 @@ export default class DuneActor extends Actor {
             }
         }
         
+        if(this.type == "House") {
+            // Calculate Upkeep and modifier
+
+            // Military Power
+            if(this.system.militaryPower != null) {
+                this.system.militaryPowerUpkeep = CONFIG.dune2d20.militaryPowerLevel[this.system.militaryPower].wealthUpkeep;
+                this.system.militaryPowerDifficulty = CONFIG.dune2d20.militaryPowerLevel[this.system.militaryPower].difficulty;
+            }
+
+            // Population Loyalty
+            if(this.system.populationLoyalty != null) {
+                this.system.populationLoyaltyUpkeep = CONFIG.dune2d20.populationLoyaltyLevel[this.system.populationLoyalty].wealthUpkeep;
+                this.system.populationLoyaltyModifier = CONFIG.dune2d20.populationLoyaltyLevel[this.system.populationLoyalty].modifier;
+            }
+
+            // Lifestyle
+            if(this.system.lifestyle != null) {
+                this.system.lifestyleUpkeep = CONFIG.dune2d20.lifestyleLevel[this.system.lifestyle].wealthUpkeep;
+                this.system.lifestyleTrait = CONFIG.dune2d20.lifestyleLevel[this.system.lifestyle].trait;
+            }
+        }
+
+        // Set min and max values for Skills
+
+        // BATTLE
+        if(this.system.skills.battle.value < this.system.skills.battle.min) this.system.skills.battle.value = this.system.skills.battle.min;
+        if(this.system.skills.battle.value > this.system.skills.battle.max) this.system.skills.battle.value = this.system.skills.battle.max;
+        // COMMUNICATE
+        if(this.system.skills.communicate.value < this.system.skills.communicate.min) this.system.skills.communicate.value = this.system.skills.communicate.min;
+        if(this.system.skills.communicate.value > this.system.skills.communicate.max) this.system.skills.communicate.value = this.system.skills.communicate.max;
+        // DISCIPLINE
+        if(this.system.skills.discipline.value < this.system.skills.discipline.min) this.system.skills.discipline.value = this.system.skills.discipline.min;
+        if(this.system.skills.discipline.value > this.system.skills.discipline.max) this.system.skills.discipline.value = this.system.skills.discipline.max;
+        // MOVE
+        if(this.system.skills.move.value < this.system.skills.move.min) this.system.skills.move.value = this.system.skills.move.min;
+        if(this.system.skills.move.value > this.system.skills.move.max) this.system.skills.move.value = this.system.skills.move.max;
+        // UNDERSTAND
+        if(this.system.skills.understand.value < this.system.skills.understand.min) this.system.skills.understand.value = this.system.skills.understand.min;
+        if(this.system.skills.understand.value > this.system.skills.understand.max) this.system.skills.understand.value = this.system.skills.understand.max;
     }
 
     get isUnlocked() {

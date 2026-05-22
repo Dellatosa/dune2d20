@@ -1,13 +1,13 @@
 <section class="sheet-body">
     <div class="enemy-grid">
         <div class="enemy-stats">
-            <div class="stat">{{ localize 'dune2d20.item.houseType' }}</div>
+            <div class="stat"><i class="fa-solid fa-khanda"></i> {{ localize 'dune2d20.item.houseType' }}</div>
             <div class="full-col">                    
                 <select name="system.houseType">
                     {{selectOptions config.houseType selected=system.houseType localize=true}}
                 </select>
             </div>
-            <div class="stat">{{ localize 'dune2d20.item.hatred' }}</div>
+            <div class="stat"><i class="fa-solid fa-heart-crack"></i> {{ localize 'dune2d20.item.hatred' }}</div>
             <div class="full-col">                    
                 <select name="system.hatred"> 
                     {{selectOptions config.hatred selected=system.hatred localize=true}}

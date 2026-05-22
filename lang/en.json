@@ -172,13 +172,16 @@
             "quality": "Quality",
             "primaryDomain": "Primary Domain",
             "secondaryDomain": "Secondary Domain",
-            "hatred" : "Hatred",
+            "hatred" : "Hatred level",
             "removeDomain": "Remove Domain",
             "editDomain": "Edit Domain",
             "removeEnemy": "Remove Enemy",
             "editEnemy": "Edit Enemy",
             "management": "MANAGEMENT",
-            "skillUpkeep": "SKILL UPKEEP"
+            "skillUpkeep": "SKILL UPKEEP",
+            "houseType": "House type",
+            "showDomainDesc": "Show Domain description",
+            "showEnemyNotes": "Show Enemy notes"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !",
@@ -213,7 +216,20 @@
             "poor": "Poor",
             "noble": "Noble",
             "wealthy": "Wealthy",
-            "imperial": "Imperial"
+            "imperial": "Imperial",
+            "machinery": "Machinery",
+            "produce": "Produce",
+            "expertise": "Expertise",
+            "workers": "Workers",
+            "understanding": "Understanding",
+            "artistic": "Artistic",
+            "espionage": "Espionage",
+            "farming": "Farming",
+            "industrial": "Industrial",
+            "military": "Military",
+            "political": "Political",
+            "religious": "Religious",
+            "scientific": "Scientific"
         },
         "setting": {
             "momentumPool": "Momentum Pool",

@@ -97,7 +97,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
         context.img = this.actor.img;
         context.system = this.actor.system;
 
-        console.log(context);
+        //console.log(context);
         return context;
     }
 
