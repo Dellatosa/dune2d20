@@ -179,7 +179,8 @@
             "editEnemy": "Modifier l'Ennemi",
             "houseType": "Type de Maison",
             "showDomainDesc": "Afficher la description du Domaine",
-            "showEnemyNotes": "Afficher les notes concernant l'Ennemi"
+            "showEnemyNotes": "Afficher les notes concernant l'Ennemi",
+            "enemyReason": "Raison de l'inimitié"
         },
         "notification": {
             "houseAlreadyExists" : "Ce personnage sert déjà une Maison !",

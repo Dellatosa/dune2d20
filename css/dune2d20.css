@@ -557,6 +557,7 @@
 .dune2d20.sheet.house .statistics .domain-income-grid {
   display: grid;
   grid-template-columns: 27px 1fr 27px 10px 59px 10px 59px 10px;
+  grid-template-rows: 40px 15px;
 }
 .dune2d20.sheet.house .statistics .overview-grid {
   display: grid;

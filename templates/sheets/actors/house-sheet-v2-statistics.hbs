@@ -24,11 +24,7 @@
             <div class="domain-income-grid">
                 <!-- Domain income title -->
                 <div class="title">{{ localize 'dune2d20.actor.domainIncome' }}</div>
-                {{#if unlocked}}
-                    {{> "systems/dune2d20/templates/partials/house/house-dom-income-unlocked-v2.hbs" }}
-                {{else}}
-                    {{> "systems/dune2d20/templates/partials/house/house-dom-income-locked-v2.hbs" }}
-                {{/if}}
+                {{> "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs" }}
             </div>
         </div>
     </div>

@@ -181,7 +181,8 @@
             "skillUpkeep": "SKILL UPKEEP",
             "houseType": "House type",
             "showDomainDesc": "Show Domain description",
-            "showEnemyNotes": "Show Enemy notes"
+            "showEnemyNotes": "Show Enemy notes",
+            "enemyReason": "Enemy reason"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !",

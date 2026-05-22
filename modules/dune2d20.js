@@ -61,7 +61,7 @@ Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
     if(dropped.type == "Actor") {
         const actorDocument = fromUuidSync(dropped.uuid);
 
-        console.log(fromUuidSync(actor.system.house));
+        //console.log(fromUuidSync(actor.system.house));
 
         if(actorDocument.type == "House") {
             if(actor.system.house == null || fromUuidSync(actor.system.house) == null) {
@@ -119,8 +119,7 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-dom-income-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-dom-income-unlocked-v2.hbs"
+        "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs"
     ];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);
