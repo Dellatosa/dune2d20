@@ -74,7 +74,8 @@
             "lifestyle": "LIFESTYLE",
             "domainIncome": "DOMAIN INCOME",
             "resources": "RESOURCES",
-            "wealth": "WEALTH"
+            "wealth": "WEALTH",
+            "compVentures": "COMPLETED VENTURES"
         },
         "item": {
             "name": "Name",

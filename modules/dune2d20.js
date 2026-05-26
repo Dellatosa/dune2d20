@@ -119,7 +119,9 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-locked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs"
+        "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-comp-ventures-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-comp-ventures-unlocked-v2.hbs"
     ];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);
