@@ -146,6 +146,8 @@
           "name": ""
         }
       },
+      "activeRoles": 0,
+      "rolesUpkeep": 0,
       "skills": {
           "battle": {
             "value": 4,
@@ -171,16 +173,19 @@
             "value": 4,
             "min": 4,
             "max": 10
-          },
-          "upkeep": {
-            "value": 0,
-            "min": 0,
-            "max": 10
           }
       },
+      "status": {
+        "value": 0,
+        "min": 0,
+        "max": 100
+      },
+      "skillsUpkeep": 0,
       "militaryPower": "empty",
       "populationLoyalty": "empty",
       "lifestyle": "empty",
+      "totalWealth": 0,
+      "totalResources": 0,
       "enemies": []
     }
   },  

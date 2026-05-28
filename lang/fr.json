@@ -61,6 +61,10 @@
             "area" :"Secteur",
             "section": "Section",
             "houseRoles": "ROLES DE LA MAISON",
+            "additionalRoles": "ROLES ADDITIONNELS",
+            "activeRoles": "ROLES ACTIFS",
+            "rolesUpkeep": "ENTRETIEN DES ROLES",
+            "rolesStats": "STATISTIQUES",
             "enemies": "ENNEMIS",
             "type": "TYPE",
             "reason": "RAISON",
@@ -75,7 +79,14 @@
             "domainIncome": "REVENUS DES DOMAINES",
             "resources": "RESSOURCES",
             "wealth": "RICHESSE",
-            "compVentures": "ENTREPRISES COMPLETEES"
+            "compVentures": "ENTREPRISES COMPLETEES",
+            "houseManagement":"GESTION DE LA MAISON",
+            "totalWealth": "RICHESSE TOTALE",
+            "totalResources": "RESSOURCES TOTALE",
+            "totalUpkeep": "ENTRETIEN TOTAL",
+            "newsImperium": "NOUVELLES DE L'IMPERIUM",
+            "events": "EVENEMENTS",
+            "devVentures": "ENTREPRISES DEVELOPPEES"
         },
         "item": {
             "name": "Nom",

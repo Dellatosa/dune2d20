@@ -44,11 +44,25 @@ dune2d20.factions = {
 }
 
 dune2d20.houseType = {
-    none: "",
-    nascentHouse: "dune2d20.config.nascentHouse",
-    houseMinor: "dune2d20.config.houseMinor",
-    houseMajor: "dune2d20.config.houseMajor",
-    greatHouse: "dune2d20.config.greatHouse"
+    none: {
+        label: ""
+    },
+    nascentHouse: {
+        label: "dune2d20.config.nascentHouse",
+        additionalRoles: 2
+    },
+    houseMinor: {
+        label: "dune2d20.config.houseMinor",
+        additionalRoles: 4
+    },
+    houseMajor: {
+        label: "dune2d20.config.houseMajor",
+        additionalRoles: 6
+    },
+    greatHouse: {
+        label: "dune2d20.config.greatHouse",
+        additionalRoles: 8
+    }
 }
 
 dune2d20.hatred = {
@@ -278,6 +292,39 @@ dune2d20.lifestyleLevel = {
         label: "dune2d20.config.imperial",
         trait: "envied",
         wealthUpkeep: 60 
+    }
+}
+
+dune2d20.status = {
+    "feeble": {
+        "minor": 0,
+        "major": 0,
+        "great": 0
+    },
+    "weak": {
+        "minor": 11,
+        "major": 21,
+        "great": 41
+    },
+    "respected": {
+        "minor": 21,
+        "major": 41,
+        "great": 61
+    },
+    "strong": {
+        "minor": 41,
+        "major": 61,
+        "great": 71
+    },
+    "problematic": {
+        "minor": 51,
+        "major": 71,
+        "great": 81
+    },
+    "dangerous": {
+        "minor": 71,
+        "major": 81,
+        "great": 91
     }
 }
 

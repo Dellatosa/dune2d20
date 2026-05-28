@@ -51,7 +51,19 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
         management: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-management.hbs",
             scrollable: ['']
-        }
+        }/*,
+        newsImperium: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-news-imperium.hbs",
+            scrollable: ['']
+        },
+        events: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-events.hbs",
+            scrollable: ['']
+        },
+        devVentures: {
+            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-dev-ventures.hbs",
+            scrollable: ['']
+        }*/
 	};
 
     static TABS = {
@@ -59,10 +71,16 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             tabs: [{ id: "roles" }, { id: "domains" }, { id: "statistics" }, { id: "management" }],
             labelPrefix: "dune2d20.actor", 
             initial: "roles"
-        }
+        }/*,
+        secondary: {
+            tabs: [{ id: "newsImperium" }, { id: "events" }, { id: "devVentures" }],
+            labelPrefix: "dune2d20.actor", 
+            initial: "newsImperium"
+        }*/
     };
 
     async _preparePartContext(partId, context) {
+        console.log(partId);
         switch (partId) {
             case 'header':
                 context.traits = this.actor.items.filter(function (item) { return item.type == "Trait"});
@@ -81,6 +99,15 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             case 'management':
                 context.tab = context.tabs[partId];
                 break;
+            /*case 'newsImperium':
+                context.tab = context.tabs[partId];
+                break;
+            case 'events':
+                context.tab = context.tabs[partId];
+                break;
+            case 'devVentures':
+                context.tab = context.tabs[partId];
+                break;*/
             default:
         }
 
@@ -90,7 +117,6 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
     async _prepareContext(options) {
         const context = await super._prepareContext(options);
 
-        //context.tabs = this._prepareTabs("primary");
         context.config = CONFIG.dune2d20;
         context.unlocked = this.actor.isOwner ? this.actor.isUnlocked : false;
         context.name = this.actor.name;

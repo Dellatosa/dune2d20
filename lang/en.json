@@ -61,6 +61,10 @@
             "area" :"Area",
             "section": "Section",
             "houseRoles": "HOUSE ROLES",
+            "additionalRoles": "ADDITIONAL ROLES",
+            "activeRoles": "ACTIVE ROLES",
+            "rolesUpkeep": "ROLES UPKEEP",
+            "rolesStats": "STATISTICS",
             "enemies": "ENEMIES",
             "type": "TYPE",
             "reason": "REASON",
@@ -75,7 +79,14 @@
             "domainIncome": "DOMAIN INCOME",
             "resources": "RESOURCES",
             "wealth": "WEALTH",
-            "compVentures": "COMPLETED VENTURES"
+            "compVentures": "COMPLETED VENTURES",
+            "houseManagement":"HOUSE MANAGEMENT",
+            "totalWealth": "TOTAL WEALTH",
+            "totalResources": "TOTAL RESOURCES",
+            "totalUpkeep": "TOTAL UPKEEP",
+            "newsImperium": "NEWS FROM THE IMPERIUM",
+            "events": "EVENTS",
+            "devVentures": "VENTURES DEVELOPED"
         },
         "item": {
             "name": "Name",

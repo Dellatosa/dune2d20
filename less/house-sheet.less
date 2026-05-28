@@ -95,6 +95,7 @@
 
                 input:focus, select:focus {
                     box-shadow: none;
+                    outline: none;
                 }
 
                 input:read-only {
@@ -300,6 +301,7 @@
 
                 input:focus, select:focus {
                     box-shadow: none;
+                    outline: none;
                 }
 
                 input:read-only {
@@ -379,11 +381,11 @@
         }
     }
 
-    .domaines-grid, .comp-ventures-grid {
+    .domaines-grid, .comp-ventures-grid, .news-imperium-grid, .events-grid, .dev-ventures-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;
 
-        .domaines-flex, .comp-ventures-flex {
+        .domaines-flex, .comp-ventures-flex, .news-imperium-flex, .events-flex, .dev-ventures-flex {
             display: flex;
             flex-direction: column;
 
@@ -467,6 +469,80 @@
         margin-top: 5px;
     }
 
+    .roles-stats {
+        display: grid;
+        grid-template-columns: 27px 1fr 27px 10px 27px 1fr 27px 10px 27px 1fr 27px;
+
+        align-items: center;
+        margin: 0 2px;
+
+        color: var(--color-normal-text);
+
+        .stat-name {
+            margin-top: 3px;
+            
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .stat-name.left {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .stat-name.middle {
+            grid-column-start: 5;
+            grid-column-end: 8;
+        }
+
+        .stat-name.right {
+            grid-column-start: 9;
+            grid-column-end: 12;
+        }
+
+        .stat-data {
+
+            input {
+                height: 34px;
+                width: 100%;
+
+                background: none;
+                border: none;
+                border-top: solid 1px  var(--color-box-border);
+                border-bottom: solid 1px var(--color-box-border);
+
+                font-family: "Perpetua";
+                font-size: 1.25em;
+                color: var(--color-normal-text);
+                text-align: center;
+            }
+
+            input:focus {
+                box-shadow: none;
+                outline: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+                
+            input:not([readonly]):focus {
+                color: var(--color-focus-text);
+                font-weight: bold;
+            }
+        }
+
+        .stat-start {
+            height: 34px;
+            background-image: url("../images/sheet/field-left.png");
+        }
+
+        .stat-end {
+            height: 34px;
+            background-image: url("../images/sheet/field-right.png");
+        }
+    }
+
     .roles {
         display: grid;
         grid-template-columns: 27px 1fr 27px 10px 27px 1fr 27px;
@@ -514,6 +590,7 @@
 
             input:focus, select:focus {
                 box-shadow: none;
+                outline: none;
             }
 
             input:read-only {
@@ -539,6 +616,121 @@
         .role-end {
             height: 34px;
             background-image: url("../images/sheet/field-right.png");
+        }
+    }
+
+    .manage-pools-grid {
+        display: grid;
+        grid-template-columns: 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr;
+        grid-template-rows: 30px 70px;
+
+        margin: 0 2px;
+
+        color: var(--color-normal-text);
+
+        .pool-name {
+            margin: 0 3px;
+            align-self: center;
+            
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .pool-box {
+            background-image: url("../images/sheet/house-total-box.png");
+        }
+
+        .pool-val {
+
+            input {
+                height: 70px;
+                width: 100%;
+                text-align: center;
+
+                background: none;
+                border: none;
+
+                font-family: "Perpetua";
+                font-size: 1.25em;
+                color: var(--color-normal-text);
+            }
+
+            input:focus {
+                box-shadow: none;
+                outline: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+                
+            input:not([readonly]):focus {
+                color: var(--color-focus-text);
+                font-weight: bold;
+            }
+        }
+
+        .pool-name.left {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .pool-box.left {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .pool-val.left {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .pool-name.middle {
+            grid-column-start: 5;
+            grid-column-end: 10;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .pool-box.middle {
+            grid-column-start: 6;
+            grid-column-end: 9;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .pool-val.middle {
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .pool-name.right {
+            grid-column-start: 9;
+            grid-column-end: 14;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .pool-box.right {
+            grid-column-start: 10;
+            grid-column-end: 13;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .pool-val.right {
+            grid-column-start: 11;
+            grid-column-end: 12;
+            grid-row-start: 2;
+            grid-row-end: 3;
         }
     }
 

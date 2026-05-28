@@ -121,7 +121,17 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/house/house-roles-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-comp-ventures-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-comp-ventures-unlocked-v2.hbs"
+        "systems/dune2d20/templates/partials/house/house-comp-ventures-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-stats-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-roles-stats-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-manage-pools-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-manage-pools-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-news-imperium-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-news-imperium-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-events-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-events-unlocked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-dev-ventures-locked-v2.hbs",
+        "systems/dune2d20/templates/partials/house/house-dev-ventures-unlocked-v2.hbs"
     ];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);

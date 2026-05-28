@@ -457,6 +457,7 @@
 .dune2d20.sheet.house .sheet-header .background .bg-data input:focus,
 .dune2d20.sheet.house .sheet-header .background .bg-data select:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.house .sheet-header .background .bg-data input:read-only {
   cursor: default;
@@ -631,6 +632,7 @@
 .dune2d20.sheet.house .statistics .overview-grid .field-data select:focus,
 .dune2d20.sheet.house .statistics .domain-income-grid .field-data select:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.house .statistics .overview-grid .field-data input:read-only,
 .dune2d20.sheet.house .statistics .domain-income-grid .field-data input:read-only {
@@ -706,14 +708,38 @@
   font-style: italic;
 }
 .dune2d20.sheet.house .domaines-grid,
-.dune2d20.sheet.house .comp-ventures-grid {
+.dune2d20.sheet.house .comp-ventures-grid,
+.dune2d20.sheet.house .news-imperium-grid,
+.dune2d20.sheet.house .events-grid,
+.dune2d20.sheet.house .dev-ventures-grid {
   display: grid;
   grid-template-columns: 1fr 720px 1fr;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex,
+.dune2d20.sheet.house .events-grid .domaines-flex,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex,
+.dune2d20.sheet.house .events-grid .news-imperium-flex,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex,
+.dune2d20.sheet.house .domaines-grid .events-flex,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex,
+.dune2d20.sheet.house .news-imperium-grid .events-flex,
+.dune2d20.sheet.house .events-grid .events-flex,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex {
   display: flex;
   flex-direction: column;
   font-family: "Hoefler";
@@ -722,16 +748,58 @@
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .top-row,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .top-row,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .top-row,
+.dune2d20.sheet.house .events-grid .domaines-flex .top-row,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .top-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .top-row,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .top-row {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .top-row,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .top-row,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .top-row,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .top-row,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .top-row,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .top-row,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .top-row,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .top-row,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .top-row,
+.dune2d20.sheet.house .domaines-grid .events-flex .top-row,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .top-row,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .top-row,
+.dune2d20.sheet.house .events-grid .events-flex .top-row,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .top-row,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .top-row,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .top-row,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .top-row,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .top-row,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .top-row {
   flex-basis: 28px;
   background-image: url("../images/sheet/domaines-top.png");
   margin-top: 5px;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .title-row,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .title-row,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .title-row,
+.dune2d20.sheet.house .events-grid .domaines-flex .title-row,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .title-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .title-row,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .title-row {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .title-row,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .title-row,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .title-row,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .title-row,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .title-row,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .title-row,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .title-row,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .title-row,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .title-row,
+.dune2d20.sheet.house .domaines-grid .events-flex .title-row,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .title-row,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .title-row,
+.dune2d20.sheet.house .events-grid .events-flex .title-row,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .title-row,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .title-row,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .title-row,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .title-row,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .title-row,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .title-row {
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
   font-weight: bold;
@@ -739,8 +807,29 @@
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .domain-row,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .domain-row,
+.dune2d20.sheet.house .events-grid .domaines-flex .domain-row,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .domain-row,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .domain-row,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .domain-row,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .domain-row,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .domain-row,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .domain-row,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .domain-row,
+.dune2d20.sheet.house .domaines-grid .events-flex .domain-row,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .domain-row,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .domain-row,
+.dune2d20.sheet.house .events-grid .events-flex .domain-row,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .domain-row,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .domain-row,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .domain-row,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .domain-row,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row {
   display: flex;
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
@@ -750,31 +839,136 @@
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .domain-name,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .domain-row .domain-name,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .domain-row .domain-name,
+.dune2d20.sheet.house .events-grid .domaines-flex .domain-row .domain-name,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .domain-name,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .domain-name,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .domain-name {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .domain-row .domain-name,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .domain-row .domain-name,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .domain-row .domain-name,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .domain-row .domain-name,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .domain-row .domain-name,
+.dune2d20.sheet.house .domaines-grid .events-flex .domain-row .domain-name,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .domain-row .domain-name,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .domain-row .domain-name,
+.dune2d20.sheet.house .events-grid .events-flex .domain-row .domain-name,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .domain-row .domain-name,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .domain-name {
   flex: 2;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .domain-stat,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .events-grid .domaines-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .domain-stat,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .domain-stat {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .domaines-grid .events-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .events-grid .events-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .domain-stat {
   flex: 1;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .edit-item,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .domain-row .edit-item,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .domain-row .edit-item,
+.dune2d20.sheet.house .events-grid .domaines-flex .domain-row .edit-item,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .edit-item,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .edit-item,
 .dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .domain-row .edit-item,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .domain-row .edit-item,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .domain-row .edit-item,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .domain-row .edit-item,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .domain-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .events-flex .domain-row .edit-item,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .domain-row .edit-item,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .domain-row .edit-item,
+.dune2d20.sheet.house .events-grid .events-flex .domain-row .edit-item,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .domain-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .edit-item,
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .remove-item,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .domain-row .remove-item,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .domain-row .remove-item,
+.dune2d20.sheet.house .events-grid .domaines-flex .domain-row .remove-item,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .remove-item,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .remove-item,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .remove-item {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .domain-row .remove-item,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .domain-row .remove-item,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .domain-row .remove-item,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .domain-row .remove-item,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .domain-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .events-flex .domain-row .remove-item,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .domain-row .remove-item,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .domain-row .remove-item,
+.dune2d20.sheet.house .events-grid .events-flex .domain-row .remove-item,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .domain-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .remove-item {
   flex-basis: 25px;
   text-align: center;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .desc-row,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .desc-row,
+.dune2d20.sheet.house .events-grid .domaines-flex .desc-row,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .desc-row,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .desc-row,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .desc-row,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .desc-row,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .desc-row,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .desc-row,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .desc-row,
+.dune2d20.sheet.house .domaines-grid .events-flex .desc-row,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .desc-row,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .desc-row,
+.dune2d20.sheet.house .events-grid .events-flex .desc-row,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .desc-row,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .desc-row,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .desc-row,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .desc-row,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row {
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
   padding-left: 3px;
@@ -783,8 +977,29 @@
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .desc-row .editor,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .desc-row .editor,
+.dune2d20.sheet.house .events-grid .domaines-flex .desc-row .editor,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row .editor,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row .editor,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row .editor {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .desc-row .editor,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .desc-row .editor,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .desc-row .editor,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .desc-row .editor,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .desc-row .editor,
+.dune2d20.sheet.house .domaines-grid .events-flex .desc-row .editor,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .desc-row .editor,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .desc-row .editor,
+.dune2d20.sheet.house .events-grid .events-flex .desc-row .editor,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .desc-row .editor,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row .editor {
   background-color: var(--color-box-background);
   border: solid 1px var(--color-box-border);
   box-shadow: inset 0 0 5px var(--color-box-inset);
@@ -792,16 +1007,58 @@
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor .editor-content,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .events-grid .domaines-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row .editor .editor-content,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row .editor .editor-content {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .domaines-grid .events-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .events-grid .events-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row .editor .editor-content {
   padding: 2px 2px;
   font-size: 0.8em;
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .bottom-row,
 .dune2d20.sheet.house .comp-ventures-grid .domaines-flex .bottom-row,
+.dune2d20.sheet.house .news-imperium-grid .domaines-flex .bottom-row,
+.dune2d20.sheet.house .events-grid .domaines-flex .bottom-row,
+.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .bottom-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .bottom-row,
-.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .bottom-row {
+.dune2d20.sheet.house .comp-ventures-grid .comp-ventures-flex .bottom-row,
+.dune2d20.sheet.house .news-imperium-grid .comp-ventures-flex .bottom-row,
+.dune2d20.sheet.house .events-grid .comp-ventures-flex .bottom-row,
+.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .bottom-row,
+.dune2d20.sheet.house .domaines-grid .news-imperium-flex .bottom-row,
+.dune2d20.sheet.house .comp-ventures-grid .news-imperium-flex .bottom-row,
+.dune2d20.sheet.house .news-imperium-grid .news-imperium-flex .bottom-row,
+.dune2d20.sheet.house .events-grid .news-imperium-flex .bottom-row,
+.dune2d20.sheet.house .dev-ventures-grid .news-imperium-flex .bottom-row,
+.dune2d20.sheet.house .domaines-grid .events-flex .bottom-row,
+.dune2d20.sheet.house .comp-ventures-grid .events-flex .bottom-row,
+.dune2d20.sheet.house .news-imperium-grid .events-flex .bottom-row,
+.dune2d20.sheet.house .events-grid .events-flex .bottom-row,
+.dune2d20.sheet.house .dev-ventures-grid .events-flex .bottom-row,
+.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .bottom-row,
+.dune2d20.sheet.house .comp-ventures-grid .dev-ventures-flex .bottom-row,
+.dune2d20.sheet.house .news-imperium-grid .dev-ventures-flex .bottom-row,
+.dune2d20.sheet.house .events-grid .dev-ventures-flex .bottom-row,
+.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .bottom-row {
   flex-basis: 32px;
   background-image: url("../images/sheet/domaines-bottom.png");
 }
@@ -810,6 +1067,61 @@
   font-weight: bold;
   color: var(--color-normal-text);
   margin-top: 5px;
+}
+.dune2d20.sheet.house .roles-stats {
+  display: grid;
+  grid-template-columns: 27px 1fr 27px 10px 27px 1fr 27px 10px 27px 1fr 27px;
+  align-items: center;
+  margin: 0 2px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .roles-stats .stat-name {
+  margin-top: 3px;
+  font-weight: bold;
+  text-align: center;
+}
+.dune2d20.sheet.house .roles-stats .stat-name.left {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.dune2d20.sheet.house .roles-stats .stat-name.middle {
+  grid-column-start: 5;
+  grid-column-end: 8;
+}
+.dune2d20.sheet.house .roles-stats .stat-name.right {
+  grid-column-start: 9;
+  grid-column-end: 12;
+}
+.dune2d20.sheet.house .roles-stats .stat-data input {
+  height: 34px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: solid 1px var(--color-box-border);
+  border-bottom: solid 1px var(--color-box-border);
+  font-family: "Perpetua";
+  font-size: 1.25em;
+  color: var(--color-normal-text);
+  text-align: center;
+}
+.dune2d20.sheet.house .roles-stats .stat-data input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.house .roles-stats .stat-data input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .roles-stats .stat-data input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .roles-stats .stat-start {
+  height: 34px;
+  background-image: url("../images/sheet/field-left.png");
+}
+.dune2d20.sheet.house .roles-stats .stat-end {
+  height: 34px;
+  background-image: url("../images/sheet/field-right.png");
 }
 .dune2d20.sheet.house .roles {
   display: grid;
@@ -848,6 +1160,7 @@
 .dune2d20.sheet.house .roles .role-data input:focus,
 .dune2d20.sheet.house .roles .role-data select:focus {
   box-shadow: none;
+  outline: none;
 }
 .dune2d20.sheet.house .roles .role-data input:read-only {
   cursor: default;
@@ -868,6 +1181,97 @@
 .dune2d20.sheet.house .roles .role-end {
   height: 34px;
   background-image: url("../images/sheet/field-right.png");
+}
+.dune2d20.sheet.house .manage-pools-grid {
+  display: grid;
+  grid-template-columns: 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr;
+  grid-template-rows: 30px 70px;
+  margin: 0 2px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-name {
+  margin: 0 3px;
+  align-self: center;
+  font-weight: bold;
+  text-align: center;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-box {
+  background-image: url("../images/sheet/house-total-box.png");
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val input {
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  font-family: "Perpetua";
+  font-size: 1.25em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-name.left {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-box.left {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val.left {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-name.middle {
+  grid-column-start: 5;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-box.middle {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val.middle {
+  grid-column-start: 7;
+  grid-column-end: 8;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-name.right {
+  grid-column-start: 9;
+  grid-column-end: 14;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-box.right {
+  grid-column-start: 10;
+  grid-column-end: 13;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .manage-pools-grid .pool-val.right {
+  grid-column-start: 11;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .dune2d20.sheet.house .enemies {
   display: grid;
