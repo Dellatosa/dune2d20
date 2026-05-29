@@ -7,33 +7,27 @@
             {{> "systems/dune2d20/templates/partials/house/house-manage-pools-locked-v2.hbs" }}
         {{/if}}
     </div>
-    <div class="news-imperium-grid">
-        <div> </div>
-        <div class="news-imperium-flex">
-            <div class="top-row"> </div>
+    <div class="news-events">
+        <div class="news-block">
+            <div class="news-top"> </div>
             <div class="title-row">{{ localize 'dune2d20.actor.newsImperium' }}</div>
             {{#if unlocked}}
                 {{> "systems/dune2d20/templates/partials/house/house-news-imperium-unlocked-v2.hbs" }}
             {{else}}
                 {{> "systems/dune2d20/templates/partials/house/house-news-imperium-locked-v2.hbs" }}
             {{/if}}
-            <div class="bottom-row"> </div>
+            <div class="news-bottom"> </div>
         </div>
-        <div> </div>
-    </div>
-    <div class="events-grid">
-        <div> </div>
-        <div class="events-flex">
-            <div class="top-row"> </div>
+        <div class="events-block">
+            <div class="news-top"> </div>
             <div class="title-row">{{ localize 'dune2d20.actor.events' }}</div>
             {{#if unlocked}}
                 {{> "systems/dune2d20/templates/partials/house/house-events-unlocked-v2.hbs" }}
             {{else}}
                 {{> "systems/dune2d20/templates/partials/house/house-events-locked-v2.hbs" }}
             {{/if}}
-            <div class="bottom-row"> </div>
+            <div class="news-bottom"> </div>
         </div>
-        <div> </div>
     </div>
     <div class="dev-ventures-grid">
         <div> </div>

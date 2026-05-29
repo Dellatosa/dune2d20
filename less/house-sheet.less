@@ -5,12 +5,14 @@
         background-image: url("../images/sheet/bg-house.jpg");
         background-size: cover;
         background-clip: border-box;
+
+        overflow-y: auto;
     }
 
     form {
         display: flex;
         flex-direction: column;
-        
+
         a:hover {
             text-shadow: 0 0 10px orange;
         }
@@ -381,11 +383,11 @@
         }
     }
 
-    .domaines-grid, .comp-ventures-grid, .news-imperium-grid, .events-grid, .dev-ventures-grid {
+    .domaines-grid, .comp-ventures-grid, .dev-ventures-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;
 
-        .domaines-flex, .comp-ventures-flex, .news-imperium-flex, .events-flex, .dev-ventures-flex {
+        .domaines-flex, .comp-ventures-flex, .dev-ventures-flex {
             display: flex;
             flex-direction: column;
 
@@ -624,7 +626,7 @@
         grid-template-columns: 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr 47px 40px 47px 1fr;
         grid-template-rows: 30px 70px;
 
-        margin: 0 2px;
+        margin: 0 2px 10px;
 
         color: var(--color-normal-text);
 
@@ -734,19 +736,28 @@
         }
     }
 
-    .enemies {
+    .enemies, .news-events {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: center;
 
         color: var(--color-normal-text);
 
-        .enemy-block {
+        .enemy-block, .news-block, .events-block {
             width: 360px;
+            margin-bottom: 10px;
 
-            .enemy-top {
+            .enemy-top, .news-top, .events-top {
                 height: 28px;
                 background-image: url("../images/sheet/enemy-top.png");
+            }
+
+            .title-row {
+                border-left: solid 1px var(--color-box-border);
+                border-right: solid 1px var(--color-box-border);
+
+                font-weight: bold;
+                text-align: center;
             }
 
             .enemy {
@@ -806,7 +817,7 @@
                 }
             }
 
-            .enemy-bottom {
+            .enemy-bottom, .news-bottom, .events-bottom {
                 height: 32px;
                 background-image: url("../images/sheet/enemy-bottom.png");
             }

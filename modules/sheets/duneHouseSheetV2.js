@@ -31,39 +31,27 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     static PARTS = {
   		header: {
-    		template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-header.hbs"
+    		template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-header.hbs",
   		},
         tabs: {
-            template: "templates/generic/tab-navigation.hbs"
+            template: "templates/generic/tab-navigation.hbs",
         },
         roles: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-roles.hbs",
-            scrollable: ['']
+            scrollable: [""]
         },
         domains: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-domains.hbs",
-            scrollable: ['']
+            scrollable: [""]
         },
         statistics: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-statistics.hbs",
-            scrollable: ['']
+            scrollable: [""]
         },
         management: {
             template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-management.hbs",
-            scrollable: ['']
-        }/*,
-        newsImperium: {
-            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-news-imperium.hbs",
-            scrollable: ['']
-        },
-        events: {
-            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-events.hbs",
-            scrollable: ['']
-        },
-        devVentures: {
-            template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-dev-ventures.hbs",
-            scrollable: ['']
-        }*/
+            scrollable: [""]
+        }
 	};
 
     static TABS = {
@@ -71,12 +59,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
             tabs: [{ id: "roles" }, { id: "domains" }, { id: "statistics" }, { id: "management" }],
             labelPrefix: "dune2d20.actor", 
             initial: "roles"
-        }/*,
-        secondary: {
-            tabs: [{ id: "newsImperium" }, { id: "events" }, { id: "devVentures" }],
-            labelPrefix: "dune2d20.actor", 
-            initial: "newsImperium"
-        }*/
+        }
     };
 
     async _preparePartContext(partId, context) {
