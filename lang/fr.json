@@ -86,7 +86,10 @@
             "totalUpkeep": "ENTRETIEN TOTAL",
             "newsImperium": "NOUVELLES DE L'IMPERIUM",
             "events": "EVENEMENTS",
-            "devVentures": "ENTREPRISES DEVELOPPEES"
+            "devVentures": "ENTREPRISES DEVELOPPEES",
+            "houseStatus": "STATUT DE LA MAISON",
+            "status": "STATUT",
+            "reputation": "REPUTATION"
         },
         "item": {
             "name": "Nom",
@@ -240,7 +243,16 @@
             "military": "Armée",
             "political": "Politique",
             "religious": "Religion",
-            "scientific": "Science"
+            "scientific": "Science",
+            "feeble": "Négligeable",
+            "weak": "Faible",
+            "respected": "Respectée",
+            "strong": "Puissante",
+            "problematic": "Problematique",
+            "dangerous": "Dangereuse",
+            "commoners": "Commoners",
+            "impressive": "Impressive",
+            "envied": "Envied"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",

@@ -63,7 +63,6 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
     };
 
     async _preparePartContext(partId, context) {
-        console.log(partId);
         switch (partId) {
             case 'header':
                 context.traits = this.actor.items.filter(function (item) { return item.type == "Trait"});
@@ -80,17 +79,9 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
                 context.tab = context.tabs[partId];
                 break;
             case 'management':
+                context.traits = this.actor.items.filter(function (item) { return item.type == "Trait"});
                 context.tab = context.tabs[partId];
                 break;
-            /*case 'newsImperium':
-                context.tab = context.tabs[partId];
-                break;
-            case 'events':
-                context.tab = context.tabs[partId];
-                break;
-            case 'devVentures':
-                context.tab = context.tabs[partId];
-                break;*/
             default:
         }
 

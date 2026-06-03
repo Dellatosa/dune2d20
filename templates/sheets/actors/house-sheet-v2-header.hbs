@@ -1,18 +1,16 @@
 <header class="sheet-header">
     <div class="top-title">D U N E</div>
-    {{#if unlocked}}
-        <div class="padlock">
+    <div class="padlock">
+        {{#if unlocked}}
             <a data-action="changeLock" title="{{localize 'dune2d20.hint.lock'}}">
                 <i class="fa-solid fa-unlock"></i>
             </a>
-        </div>
-    {{else}}
-        <div class="padlock">
+        {{else}}
             <a data-action="changeLock" title="{{localize 'dune2d20.hint.unlock'}}">
                 <i class="fa-solid fa-lock"></i>
             </a>
-        </div>
-    {{/if}}
+        {{/if}}
+    </div>
     <div class="background">
         {{#if unlocked}}
             {{> "systems/dune2d20/templates/partials/house/house-background-unlocked-v2.hbs" }}

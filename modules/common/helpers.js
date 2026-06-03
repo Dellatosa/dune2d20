@@ -35,7 +35,18 @@ export default function registerHandlebarsHelpers() {
         return result;
     });
 
-    Handlebars.registerHelper("times", function (n, block) {
+    Handlebars.registerHelper("configLocalizeTrait", function(liste, val, limit) {
+        let result = game.i18n.localize(dune2d20[liste][val].trait);
+        if(limit != null) {
+            if(result.length > limit) {
+                return result.slice(0, limit);
+            }
+        }
+
+        return result;
+    });
+
+    /*Handlebars.registerHelper("times", function (n, block) {
         var accum = "";
         for (var i = 1; i <= n; ++i) {
           block.data.index = i;
@@ -44,7 +55,7 @@ export default function registerHandlebarsHelpers() {
           accum += block.fn(this);
         }
         return accum;
-    });
+    });*/
     
     /* Handlebars.registerHelper("truncate", function(str, limit, suffix) {
         if (typeof str === 'string') {

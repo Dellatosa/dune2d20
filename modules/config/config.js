@@ -270,12 +270,12 @@ dune2d20.lifestyleLevel = {
     },
     ofThePeople: {
         label: "dune2d20.config.ofThePeople",
-        trait: "commoners",
+        trait: "dune2d20.config.commoners",
         wealthUpkeep: 0 
     },
     poor: {
         label: "dune2d20.config.poor",
-        trait: "poor",
+        trait: "dune2d20.config.poor",
         wealthUpkeep: 5 
     },
     noble: {
@@ -285,46 +285,58 @@ dune2d20.lifestyleLevel = {
     },
     wealthy: {
         label: "dune2d20.config.wealthy",
-        trait: "impressive",
+        trait: "dune2d20.config.impressive",
         wealthUpkeep: 30 
     },
     imperial: {
         label: "dune2d20.config.imperial",
-        trait: "envied",
+        trait: "dune2d20.config.envied",
         wealthUpkeep: 60 
     }
 }
 
 dune2d20.status = {
-    "feeble": {
-        "minor": 0,
-        "major": 0,
-        "great": 0
+    feeble: { 
+        label: "dune2d20.config.feeble",
+        nascentHouse: 0,
+        houseMinor: 0,
+        houseMajor: 0,
+        greatHouse: 0
     },
-    "weak": {
-        "minor": 11,
-        "major": 21,
-        "great": 41
+    weak: {
+        label: "dune2d20.config.weak",
+        nascentHouse: 11,
+        houseMinor: 11,
+        houseMajor: 21,
+        greatHouse: 41
     },
-    "respected": {
-        "minor": 21,
-        "major": 41,
-        "great": 61
+    respected: {
+        label: "dune2d20.config.respected",
+        nascentHouse: 21,
+        houseMinor: 21,
+        houseMajor: 41,
+        greatHouse: 61
     },
-    "strong": {
-        "minor": 41,
-        "major": 61,
-        "great": 71
+    strong: {
+        label: "dune2d20.config.strong",
+        nascentHouse: 41,
+        houseMinor: 41,
+        houseMajor: 61,
+        great: 71
     },
-    "problematic": {
-        "minor": 51,
-        "major": 71,
-        "great": 81
+    problematic: {
+        label: "dune2d20.config.problematic",
+        nascentHouse: 51,
+        houseMinor: 51,
+        houseMajor: 71,
+        greatHouse: 81
     },
-    "dangerous": {
-        "minor": 71,
-        "major": 81,
-        "great": 91
+    dangerous: {
+        label: "dune2d20.config.dangerous",
+        nascentHouse: 71,
+        houseMinor: 71,
+        houseMajor: 81,
+        greatHouse: 91
     }
 }
 

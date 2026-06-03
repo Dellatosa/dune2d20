@@ -82,7 +82,10 @@ export default class DuneActor extends Actor {
 
             // Total Upkeep
             this.system.totalUpkeep = this.system.rolesUpkeep + this.system.skillsUpkeep + this.system.militaryPowerUpkeep
-                + this.system.populationLoyaltyUpkeep + this.system.lifestyleUpkeep
+                + this.system.populationLoyaltyUpkeep + this.system.lifestyleUpkeep;
+
+            // Status level
+            this.system.statusLevel = this.calculateStatusLevel();
         }
     }
 
@@ -117,7 +120,16 @@ export default class DuneActor extends Actor {
 
         return skillsUpkeep;
     }
+
+    calculateStatusLevel() {
+        for(const [key, status] of Object.entries(CONFIG.dune2d20.status).reverse()) {
+            if (this.system.status.value >= status[this.system.houseType]) {
+                return key;
+            }
+        }
+    }
 }
+
 
 Hooks.on("createActor", (actor, render, id) => onCreateActor(actor));
 

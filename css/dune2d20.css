@@ -1081,6 +1081,90 @@
   grid-row-start: 2;
   grid-row-end: 3;
 }
+.dune2d20.sheet.house .house-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.dune2d20.sheet.house .rep-block {
+  width: 480px;
+  margin-bottom: 10px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .rep-block .rep-top {
+  height: 28px;
+  background-image: url("../images/sheet/reputation-top.png");
+}
+.dune2d20.sheet.house .rep-block .title-row {
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+  font-weight: bold;
+  text-align: center;
+}
+.dune2d20.sheet.house .rep-block .rep-data {
+  display: flex;
+  flex-wrap: wrap;
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+}
+.dune2d20.sheet.house .rep-block .rep-data .trait {
+  padding: 1px 3px;
+  font-size: 1.2em;
+}
+.dune2d20.sheet.house .rep-block .rep-bottom {
+  height: 32px;
+  background-image: url("../images/sheet/reputation-bottom.png");
+}
+.dune2d20.sheet.house .status-grid {
+  display: grid;
+  grid-template-columns: 1fr 47px 40px 47px 1fr;
+  grid-template-rows: 30px 70px 30px;
+  margin: 0 2px 10px;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .status-grid .status-title,
+.dune2d20.sheet.house .status-grid .status-level {
+  margin: 0 3px;
+  align-self: center;
+  font-weight: bold;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.dune2d20.sheet.house .status-grid .status-box {
+  background-image: url("../images/sheet/house-total-box.png");
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .status-grid .status-val {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.dune2d20.sheet.house .status-grid .status-val input {
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  font-family: "Perpetua";
+  font-size: 1.25em;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.house .status-grid .status-val input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.house .status-grid .status-val input:read-only {
+  cursor: default;
+}
+.dune2d20.sheet.house .status-grid .status-val input:not([readonly]):focus {
+  color: var(--color-focus-text);
+  font-weight: bold;
+}
 .dune2d20.sheet.house .enemies,
 .dune2d20.sheet.house .news-events {
   display: grid;

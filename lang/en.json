@@ -86,7 +86,10 @@
             "totalUpkeep": "TOTAL UPKEEP",
             "newsImperium": "NEWS FROM THE IMPERIUM",
             "events": "EVENTS",
-            "devVentures": "VENTURES DEVELOPED"
+            "devVentures": "VENTURES DEVELOPED",
+            "houseStatus": "HOUSE STATUS",
+            "status": "STATUS",
+            "reputation": "REPUTATION"
         },
         "item": {
             "name": "Name",
@@ -242,7 +245,16 @@
             "military": "Military",
             "political": "Political",
             "religious": "Religious",
-            "scientific": "Scientific"
+            "scientific": "Scientific",
+            "feeble": "Feeble",
+            "weak": "Weak",
+            "respected": "Respected",
+            "strong": "Strong",
+            "problematic": "Problematic",
+            "dangerous": "Dangerous",
+            "commoners": "Commoners",
+            "impressive": "Impressive",
+            "envied": "Envied"
         },
         "setting": {
             "momentumPool": "Momentum Pool",

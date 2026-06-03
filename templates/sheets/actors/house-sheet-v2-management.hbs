@@ -1,11 +1,42 @@
 <section class="tab management-content {{tab.cssClass}}" data-group="primary" data-tab="management">
+    <div class="section-title">{{ localize 'dune2d20.actor.houseStatus' }}</div>
+    <div class="house-status-grid">
+        <div class="status-grid">
+            <div class="status-title">{{ localize 'dune2d20.actor.status' }}</div>            
+            <div class="status-val"><input name="system.status.value" type="number" value="{{system.status.value}}" min="{{system.status.min}}" max="{{system.status.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <div class="status-box"> </div>
+            <div class="status-level">{{configLocalizeLabel "status" system.statusLevel}}</div>
+        </div>
+        <div class="rep-block">
+            <div class="rep-top"> </div>
+            <div class="title-row">{{ localize 'dune2d20.actor.reputation' }}</div>
+            <div class="rep-data">
+                {{#if (not (eq system.statusLevel "respected"))}}
+                    <div class="trait item">• {{configLocalizeLabel "status" system.statusLevel}}</div>
+                {{/if}}
+                {{#if (not (eq system.lifestyle "noble"))}}
+                    <div class="trait item">• {{configLocalizeTrait "lifestyleLevel" system.lifestyle}}</div>
+                {{/if}}
+                {{#each traits as |trait id|}}
+                    <div class="trait item" data-item-id="{{trait._id}}" data-item-type="trait">• {{trait.name}}
+                        {{#if ../unlocked}}<a class="action-btn" data-action="removeItem" title="{{localize 'dune2d20.hint.removeTrait'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>{{/if}}
+                    </div>
+                {{/each}}
+            </div>
+            <div class="rep-bottom"> </div>
+        </div>
+    </div>
     <div class="section-title">{{ localize 'dune2d20.actor.houseManagement' }}</div>
     <div class="manage-pools-grid">
-        {{#if unlocked}}
-            {{> "systems/dune2d20/templates/partials/house/house-manage-pools-unlocked-v2.hbs" }}
-        {{else}}
-            {{> "systems/dune2d20/templates/partials/house/house-manage-pools-locked-v2.hbs" }}
-        {{/if}}
+        <div class="pool-name left">{{ localize 'dune2d20.actor.totalWealth' }}</div>
+        <div class="pool-name middle">{{ localize 'dune2d20.actor.totalResources' }}</div>
+        <div class="pool-name right">{{ localize 'dune2d20.actor.totalUpkeep' }}</div>
+        <div class="pool-box left"></div>
+        <div class="pool-val left"><input name="system.totalWealth" type="number" value="{{system.totalWealth}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="pool-box middle"></div>
+        <div class="pool-val middle"><input name="system.totalResources" type="number" value="{{system.totalResources}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="pool-box right"></div>
+        <div class="pool-val right"><input name="system.totalUpkeep" type="number" value="{{system.totalUpkeep}}" readonly/></div>
     </div>
     <div class="news-events">
         <div class="news-block">
