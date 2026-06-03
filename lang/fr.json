@@ -195,7 +195,9 @@
             "houseType": "Type de Maison",
             "showDomainDesc": "Afficher la description du Domaine",
             "showEnemyNotes": "Afficher les notes concernant l'Ennemi",
-            "enemyReason": "Raison de l'inimitié"
+            "enemyReason": "Raison de l'inimitié",
+            "statusTrait": "Trait de Statut",
+            "lifestyleTrait": "Trait de Train de Vie"
         },
         "notification": {
             "houseAlreadyExists" : "Ce personnage sert déjà une Maison !",
@@ -250,9 +252,9 @@
             "strong": "Puissante",
             "problematic": "Problematique",
             "dangerous": "Dangereuse",
-            "commoners": "Commoners",
-            "impressive": "Impressive",
-            "envied": "Envied"
+            "commoners": "Roturière",
+            "impressive": "Impressionnante",
+            "envied": "Enviée"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",

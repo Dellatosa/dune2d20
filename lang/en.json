@@ -197,7 +197,9 @@
             "houseType": "House type",
             "showDomainDesc": "Show Domain description",
             "showEnemyNotes": "Show Enemy notes",
-            "enemyReason": "Enemy reason"
+            "enemyReason": "Enemy reason",
+            "statusTrait": "Status Trait",
+            "lifestyleTrait": "Lifestyle Trait"
         },
         "notification": {
             "houseAlreadyExists" : "This character already serves a House !",

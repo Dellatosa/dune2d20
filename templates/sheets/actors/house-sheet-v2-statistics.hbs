@@ -4,11 +4,26 @@
             <!-- House skills title -->
             <div class="title">{{ localize 'dune2d20.actor.skill' }}</div>
             <div> </div>
-            {{#if unlocked}}
-                {{> "systems/dune2d20/templates/partials/house/house-skills-unlocked-v2.hbs" }}
-            {{else}}
-                {{> "systems/dune2d20/templates/partials/house/house-skills-locked-v2.hbs" }}
-            {{/if}}
+            <!-- Battle -->
+            <div class="skill">{{ localize 'dune2d20.actor.battle' }}</div>
+            <div class="val"><input name="system.skills.battle.value" type="number" value="{{system.skills.battle.value}}" min="{{system.skills.battle.min}}" max="{{system.skills.battle.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <!-- Communicate -->
+            <div class="skill">{{ localize 'dune2d20.actor.communicate' }}</div>
+            <div class="val"><input name="system.skills.communicate.value" type="number" value="{{system.skills.communicate.value}}" min="{{system.skills.communicate.min}}" max="{{system.skills.communicate.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <!-- Discipline -->
+            <div class="skill">{{ localize 'dune2d20.actor.discipline' }}</div>
+            <div class="val"><input name="system.skills.discipline.value" type="number" value="{{system.skills.discipline.value}}" min="{{system.skills.discipline.min}}" max="{{system.skills.discipline.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <!-- Move -->
+            <div class="skill">{{ localize 'dune2d20.actor.move' }}</div>
+            <div class="val"><input name="system.skills.move.value" type="number" value="{{system.skills.move.value}}" min="{{system.skills.move.min}}" max="{{system.skills.move.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <!-- Understand -->
+            <div class="skill">{{ localize 'dune2d20.actor.understand' }}</div>
+            <div class="val"><input name="system.skills.understand.value" type="number" value="{{system.skills.understand.value}}" min="{{system.skills.understand.min}}" max="{{system.skills.understand.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <!-- Skills upkeep> -->
+            <div> </div>
+            <div> </div>
+            <div class="skill">{{ localize 'dune2d20.actor.skillUpkeep' }}</div>
+            <div class="skill-upkeep"><input name="system.skillsUpkeep" type="number" value="{{system.skillsUpkeep}}" readonly/></div>
         </div>
         <div> </div>
         <div>
@@ -24,7 +39,27 @@
             <div class="domain-income-grid">
                 <!-- Domain income title -->
                 <div class="title">{{ localize 'dune2d20.actor.domainIncome' }}</div>
-                {{> "systems/dune2d20/templates/partials/house/house-dom-income-v2.hbs" }}
+                <div class="field-name start">&nbsp;</div>
+                <div class="resources">{{ localize 'dune2d20.actor.resources' }}</div>
+                <div> </div>
+                <div class="wealth">{{ localize 'dune2d20.actor.wealth' }}</div>
+                <div> </div>
+                {{#each domains as |domain id|}}
+                    <div class="field-start"> </div>
+                    <div class="field-data domain" title="{{domain.name}}">
+                    {{#if domain.system.primary}}
+                        <i class="fa-solid fa-square-1" title="{{localize 'dune2d20.hint.primaryDomain'}}"></i>
+                    {{else}}
+                        <i class="fa-solid fa-square-2" title="{{localize 'dune2d20.hint.secondaryDomain'}}"></i>
+                    {{/if}} {{domain.name}}
+                    </div>
+                    <div class="field-end"> </div>
+                    <div> </div>
+                    <div class="val"><input name="system.resourcesIncome" type="number" value="{{domain.system.resourcesIncome}}" readonly/></div>
+                    <div> </div>
+                    <div class="val"><input name="system.wealthIncome" type="number" value="{{domain.system.wealthIncome}}" readonly/></div>
+                    <div> </div>
+                {{/each}}
             </div>
         </div>
     </div>
@@ -33,11 +68,7 @@
         <div class="comp-ventures-flex">
             <div class="top-row"> </div>
             <div class="title-row">{{ localize 'dune2d20.actor.compVentures' }}</div>
-            {{#if unlocked}}
-                {{> "systems/dune2d20/templates/partials/house/house-comp-ventures-unlocked-v2.hbs" }}
-            {{else}}
-                {{> "systems/dune2d20/templates/partials/house/house-comp-ventures-locked-v2.hbs" }}
-            {{/if}}
+            <!-- TODO -->
             <div class="bottom-row"> </div>
         </div>
         <div> </div>

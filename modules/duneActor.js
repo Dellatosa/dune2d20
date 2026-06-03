@@ -84,6 +84,11 @@ export default class DuneActor extends Actor {
             this.system.totalUpkeep = this.system.rolesUpkeep + this.system.skillsUpkeep + this.system.militaryPowerUpkeep
                 + this.system.populationLoyaltyUpkeep + this.system.lifestyleUpkeep;
 
+            // Starting status
+            if(this.system.status.value < 0 && this.system.houseType != "none") {
+                this.system.status.value = CONFIG.dune2d20.houseType[this.system.houseType].startingStatus;
+            }
+
             // Status level
             this.system.statusLevel = this.calculateStatusLevel();
         }
@@ -127,6 +132,8 @@ export default class DuneActor extends Actor {
                 return key;
             }
         }
+
+        return null;
     }
 }
 

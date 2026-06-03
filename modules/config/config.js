@@ -49,19 +49,23 @@ dune2d20.houseType = {
     },
     nascentHouse: {
         label: "dune2d20.config.nascentHouse",
-        additionalRoles: 2
+        additionalRoles: 2,
+        startingStatus: 15 
     },
     houseMinor: {
         label: "dune2d20.config.houseMinor",
-        additionalRoles: 4
+        additionalRoles: 4,
+        startingStatus: 25
     },
     houseMajor: {
         label: "dune2d20.config.houseMajor",
-        additionalRoles: 6
+        additionalRoles: 6,
+        startingStatus: 45
     },
     greatHouse: {
         label: "dune2d20.config.greatHouse",
-        additionalRoles: 8
+        additionalRoles: 8,
+        startingStatus: 65
     }
 }
 

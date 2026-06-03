@@ -473,7 +473,7 @@
 
     .roles-stats {
         display: grid;
-        grid-template-columns: 27px 1fr 27px 10px 27px 1fr 27px 10px 27px 1fr 27px;
+        grid-template-columns: 1fr 27px 1.5fr 27px 1fr 27px 1.5fr 27px 1fr 27px 1.5fr 27px 1fr;
 
         align-items: center;
         margin: 0 2px;
@@ -488,18 +488,18 @@
         }
 
         .stat-name.left {
-            grid-column-start: 1;
-            grid-column-end: 4;
+            grid-column-start: 2; 
+            grid-column-end: 5; 
         }
 
         .stat-name.middle {
-            grid-column-start: 5;
-            grid-column-end: 8;
+            grid-column-start: 6; 
+            grid-column-end: 9; 
         }
 
         .stat-name.right {
-            grid-column-start: 9;
-            grid-column-end: 12;
+            grid-column-start: 10; 
+            grid-column-end: 13; 
         }
 
         .stat-data {
@@ -811,6 +811,11 @@
 
         .status-val {
 
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+
             input {
                 height: 70px;
                 width: 100%;
@@ -837,11 +842,6 @@
                 color: var(--color-focus-text);
                 font-weight: bold;
             }
-
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 2;
-            grid-row-end: 3;
         }
     }
 
