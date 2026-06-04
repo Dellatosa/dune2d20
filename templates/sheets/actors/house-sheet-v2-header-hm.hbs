@@ -1,0 +1,52 @@
+<header class="sheet-header">
+    <div class="top-title">D U N E</div>
+    <div class="padlock">
+        {{#if unlocked}}
+            <a data-action="changeLock" title="{{localize 'dune2d20.hint.lock'}}">
+                <i class="fa-solid fa-unlock"></i>
+            </a>
+        {{else}}
+            <a data-action="changeLock" title="{{localize 'dune2d20.hint.unlock'}}">
+                <i class="fa-solid fa-lock"></i>
+            </a>
+        {{/if}}
+    </div>
+    <div class="background-hm">
+        <div class="bg-name">{{ localize 'dune2d20.actor.houseName' }}</div>
+        <div class="bg-start"></div>
+        <div class="bg-data full"><input name="name" type="text" value="{{name}}" placeholder="{{ localize 'dune2d20.actor.houseNamePlaceholder' }}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="bg-end"></div>
+        <div class="bg-name">{{ localize 'dune2d20.actor.homeworld' }}</div>
+        <div class="bg-start"></div>
+        <div class="bg-data full"><input name="system.homeworld" type="text" value="{{system.homeworld}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="bg-end"></div>
+        <div class="bg-name">{{ localize 'dune2d20.actor.houseType' }}</div>
+        <div class="bg-start"></div>
+        {{#if unlocked}}
+            <div class="bg-data full">
+                <select name="system.houseType">
+                    {{selectOptions config.houseType selected=system.houseType labelAttr="label" localize=true}}
+                </select>
+            </div>
+        {{else}}
+            <div class="bg-data border">
+                <div class="type">{{configLocalizeLabel "houseType" system.houseType}}</div>
+            </div>
+        {{/if}}
+        <div class="bg-end"></div>
+        <div class="bg-name">{{ localize 'dune2d20.actor.status' }}</div>
+        <div class="bg-start"></div>
+        <div class="bg-data num"><input name="system.status.value" type="number" value="{{system.status.value}}" min="{{system.status.min}}" max="{{system.status.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="bg-end"></div>
+        <div> </div>
+        <div class="bg-start"></div>
+        <div class="bg-data border"><div class="val">{{configLocalizeLabel "status" system.statusLevel}}</div></div>
+        <div class="bg-end"></div>
+        <div class="bg-name">{{ localize 'dune2d20.actor.motto' }}</div>
+        <div class="bg-start"></div>
+        <div class="bg-data full"><input name="system.motto" type="text" value="{{system.motto}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+        <div class="bg-end"></div>
+        
+    </div>
+    <img class="" src="{{img}}" data-action="editImage" data-field="img" title="{{name}}"/>
+</header>

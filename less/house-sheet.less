@@ -66,7 +66,40 @@
             display: grid;
             grid-template-columns: 1fr 27px 3fr 27px;
             grid-auto-rows: 38px;
+        }
 
+        .background-hm {
+            display: grid;
+            grid-template-columns: 1fr 27px 0.6fr 27px 10px 27px 2fr 27px;
+            grid-auto-rows: 38px;
+
+            .bg-data.full {
+                grid-column-start: 3;
+                grid-column-end: 8;
+            }
+
+            .bg-data {
+
+                .val {
+                    font-size: 1.2em;
+                    justify-self: center;
+                }
+            }
+
+            .bg-data.num {
+
+                input {
+                    font-family: "Perpetua";
+                    text-align: center;
+                }
+            }
+
+             .bg-data.border {
+                justify-content: center;
+             }
+        }
+
+        .background, .background-hm {
             align-items: center;
             margin: 0 2px;
 

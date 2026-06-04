@@ -31,7 +31,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     static PARTS = {
   		header: {
-    		template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-header.hbs",
+    		template: "systems/dune2d20/templates/sheets/actors/house-sheet-v2-header-hm.hbs",
   		},
         tabs: {
             template: "templates/generic/tab-navigation.hbs",

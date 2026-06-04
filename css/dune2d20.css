@@ -435,18 +435,44 @@
   display: grid;
   grid-template-columns: 1fr 27px 3fr 27px;
   grid-auto-rows: 38px;
+}
+.dune2d20.sheet.house .sheet-header .background-hm {
+  display: grid;
+  grid-template-columns: 1fr 27px 0.6fr 27px 10px 27px 2fr 27px;
+  grid-auto-rows: 38px;
+}
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data.full {
+  grid-column-start: 3;
+  grid-column-end: 8;
+}
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data .val {
+  font-size: 1.2em;
+  justify-self: center;
+}
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data.num input {
+  font-family: "Perpetua";
+  text-align: center;
+}
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data.border {
+  justify-content: center;
+}
+.dune2d20.sheet.house .sheet-header .background,
+.dune2d20.sheet.house .sheet-header .background-hm {
   align-items: center;
   margin: 0 2px;
   color: var(--color-normal-text);
 }
-.dune2d20.sheet.house .sheet-header .background .bg-name {
+.dune2d20.sheet.house .sheet-header .background .bg-name,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-name {
   padding-right: 10px;
   text-align: right;
   font-size: 1.1em;
   font-weight: bold;
 }
 .dune2d20.sheet.house .sheet-header .background .bg-data input,
-.dune2d20.sheet.house .sheet-header .background .bg-data select {
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data input,
+.dune2d20.sheet.house .sheet-header .background .bg-data select,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data select {
   height: 34px;
   width: 100%;
   background: none;
@@ -457,39 +483,50 @@
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .sheet-header .background .bg-data input:focus,
-.dune2d20.sheet.house .sheet-header .background .bg-data select:focus {
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data input:focus,
+.dune2d20.sheet.house .sheet-header .background .bg-data select:focus,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data select:focus {
   box-shadow: none;
   outline: none;
 }
-.dune2d20.sheet.house .sheet-header .background .bg-data input:read-only {
+.dune2d20.sheet.house .sheet-header .background .bg-data input:read-only,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data input:read-only {
   cursor: default;
 }
 .dune2d20.sheet.house .sheet-header .background .bg-data input:not([readonly]):focus,
-.dune2d20.sheet.house .sheet-header .background .bg-data select:focus {
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data input:not([readonly]):focus,
+.dune2d20.sheet.house .sheet-header .background .bg-data select:focus,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data select:focus {
   color: var(--color-focus-text);
   font-weight: bold;
 }
-.dune2d20.sheet.house .sheet-header .background .bg-data input::placeholder {
+.dune2d20.sheet.house .sheet-header .background .bg-data input::placeholder,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data input::placeholder {
   color: var(--color-placeholder-text);
   font-style: italic;
 }
 .dune2d20.sheet.house .sheet-header .background .bg-data .trait,
-.dune2d20.sheet.house .sheet-header .background .bg-data .type {
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data .trait,
+.dune2d20.sheet.house .sheet-header .background .bg-data .type,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data .type {
   padding: 1px 3px;
   font-size: 1.2em;
 }
-.dune2d20.sheet.house .sheet-header .background .bg-data.border {
+.dune2d20.sheet.house .sheet-header .background .bg-data.border,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-data.border {
   height: 34px;
   display: flex;
   align-items: center;
   border-top: solid 1px var(--color-box-border);
   border-bottom: solid 1px var(--color-box-border);
 }
-.dune2d20.sheet.house .sheet-header .background .bg-start {
+.dune2d20.sheet.house .sheet-header .background .bg-start,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-start {
   height: 34px;
   background-image: url("../images/sheet/field-left.png");
 }
-.dune2d20.sheet.house .sheet-header .background .bg-end {
+.dune2d20.sheet.house .sheet-header .background .bg-end,
+.dune2d20.sheet.house .sheet-header .background-hm .bg-end {
   height: 34px;
   background-image: url("../images/sheet/field-right.png");
 }
