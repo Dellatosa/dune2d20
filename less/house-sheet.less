@@ -94,7 +94,7 @@
                 }
             }
 
-             .bg-data.border {
+             .bg-data.center {
                 justify-content: center;
              }
         }
@@ -416,7 +416,7 @@
         }
     }
 
-    .domaines-grid, .comp-ventures-grid, .dev-ventures-grid {
+    .domaines-grid, .comp-ventures-grid, .dev-ventures-grid, .rep-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;
 
@@ -769,21 +769,22 @@
         }
     }
 
+    /*
     .house-status-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: center;
-    }
+    }*/
 
     .rep-block  {
-        width: 480px;
+        width: 720px;
         margin-bottom: 10px;
 
         color: var(--color-normal-text);
 
         .rep-top {
             height: 28px;
-            background-image: url("../images/sheet/reputation-top.png");
+            background-image: url("../images/sheet/domaines-top.png");
         }
 
         .title-row {
@@ -809,10 +810,11 @@
 
         .rep-bottom {
             height: 32px;
-            background-image: url("../images/sheet/reputation-bottom.png");
+            background-image: url("../images/sheet/domaines-bottom.png");
         }
     }
 
+    /*
     .status-grid {
         display: grid;
         grid-template-columns: 1fr 47px 40px 47px 1fr;
@@ -876,7 +878,7 @@
                 font-weight: bold;
             }
         }
-    }
+    }*/
 
     .enemies, .news-events {
         display: grid;

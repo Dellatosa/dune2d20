@@ -1,15 +1,10 @@
 <section class="tab management-content {{tab.cssClass}}" data-group="primary" data-tab="management">
-    <div class="section-title">{{ localize 'dune2d20.actor.houseStatus' }}</div>
-    <div class="house-status-grid">
-        <div class="status-grid">
-            <div class="status-title">{{ localize 'dune2d20.actor.status' }}</div>            
-            <div class="status-box"> </div>
-            <div class="status-val"><input name="system.status.value" type="number" value="{{system.status.value}}" min="{{system.status.min}}" max="{{system.status.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            {{#if system.statusLevel}}<div class="status-level">{{configLocalizeLabel "status" system.statusLevel}}</div>{{/if}}
-        </div>
+    <div class="section-title">{{ localize 'dune2d20.actor.reputation' }}</div>
+    <div class="rep-grid">
+        <div> </div>
         <div class="rep-block">
             <div class="rep-top"> </div>
-            <div class="title-row">{{ localize 'dune2d20.actor.reputation' }}</div>
+            <div class="title-row">{{ localize 'dune2d20.actor.traits' }}</div>
             <div class="rep-data">
                 {{#if (and (ne system.statusLevel "respected") system.statusLevel)}}
                     <div class="trait item" title="{{localize 'dune2d20.hint.statusTrait'}}">• {{configLocalizeLabel "status" system.statusLevel}}</div>
@@ -25,6 +20,7 @@
             </div>
             <div class="rep-bottom"> </div>
         </div>
+        <div> </div>
     </div>
     <div class="section-title">{{ localize 'dune2d20.actor.houseManagement' }}</div>
     <div class="manage-pools-grid">
