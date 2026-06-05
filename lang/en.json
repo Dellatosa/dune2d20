@@ -9,6 +9,7 @@
     "TYPES.Item.Focus": "Focus", 
     "TYPES.Item.Domain": "Domain", 
     "TYPES.Item.Enemy": "Enemy",
+    "TYPES.Item.Venture": "Venture",
     "dune2d20": {
         "actor" : {
             "characterName": "Character Name",
@@ -116,7 +117,12 @@
             "houseType": "HOUSE TYPE",
             "hatred" : "HATRED",
             "reason": "REASON",
-            "notes": "NOTES"
+            "notes": "NOTES",
+            "type": "TYPE",
+            "resources": "RESOURCES",
+            "wealth": "WEALTH",
+            "successes": "SUCCESSES",
+            "completed": "COMPLETED"
         },
         "dialog": {
             "confirmRemoval": "Confirm removal",
@@ -256,7 +262,9 @@
             "dangerous": "Dangerous",
             "commoners": "Commoners",
             "impressive": "Impressive",
-            "envied": "Envied"
+            "envied": "Envied",
+            "construction": "Construction",
+            "boon": "Boon"
         },
         "setting": {
             "momentumPool": "Momentum Pool",

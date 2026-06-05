@@ -112,9 +112,7 @@ async function preloadHandlebarsTemplates() {
         "systems/dune2d20/templates/partials/actors/character-pools-locked-v2.hbs",
         "systems/dune2d20/templates/partials/actors/character-pools-unlocked-v2.hbs",
         "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-stats-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-stats-unlocked-v2.hbs"
+        "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs"
     ];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);

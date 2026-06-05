@@ -45,6 +45,9 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         },
         trait: {
             template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-trait.hbs"
+        },
+        venture: {
+            template: "systems/dune2d20/templates/sheets/items/item-sheet-v2-venture.hbs"
         }
     };
 
@@ -103,6 +106,9 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
                 break;
             case 'Trait':
                 options.parts.push('trait')
+                break;
+            case 'Venture':
+                options.parts.push('venture')
                 break;
         }
     }

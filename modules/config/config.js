@@ -344,6 +344,12 @@ dune2d20.status = {
     }
 }
 
+dune2d20.ventureType = {
+    none : "",
+    construction: "dune2d20.config.construction",
+    boon: "dune2d20.config.boon"
+}
+
 dune2d20.itemDefIcon = {
     Asset: "systems/dune2d20/images/sheet/item-icon-2.png",
     Domain: "systems/dune2d20/images/sheet/item-icon-1.png",
@@ -351,6 +357,7 @@ dune2d20.itemDefIcon = {
     Talent: "systems/dune2d20/images/sheet/item-icon-2.png",
     Enemy: "systems/dune2d20/images/sheet/combat-dune-dark.svg",
     Focus: "systems/dune2d20/images/sheet/item-icon-1.png",
+    Venture: "systems/dune2d20/images/sheet/item-icon-2.png"
 }
 
 dune2d20.resourcesTrackerPos = {xPos: "840px", yPos: "3px"};

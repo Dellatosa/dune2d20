@@ -9,6 +9,7 @@
     "TYPES.Item.Focus": "Spécialisation", 
     "TYPES.Item.Domain": "Domaine", 
     "TYPES.Item.Enemy": "Ennemi",
+    "TYPES.Item.Venture": "Entreprise",
     "dune2d20": {
         "actor" : {
             "characterName": "Nom du personnage",
@@ -116,7 +117,12 @@
             "houseType": "TYPE",
             "hatred" : "HAINE",
             "reason": "RAISON",
-            "notes": "NOTES"
+            "notes": "NOTES",
+            "type": "TYPE",
+            "resources": "RESSOURCES",
+            "wealth": "RICHESSE",
+            "successes": "SUCCES",
+            "completed": "DEVELOPPEE"
         },
         "chat": {
             "focus": "Spécialisation",
@@ -254,7 +260,9 @@
             "dangerous": "Dangereuse",
             "commoners": "Roturière",
             "impressive": "Impressionnante",
-            "envied": "Enviée"
+            "envied": "Enviée",
+            "construction": "Construction",
+            "boon": "Faveur"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",
