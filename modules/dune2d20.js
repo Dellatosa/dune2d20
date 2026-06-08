@@ -3,14 +3,14 @@ import { registerSystemSettings } from "./config/settings.js";
 import registerHandlebarsHelpers from "./common/helpers.js"
 import DuneItem from "./duneItem.js";
 import DuneActor from "./duneActor.js";
-import { DuneResourcesTracker } from "./apps/duneResourcesTracker.js";
+//import { DuneResourcesTracker } from "./apps/duneResourcesTracker.js";
 import { DuneResourcesTrackerV2 } from "./apps/duneResourcesTrackerV2.js";
 import * as Chat from "./chat.js";
 import DuneItemSheet from "./sheets/duneItemSheet.js";
 import DuneItemSheetV2 from "./sheets/duneItemSheetV2.js";
 import DuneActorSheet from "./sheets/duneActorSheet.js";
 import DuneActorSheetV2 from "./sheets/duneActorSheetV2.js";
-import DuneHouseSheet from "./sheets/duneHouseSheet.js";
+//import DuneHouseSheet from "./sheets/duneHouseSheet.js";
 import DuneHouseSheetV2 from "./sheets/duneHouseSheetV2.js";
 
 Hooks.once("init", function(){
@@ -19,7 +19,7 @@ Hooks.once("init", function(){
     game.dune2d20 = {
         DuneActor,
         DuneItem,
-        DuneResourcesTracker,
+        //DuneResourcesTracker,
         DuneResourcesTrackerV2
     };
     
@@ -40,13 +40,13 @@ Hooks.once("init", function(){
     CONFIG.Actor.documentClass = DuneActor;
 
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"]}); 
+    //foundry.documents.collections.Actors.registerSheet("dune2d20", DuneActorSheet, {types: ["PC", "SC", "NPC"]}); 
     foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneActorSheetV2, {label: "dune2d20.DuneActorSheetV2.label", types: ["PC", "SC", "NPC"], makeDefault: true}); //, makeDefault: true
-    foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"]});
+    //foundry.documents.collections.Actors.registerSheet("dune2d20", DuneHouseSheet, {types: ["House"]});
     foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "dune2d20", DuneHouseSheetV2, {label: "dune2d20.DuneHouseSheetV2.label", types: ["House"], makeDefault: true});
 
     foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
-    foundry.documents.collections.Items.registerSheet("dune2d20", DuneItemSheet);
+    //foundry.documents.collections.Items.registerSheet("dune2d20", DuneItemSheet);
     foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "dune2d20", DuneItemSheetV2, {label: "dune2d20.DuneItemSheetV2.label", makeDefault: true});
 
     registerSystemSettings();
@@ -77,43 +77,7 @@ Hooks.on("dropActorSheetData", function(actor, actorSheet, dropped) {
 Hooks.on("renderChatMessageHTML", (message, html, context) => Chat.addChatMessageListeners(html));
 
 async function preloadHandlebarsTemplates() {
-    const templatePaths = [
-        // Sheet V1
-        "systems/dune2d20/templates/partials/actors/character-background-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-background-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-unlocked.hbs",
-        "systems/dune2d20/templates/partials/house/house-background-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-background-unlocked.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-roles-unlocked.hbs",
-
-        // Sheet V1 & Sheet V2
-        "systems/dune2d20/templates/partials/actors/character-talents-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-talents-unlocked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-assets-locked.hbs",
-        "systems/dune2d20/templates/partials/actors/character-assets-unlocked.hbs",
-        "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs",
-        "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs",
-        "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs",
-
-        // Sheet V2
-        "systems/dune2d20/templates/partials/actors/character-background-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-background-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-drives-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-skills-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/actors/character-pools-unlocked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs",
-        "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs"
-    ];
+    const templatePaths = [];
 
     return foundry.applications.handlebars.loadTemplates(templatePaths);
 };
