@@ -30,11 +30,67 @@
             <div class="overview-grid">
                 <!-- Overview title -->
                 <div class="title">{{ localize 'dune2d20.actor.overview' }}</div>
+                <div class="field-name start">{{ localize 'dune2d20.actor.militaryPower' }}</div>
+                <div class="modifier">{{ localize 'dune2d20.actor.modifier' }}</div>
+                <div> </div>
+                <div class="upkeep">{{ localize 'dune2d20.actor.upkeep' }}</div>
+                <div> </div>
+                <div class="field-start"> </div>
                 {{#if unlocked}}
-                    {{> "systems/dune2d20/templates/partials/house/house-overview-unlocked-v2.hbs" }}
+                    <div class="field-data">
+                        <select name="system.militaryPower">
+                            {{selectOptions config.militaryPowerLevel selected=system.militaryPower labelAttr="label" localize=true}}
+                        </select>
+                    </div>
                 {{else}}
-                    {{> "systems/dune2d20/templates/partials/house/house-overview-locked-v2.hbs" }}
+                    <div class="field-data locked">
+                        {{configLocalizeLabel "militaryPowerLevel" system.militaryPower}}
+                    </div>
                 {{/if}}
+                <div class="field-end"> </div>
+                <div> </div>
+                <div class="val"><input name="system.militaryPowerDifficulty" type="number" value="{{system.militaryPowerDifficulty}}" readonly/></div>
+                <div> </div>
+                <div class="val"><input name="system.militaryPowerUpkeep" type="number" value="{{system.militaryPowerUpkeep}}" readonly/></div>
+                <div> </div>
+                <div class="field-name">{{ localize 'dune2d20.actor.populationLoyalty' }}</div>
+                <div class="field-start"> </div>
+                {{#if unlocked}}
+                    <div class="field-data">
+                        <select name="system.populationLoyalty">
+                            {{selectOptions config.populationLoyaltyLevel selected=system.populationLoyalty labelAttr="label" localize=true}}
+                        </select>
+                    </div>
+                {{else}}
+                    <div class="field-data locked">
+                        <div>{{configLocalizeLabel "populationLoyaltyLevel" system.populationLoyalty}}</div>
+                    </div>
+                {{/if}}
+                <div class="field-end"> </div>
+                <div> </div>
+                <div class="val"><input name="system.populationLoyaltyModifier" type="number" value="{{system.populationLoyaltyModifier}}" readonly/></div>
+                <div> </div>
+                <div class="val"><input name="system.populationLoyaltyUpkeep" type="number" value="{{system.populationLoyaltyUpkeep}}" readonly/></div>
+                <div> </div>
+                <div class="field-name">{{ localize 'dune2d20.actor.lifestyle' }}</div>
+                <div class="field-start"> </div>
+                {{#if unlocked}}
+                    <div class="field-data">
+                        <select name="system.lifestyle">
+                            {{selectOptions config.lifestyleLevel selected=system.lifestyle labelAttr="label" localize=true}}
+                        </select>
+                    </div>
+                {{else}}
+                    <div class="field-data locked">
+                        <div>{{configLocalizeLabel "lifestyleLevel" system.lifestyle}}</div>
+                    </div>
+                {{/if}}
+                <div class="field-end"> </div>
+                <div> </div>
+                <div class="val">&nbsp;</div>
+                <div> </div>
+                <div class="val"><input name="system.lifestyleUpkeep" type="number" value="{{system.lifestyleUpkeep}}" readonly/></div>
+                <div> </div>
             </div>
             <div class="domain-income-grid">
                 <!-- Domain income title -->

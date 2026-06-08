@@ -4,11 +4,32 @@
         <div class="domaines-flex">
             <div class="top-row"> </div>
             <div class="title-row">{{ localize 'dune2d20.actor.domains' }}</div>
-            {{#if unlocked}}
-                {{> "systems/dune2d20/templates/partials/house/house-domaines-unlocked.hbs" }}
-            {{else}}
-                {{> "systems/dune2d20/templates/partials/house/house-domaines-locked.hbs" }}
-            {{/if}}
+            {{#each domains as |domain id|}}
+                <div class="domain-row item" data-item-id="{{domain._id}}" data-item-type="domain">
+                    <div class="domain-name">
+                        {{#if domain.system.primary}}
+                            <i class="fa-solid fa-square-1" title="{{localize 'dune2d20.hint.primaryDomain'}}"></i>
+                        {{else}}
+                            <i class="fa-solid fa-square-2" title="{{localize 'dune2d20.hint.secondaryDomain'}}"></i>
+                        {{/if}} {{domain.name}}
+                    </div>
+                    <div class="domain-stat"><i class="fa-solid fa-chart-pie-simple-circle-dollar" title="{{localize 'dune2d20.actor.area'}}"></i> {{configLocalizeLabel "areaOfExpertise" domain.system.area}}</div>
+                    <div class="domain-stat"><i class="fa-solid fa-industry" title="{{localize 'dune2d20.actor.section'}}"></i> {{configLocalizeLabel "sections" domain.system.section}}</div>
+                {{#if ../unlocked}}
+                    <a class="edit-item" data-action="editItem" title="{{localize 'dune2d20.hint.editDomain'}}"><i class="fa-regular fa-sliders"></i></a>
+                    <a class="remove-item" data-action="removeItem" title="{{localize 'dune2d20.hint.removeDomain'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+                </div>
+                {{else}}
+                    {{#if system.descVisible}}
+                        <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideDomainDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+                    </div>
+                    <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
+                    {{else}}
+                        <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showDomainDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
+                    </div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
             <div class="bottom-row"> </div>
         </div>
         <div> </div>
@@ -16,10 +37,42 @@
     
     <div class="section-title">{{ localize 'dune2d20.actor.enemies' }}</div>
     <div class="enemies">
-        {{#if unlocked}}
-            {{> "systems/dune2d20/templates/partials/house/house-enemies-unlocked.hbs" }}
-        {{else}}
-            {{> "systems/dune2d20/templates/partials/house/house-enemies-locked.hbs" }}
-        {{/if}}
+        {{#each enemies as |enemy id|}}
+        <div class="enemy-block">
+            <div class="enemy-top"> </div>
+            <div class="enemy item" data-item-id="{{enemy._id}}" data-item-type="enemy">
+                <div class="enemy-name">{{enemy.name}}</div>
+                {{#if ../unlocked}}
+                    <a class="edit-item" data-action="editItem" title="{{localize 'dune2d20.hint.editEnemy'}}"><i class="fa-regular fa-sliders"></i></a>
+                {{else}}
+                    <div> </div>
+                {{/if}}
+                <div class="icone"><i class="fa-solid fa-heart-crack" title="{{localize 'dune2d20.hint.hatred'}}"></i></div>
+                <div class="enemy-stat">{{configLocalize "hatred" enemy.system.hatred}}</div>
+                <div class="icone"><i class="fa-solid fa-khanda" title="{{localize 'dune2d20.hint.houseType'}}"></i></div>
+                <div class="enemy-stat">{{configLocalizeLabel "houseType" enemy.system.houseType}}</div>
+                {{#if ../unlocked}}
+                    <a class="remove-item" data-action="removeItem" title="{{localize 'dune2d20.hint.removeEnemy'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+                {{else}}
+                    <div> </div>
+                {{/if}}
+                <div class="icone"><i class="fa-solid fa-cloud-bolt" title="{{localize 'dune2d20.hint.enemyReason'}}"></i></div>
+                <div class="enemy-stat large">{{enemy.system.reason}}</div>
+            {{#if ../unlocked}}
+            </div>
+            {{else}}
+                {{#if system.descVisible}}
+                    <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideEnemyNotes'}}"><i class="fa-solid fa-caret-up"></i></a>
+                {{else}}
+                    <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showEnemyNotes'}}"><i class="fa-solid fa-caret-down"></i></a>
+                {{/if}}
+            </div>
+                {{#if system.descVisible}}
+                    <div class="enemy-notes">{{editor system.notes target="system.notes" button=false owner=true editable=false}}</div>
+                {{/if}}
+            {{/if}}
+            <div class="enemy-bottom"> </div>
+        </div>
+        {{/each}}
     </div>
 </section>

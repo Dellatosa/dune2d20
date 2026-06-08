@@ -150,6 +150,8 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     static async removeItemHandler(event, target) {
 		event.preventDefault();
 
+        console.log(target, target.closest(".item"));
+        
         const itemId = target.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
         const itemType = target.closest(".item").dataset.itemType;
