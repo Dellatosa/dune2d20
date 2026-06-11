@@ -2,6 +2,14 @@ import { dune2d20 } from "../config/config.js";
 
 export default function registerHandlebarsHelpers() {
 
+    Handlebars.registerHelper('isEven', function(conditional, options) {
+        if((conditional % 2) == 0) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+
     Handlebars.registerHelper("times", function (n, block) {
         var accum = "";
         for (var i = 1; i <= n; ++i) {

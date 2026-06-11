@@ -121,12 +121,33 @@
     </div>
     <div class="comp-ventures-grid">
         <div> </div>
-        <div class="comp-ventures-flex">
-            <div class="top-row"> </div>
-            <div class="title-row">{{ localize 'dune2d20.actor.compVentures' }}</div>
-            <!-- TODO -->
-            <div class="bottom-row"> </div>
-        </div>
+        <div class="top-row"> </div>
+        <div> </div>
+        <div> </div>
+        <div class="title-row">{{ localize 'dune2d20.actor.compVentures' }}</div>
+        <div> </div>
+        <div> </div>        
+        {{#each compVentures as |venture id|}}
+            <div class="comp-ventures-flex {{#isEven @index}}left{{else}}right{{/isEven}}">
+                <div class="ventures-row item" data-item-id="{{venture._id}}" data-item-type="venture">
+                    <div class="venture-name">{{venture.name}}</div>
+                    {{#if ../unlocked}}
+                        <a class="edit-item" data-action="editItem" title="{{localize 'dune2d20.hint.editVenture'}}"><i class="fa-regular fa-sliders"></i></a>
+                        <a class="remove-item" data-action="removeItem" title="{{localize 'dune2d20.hint.removeVenture'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+                    </div>
+                    {{else}}
+                        {{#if system.descVisible}}
+                            <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideVentureDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+                        </div>
+                        <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
+                        {{else}}
+                            <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showVentureDesc'}}"><i class="fa-solid fa-caret-down"></i></a>                        </div>
+                        {{/if}}
+                    {{/if}}
+            </div>
+        {{/each}}
+        <div> </div>
+        <div class="bottom-row"> </div>
         <div> </div>
     </div>
 </section>

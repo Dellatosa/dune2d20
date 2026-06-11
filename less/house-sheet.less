@@ -416,7 +416,106 @@
         }
     }
 
-    .domaines-grid, .comp-ventures-grid, .dev-ventures-grid, .rep-grid {
+    .comp-ventures-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px 360px 1fr;
+
+        .top-row {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            height: 28px;
+            
+            background-image: url("../images/sheet/domaines-top.png");
+            margin-top: 5px;
+        }
+
+        .bottom-row {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            height: 32px;
+
+            background-image: url("../images/sheet/domaines-bottom.png");
+        }
+
+        .title-row {
+            grid-column-start: 2;
+            grid-column-end: 4;
+
+            font-family: "Hoefler";
+            font-size: 1.2em;
+            color: var(--color-normal-text);
+
+            border-left: solid 1px var(--color-box-border);
+            border-right: solid 1px var(--color-box-border);
+
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .comp-ventures-flex {
+            display: flex;
+            flex-direction: column;
+            
+            font-family: "Hoefler";
+            font-size: 1.2em;
+            color: var(--color-normal-text);
+        }
+
+        .comp-ventures-flex.left {
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            border-left: solid 1px var(--color-box-border);
+        }
+
+        .comp-ventures-flex.right {
+            grid-column-start: 3;
+            grid-column-end: 4;
+
+            border-right: solid 1px var(--color-box-border);
+        }
+
+        .ventures-row {
+            display: flex;
+
+            padding-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+
+            .venture-name {
+                flex: 1;
+            }
+
+            .edit-item, .remove-item, .toogle-desc {
+                flex-basis: 25px;
+                text-align: center;
+            }
+        }
+
+        .desc-row {
+            //border-left: solid 1px var(--color-box-border);
+            //border-right: solid 1px var(--color-box-border);
+
+            padding-left: 3px;
+            padding-right: 3px;
+            padding-bottom: 3px;
+
+            .editor {
+                background-color: var(--color-box-background);
+                border: solid 1px var(--color-box-border);
+                box-shadow: inset 0 0 5px var(--color-box-inset);
+                border-radius: 5px;
+
+                .editor-content {
+                    padding: 2px 2px;
+                    font-size: 0.8em;
+                    color: var(--color-normal-text);
+                }
+            }
+        }
+    }
+
+    .domaines-grid, .dev-ventures-grid, .rep-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;
 
@@ -460,7 +559,7 @@
                     flex: 1;
                 }
 
-                .edit-item, .remove-item {
+                .edit-item, .remove-item, .toogle-desc {
                     flex-basis: 25px;
                     text-align: center;
                 }
@@ -768,13 +867,6 @@
             grid-row-end: 3;
         }
     }
-
-    /*
-    .house-status-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-    }*/
 
     .rep-block  {
         width: 720px;
