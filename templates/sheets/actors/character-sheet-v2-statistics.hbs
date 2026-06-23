@@ -1,36 +1,50 @@
 <section class="tab statistics-content {{tab.cssClass}}" data-group="primary" data-tab="statistics">
     <div class="statistics">
-        <div class="stats-grid">
-            <!-- Drives title -->
-            <div class="title">{{ localize 'dune2d20.actor.drive' }}</div>
-            <div> </div>
-            <div class="title">{{ localize 'dune2d20.actor.statement' }}</div>
-            <div> </div>
-            <!-- Duty -->
-            <div class="drive">{{ localize 'dune2d20.actor.duty' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="duty"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
-            <div class="val"><input name="system.drives.duty.value" type="number" value="{{system.drives.duty.value}}" min="{{system.drives.duty.min}}" max="{{system.drives.duty.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            <div class="statement"><textarea name="system.drives.duty.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.duty.statement}}</textarea></div>
-            <div class="stat-end"> </div>
-            <!-- Faith -->
-            <div class="drive">{{ localize 'dune2d20.actor.faith' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="faith"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
-            <div class="val"><input name="system.drives.faith.value" type="number" value="{{system.drives.faith.value}}" min="{{system.drives.faith.min}}" max="{{system.drives.faith.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            <div class="statement"><textarea name="system.drives.faith.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.faith.statement}}</textarea></div>
-            <div class="stat-end"> </div>
-            <!-- Justice -->
-            <div class="drive">{{ localize 'dune2d20.actor.justice' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="justice"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
-            <div class="val"><input name="system.drives.justice.value" type="number" value="{{system.drives.justice.value}}" min="{{system.drives.justice.min}}" max="{{system.drives.justice.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            <div class="statement"><textarea name="system.drives.justice.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.justice.statement}}</textarea></div>
-            <div class="stat-end"> </div>
-            <!-- Power -->
-            <div class="drive">{{ localize 'dune2d20.actor.power' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="power"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
-            <div class="val"><input name="system.drives.power.value" type="number" value="{{system.drives.power.value}}" min="{{system.drives.power.min}}" max="{{system.drives.power.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            <div class="statement"><textarea name="system.drives.power.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.power.statement}}</textarea></div>
-            <div class="stat-end"> </div>
-            <!-- Truth -->
-            <div class="drive">{{ localize 'dune2d20.actor.truth' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="truth"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
-            <div class="val"><input name="system.drives.truth.value" type="number" value="{{system.drives.truth.value}}" min="{{system.drives.truth.min}}" max="{{system.drives.truth.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-            <div class="statement"><textarea name="system.drives.truth.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.truth.statement}}</textarea></div>
-            <div class="stat-end"> </div>
+        {{#if (eq system.category "minor")}}
+            <div class="stats-grid-minor">
+                <!-- Drives title -->
+                <div class="title">{{ localize 'dune2d20.actor.drive' }}</div>
+                <div> </div>
+                <div> </div>
+                <div> </div>
+                <!-- Generic drive -->
+                <div class="drive">{{ localize 'dune2d20.actor.driveValue' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="genDrive"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val minor"><input name="system.genDrive.value" type="number" value="{{system.genDrive.value}}" min="{{system.genDrive.min}}" max="{{system.genDrive.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div> </div>
+                <div> </div>
+        {{else}}
+            <div class="stats-grid">
+                <!-- Drives title -->
+                <div class="title">{{ localize 'dune2d20.actor.drive' }}</div>
+                <div> </div>
+                <div class="title">{{ localize 'dune2d20.actor.statement' }}</div>
+                <div> </div>
+                <!-- Duty -->
+                <div class="drive">{{ localize 'dune2d20.actor.duty' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="duty"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val"><input name="system.drives.duty.value" type="number" value="{{system.drives.duty.value}}" min="{{system.drives.duty.min}}" max="{{system.drives.duty.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div class="statement"><textarea name="system.drives.duty.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.duty.statement}}</textarea></div>
+                <div class="stat-end"> </div>
+                <!-- Faith -->
+                <div class="drive">{{ localize 'dune2d20.actor.faith' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="faith"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val"><input name="system.drives.faith.value" type="number" value="{{system.drives.faith.value}}" min="{{system.drives.faith.min}}" max="{{system.drives.faith.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div class="statement"><textarea name="system.drives.faith.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.faith.statement}}</textarea></div>
+                <div class="stat-end"> </div>
+                <!-- Justice -->
+                <div class="drive">{{ localize 'dune2d20.actor.justice' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="justice"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val"><input name="system.drives.justice.value" type="number" value="{{system.drives.justice.value}}" min="{{system.drives.justice.min}}" max="{{system.drives.justice.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div class="statement"><textarea name="system.drives.justice.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.justice.statement}}</textarea></div>
+                <div class="stat-end"> </div>
+                <!-- Power -->
+                <div class="drive">{{ localize 'dune2d20.actor.power' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="power"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val"><input name="system.drives.power.value" type="number" value="{{system.drives.power.value}}" min="{{system.drives.power.min}}" max="{{system.drives.power.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div class="statement"><textarea name="system.drives.power.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.power.statement}}</textarea></div>
+                <div class="stat-end"> </div>
+                <!-- Truth -->
+                <div class="drive">{{ localize 'dune2d20.actor.truth' }} {{#unless unlocked}}<a data-action="rollDrive" title="{{localize 'dune2d20.hint.rollDrive'}}" data-drive="truth"><i class="fa-solid fa-dice-d20"></i></a>{{/unless}}</div>
+                <div class="val"><input name="system.drives.truth.value" type="number" value="{{system.drives.truth.value}}" min="{{system.drives.truth.min}}" max="{{system.drives.truth.max}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+                <div class="statement"><textarea name="system.drives.truth.statement" {{#unless unlocked}}readonly{{/unless}}>{{system.drives.truth.statement}}</textarea></div>
+                <div class="stat-end"> </div>
+        {{/if}}
 
             <!-- Skills title -->
             <div class="title">{{ localize 'dune2d20.actor.skill' }}</div>
@@ -151,17 +165,25 @@
                             {{/if}}
                         {{/if}}
                 {{/each}}
-
                 <div class="bottom-row"> </div>
             </div>
             <div> </div>
-            <div class="adv-det-grid ">
-                <div class="title left">{{ localize 'dune2d20.actor.advancement' }}</div>
-                <div class="title right">{{ localize 'dune2d20.actor.determination' }}</div>
-                <div class="back"> </div>
-                <div class="val adv"><input name="system.resources.advancementPoints.value" type="number" value="{{system.resources.advancementPoints.value}}" min="{{system.resources.advancementPoints.min}}" {{#unless unlocked}}readonly{{/unless}}></div>
-                <div class="val det"><input name="system.resources.determination.value" type="number" value="{{system.resources.determination.value}}" min="{{system.resources.determination.min}}" max="{{system.resources.determination.max}}" {{#unless unlocked}}readonly{{/unless}}></div>
-            </div>
+            {{#if (eq type "PC")}}
+                <div class="adv-det-grid ">
+                    <div class="title left">{{ localize 'dune2d20.actor.advancement' }}</div>
+                    <div class="title right">{{ localize 'dune2d20.actor.determination' }}</div>
+                    <div class="back"> </div>
+                    <div class="val adv"><input name="system.resources.advancementPoints.value" type="number" value="{{system.resources.advancementPoints.value}}" min="{{system.resources.advancementPoints.min}}" {{#unless unlocked}}readonly{{/unless}}></div>
+                    <div class="val det"><input name="system.resources.determination.value" type="number" value="{{system.resources.determination.value}}" min="{{system.resources.determination.min}}" max="{{system.resources.determination.max}}" {{#unless unlocked}}readonly{{/unless}}></div>
+                </div>
+            {{/if}}
+            {{#if (eq type "SC")}}
+                <div class="cost-grid ">
+                    <div class="cost-name">{{ localize 'dune2d20.actor.cost' }}</div>
+                    <div class="cost-box"></div>
+                    <div class="cost-val"><input name="system.cost" type="number" value="{{system.cost}}" min="0" {{#unless unlocked}}readonly{{/unless}}></div>
+                </div>
+            {{/if}}
         </div>
     </div>
 </section>

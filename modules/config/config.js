@@ -43,6 +43,12 @@ dune2d20.factions = {
     sukDoctor: "dune2d20.config.sukDoctor"
 }
 
+dune2d20.characterCategory = {
+    none: "",
+    minor: "dune2d20.config.minor",
+    notable: "dune2d20.config.notable",
+}
+
 dune2d20.houseType = {
     none: {
         label: ""

@@ -85,7 +85,7 @@
 
             .bg-data {
 
-                input {
+                input, select {
                     height: 34px;
                     width: 100%;
 
@@ -97,7 +97,7 @@
                     color: var(--color-normal-text);
                 }
 
-                input:focus {
+                input:focus, select:focus {
                     box-shadow: none;
                     outline: none;
                 }
@@ -106,7 +106,7 @@
                     cursor: default;
                 }
                 
-                input:not([readonly]):focus {
+                input:not([readonly]):focus, select:focus {
                     color: var(--color-focus-text);
                     font-weight: bold;
                 }
@@ -116,7 +116,7 @@
                     font-style: italic;
                 }
 
-                .house, .trait {
+                .house, .trait, .categ {
                     padding: 1px 3px;
                 }
             }
@@ -156,9 +156,20 @@
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 59px 2fr 26px;
-            //grid-auto-rows: 50px;
             grid-template-rows: 40px repeat(5, 50px) 40px repeat(5, 50px);
+        }
 
+        .stats-grid-minor {
+            display: grid;
+            grid-template-columns: 1fr 59px 2fr 26px;
+            grid-template-rows: 40px 50px 40px repeat(5, 50px);
+
+            .val.minor {
+                background-image: url("../images/sheet/house-skill-box.png");
+            }
+        }
+
+        .stats-grid, .stats-grid-minor {
             align-items: center;
 
             color: var(--color-normal-text);
@@ -440,6 +451,77 @@
         }
     }
     
+     .cost-grid {
+        grid-column-start: 1;
+        grid-column-end: 4; 
+
+        display: grid;
+        grid-template-columns: 1fr 47px 40px 47px 1fr;
+        grid-template-rows: 30px 70px;
+
+        margin: 0 2px 10px;
+
+        color: var(--color-normal-text);
+
+        .cost-name {
+            margin: 0 3px;
+            align-self: center;
+            
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .cost-box {
+            background-image: url("../images/sheet/house-total-box.png");
+
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .cost-val {
+
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+            input {
+                height: 70px;
+                width: 100%;
+                text-align: center;
+
+                background: none;
+                border: none;
+
+                font-family: "Perpetua";
+                font-size: 1.25em;
+                color: var(--color-normal-text);
+            }
+
+            input:focus {
+                box-shadow: none;
+                outline: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+                
+            input:not([readonly]):focus {
+                color: var(--color-focus-text);
+                font-weight: bold;
+            }
+        }
+    }
+
     .biography {
         
         background-color: var(--color-box-background);

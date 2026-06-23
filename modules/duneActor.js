@@ -49,6 +49,12 @@ export default class DuneActor extends Actor {
                 if(this.system.resources.determination.value < this.system.resources.determination.min) this.system.resources.determination.value = this.system.resources.determination.min;
                 if(this.system.resources.determination.value > this.system.resources.determination.max) this.system.resources.determination.value = this.system.resources.determination.max;
             }
+
+            if(this.type == "SC" || this.type == "NPC") {
+                // GENERIC DRIVE
+                if(this.system.genDrive.value < this.system.genDrive.min) this.system.genDrive.value = this.system.genDrive.min;
+                if(this.system.genDrive.value > this.system.genDrive.max) this.system.genDrive.value = this.system.genDrive.max;
+            }
         }
         
         if(this.type == "House") {

@@ -90,7 +90,10 @@
             "devVentures": "ENTREPRISES DEVELOPPEES",
             "houseStatus": "STATUT DE LA MAISON",
             "status": "STATUT",
-            "reputation": "REPUTATION"
+            "reputation": "REPUTATION",
+            "category": "CATEGORIE",
+            "driveValue": "VALEUR",
+            "cost": "COUT"
         },
         "item": {
             "name": "Nom",
@@ -262,7 +265,9 @@
             "impressive": "Impressionnante",
             "envied": "Enviée",
             "construction": "Construction",
-            "boon": "Faveur"
+            "boon": "Faveur",
+            "minor": "Mineur",
+            "notable": "Notable"
         },
         "setting": {
             "momentumPool": "Jauge d'Impulsion",

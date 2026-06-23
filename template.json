@@ -94,10 +94,23 @@
       "templates": [ "informations", "resources", "skillsAndDrives" ]
     },
     "SC": {
-      "templates": [ "informations", "skillsAndDrives" ]
+      "templates": [ "informations", "skillsAndDrives" ],
+      "category": "",
+      "genDrive": {
+        "value": 4,
+        "min": 4,
+        "max": 8
+      },
+      "cost": 0
     },
     "NPC": {
-      "templates": [ "informations", "skillsAndDrives" ]
+      "templates": [ "informations", "skillsAndDrives" ],
+      "category": "",
+      "genDrive": {
+        "value": 4,
+        "min": 4,
+        "max": 8
+      }
     },
     "House": {
       "homeworld": "",

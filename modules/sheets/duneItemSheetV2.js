@@ -86,29 +86,29 @@ export default class DuneItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     _configureRenderOptions(options) {
         super._configureRenderOptions(options);
 
-        options.parts = ['header']
+        options.parts = ['header'];
 
         switch (this.document.type) {
             case 'Asset':
-                options.parts.push('asset')
+                options.parts.push('asset');
                 break;
             case 'Domain':
-                options.parts.push('domain')
+                options.parts.push('domain');
                 break;
             case 'Enemy':
-                options.parts.push('enemy')
+                options.parts.push('enemy');
                 break;
             case 'Focus':
-                options.parts.push('focus')
+                options.parts.push('focus');
                 break;
             case 'Talent':
-                options.parts.push('talent')
+                options.parts.push('talent');
                 break;
             case 'Trait':
-                options.parts.push('trait')
+                options.parts.push('trait');
                 break;
             case 'Venture':
-                options.parts.push('venture')
+                options.parts.push('venture');
                 break;
         }
     }

@@ -90,7 +90,10 @@
             "devVentures": "VENTURES DEVELOPED",
             "houseStatus": "HOUSE STATUS",
             "status": "STATUS",
-            "reputation": "REPUTATION"
+            "reputation": "REPUTATION",
+            "category": "CATEGORY",
+            "driveValue": "VALUE",
+            "cost": "COST"
         },
         "item": {
             "name": "Name",
@@ -264,7 +267,9 @@
             "impressive": "Impressive",
             "envied": "Envied",
             "construction": "Construction",
-            "boon": "Boon"
+            "boon": "Boon",
+            "minor": "Minor",
+            "notable": "Notable"
         },
         "setting": {
             "momentumPool": "Momentum Pool",

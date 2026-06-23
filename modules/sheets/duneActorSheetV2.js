@@ -56,6 +56,20 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         }
     };
 
+    /*
+    _configureRenderOptions(options) {
+        super._configureRenderOptions(options);
+
+        options.parts = ['header', 'tabs'];
+
+        switch (this.document.type) {
+            case 'PC':
+                options.parts.push('statistics');
+                options.parts.push('biography');
+                break;
+        }
+    }*/
+
     async _preparePartContext(partId, context) {
         switch (partId) {
             case 'header':
@@ -84,6 +98,7 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         context.house = this.actor.system.house != null ? fromUuidSync(this.actor.system.house) : null;
         context.name = this.actor.name;
         context.img = this.actor.img;
+        context.type = this.actor.type;
         context.system = this.actor.system;
 
         context.biographyHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(

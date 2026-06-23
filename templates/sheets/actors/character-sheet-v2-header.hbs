@@ -34,10 +34,27 @@
             {{/each}}
         </div>
         <div class="bg-end"></div>
-        <div class="bg-name">{{ localize 'dune2d20.actor.ambition' }}</div>
-        <div class="bg-start"></div>
-        <div class="bg-data"><input name="system.ambition" type="text" value="{{system.ambition}}" {{#unless unlocked}}readonly{{/unless}}/></div>
-        <div class="bg-end"></div>
+        {{#if (eq type "PC")}}
+            <div class="bg-name">{{ localize 'dune2d20.actor.ambition' }}</div>
+            <div class="bg-start"></div>
+            <div class="bg-data"><input name="system.ambition" type="text" value="{{system.ambition}}" {{#unless unlocked}}readonly{{/unless}}/></div>
+            <div class="bg-end"></div>
+        {{else}}
+            <div class="bg-name">{{ localize 'dune2d20.actor.category' }}</div>
+            <div class="bg-start"></div>
+            {{#if unlocked}}
+                <div class="bg-data">
+                    <select name="system.category">
+                        {{selectOptions config.characterCategory selected=system.category  localize=true}}
+                    </select>
+                </div>
+            {{else}}
+                <div class="bg-data border">
+                    <div class="categ">{{configLocalize "characterCategory" system.category}}</div>
+                </div>
+            {{/if}}
+            <div class="bg-end"></div>
+        {{/if}}
     </div>
     {{#if unlocked}}
         <div class="padlock">
