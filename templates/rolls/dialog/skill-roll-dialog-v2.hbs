@@ -1,11 +1,13 @@
 <section class="roll-dialog">
     <div class="title">{{configLocalize "skills" skill}}</div>
-    <div class="opt-select">
-        <div>{{localize 'dune2d20.dialog.drive'}}</div>
-        <select name="drive">
-            {{selectOptions cfgData.drivesMdt selected=value localize=true}}
-        </select>
-    </div>
+    {{#unless (eq actor.system.category "minor")}}
+        <div class="opt-select">
+            <div>{{localize 'dune2d20.dialog.drive'}}</div>
+            <select name="drive">
+                {{selectOptions cfgData.drivesMdt selected=value localize=true}}
+            </select>
+        </div>
+    {{/unless}}
     {{#if focuses}}
         <div class="opt-select">
             <div>{{localize 'dune2d20.dialog.focus'}}</div>

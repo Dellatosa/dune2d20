@@ -24,10 +24,23 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         skill = dialogOptions.skill;
     }
     else if (type == "skill") {
-        drive = dialogOptions.drive;
+        if(actor.system.category == "minor") {
+            drive = "genDrive";
+        }
+        else {
+            drive = dialogOptions.drive;
+        }
     }
+
     let skillValue = actor.system.skills[skill].value;
-    let driveValue = actor.system.drives[drive].value;
+
+    let driveValue;
+    if(drive == "genDrive") {
+        driveValue = actor.system.genDrive.value;
+    }
+    else {
+        driveValue = actor.system.drives[drive].value;
+    }
 
     // Focus
     let focus = dialogOptions.focusId != null && dialogOptions.focusId != "none" ? actor.items.get(dialogOptions.focusId) : null;
@@ -88,7 +101,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         actor: actor,
         skillName: game.i18n.localize(CONFIG.dune2d20.skills[skill]),
         skillValue: skillValue,
-        driveName: game.i18n.localize(CONFIG.dune2d20.drives[drive]),
+        driveName: drive == "genDrive" ? game.i18n.localize("dune2d20.actor.drive") : game.i18n.localize(CONFIG.dune2d20.drives[drive]),
         driveValue: driveValue,
         focus: focus,
         difficulty: difficulty,
@@ -127,7 +140,6 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
 
     switch(type) {
         case "drive":
-            //template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog.html";
             template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog-v2.hbs";
             title = "dune2d20.dialog.driveRoll";
             break;

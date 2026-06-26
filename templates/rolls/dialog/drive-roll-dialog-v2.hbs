@@ -1,5 +1,9 @@
 <section class="roll-dialog">
-    <div class="title">{{configLocalize "drives" drive}}</div>
+    {{#if (eq drive "genDrive")}}
+        <div class="title">{{localize 'dune2d20.dialog.drive'}}</div>
+    {{else}}
+        <div class="title">{{configLocalize "drives" drive}}</div>
+    {{/if}}
     <div class="opt-select">
         <div>{{localize 'dune2d20.dialog.skill'}}</div>
         <select name="skill">
