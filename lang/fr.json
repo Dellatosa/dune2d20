@@ -93,7 +93,9 @@
             "reputation": "REPUTATION",
             "category": "CATEGORIE",
             "driveValue": "VALEUR",
-            "cost": "COUT"
+            "cost": "COUT",
+            "characterDrive": "PRINCIPE DU PERSONNAGE",
+            "houseSkill": "COMPETENCE DE LA MAISON"
         },
         "item": {
             "name": "Nom",
@@ -175,7 +177,9 @@
             "difficulty": "Difficulté",
             "useDetermination": "Utiliser la Détermination",
             "numberOfDices": "Nombre de dés",
-            "focus": "Spécialisation"
+            "focus": "Spécialisation",
+            "characterDrive": "Principe du Personnage",
+            "houseSkill": "Compétence de la Maison"
         },
         "hint": {
             "lock": "Verouiller",

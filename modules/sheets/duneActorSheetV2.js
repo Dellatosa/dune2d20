@@ -25,6 +25,8 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 			show: DuneActorSheetV2.showHandler,
             rollDrive: DuneActorSheetV2.rollDriveHandler,
             rollSkill: DuneActorSheetV2.rollSkillHandler,
+            rollDriveHouse: DuneActorSheetV2.rollDriveHouseHandler,
+            rollSkillHouse: DuneActorSheetV2.rollSkillHouseHandler,
             removeHouse: DuneActorSheetV2.removeHouseHandler,
             editItem: DuneActorSheetV2.editItemHandler,
             removeItem: DuneActorSheetV2.removeItemHandler
@@ -45,6 +47,10 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         biography: {
             template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-biography.hbs",
             scrollable: ['']
+        },
+        house : {
+            template: "systems/dune2d20/templates/sheets/actors/character-sheet-v2-house.hbs",
+            scrollable: ['']
         }
 	};
 
@@ -56,19 +62,29 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         }
     };
 
-    /*
+    
     _configureRenderOptions(options) {
         super._configureRenderOptions(options);
 
-        options.parts = ['header', 'tabs'];
+        options.parts = ['header', 'tabs', 'statistics'];
 
-        switch (this.document.type) {
-            case 'PC':
-                options.parts.push('statistics');
-                options.parts.push('biography');
-                break;
+        if(this.actor.system.house != null) {
+            options.parts.push('house');    
         }
-    }*/
+
+        options.parts.push('biography');
+    }
+
+    
+    _getTabsConfig(group) {
+        const tabs = foundry.utils.deepClone(super._getTabsConfig(group))
+
+        if (this.actor.system.house != null) {
+            tabs.tabs.push({ id: 'house' })
+        }
+
+        return tabs
+    }
 
     async _preparePartContext(partId, context) {
         switch (partId) {
@@ -82,6 +98,10 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
                 context.tab = context.tabs[partId];
                 break;
             case 'biography':
+                context.tab = context.tabs[partId];
+                break;
+            case 'house':
+                //context.houseSkills =
                 context.tab = context.tabs[partId];
                 break;
             default:
@@ -107,8 +127,6 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
             secrets: this.document.isOwner,
             relativeTo: this.document
         });
-
-        //console.log("OPTIONS : ", options);
 
         return context;
     }
@@ -258,6 +276,32 @@ export default class DuneActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
             actor: this.actor, 
             skill: dataset.skill, 
             focuses: this.actor.items.filter(function (item) { return item.type == "Focus" && item.system.skill == dataset.skill})
+        });
+    }
+
+    // Roll Drive check (with House Skill)
+    static rollDriveHouseHandler(event, target) {
+		event.preventDefault();
+        const dataset = target.dataset;
+
+        Roll.roll({ 
+            type: "driveHouse", 
+            actor: this.actor, 
+            drive: dataset.drive//, 
+            //focuses: this.actor.items.filter(function (item) { return item.type == "Focus"})
+        });
+    }
+
+    // Roll Skill check (with House Skill)
+    static rollSkillHouseHandler(event, target) {
+		event.preventDefault();
+        const dataset = target.dataset;
+
+        Roll.roll({ 
+            type: "skillHouse", 
+            actor: this.actor, 
+            skill: dataset.skill//, 
+            //focuses: this.actor.items.filter(function (item) { return item.type == "Focus" && item.system.skill == dataset.skill})
         });
     }
 }

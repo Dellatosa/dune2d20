@@ -93,7 +93,9 @@
             "reputation": "REPUTATION",
             "category": "CATEGORY",
             "driveValue": "VALUE",
-            "cost": "COST"
+            "cost": "COST",
+            "characterDrive": "CHARACTER DRIVE",
+            "houseSkill": "HOUSE SKILL"
         },
         "item": {
             "name": "Name",
@@ -157,7 +159,9 @@
             "difficulty": "Difficulty",
             "useDetermination": "Use Determination",
             "numberOfDices": "Number of dices",
-            "focus": "Focus"
+            "focus": "Focus",
+            "characterDrive": "Character Drive",
+            "houseSkill": "House Skill"
         },
         "chat": {
             "focus": "Focus",

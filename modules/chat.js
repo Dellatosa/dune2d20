@@ -34,6 +34,6 @@ async function onReroll(event) {
     const dicesSel = await DuneRerollAppV2.open(actor, dices);
 
     if(dicesSel) {
-        Roll.reroll(actor, dataset.driveName, parseInt(dataset.driveValue), dataset.skillName, parseInt(dataset.skillValue), dicesSel, dataset.focus, dataset.difficulty);
+        Roll.reroll(actor, dataset.houseRoll, dataset.driveName, parseInt(dataset.driveValue), dataset.skillName, parseInt(dataset.skillValue), dicesSel, dataset.focus, dataset.difficulty);
     }
 }

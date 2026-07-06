@@ -1,14 +1,20 @@
 export async function roll({type = null, actor = null, drive = null, skill= null, focuses = null} = {}) {
     // Roll Drive options
-    let focusesList = focuses.length > 0 ? [{id: "none", name: "", nameWithSkl: ""}] : null;
+    let focusesList
+    if (focuses) {
+        focusesList = focuses && focuses.length > 0 ? [{id: "none", name: "", nameWithSkl: ""}] : null;
 
-    focuses.forEach(foc => {
-        const skill = game.i18n.localize(CONFIG.dune2d20.skills[foc.system.skill]);
-        let result = foc.name.concat(" (");
-        if (skill.length > 3) { result = result.concat(skill.slice(0, 3), ")") };
-        focusesList.push({id: foc._id, name: foc.name, nameWithSkl: result});
-    });
-
+        focuses.forEach(foc => {
+            const skill = game.i18n.localize(CONFIG.dune2d20.skills[foc.system.skill]);
+            let result = foc.name.concat(" (");
+            if (skill.length > 3) { result = result.concat(skill.slice(0, 3), ")") };
+            focusesList.push({id: foc._id, name: foc.name, nameWithSkl: result});
+        });
+    }
+    else {
+        focusesList = null;
+    }
+    
     let dialogOptions = await getRollOptions({cfgData: CONFIG.dune2d20, type: type, actor: actor, drive: drive, skill: skill, focuses: focusesList});
 
     // Cancel roll if 'Cancel' or 'Close' button used
@@ -20,10 +26,10 @@ export async function roll({type = null, actor = null, drive = null, skill= null
     const canReroll = true;
 
     // Drive and Skill selection
-    if(type == "drive") {
+    if(type == "drive" || type == "driveHouse") {
         skill = dialogOptions.skill;
     }
-    else if (type == "skill") {
+    else if (type == "skill" || type == "skillHouse") {
         if(actor.system.category == "minor") {
             drive = "genDrive";
         }
@@ -32,7 +38,13 @@ export async function roll({type = null, actor = null, drive = null, skill= null
         }
     }
 
-    let skillValue = actor.system.skills[skill].value;
+    let skillValue;
+    if(type == "skillHouse" || type == "driveHouse") {
+        skillValue = fromUuidSync(actor.system.house).system.skills[skill].value;
+    }
+    else {
+        skillValue = actor.system.skills[skill].value;
+    }
 
     let driveValue;
     if(drive == "genDrive") {
@@ -59,7 +71,7 @@ export async function roll({type = null, actor = null, drive = null, skill= null
 
     // Roll formula
     let rollFormula = `${dicePoolSize}d20cs<=${skillValue + driveValue}`;
-    let rollResult = await new Roll(rollFormula, null).evaluate(); //.roll({async: true});
+    let rollResult = await new Roll(rollFormula, null).evaluate();
 
     // Change greater dice value to 1 if determination used
     if(useDetermination) {
@@ -97,8 +109,11 @@ export async function roll({type = null, actor = null, drive = null, skill= null
     // Generated momentum
     const momentum = rollResult.result > difficulty ? rollResult.result - difficulty : 0;
 
+    //console.log(type == "skillHouse" || type == "driveHouse");
+
     let rollStats = {
         actor: actor,
+        houseRoll: type == "skillHouse" || type == "driveHouse",
         skillName: game.i18n.localize(CONFIG.dune2d20.skills[skill]),
         skillValue: skillValue,
         driveName: drive == "genDrive" ? game.i18n.localize("dune2d20.actor.drive") : game.i18n.localize(CONFIG.dune2d20.drives[drive]),
@@ -138,12 +153,15 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
     let template = null;
     let title = null;
 
+    //console.log(type);
     switch(type) {
         case "drive":
+        case "driveHouse":
             template = "systems/dune2d20/templates/rolls/dialog/drive-roll-dialog-v2.hbs";
             title = "dune2d20.dialog.driveRoll";
             break;
         case "skill":
+        case "skillHouse":
             //template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog.html";
             template = "systems/dune2d20/templates/rolls/dialog/skill-roll-dialog-v2.hbs";
             title = "dune2d20.dialog.skillRoll"
@@ -152,6 +170,7 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
     
     let dialogContext = {
         cfgData,
+        type,
         actor,
         drive,
         skill,
@@ -244,7 +263,7 @@ function _processRollOptions(form) {
     }
 }
 
-export async function reroll(actor, driveName, driveValue, skillName, skillValue, dicesSel, focus, difficulty) {  
+export async function reroll(actor, houseRoll, driveName, driveValue, skillName, skillValue, dicesSel, focus, difficulty) {  
     // Can't reroll more than once
     const canReroll = false;
 
@@ -291,8 +310,11 @@ export async function reroll(actor, driveName, driveValue, skillName, skillValue
     // Generated momentum
     const momentum = nbSuccesses > difficulty ? nbSuccesses - difficulty : 0;
 
+    //console.log(houseRoll);
+
     let rollStats = {
         actor: actor,
+        houseRoll: houseRoll,
         skillName: skillName,
         skillValue: skillValue,
         driveName: driveName,

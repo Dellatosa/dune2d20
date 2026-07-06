@@ -2,7 +2,7 @@
     <div class="title">{{configLocalize "skills" skill}}</div>
     {{#unless (eq actor.system.category "minor")}}
         <div class="opt-select">
-            <div>{{localize 'dune2d20.dialog.drive'}}</div>
+            <div>{{#if (eq type "skillHouse")}}{{localize 'dune2d20.dialog.characterDrive'}}{{else}}{{localize 'dune2d20.dialog.drive'}}{{/if}}</div>
             <select name="drive">
                 {{selectOptions cfgData.drivesMdt selected=value localize=true}}
             </select>

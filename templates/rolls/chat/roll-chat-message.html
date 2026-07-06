@@ -1,7 +1,7 @@
 <div class="roll-message">
     <div class="stats-name">
         <div>{{driveName}}</div>
-        <div>{{skillName}}</div>
+        <div>{{#if houseRoll}}<i class="fa-sharp fa-light fa-swords"></i>{{/if}} {{skillName}}</div>
     </div>
     <div class="stats-val">
         <div class="left-bg"> </div>
@@ -34,6 +34,7 @@
                     data-dice{{@index}}="{{dice.result}}" 
                     data-dice{{@index}}-det="{{dice.determination}}" 
                 {{/each}}
+                data-house-roll="{{houseRoll}}"
                 data-drive-name="{{driveName}}" data-drive-value="{{driveValue}}"
                 data-skill-name="{{skillName}}" data-skill-value="{{skillValue}}"
                 data-difficulty="{{difficulty}}" data-focus="{{#if focus}}{{focus.name}}{{/if}}"

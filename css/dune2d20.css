@@ -465,6 +465,52 @@
   padding: 2px 5px;
   color: var(--color-normal-text);
 }
+.dune2d20.sheet.actor .house-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 59px 25px 1fr 59px 25px;
+  grid-template-rows: 40px repeat(5, 50px);
+  align-items: center;
+  color: var(--color-normal-text);
+}
+.dune2d20.sheet.actor .house-stats-grid .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.dune2d20.sheet.actor .house-stats-grid .left {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.dune2d20.sheet.actor .house-stats-grid .right {
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+.dune2d20.sheet.actor .house-stats-grid .drive,
+.dune2d20.sheet.actor .house-stats-grid .skill {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.dune2d20.sheet.actor .house-stats-grid .val {
+  font-family: "Perpetua";
+  font-size: 1.25em;
+  background-image: url("../images/sheet/house-skill-box.png");
+}
+.dune2d20.sheet.actor .house-stats-grid .val input {
+  height: 50px;
+  border: none;
+  background: none;
+  color: var(--color-normal-text);
+  text-align: center;
+}
+.dune2d20.sheet.actor .house-stats-grid .val input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.dune2d20.sheet.actor .house-stats-grid .val input:read-only {
+  cursor: default;
+}
 .dune2d20.sheet.house {
   font-family: "Hoefler";
 }

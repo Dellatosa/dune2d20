@@ -542,4 +542,66 @@
             }
         }
     }
+
+    .house-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 59px 25px 1fr 59px 25px;
+        grid-template-rows: 40px repeat(5, 50px);
+
+        align-items: center;
+
+        color: var(--color-normal-text);
+
+        .title {
+            text-align: center;
+
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .left {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .right {
+            grid-column-start: 4;
+            grid-column-end: 6;
+        }
+
+        .drive, .skill {
+            text-align: right;
+            padding-right: 10px;
+                
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .val {
+            font-family: "Perpetua";
+            font-size: 1.25em;
+
+            background-image: url("../images/sheet/house-skill-box.png");
+
+            input {
+                height: 50px;
+
+                border: none;
+                background: none;
+
+                color: var(--color-normal-text);
+
+                text-align: center;
+            }
+
+            input:focus {
+                box-shadow: none;
+                outline: none;
+            }
+
+            input:read-only {
+                cursor: default;
+            }
+        }
+    }
 }
