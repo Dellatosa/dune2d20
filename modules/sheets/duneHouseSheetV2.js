@@ -81,6 +81,7 @@ export default class DuneHouseSheetV2 extends HandlebarsApplicationMixin(ActorSh
                 break;
             case 'management':
                 context.traits = this.actor.items.filter(function (item) { return item.type == "Trait"});
+                context.ventures = this.actor.items.filter(function (item) { return item.type == "Venture" && item.system.completed == false }); 
                 context.tab = context.tabs[partId];
                 break;
             default:

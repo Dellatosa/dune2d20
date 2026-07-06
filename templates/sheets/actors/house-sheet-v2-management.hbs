@@ -48,12 +48,41 @@
             <div class="news-bottom"> </div>
         </div>
     </div>
-    <div class="dev-ventures-grid">
+    <div class="ventures-grid">
         <div> </div>
-        <div class="dev-ventures-flex">
+        <div class="ventures-flex">
             <div class="top-row"> </div>
             <div class="title-row">{{ localize 'dune2d20.actor.devVentures' }}</div>
             <!-- TODO -->
+            {{#each ventures as |venture id|}}
+                <div class="venture-row item" data-item-id="{{venture._id}}" data-item-type="venture">
+                    <div class="venture-name">
+                        {{venture.name}}
+                    </div>
+                    <div class="venture-info"><i class="fa-solid fa-chart-pie-simple-circle-dollar" title="{{localize 'dune2d20.hint.type'}}"></i> {{configLocalize "ventureType" venture.system.type}}</div>
+                    <div class="venture-info"><i class="fa-solid fa-graduation-cap" title="{{localize 'dune2d20.hint.skill'}}"></i> {{configLocalize "skills" venture.system.skill}}</div>
+                    {{#if (eq venture.system.type "construction")}}
+                        <div class="venture-stat"><i class="fa-solid fa-industry" title="{{localize 'dune2d20.hint.resources'}}"></i> {{venture.system.resources}}</div>
+                    {{/if}}
+                    {{#if (eq venture.system.type "boon")}}
+                        <div class="venture-stat"><i class="fa-solid fa-coins" title="{{localize 'dune2d20.hint.wealth'}}"></i> {{venture.system.wealth}}</div>
+                    {{/if}}
+                    <div class="venture-stat"><i class="fa-sharp fa-solid fa-ranking-star" title="{{localize 'dune2d20.hint.successes'}}"></i> {{venture.system.successes}}</div>
+                {{#if ../unlocked}}
+                    <a class="edit-item" data-action="editItem" title="{{localize 'dune2d20.hint.editDomain'}}"><i class="fa-regular fa-sliders"></i></a>
+                    <a class="remove-item" data-action="removeItem" title="{{localize 'dune2d20.hint.removeDomain'}}"><i class="fa-solid fa-hexagon-xmark"></i></a>
+                </div>
+                {{else}}
+                    {{#if system.descVisible}}
+                        <a class="toogle-desc" data-action="hide" title="{{localize 'dune2d20.hint.hideDomainDesc'}}"><i class="fa-solid fa-caret-up"></i></a>
+                    </div>
+                    <div class="desc-row">{{editor system.description target="system.description" button=false owner=true editable=false}}</div>
+                    {{else}}
+                        <a class="toogle-desc" data-action="show" title="{{localize 'dune2d20.hint.showDomainDesc'}}"><i class="fa-solid fa-caret-down"></i></a>
+                    </div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
             <div class="bottom-row"> </div>
         </div>
         <div> </div>

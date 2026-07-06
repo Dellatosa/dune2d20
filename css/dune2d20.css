@@ -955,20 +955,20 @@
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .domaines-grid,
-.dune2d20.sheet.house .dev-ventures-grid,
+.dune2d20.sheet.house .ventures-grid,
 .dune2d20.sheet.house .rep-grid {
   display: grid;
   grid-template-columns: 1fr 720px 1fr;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex,
+.dune2d20.sheet.house .ventures-grid .domaines-flex,
 .dune2d20.sheet.house .rep-grid .domaines-flex,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex {
+.dune2d20.sheet.house .domaines-grid .ventures-flex,
+.dune2d20.sheet.house .ventures-grid .ventures-flex,
+.dune2d20.sheet.house .rep-grid .ventures-flex {
   display: flex;
   flex-direction: column;
   font-family: "Hoefler";
@@ -976,41 +976,120 @@
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .top-row,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .top-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .top-row,
 .dune2d20.sheet.house .rep-grid .domaines-flex .top-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .top-row,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .top-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .top-row,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .top-row,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .top-row,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .top-row,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .top-row {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .top-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .top-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .top-row {
   flex-basis: 28px;
   background-image: url("../images/sheet/domaines-top.png");
   margin-top: 5px;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .title-row,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .title-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .title-row,
 .dune2d20.sheet.house .rep-grid .domaines-flex .title-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .title-row,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .title-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .title-row,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .title-row,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .title-row,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .title-row,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .title-row {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .title-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .title-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .title-row {
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
   font-weight: bold;
   text-align: center;
 }
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row {
+  display: flex;
+  border-left: solid 1px var(--color-box-border);
+  border-right: solid 1px var(--color-box-border);
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .venture-name,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .venture-name,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .venture-name,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .venture-name,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .venture-name,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .venture-name,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .venture-name,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .venture-name,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .venture-name {
+  flex: 3.5;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .venture-info,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .venture-info,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .venture-info,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .venture-info,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .venture-info,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .venture-info,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .venture-info,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .venture-info,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .venture-info {
+  flex: 2;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .venture-stat,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .venture-stat {
+  flex: 0.5;
+}
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .edit-item,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .remove-item,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .domaines-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .rep-grid .domaines-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .domaines-grid .comp-ventures-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .rep-grid .comp-ventures-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .venture-row .toogle-desc,
+.dune2d20.sheet.house .rep-grid .ventures-flex .venture-row .toogle-desc {
+  flex-basis: 25px;
+  text-align: center;
+}
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row {
   display: flex;
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
@@ -1019,66 +1098,66 @@
   padding-right: 5px;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .domain-name,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .domain-name,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row .domain-name,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row .domain-name,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .domain-name,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row .domain-name,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row .domain-name,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .domain-name,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .domain-name,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row .domain-name {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row .domain-name,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row .domain-name {
   flex: 2;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row .domain-stat,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row .domain-stat,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row .domain-stat,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .domain-stat,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row .domain-stat {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row .domain-stat,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row .domain-stat {
   flex: 1;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .edit-item,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row .edit-item,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row .edit-item,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .edit-item,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row .edit-item,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row .edit-item,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .edit-item,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .edit-item,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row .edit-item,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row .edit-item,
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .remove-item,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row .remove-item,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row .remove-item,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .remove-item,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row .remove-item,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row .remove-item,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .remove-item,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .remove-item,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row .remove-item,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row .remove-item,
 .dune2d20.sheet.house .domaines-grid .domaines-flex .domain-row .toogle-desc,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .domain-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .domain-row .toogle-desc,
 .dune2d20.sheet.house .rep-grid .domaines-flex .domain-row .toogle-desc,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .domain-row .toogle-desc,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .domain-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .domain-row .toogle-desc,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .domain-row .toogle-desc,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .domain-row .toogle-desc,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .domain-row .toogle-desc,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .domain-row .toogle-desc {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .domain-row .toogle-desc,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .domain-row .toogle-desc,
+.dune2d20.sheet.house .rep-grid .ventures-flex .domain-row .toogle-desc {
   flex-basis: 25px;
   text-align: center;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .desc-row,
 .dune2d20.sheet.house .rep-grid .domaines-flex .desc-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .desc-row,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .desc-row,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .desc-row {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .desc-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .desc-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .desc-row {
   border-left: solid 1px var(--color-box-border);
   border-right: solid 1px var(--color-box-border);
   padding-left: 3px;
@@ -1086,41 +1165,41 @@
   padding-bottom: 3px;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row .editor,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .desc-row .editor,
 .dune2d20.sheet.house .rep-grid .domaines-flex .desc-row .editor,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row .editor,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .desc-row .editor,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .desc-row .editor,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row .editor,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row .editor,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .desc-row .editor {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .desc-row .editor,
+.dune2d20.sheet.house .rep-grid .ventures-flex .desc-row .editor {
   background-color: var(--color-box-background);
   border: solid 1px var(--color-box-border);
   box-shadow: inset 0 0 5px var(--color-box-inset);
   border-radius: 5px;
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .desc-row .editor .editor-content,
 .dune2d20.sheet.house .rep-grid .domaines-flex .desc-row .editor .editor-content,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .desc-row .editor .editor-content,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .desc-row .editor .editor-content,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .desc-row .editor .editor-content {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .desc-row .editor .editor-content,
+.dune2d20.sheet.house .rep-grid .ventures-flex .desc-row .editor .editor-content {
   padding: 2px 2px;
   font-size: 0.8em;
   color: var(--color-normal-text);
 }
 .dune2d20.sheet.house .domaines-grid .domaines-flex .bottom-row,
-.dune2d20.sheet.house .dev-ventures-grid .domaines-flex .bottom-row,
+.dune2d20.sheet.house .ventures-grid .domaines-flex .bottom-row,
 .dune2d20.sheet.house .rep-grid .domaines-flex .bottom-row,
 .dune2d20.sheet.house .domaines-grid .comp-ventures-flex .bottom-row,
-.dune2d20.sheet.house .dev-ventures-grid .comp-ventures-flex .bottom-row,
+.dune2d20.sheet.house .ventures-grid .comp-ventures-flex .bottom-row,
 .dune2d20.sheet.house .rep-grid .comp-ventures-flex .bottom-row,
-.dune2d20.sheet.house .domaines-grid .dev-ventures-flex .bottom-row,
-.dune2d20.sheet.house .dev-ventures-grid .dev-ventures-flex .bottom-row,
-.dune2d20.sheet.house .rep-grid .dev-ventures-flex .bottom-row {
+.dune2d20.sheet.house .domaines-grid .ventures-flex .bottom-row,
+.dune2d20.sheet.house .ventures-grid .ventures-flex .bottom-row,
+.dune2d20.sheet.house .rep-grid .ventures-flex .bottom-row {
   flex-basis: 32px;
   background-image: url("../images/sheet/domaines-bottom.png");
 }

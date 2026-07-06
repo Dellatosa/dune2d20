@@ -180,33 +180,7 @@ async function getRollOptions({cfgData = null, type = null, actor = null, drive 
         useDetermination
     }
 
-    //const html = await foundry.applications.handlebars.renderTemplate(template, {data: cfgData, actor: actor, drive: drive, skill: skill, focuses: focuses, difficulty: difficulty, nbDice: nbDice, useDetermination: false});
     const html = await foundry.applications.handlebars.renderTemplate(template, dialogContext);
-
-    /*
-    return new Promise( resolve => {
-        const data = {
-            title: game.i18n.localize(title),
-            content: html,
-            buttons: {
-                roll: { // Roll dices button
-                    icon: '<i class="fa-solid fa-dice-d20"></i>',
-                    label: game.i18n.localize("dune2d20.dialog.roll"),
-                    callback: html => resolve(_processRollOptions(html[0].querySelector("form")))
-                },
-                cancel: { // Cancel button 
-                    label: game.i18n.localize("dune2d20.dialog.cancel"),
-                    callback: html => resolve({cancel: true})
-                }
-            },
-            default: "roll",
-            close: () => resolve({cancel: true})
-        }
-
-        // Show dialog
-        new Dialog(data, null).render(true);
-    });
-    */
 
     const rollOptions = await foundry.applications.api.DialogV2.wait({
       window: { title },

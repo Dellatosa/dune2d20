@@ -512,11 +512,11 @@
         }
     }
 
-    .domaines-grid, .dev-ventures-grid, .rep-grid {
+    .domaines-grid, .ventures-grid, .rep-grid {
         display: grid;
         grid-template-columns: 1fr 720px 1fr;
 
-        .domaines-flex, .comp-ventures-flex, .dev-ventures-flex {
+        .domaines-flex, .comp-ventures-flex, .ventures-flex {
             display: flex;
             flex-direction: column;
 
@@ -536,6 +536,34 @@
 
                 font-weight: bold;
                 text-align: center;
+            }
+
+            .venture-row {
+                display: flex;
+
+                border-left: solid 1px var(--color-box-border);
+                border-right: solid 1px var(--color-box-border);
+
+                padding-top: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+
+                .venture-name {
+                    flex: 3.5;
+                }
+
+                .venture-info {
+                    flex: 2;
+                }
+
+                .venture-stat {
+                    flex: 0.5;
+                }
+
+                .edit-item, .remove-item, .toogle-desc {
+                    flex-basis: 25px;
+                    text-align: center;
+                }
             }
 
             .domain-row {
